@@ -1,0 +1,45 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+/* src/index.css */
+
+/* ===== Custom Fonts from Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ===== Custom Theme Colors (override Bootstrap utilities) ===== */
+:root {
+  --bs-primary: #1d4ed8;
+  --bs-secondary: #64748b;
+  --bs-success: #10b981;
+  --bs-danger: #ef4444;
+  --bs-warning: #f59e0b;
+  --bs-info: #3b82f6;
+  --bs-dark: #0f172a;
+  --bs-light: #f8fafc;
+
+  --bs-font-sans-serif: 'Inter', system-ui, sans-serif;
+  --bs-font-heading: 'Poppins', system-ui, sans-serif;
+}
+
+
+.btn-accent {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: #d97706;
+}
+
+
+.footer-bg-overlay {
+  background-image: url("/footer-bg.png"); /* Place your image in /public */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
