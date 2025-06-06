@@ -45,32 +45,31 @@ const slides = [
 function CarouselFade() {
   return (
     <div className="w-100">
-      <Carousel fade interval={5000} indicators controls>
-        {slides.map((slide, index) => (
-          <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={slide.image}
-              alt={`Slide ${index + 1}`}
-              style={{
-                height: '65vh',
-                objectFit: 'cover',
-              }}
-            />
-            <Carousel.Caption
-              className="bg-dark bg-opacity-50 p-3 rounded"
-              style={{
-                maxWidth: '90%',
-                margin: '0 auto',
-                bottom: '10%',
-              }}
-            >
-              <h3 className="fs-2 fs-md-3">{slide.title}</h3>
-              <p className="fs-6 fs-md-5">{slide.description}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+ <Carousel
+  fade
+  interval={5000}
+  indicators
+  controls
+  pause={false}   // Ensures auto-slide doesn't stop on hover
+  ride="carousel" // Starts the animation when component loads
+>
+  {slides.map((slide, index) => (
+    <Carousel.Item key={index}>
+      <img
+        className="d-block w-100"
+        src={slide.image}
+        alt={`Slide ${index + 1}`}
+        style={{
+          width: '1272px',
+          objectFit: 'cover',
+        }}
+      />
+      {/* Optional Caption */}
+      {/* <Carousel.Caption>...</Carousel.Caption> */}
+    </Carousel.Item>
+  ))}
+</Carousel>
+
     </div>
   );
 }

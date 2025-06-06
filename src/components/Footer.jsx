@@ -87,7 +87,7 @@ export default function Footer() {
       </div>
 </div>
       {/* Bottom Bar */}
-      <div className="text-center py-3 mt-5 border-top border-white border-opacity-25">
+      <div className="text-center py-3 mt-4 border-top border-white border-opacity-25">
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-white small gap-2">
           <p className="mb-0">© 2025 VGN Homes - All Rights Reserved.</p>
           <p className="mb-0">Website Maintained by <strong>Ayatiworks</strong></p>

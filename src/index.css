@@ -1,15 +1,9 @@
+@charset "UTF-8";
+
+
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-
-/* src/index.css */
-
-/* ===== Custom Fonts from Google Fonts ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap');
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
-}
 
 /* ===== Custom Theme Colors (override Bootstrap utilities) ===== */
 :root {
@@ -22,9 +16,98 @@ body {
   --bs-dark: #0f172a;
   --bs-light: #f8fafc;
 
-  --bs-font-sans-serif: 'Inter', system-ui, sans-serif;
-  --bs-font-heading: 'Poppins', system-ui, sans-serif;
+  --bs-font-sans-serif: 'Mulish', sans-serif;
+  --bs-font-heading: 'Mulish', sans-serif;
 }
+
+
+.mulish-sans {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Mulish', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: #111111;
+  font-weight: 400;
+  font-family: 'Mulish', sans-serif !important;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Mulish', sans-serif;
+}
+p {
+  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
+  color: #000000;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 15px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+
 
 
 .btn-accent {
@@ -42,4 +125,375 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+/* Home Page Start */
+.hs-top {
+    background: #b4151a;
+}
+.logo img{
+  margin-top: 5px;
+    width: 165px;
+}
+.read-more {
+    display: inline-block;
+    font-size: 13px;
+    color: #bf151a;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0px 6px;
+    border: 1px solid #b4151a;
+    line-height: 20px;
+    text-decoration: none;
+}
+.read-more:hover {
+    color: #fff;
+    background: #bf151a;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+}
+.bg{
+  background-color: #fff9f1;
+}
+.spad {
+    padding-top: 60px;
+}
+.head1 {
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 100;
+}
+
+
+.home-head1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home-txt1 {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+#video-background {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#video-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.home-video-sec1 {
+    padding: 61px 60px;
+}
+.home-head1 {
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+    line-height: 42px;
+}
+.home-txt1 {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+    padding-bottom: 0 !important;
+}
+
+
+.enquiry-heading {
+  font-size: 2rem;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.enquiry-heading::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: -25px;
+  width: 15px;
+  height: 15px;
+  border-top: 5px solid #bf151a;
+  border-left: 5px solid #bf151a;
+}
+
+/* Add to your CSS file or <style> block */
+@media (max-width: 576px) {
+  .form-control,
+  .form-select {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .section-title1 h4 {
+    font-size: 1.4rem !important;
+  }
+}
+
+
+
+.head-border {
+    position: absolute;
+    margin-left: -15px;
+    margin-top: -13px;
+}
+.section-title1 h4 {
+   
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+
+
+.hs-nav {
+    box-shadow: 1px 1px 1px #ddd;
+}
+
+.nav-menu {
+    text-align: right;
+}
+.hs-nav .nav-menu ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    position: relative;
+}
+.hs-nav .nav-menu ul li a {
+    color: #111111;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 20px 0;
+    display: block;
+    position: relative;
+}
+.hs-nav .nav-menu ul li .dropdown {
+    position: absolute;
+    left: -30px;
+    top: 80px;
+    width: 209px;
+    background: #ffffff;
+    z-index: 9;
+    padding: 15px 0 14px;
+    box-shadow: 1px 3px 15px rgba(11, 27, 32, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+/* Home Page End */
+
+
+/* About Page Start */
+.spad {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+.head1 {
+    font-size: 35px;
+    line-height: 35px;
+    font-weight: 100;
+}
+.breadcrumb-text .bt-option a {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 20px;
+    position: relative;
+    text-decoration: none;
+}
+.breadcrumb-text .bt-option a i {
+    margin-right: 4px;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* About Page End */
+
+/* Our Values Page Start */
+
+.breadcrumb-section {
+  padding: 60px 0; /* You can adjust this */
+  color: white;
+}
+
+.breadcrumb-text
+
+ {
+    display: inline-block;
+    padding: 35px 0px;
+}
+.breadcrumb-text h4 {
+    font-weight: 700;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background-color: rgb(0 0 0 / 65%);
+    padding: 10px 10px;
+}
+.blog-details-content .bc-quote .bq-icon {
+    width: 75px;
+    height: 69px;
+    border: 1px solid #e1e1e1;
+    border-radius: 50%;
+    line-height: 55px;
+    text-align: center;
+    font-size: 30px;
+    color: #b4151a;
+    float: left;
+    margin-right: 20px;
+}
+
+.mission-txt {
+    padding: 15px;
+    border: 1px solid #da2d26;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+.blog-details-content .bc-quote {
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+
+.servicebox2 {
+    background: #fff;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    min-height: 255px;
+}
+
+.servicetitle h5 {
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-transform: none;
+    padding-bottom: 10px;
+    color:#000000;
+}
+.servicebox2:hover h5 {
+    color:#ffffff;
+}
+.servicebox2 p {
+    text-align: center;
+}
+.servicebox2:hover p {
+  color: #fff;
+    text-align: center;
+}
+.servicebox2:hover h3 {
+    color: #fff;
+}
+.servicebox2:hover {
+    background: #b4151a;
+}
+.service-icon1  {
+    font-size: 35px;
+    color: #b4151a;
+    margin-top: 20px;
+}
+.servicebox2:hover .service-icon1 svg {
+  color: white;
+}
+/* Our Values Page End */
+
+/* Message From Chairman Start */
+
+.chair-txt {
+    background: url(../chairman-back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.people-text p {
+    color: #fff;
+    padding-bottom: 10px;
+}
+.people-text {
+    padding: 30px;
+    padding-top: 40px;
+}
+/* Message From Chairman End */
+
+/* Our People start*/
+.chair-txt1 {
+    background: url(../chairman-back1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 0;
+    padding-left: 0;
+}
+/* Our People End */
+
+
+/* Testimonial Start */
+.testim .arrow.left {
+    left: 10px;
+}
+.testim .arrow {
+    display: block;
+    position: absolute;
+    color: #b4151a;
+    cursor: pointer;
+    font-size: 2em;
+    top: 50%;
 }
