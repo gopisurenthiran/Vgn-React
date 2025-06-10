@@ -363,10 +363,7 @@ a:hover, a:focus {
 
 /* Our Values Page Start */
 
-.breadcrumb-section {
-  padding: 60px 0; /* You can adjust this */
-  color: white;
-}
+
 
 .breadcrumb-text
 
@@ -497,3 +494,394 @@ a:hover, a:focus {
     font-size: 2em;
     top: 50%;
 }
+
+/* Testimonial End */
+
+
+/* Ongoing Projects Start */
+.breadcrumb-text h4 {
+    font-weight: 700;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    background-color: rgb(0 0 0 / 65%);
+    padding: 10px 10px;
+}
+
+.breadcrumb-text {
+    display: inline-block;
+    padding: 35px 0px;
+}
+
+.as-item {
+    background: #ffffff;
+    padding: 12px 12px 12px 12px;
+    box-shadow: 0px 3px 15px rgba(91, 91, 91, 0.15);
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 7px;
+}
+.property-item .pi-text {
+    position: relative;
+    padding: 18px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: #fff;
+}
+.property-item .pi-text h5 {
+    margin-bottom: 10px;
+}
+
+
+.property-item .pi-text ul li {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 700;
+    list-style: none;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+.property-item .pi-text h5 a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #b4151a;
+    font-family: 'Mulish', sans-serif;
+}
+.property-item .pi-text ul li span {
+    font-size: 13px;
+    color: #bf151a;
+    margin-right: 0px;
+    width: 14px;
+}
+.loadmore-btn {
+    text-align: center;
+}
+
+.loadmore-btn a {
+    display: inline-block;
+    font-size: 13px;
+    color: #bf151a;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid #b4151a;
+}
+.loadmore-btn a:hover
+{
+color: #ffffff;
+    background: #bf151a;
+}
+    
+/* Ongoing Projects End */
+
+
+/* Completed Start */
+
+.as-item2 {
+    background: #ffffff;
+    padding: 12px 12px 12px 12px;
+    box-shadow: 0px 3px 15px rgb(91 91 91 / 15%);
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 7px;
+}
+
+figure.effect-goliath h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 15px;
+    z-index: 99;
+    word-spacing: 1px;
+}
+figure.effect-goliath:hover h2 {
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -30px, 0);
+}
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 0px;
+    width: 100%;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+}
+
+.completed-txt:before {
+    background: url(../img/shaw-optimised.png) center bottom repeat;
+    bottom: 0;
+    content: "";
+    height: 139px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+}
+
+.as-item2 {
+    background: #ffffff;
+    padding: 12px 12px 12px 12px;
+    box-shadow: 0px 3px 15px rgb(91 91 91 / 15%);
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 7px;
+}
+
+content {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.grid {
+    position: relative;
+    clear: both;
+    max-width: 1000px;
+    list-style: none;
+    text-align: center;
+}
+
+.project-name {
+    bottom: 2px !important;
+    font-size: 19px;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: 700 !important;
+    color: #fff;
+    text-align: left;
+}
+.figure.effect-goliath .complete-details {
+    text-transform: none;
+    font-size: 90%;
+    background: #b4151a;
+    padding-top: 8px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
+}
+
+.effect-goliath img {
+  transition: transform 0.5s ease;
+  display: block;
+  width: 100%;
+}
+
+.effect-goliath:hover img {
+  transform: scale(1.1);
+}
+
+.sq-txt {
+    font-size: 14px !important;
+    color: #fff;
+    font-weight: 600 !important;
+}
+.plot-txt {
+    font-size: 14px !important;
+    color: #fff;
+    font-weight: 600 !important;
+}
+.completed-txt {
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
+  color: #fff;
+}
+
+.project-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pi-text1 ul li {
+  font-size: 14px;
+  color: #333;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.pi-text1
+{
+	    position: initial !important;
+    margin-top: 0px;
+	padding-top:0px !important;
+	padding-bottom:0px !important;
+}
+.completed-txt:before {
+    background: url(../img/shaw-optimised.png) center bottom repeat;
+    bottom: 0;
+    content: "";
+    height: 139px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+	left:0;
+}
+figure.effect-goliath:hover .completed-txt:before
+{
+	 bottom: 0px;
+}
+.pi-text1 li{
+	padding-top: 10px;
+	margin-bottom:0px !important;
+}
+.property-item .pi-text ul li span{
+    font-size: 13px;
+    color: #bf151a;
+    margin-right: 5px;
+}
+.property-item .pi-text ul li {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 700;
+    list-style: none;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+
+figure.effect-goliath img,
+figure.effect-goliath h2 {
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+}
+
+figure.effect-goliath img {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+
+figure.effect-goliath h2,
+figure.effect-goliath .complete-details {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 20px 15px;
+	z-index: 99;
+	    word-spacing: 1px;
+}
+
+figure.effect-goliath .complete-details {
+	text-transform: none;
+	font-size: 90%;
+	background: #b4151a;
+    padding-top: 8px;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,50px,0);
+	transform: translate3d(0,50px,0);
+}
+
+figure.effect-goliath:hover img {
+	-webkit-transform: translate3d(0,-80px,0);
+	transform:translate3d(0,0px,0);
+}
+
+figure.effect-goliath:hover h2 {
+	-webkit-transform: translate3d(0,-100px,0);
+	transform:translate3d(0,-30px,0);
+}
+
+figure.effect-goliath:hover .complete-details {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.grid figure {
+
+position: relative;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 0px;
+    width: 100%;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.completed:before {
+    background: url(../shaw-optimised.png) center bottom repeat;
+    bottom: 0;
+    content: "";
+    height: 139px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+}
+
+
+@media only screen and (max-width: 479px)
+{
+.breadcrumb-text {
+    padding: 35px 0px;
+	   bottom: -32px !important;
+}
+.breadcrumb-text h4 {
+   
+    font-size: 15px;
+   
+}
+}
+
+@media only screen and (max-width: 767px) {
+    .sq-txt {
+        font-size: 10px !important;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .property-item .pi-text ul li {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .property-item .pi-text ul li {
+        margin-right: 20px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    figure.effect-goliath .complete-details {
+        padding-top: 3px;
+        padding-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .plot-txt {
+        font-size: 10px !important;
+    }
+}
+
+.colleft{
+  width:40%;
+}
+.colright{
+  width:60%;
+}
+@media only screen and (max-width: 767px) {
+    .colleft {
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .colright {
+        width: 40%;
+    }
+}
+/* Completed End  */

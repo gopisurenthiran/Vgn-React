@@ -1,7 +1,7 @@
-import People from '../components/People';
-import BrandIconSection from '../components/BrandIconSection';
-import TeamMessageSection from '../components/TeamMessageSection';
-import ManagerSection from '../components/ManagerSection';
+import People from '../components/OurPeople/People';
+
+import TeamMessageSection from '../components/OurPeople/TeamMessageSection';
+import ManagerSection from '../components/OurPeople/ManagerSection';
 
 
 
@@ -11,7 +11,7 @@ export default function OurPeople() {
       <People/>
       <TeamMessageSection/>
       <ManagerSection/>
-       <BrandIconSection/>
+
     </div>
   )
 }

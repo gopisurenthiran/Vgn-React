@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import CarouselFade from './Slider';
-import Trust from '@/components/Trust';
-import Video from '@/components/Video';
-import EnquiryForm from '../components/EnquiryForm';
-import VgnAdvantages from '../components/VgnAdvantages';
-import BrandIconSection from '../components/BrandIconSection';
-import Property from '../components/Property';
-import UpcomingProjects from '../components/UpcomingProjects';
+import CarouselFade from '@/components/Home/Slider';
+import Trust from '@/components/Home/Trust';
+import Video from '@/components/Home/Video';
+import EnquiryForm from '../components/Home/EnquiryForm';
+import VgnAdvantages from '../components/Home/VgnAdvantages';
+
+import Property from '../components/Home/Property';
+import UpcomingProjects from '../components/Home/UpcomingProjects';
 
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
        <Video/>
        <EnquiryForm/>
        <VgnAdvantages/>
-       <BrandIconSection/>
+     
     </div>
   )
 }

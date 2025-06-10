@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
+import BrandIconSection from '../components/BrandIconSection';
 
 export default function MainLayout() {
   return (
@@ -14,7 +14,7 @@ export default function MainLayout() {
         
         <Outlet />
       </main>
-
+       <BrandIconSection/>
       {/* Full-width Footer */}
       <Footer />
     </div>

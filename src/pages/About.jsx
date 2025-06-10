@@ -1,7 +1,7 @@
 import React from 'react';
-import BreadcrumbSection from '../components/BreadcrumbSection';
-import AboutUsSection from '../components/AboutUsSection';
-import BrandIconSection from '../components/BrandIconSection';
+import BreadcrumbSection from '../components/About/BreadcrumbSection';
+import AboutUsSection from '../components/About/AboutUsSection';
+
 
 
 
@@ -10,7 +10,7 @@ export default function About() {
     <div>
       <BreadcrumbSection/>
       <AboutUsSection/>
-      <BrandIconSection/>
+ 
     </div>
     
   )

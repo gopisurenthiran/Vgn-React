@@ -19,7 +19,7 @@ export default function NavigationBar() {
       </div>
 
       {/* Main Navbar */}
-    <nav className="navbar navbar-expand-lg custom-navbar shadow-sm">
+    <nav className="navbar navbar-expand-lg custom-navbar sticky-top shadow-sm bg">
       <div className="container">
         <a className="navbar-brand d-flex align-items-center" href="/">
           <img src={logo} alt="Logo" width="100" className="img-fluid" />
@@ -61,8 +61,8 @@ export default function NavigationBar() {
                 Projects
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Ongoing</a></li>
-                <li><a className="dropdown-item" href="#">Completed</a></li>
+                <li><a className="dropdown-item" href="/ongoing-project">Ongoing Projects</a></li>
+                <li><a className="dropdown-item" href="/completed-project">Completed Projects</a></li>
               </ul>
             </li>
 

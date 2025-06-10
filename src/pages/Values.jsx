@@ -1,8 +1,8 @@
 import React from 'react';
-import BreadSection from '../components/BreadSection';
-import OurValues from '../components/OurValues';
-import ValuesThatShapes from '../components/ValuesThatShapes';
-import BrandIconSection from '../components/BrandIconSection';
+import BreadSection from '../components/OurValues/BreadSection';
+import OurValues from '../components/OurValues/OurValues';
+import ValuesThatShapes from '../components/OurValues/ValuesThatShapes';
+
 
 
 
@@ -12,7 +12,6 @@ export default function Values() {
       <BreadSection/>
       <OurValues/>
       <ValuesThatShapes/>
-       <BrandIconSection/>
     </div>
   )
 }
