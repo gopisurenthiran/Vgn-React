@@ -3,6 +3,17 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import VGNParadise from "@/assets/ongoing/project23.jpg";
+import VGNGranduer from "@/assets/ongoing/project36.jpg";
+import VGNHighland from "@/assets/ongoing/project23.jpg";
+import VGNAspireGardens from "@/assets/ongoing/project34.jpg";
+import VGNPridedeVilla from "@/assets/ongoing/project35.jpg";
+import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
+import VGNClassique from "@/assets/ongoing/project24.jpg";
+
+
+
+
 
 const properties = [
       {
@@ -11,7 +22,7 @@ const properties = [
     type: "Plots & Villas",
     size: "646 - 1486 Sq feet",
     status: "Ready to Construct",
-    image: "/project23.jpg",
+    image: VGNParadise,
     isNew: true,
     btnText: "VIEW MORE",
   },
@@ -21,7 +32,7 @@ const properties = [
     type: " Plots",
     size: "581 - 3061 Sq feet",
     status: "Ready to Construct",
-    image: "/project36.jpg",
+    image: VGNGranduer,
     isNew: true,
     btnText: "VIEW MORE",
   },
@@ -32,7 +43,7 @@ const properties = [
     type: "Plots",
     size: "595 - 1731 Sq feet",
     status: "Ready to Construct",
-    image: "/project23.jpg",
+    image: VGNHighland,
     isNew: false,
     btnText: "VIEW MORE",
   },
@@ -42,7 +53,7 @@ const properties = [
     type: "Villa",
     size: "2 BHK & 3 BHK",
     status: "Under Construction",
-    image: "/project34.jpg",
+    image: VGNAspireGardens,
     isNew: true,
     btnText: "VIEW MORE",
   },
@@ -52,7 +63,7 @@ const properties = [
     type: "Villa",
     size: "3 BHK",
     status: "Under Construction",
-    image: "/project35.jpg",
+    image: VGNPridedeVilla,
     isNew: true,
     btnText: "VIEW MORE",
   },
@@ -62,7 +73,7 @@ const properties = [
     type: " Plots",
     size: "700 - 1926 Sq feet",
     status: "Ready to Construct",
-    image: "/project10-1.jpg",
+    image: VGNMugavariPhase,
     isNew: false,
     btnText: "VIEW MORE",
   },
@@ -72,7 +83,7 @@ const properties = [
     type: " Plots",
     size: "703 - 1416 Sq feet",
     status: "Ready to Construct",
-   image: "/project24.jpg",
+   image: VGNClassique,
     isNew: false,
     btnText: "VIEW MORE",
   },

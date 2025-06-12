@@ -5,132 +5,148 @@ import { useNavigate } from 'react-router-dom';
 import { MdLocationPin } from "react-icons/md";
 import { FaObjectGroup, FaBuilding, FaHome } from "react-icons/fa";
 
+import VGNGrandeur from "@/assets/ongoing/project36.jpg";
+import  VGNAspireGardens from "@/assets/ongoing/project35.jpg";
+import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
+import VGNParadise from "@/assets/ongoing/project23.jpg";
+import VGNHighland from "@/assets/ongoing/project31.jpg";
+import VGNHorizon from "@/assets/ongoing/project27.jpg";
+import VGNClassique from "@/assets/ongoing/project24.jpg";
+import VGNPride from "@/assets/ongoing/project15.jpg";
+import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
+import VGNWestfield from "@/assets/ongoing/project22.jpg";
+import VGNWindsorParkPhase4 from "@/assets/ongoing/project30.jpg";
+import VGNSouthernMeadows from "@/assets/ongoing/project21.jpg";
+import VGNVarnabhoomi from "@/assets/ongoing/project5.jpg";
+import VGNSamudra from "@/assets/ongoing/project9.jpg";
+
+
 const properties = [
   {
-    image: "/project36.jpg",
+    image: VGNGrandeur,
     title: "VGN Grandeur",
     location: "Iyyappanthangal, Porur",
     size: "581 - 3061 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "/vgn-grandeur",
+    link: "/vgn-grandeur/index",
   },
   {
-    image: "/project35.jpg",
+    image: VGNAspireGardens,
     title: "VGN Aspire Gardens",
     location: "Avadi, Chennai",
     size: "2 BHK & 3 BHK",
     type: "Villa",
     status: "Under Construction",
-    link: "vgn-aspire-gardens/index",
+    link: "/vgn-aspire-gardens/index",
   },
   {
-    image: "/project34.jpg",
+    image: VGNPridedeVilla,
     title: "VGN Pride de' Villa",
     location: "Padur, Chennai",
     size: "3 BHK",
     type: "Villa",
     status: "Under Construction",
-    link: "vgn-pride-de-villa/index",
+    link: "/vgn-pride-de-villa/index",
   },
   {
-    image: "/project23.jpg",
+    image: VGNParadise,
     title: "VGN Paradise",
     location: "Tiruvottiyur (Wimco nagar)",
     size: "646 - 1486 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-paradise/index",
+    link: "/vgn-paradise/index",
   },
   {
-    image: "/project31.jpg",
+    image: VGNHighland,
     title: "VGN Highland",
     location: "Tharapakkam, Chennai",
     size: "734 - 1704 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-highland/index",
+    link: "/vgn-highland/index",
   },
   {
-    image: "/project27.jpg",
+    image: VGNHorizon,
     title: "VGN Horizon",
     location: "Avadi, Chennai",
     size: "649 - 2359 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-horizon/index",
+    link: "/vgn-horizon/index",
   },
    {
-    image: "/project24.jpg",
+    image: VGNClassique,
     title: "VGN Classique",
     location: "Ambattur, Chennai.",
     size: "703 - 1416 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-classique/index",
+    link: "/vgn-classique/index",
   },
   {
-    image: "/project15.jpg",
+    image: VGNPride,
     title: "VGN Pride",
     location: "Padur, OMR, Chennai.",
     size: "540 - 1636 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-pride/index",
+    link: "/vgn-pride/index",
   },
   {
-    image: "/project10-1.jpg",
+    image: VGNMugavariPhase,
     title: "VGN Mugavari Phase - IV & V",
     location: "Tambaram, Chennai.",
     size: "700 - 1926 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-mugavari-phase2/index",
+    link: "/vgn-mugavari-phase2/index",
   },
   {
-    image: "/project22.jpg",
+    image: VGNWestfield,
     title: "VGN Westfield",
     location: "Avadi, Chennai.",
     size: "1358, 2195 Sq feet",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-westfield/index",
+    link: "/vgn-westfield/index",
   },
   {
-    image: "/project30.jpg",
+    image: VGNWindsorParkPhase4,
     title: "VGN Windsor Park Phase IV - 1G",
     location: "Avadi, Chennai.",
     size: "1104, 1170 Sq.Ft.",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-windsorpark-phase4-1g/index",
+    link: "/vgn-windsorpark-phase4-1g/index",
   },
   {
-    image: "/project21.jpg",
+    image: VGNSouthernMeadows,
     title: "VGN Southern Meadows",
     location: "Potheri, Chennai.",
     size: "1302 Sq.Ft.",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-southernmeadows/index",
+    link: "/vgn-southernmeadows/index",
   },
   {
-    image: "/project5.jpg",
+    image: VGNVarnabhoomi,
     title: "VGN Varnabhoomi Phase - II",
     location: "Pudupakkam, OMR.",
     size: "497, 1195 Sq.Ft.",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-varnabhoomi/index",
+    link: "/vgn-varnabhoomi/index",
   },
   {
-    image: "/project9.jpg",
+    image: VGNSamudra,
     title: "VGN Samudra",
     location: "Chromepet, Chennai.",
     size: "1829 Sq.Ft.",
     type: "Plots",
     status: "Ready to Construct",
-    link: "vgn-samudra/index",
+    link: "/vgn-samudra/index",
   },
 ];
 

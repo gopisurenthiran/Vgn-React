@@ -1,11 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import CelebrityFarms from "@/assets/ongoing/project25.jpg";
 
 const properties = [
     {
       title: 'Celebrity Farms',
-      image: '/project25.jpg',
+      image: CelebrityFarms,
       location: 'Opp. Mahindra world city.',
       type: 'Farm lands',
       size: '22 Cents',

@@ -9,6 +9,7 @@ import OurPeople from '../pages/OurPeople'
 import Testimonial from '../pages/Testimonial'
 import OngoingProjects from '@/pages/OngoingProjects'
 import VgnGrandeur from '@/pages/VgnGrandeur'
+
 import CompletedProjects from '@/pages/CompletedProjects'
 import Contact from '@/pages/Contact'
 
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
        { path: 'our-people', element: <OurPeople /> },
        { path: 'testimonial', element: <Testimonial /> },
        { path: 'ongoing-project', element: <OngoingProjects /> },
-       { path: 'vgn-grandeur', element: <VgnGrandeur /> },
+       { path: 'vgn-grandeur/index', element: <VgnGrandeur /> },
+       
        { path: 'completed-project', element: <CompletedProjects /> },
       { path: 'contact', element: <Contact /> },
     ],
