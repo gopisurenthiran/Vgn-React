@@ -195,10 +195,9 @@ export default function EnquiryForm() {
                   <div className="contact-bx">
                     <div className="section-title">
                       <h4>Enquiry Form</h4>
-                      <br />
                     </div>
 
-                    <form onSubmit={handleSubmit} className="review-form">
+                    <form onSubmit={handleSubmit} className="review-form" style={{ marginTop: "20px" }}>
                       {/* Name */}
                       <div className="mb-3">
                         <label className="form-label">Name*</label>

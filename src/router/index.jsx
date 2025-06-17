@@ -9,6 +9,11 @@ import OurPeople from '../pages/OurPeople'
 import Testimonial from '../pages/Testimonial'
 import OngoingProjects from '@/pages/OngoingProjects'
 import VgnGrandeur from '@/pages/VgnGrandeur'
+import VgnAspireGardens from '@/pages/VgnAspireGardens'
+import VgnPride from '@/pages/VgnPride'
+import VgnParadise from '../pages/VgnParadise'
+import VgnHighland from '../pages/VgnHighland'
+import VgnHorizon from '../pages/VgnHorizon'
 
 import CompletedProjects from '@/pages/CompletedProjects'
 import Contact from '@/pages/Contact'
@@ -27,7 +32,11 @@ const router = createBrowserRouter([
        { path: 'testimonial', element: <Testimonial /> },
        { path: 'ongoing-project', element: <OngoingProjects /> },
        { path: 'vgn-grandeur/index', element: <VgnGrandeur /> },
-       
+       { path: 'vgn-aspire-gardens/index', element: <VgnAspireGardens /> },
+       { path: 'vgn-pride-de-villa/index', element: <VgnPride /> },
+       { path: 'vgn-paradise/index', element: <VgnParadise /> },
+       { path: 'vgn-highland/index', element: <VgnHighland /> },
+       { path: 'vgn-horizon/index', element: <VgnHorizon /> },
        { path: 'completed-project', element: <CompletedProjects /> },
       { path: 'contact', element: <Contact /> },
     ],

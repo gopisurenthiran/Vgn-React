@@ -14,13 +14,13 @@ import project24 from "@/assets/ongoing/project24.jpg";
 import project15 from "@/assets/ongoing/project15.jpg";
 
 const NextArrow = ({ onClick }) => (
-  <button className="custom-slick-arrow next-arrow" onClick={onClick} aria-label="Next">
+  <button className="custom-slick-arrow1 next-arrow" onClick={onClick} aria-label="Next">
     <i className="fa fa-angle-right"></i>
   </button>
 );
 
 const PrevArrow = ({ onClick }) => (
-  <button className="custom-slick-arrow prev-arrow" onClick={onClick} aria-label="Previous">
+  <button className="custom-slick-arrow1 prev-arrow" onClick={onClick} aria-label="Previous">
     <i className="fa fa-angle-left"></i>
   </button>
 );

@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import 'font-awesome/css/font-awesome.min.css';
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+
 
 function App() {
   const [count, setCount] = useState(0)

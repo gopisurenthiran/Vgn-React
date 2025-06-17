@@ -13,7 +13,6 @@
     text-transform: none;
     font-weight: 900;
 }
-
 .section-title h4, .section-title h5, .section-title h6 {
 
 color: #111111;
@@ -24,6 +23,7 @@ color: #111111;
     padding-left: 20px;
 }
 .section-title h4:after, .section-title h5:after, .section-title h6:after {
+    content: "";
     position: absolute;
     left: 0;
     top: -9px;
@@ -210,7 +210,7 @@ color: #111111;
   width: 100%;
 }
 
-.custom-slick-arrow {
+.custom-slick-arrow1 {
   position: absolute;
   top: 95px;
   z-index: 10;
@@ -229,9 +229,9 @@ color: #111111;
   opacity: 0.85;
 }
 
-.custom-slick-arrow:hover {
+.custom-slick-arrow1:hover {
   opacity: 1;
-  background-color: #0b3e35;
+  background-color: #0b3e35 ;
 }
 
 .next-arrow {
