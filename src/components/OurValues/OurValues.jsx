@@ -9,7 +9,7 @@ const OurValues = () => {
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
             <div className="pd-widget blog-details-content" id="about-vgn">
-              <div className="section-title1 text-center mb-4">
+              <div className="heading text-center mb-4">
                 <h4>
                   <span className="head-border">
                     <img

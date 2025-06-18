@@ -25,7 +25,7 @@ const properties = [
 const UpcomingProjects = () => {
   return (
     <div className="py-5" style={{ background: "#fef7ef" }}>
-      <div className="text-center mb-3 section-title1 ">
+      <div className="text-center mb-3 heading">
              <h4 className="d-inline-flex align-items-center" style={{ fontSize: "1.8rem" }}>
               <img className="head-border"
             src="/head-border.png"

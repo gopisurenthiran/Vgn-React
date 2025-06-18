@@ -71,17 +71,17 @@ export default function NavigationBar() {
                 Partners
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Investors</a></li>
-                <li><a className="dropdown-item" href="#">Channel Partners</a></li>
+                <li><a className="dropdown-item" href="/channel-partner">Channel Partner</a></li>
+                <li><a className="dropdown-item" href="/land-enquiry">Land Enquiry / Joint Ventures</a></li>
               </ul>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">NRI</a>
+              <a className="nav-link" href="/nri">NRI</a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">iRefer</a>
+              <a className="nav-link" href="/irefer">iRefer</a>
             </li>
 
             <li className="nav-item dropdown">

@@ -4,19 +4,15 @@ import trust from "@/assets/83-logo.png";
 
 export default function Trust() {
   return (
-     <section
+    <section
       className="property-section latest-property-section spad bg"
       style={{ paddingBottom: "0px" }}
     >
       <div className="container">
-<div className="row align-items-center">
+        <div className="row align-items-center">
           {/* Left: Image */}
           <div className="col-lg-3 text-center">
-            <img
-              src={trust}
-              className="about-img img-fluid"
-              alt="logo"
-            />
+            <img src={trust} className="about-img img-fluid" alt="logo" />
           </div>
 
           {/* Right: Content */}
@@ -34,9 +30,8 @@ export default function Trust() {
                 Headquartered in Chennai, we are one of the oldest and most
                 trusted real estate companies, certified by ISO 14001:2004.
                 Years of experience helped us create our own path by
-                understanding our customer’s desires and helped us improve
-                their quality of life by providing them with the best projects.
-                &nbsp;
+                understanding our customer’s desires and helped us improve their
+                quality of life by providing them with the best projects. &nbsp;
                 <a href="/about" className="read-more">
                   Read more
                 </a>
@@ -44,9 +39,7 @@ export default function Trust() {
             </div>
           </div>
         </div>
-      
       </div>
-        
     </section>
   );
 }

@@ -9,7 +9,7 @@ const ChairmanSection = () => {
 
           {/* Heading */}
           <div className="col-lg-12 text-center">
-            <div className="section-title1">
+            <div className="heading">
               <h4 className="text-center" style={{ color: "#9b1306" }}>
                 <span className="head-border"></span>
                 MESSAGE FROM CHAIRMAN

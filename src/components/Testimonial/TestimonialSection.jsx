@@ -95,7 +95,7 @@ export default function TestimonialSection() {
       <div className="container">
         <div className="row mb-4">
           <div className="col-12 text-center">
-            <div className="section-title1">
+            <div className="heading">
               <h4>
                 <span className="head-border me-2">
                   <img src="/head-border.png" alt="border" />

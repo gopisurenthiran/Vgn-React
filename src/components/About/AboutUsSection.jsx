@@ -21,7 +21,7 @@ const AboutUsSection = () => {
         {/* Section Title */}
         <div className="row text-center">
           <div className="col-lg-12">
-            <div className="section-title1">
+            <div className="heading">
               <h4 className="text-center">
                 <span className="head-border">
                   <img src={headBorder} alt="section-divider" />
@@ -55,7 +55,7 @@ const AboutUsSection = () => {
         {/* VGN Advantages Title */}
         <div className="row">
           <div className="col-lg-12">
-            <div className="section-title1 mt-5 text-center">
+            <div className="heading mt-5 text-center">
               <h4 className="text-center">
                 <span className="head-border">
                   <img src={headBorder} alt="section-divider" />

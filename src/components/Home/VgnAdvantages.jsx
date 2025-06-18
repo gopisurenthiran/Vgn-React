@@ -8,7 +8,7 @@ export default function VgnAdvantages() {
       style={{ paddingTop: "80px", paddingBottom: "0px", background: "#fff" }}
     >
       <div className="container">
-        <div className="section-title1">
+        <div className="heading">
           <h4 className="text-center">
             <span className="head-border">
               <img src="/head-border.png" alt="Head Border" />

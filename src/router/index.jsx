@@ -14,6 +14,10 @@ import VgnPride from '@/pages/VgnPride'
 import VgnParadise from '../pages/VgnParadise'
 import VgnHighland from '../pages/VgnHighland'
 import VgnHorizon from '../pages/VgnHorizon'
+import Channel from '@/pages/Channel'
+import Land from '@/pages/Land'
+import Nri from '@/pages/Nri'
+import Irefer from '@/pages/Irefer'
 
 import CompletedProjects from '@/pages/CompletedProjects'
 import Contact from '@/pages/Contact'
@@ -38,6 +42,10 @@ const router = createBrowserRouter([
        { path: 'vgn-highland/index', element: <VgnHighland /> },
        { path: 'vgn-horizon/index', element: <VgnHorizon /> },
        { path: 'completed-project', element: <CompletedProjects /> },
+       {path: 'channel-partner', element: <Channel /> },
+       {path: 'land-enquiry', element: <Land /> },
+       {path: 'nri', element: <Nri /> },
+        {path: 'irefer', element: <Irefer /> },
       { path: 'contact', element: <Contact /> },
     ],
   },
