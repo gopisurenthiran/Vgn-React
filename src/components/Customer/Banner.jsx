@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaAngleRight } from "react-icons/fa";
 
-const BreadcrumbSection = () => {
+const Banner = () => {
   return (
     <section
       className="breadcrumb-section spad set-bg"
@@ -12,12 +12,12 @@ const BreadcrumbSection = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="breadcrumb-text text-white">
-              <h1 className="head1">About VGN</h1>
+              <h4 className="head1">CUSTOMER SUPPORT</h4>
               <div className="bt-option">
                 <a href="#" className="text-white">
-                  <i className="fa fa-home"></i> Home <FaAngleRight />
+                 <i className="fa fa-home"></i>  Home <FaAngleRight />
                 </a>
-                <span className="text-white"> About VGN</span>
+                <span className="text-white">Customer Support </span>
               </div>
             </div>
           </div>
@@ -27,4 +27,4 @@ const BreadcrumbSection = () => {
   );
 };
 
-export default BreadcrumbSection;
+export default Banner;

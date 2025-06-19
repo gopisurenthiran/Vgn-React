@@ -4,18 +4,18 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import headBorder from "/head-border.png";
 
-export default function LandEnquiryForm() {
+export default function SalesForm() {
   const {
     register,
     handleSubmit,
     control,
     reset,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    reset(); // optional: resets form after submit
+    console.log("Submitted Data:", data);
+    reset(); // Clear form after submission
   };
 
   return (
@@ -27,20 +27,22 @@ export default function LandEnquiryForm() {
               <span className="head-border">
                 <img src={headBorder} alt="head-border" />
               </span>
-              LAND ENQUIRY / JOINT VENTURES
+              Sales Enquiry
             </h4>
           </div>
 
           <form className="cc-form" onSubmit={handleSubmit(onSubmit)}>
-            <div className="d-md-flex gap-3 mb-3 flex-column flex-md-row">
+            <div className="d-md-flex gap-3 mb-3">
               <div className="w-100 mb-3 mb-md-0">
                 <input
                   type="text"
                   placeholder="Name*"
+                  className="form-control"
                   {...register("name", { required: "Name is required" })}
-                  className={`form-control ${errors.name ? "is-invalid" : ""}`}
                 />
-                {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
+                {errors.name && (
+                  <small className="text-danger">{errors.name.message}</small>
+                )}
               </div>
 
               <div className="w-100">
@@ -50,18 +52,15 @@ export default function LandEnquiryForm() {
                   rules={{ required: "Phone number is required" }}
                   render={({ field }) => (
                     <PhoneInput
+                      {...field}
                       country={"in"}
                       value={field.value}
                       onChange={(value) => field.onChange(value.replace(/^91/, ""))}
-                      disableCountryCode={true}
+                      disableCountryCode
                       onlyCountries={["in"]}
                       enableSearch
                       placeholder="Phone Number*"
-                      inputProps={{
-                        name: "phone",
-                        required: true,
-                        autoFocus: true
-                      }}
+                      inputProps={{ name: "phone", required: true }}
                       inputStyle={{
                         width: "100%",
                         height: "50px",
@@ -69,58 +68,83 @@ export default function LandEnquiryForm() {
                         paddingLeft: "58px",
                         border: "1px solid #ccc",
                         borderRadius: "4px",
-                        color: "#555"
+                        color: "#555",
                       }}
                       buttonStyle={{
                         border: "none",
-                        background: "transparent"
+                        background: "transparent",
                       }}
                       containerStyle={{
-                        width: "100%"
+                        width: "100%",
                       }}
                     />
                   )}
                 />
-                {errors.phone && <div className="text-danger mt-1 small">{errors.phone.message}</div>}
+                {errors.phone && (
+                  <small className="text-danger">{errors.phone.message}</small>
+                )}
               </div>
             </div>
 
-            <div className="d-md-flex gap-3 mb-3 flex-column flex-md-row">
+            <div className="d-md-flex gap-3 mb-3">
               <div className="w-100 mb-3 mb-md-0">
                 <input
                   type="email"
                   placeholder="Email id*"
+                  className="form-control"
                   {...register("email", {
                     required: "Email is required",
                     pattern: {
                       value: /^\S+@\S+$/i,
-                      message: "Invalid email format"
-                    }
+                      message: "Invalid email format",
+                    },
                   })}
-                  className={`form-control ${errors.email ? "is-invalid" : ""}`}
                 />
-                {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
+                {errors.email && (
+                  <small className="text-danger">{errors.email.message}</small>
+                )}
               </div>
 
               <div className="w-100">
-                <input
-                  type="text"
-                  placeholder="Location*"
-                  {...register("location", { required: "Location is required" })}
-                  className={`form-control ${errors.location ? "is-invalid" : ""}`}
-                />
-                {errors.location && <div className="invalid-feedback">{errors.location.message}</div>}
+                <select
+                  className="form-select custom-select"
+                  {...register("project", { required: "Please select a project" })}
+                >
+                  <option value="">Select Projects*</option>
+                  <option value="Highland">VGN Highland</option>
+                  <option value="Paradise">VGN Paradise</option>
+                  <option value="Horizon">VGN Horizon</option>
+                  <option value="Classique">VGN Classique</option>
+                  <option value="Serene">VGN Serene</option>
+                  <option value="Pride">VGN Pride</option>
+                  <option value="Brillianze Phase II">VGN Brillianze Phase II</option>
+                  <option value="Westfield">VGN Westfield</option>
+                  <option value="Mahalakshmi nagar Phase XIV">VGN Mahalakshmi nagar Phase XIV</option>
+                  <option value="CH40">VGN CH40</option>
+                  <option value="Mugavari Phase II">VGN Mugavari Phase - II</option>
+                  <option value="Windsor Park Phase IV - 1G">VGN Windsor Park Phase IV - 1G</option>
+                  <option value="Southern Meadows">VGN Southern Meadows</option>
+                  <option value="Exotica">VGN Exotica</option>
+                  <option value="Varnabhoomi Phase II">VGN Varnabhoomi Phase II</option>
+                  <option value="Windsor Park Phase VII">VGN Windsor Park Phase VII</option>
+                </select>
+                {errors.project && (
+                  <small className="text-danger">{errors.project.message}</small>
+                )}
               </div>
             </div>
 
             <div className="mb-4">
               <textarea
+                name="message"
                 rows="4"
                 placeholder="Message*"
+                className="form-control"
                 {...register("message", { required: "Message is required" })}
-                className={`form-control ${errors.message ? "is-invalid" : ""}`}
               ></textarea>
-              {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
+              {errors.message && (
+                <small className="text-danger">{errors.message.message}</small>
+              )}
             </div>
 
             <div className="text-center">

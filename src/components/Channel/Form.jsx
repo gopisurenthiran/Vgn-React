@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, Controller } from "react-hook-form";
 import { Container, Form } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import headBorder from "/head-border.png"; // Adjust the path as needed
+import "bootstrap/dist/css/bootstrap.min.css";
+import headBorder from "/head-border.png"; // adjust if needed
 
 export default function PartnerWithUs() {
-  const [phone, setPhone] = useState("");
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("Submitted Data:", data);
+    reset(); // reset form after successful submission
+  };
 
   return (
     <section className="contact-form-section spad bg" style={{ padding: "60px 0" }}>
@@ -25,49 +38,138 @@ export default function PartnerWithUs() {
               </p>
             </div>
 
-            <Form className="cc-form p-4" style={{ background: "#fff", boxShadow: "0 0 20px rgba(0,0,0,0.05)" }}>
+            <Form onSubmit={handleSubmit(onSubmit)} className="cc-form p-4" style={{ background: "#fff", boxShadow: "0 0 20px rgba(0,0,0,0.05)" }}>
               <div className="row gy-3">
                 <div className="col-lg-6">
-                  <Form.Control type="text" placeholder="Name*" required />
+                  <Form.Control
+                    type="text"
+                    placeholder="Name*"
+                    {...register("name", { required: "Name is required" })}
+                    isInvalid={errors.name}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.name?.message}
+                  </Form.Control.Feedback>
                 </div>
+
                 <div className="col-lg-6">
-                  <PhoneInput
-                    country={"in"}
-                    value={phone}
-                    onChange={setPhone}
-                    inputStyle={{ width: "100%" }}
-                    placeholder="Phone Number*"
-                    specialLabel=""
-                    inputProps={{ required: true }}
+                  <Controller
+                    name="phone"
+                    control={control}
+                    rules={{ required: "Phone number is required" }}
+                    render={({ field }) => (
+                      <PhoneInput
+                        country={"in"}
+                        value={field.value}
+                        onChange={(value) => field.onChange(value.replace(/^91/, ""))}
+                        disableCountryCode={true}
+                        onlyCountries={["in"]}
+                        enableSearch
+                        placeholder="Phone Number*"
+                        inputProps={{ required: true, name: "phone" }}
+                        inputStyle={{
+                          width: "100%",
+                          height: "50px",
+                          fontSize: "16px",
+                          paddingLeft: "58px",
+                          border: "1px solid #ccc",
+                          borderRadius: "4px",
+                          color: "#555"
+                        }}
+                        buttonStyle={{ border: "none", background: "transparent" }}
+                        containerStyle={{ width: "100%" }}
+                      />
+                    )}
+                  />
+                  {errors.phone && <div className="text-danger small mt-1">{errors.phone.message}</div>}
+                </div>
+
+                <div className="col-lg-6">
+                  <Form.Control
+                    type="email"
+                    placeholder="Email id*"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: "Invalid email address"
+                      }
+                    })}
+                    isInvalid={errors.email}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.email?.message}
+                  </Form.Control.Feedback>
+                </div>
+
+                <div className="col-lg-6">
+                  <Form.Control
+                    type="text"
+                    placeholder="Company Name*"
+                    {...register("company", { required: "Company name is required" })}
+                    isInvalid={errors.company}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.company?.message}
+                  </Form.Control.Feedback>
+                </div>
+
+                <div className="col-lg-6">
+                  <Form.Control
+                    type="text"
+                    placeholder="Registered Address*"
+                    {...register("address", { required: "Address is required" })}
+                    isInvalid={errors.address}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.address?.message}
+                  </Form.Control.Feedback>
+                </div>
+
+                <div className="col-lg-6">
+                  <Form.Control
+                    type="text"
+                    placeholder="Organization Type*"
+                    {...register("organizationType", { required: "Organization type is required" })}
+                    isInvalid={errors.organizationType}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    {errors.organizationType?.message}
+                  </Form.Control.Feedback>
+                </div>
+
+                <div className="col-lg-6">
+                  <Form.Control
+                    type="text"
+                    placeholder="Member of any Association"
+                    {...register("association")}
                   />
                 </div>
+
                 <div className="col-lg-6">
-                  <Form.Control type="email" placeholder="Email id*" required />
-                </div>
-                <div className="col-lg-6">
-                  <Form.Control type="text" placeholder="Company Name*" required />
-                </div>
-                <div className="col-lg-6">
-                  <Form.Control type="text" placeholder="Registered Address*" required />
-                </div>
-                <div className="col-lg-6">
-                  <Form.Control type="text" placeholder="Organization Type*" required />
-                </div>
-                <div className="col-lg-6">
-                  <Form.Control type="text" placeholder="Member of any Association" />
-                </div>
-                <div className="col-lg-6">
-                  <Form.Select required>
+                  <Form.Select
+                    {...register("businessType", { required: "Business type is required" })}
+                    isInvalid={errors.businessType}
+                  >
                     <option value="">Type of Business*</option>
                     <option>Land Sourcing</option>
                     <option>Commercial Sales</option>
                     <option>Residential Sales</option>
                     <option>Others</option>
                   </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.businessType?.message}
+                  </Form.Control.Feedback>
                 </div>
+
                 <div className="col-lg-12">
-                  <Form.Control type="text" placeholder="RERA #" />
+                  <Form.Control
+                    type="text"
+                    placeholder="RERA #"
+                    {...register("rera")}
+                  />
                 </div>
+
                 <div className="col-lg-12 text-center mt-4">
                   <button
                     type="submit"
@@ -81,7 +183,7 @@ export default function PartnerWithUs() {
                       padding: "10px 40px",
                       fontWeight: "600",
                       background: "transparent",
-                      letterSpacing: "1px",
+                      letterSpacing: "1px"
                     }}
                   >
                     SUBMIT

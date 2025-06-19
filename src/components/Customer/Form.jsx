@@ -3,20 +3,20 @@ import { useForm, Controller } from "react-hook-form";
 import { Container, Form } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import headBorder from "/head-border.png";
+import headBorder from "/head-border.png"; // Adjust the path if needed
 
-export default function Nri() {
+export default function PartnerWithUs() {
   const {
     register,
     handleSubmit,
     control,
-    reset,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    reset(); // optional: reset after submit
+    console.log("Submitted Data:", data);
+    reset(); // Clear form after submission
   };
 
   return (
@@ -29,8 +29,13 @@ export default function Nri() {
                 <span className="head-border">
                   <img src={headBorder} alt="head-border" />
                 </span>
-                ENQUIRY NOW
+                WE'RE ALL EARS
               </h4>
+              <p className="mt-3">
+                Queries, suggestions, assistance, be it anything you’d like to
+                share with us, our team is always there to listen and provide
+                you with solutions.
+              </p>
             </div>
 
             <Form
@@ -39,20 +44,15 @@ export default function Nri() {
               onSubmit={handleSubmit(onSubmit)}
             >
               <div className="row gy-3">
-                {/* Name */}
                 <div className="col-lg-6">
                   <Form.Control
                     type="text"
                     placeholder="Name*"
                     {...register("name", { required: "Name is required" })}
-                    isInvalid={!!errors.name}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.name?.message}
-                  </Form.Control.Feedback>
+                  {errors.name && <small className="text-danger">{errors.name.message}</small>}
                 </div>
 
-                {/* Phone */}
                 <div className="col-lg-6">
                   <Controller
                     name="phone"
@@ -60,10 +60,11 @@ export default function Nri() {
                     rules={{ required: "Phone number is required" }}
                     render={({ field }) => (
                       <PhoneInput
-                        country={"in"}
                         {...field}
+                        country={"in"}
+                        value={field.value}
                         onChange={(value) => field.onChange(value.replace(/^91/, ""))}
-                        disableCountryCode={true}
+                        disableCountryCode
                         onlyCountries={["in"]}
                         enableSearch
                         placeholder="Phone Number*"
@@ -87,10 +88,9 @@ export default function Nri() {
                       />
                     )}
                   />
-                  {errors.phone && <div className="text-danger mt-1 small">{errors.phone.message}</div>}
+                  {errors.phone && <small className="text-danger">{errors.phone.message}</small>}
                 </div>
 
-                {/* Email */}
                 <div className="col-lg-6">
                   <Form.Control
                     type="email"
@@ -99,30 +99,32 @@ export default function Nri() {
                       required: "Email is required",
                       pattern: {
                         value: /^\S+@\S+$/i,
-                        message: "Invalid email format",
+                        message: "Invalid email address",
                       },
                     })}
-                    isInvalid={!!errors.email}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.email?.message}
-                  </Form.Control.Feedback>
+                  {errors.email && <small className="text-danger">{errors.email.message}</small>}
                 </div>
 
-                {/* Location */}
                 <div className="col-lg-6">
                   <Form.Control
                     type="text"
-                    placeholder="Location*"
-                    {...register("location", { required: "Location is required" })}
-                    isInvalid={!!errors.location}
+                    placeholder="Project*"
+                    {...register("project", { required: "Project name is required" })}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.location?.message}
-                  </Form.Control.Feedback>
+                  {errors.project && <small className="text-danger">{errors.project.message}</small>}
                 </div>
 
-                {/* Submit */}
+                <div className="col-lg-12">
+                  <textarea
+                    rows="4"
+                    placeholder="Message*"
+                    className="form-control"
+                    {...register("message", { required: "Message is required" })}
+                  ></textarea>
+                  {errors.message && <small className="text-danger">{errors.message.message}</small>}
+                </div>
+
                 <div className="col-lg-12 text-center mt-4">
                   <button
                     type="submit"

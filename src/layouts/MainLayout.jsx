@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BrandIconSection from '../components/BrandIconSection';
+import ToTopContact from '../components/ToTop';
 
 export default function MainLayout() {
   return (
@@ -16,6 +17,7 @@ export default function MainLayout() {
       </main>
        <BrandIconSection/>
       {/* Full-width Footer */}
+      <ToTopContact />
       <Footer />
     </div>
   );

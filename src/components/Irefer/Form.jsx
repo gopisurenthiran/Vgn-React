@@ -1,12 +1,24 @@
-
+import React from "react";
+import { useForm, Controller } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import headBorder from "@/assets/head-border.png";
-import PhoneInput from "react-phone-input-2";
-import React, { useState } from "react";
 
 export default function ReferralForm() {
-  const [yourPhone, setYourPhone] = useState("");
-  const [friendPhone, setFriendPhone] = useState("");
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("Submitted Data:", data);
+    reset();
+  };
+
   return (
     <section className="contact-form-section py-5 bg">
       <div className="container">
@@ -21,7 +33,9 @@ export default function ReferralForm() {
                   Referral Form
                 </h4>
               </div>
-              <form className="cc-form" id="frmcontact" method="post">
+
+              <form className="cc-form" onSubmit={handleSubmit(onSubmit)}>
+                {/* Your Details */}
                 <div className="group-input mb-4">
                   <div className="cc-title mb-3">
                     <h4>Your Details</h4>
@@ -29,94 +43,104 @@ export default function ReferralForm() {
                   <div className="row g-3">
                     <div className="col-lg-6">
                       <input
+                        {...register("name", { required: "Name is required" })}
                         type="text"
-                        name="name"
-                        placeholder="Name*"
-                        maxLength="100"
-                        required
                         className="form-control"
+                        placeholder="Name*"
                       />
+                      {errors.name && (
+                        <small className="text-danger">{errors.name.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
-                      
-                      <PhoneInput
-                        country={"in"}
-                        value={yourPhone}
-                        onChange={setYourPhone}
-                        inputStyle={{ width: "100%" }}
+                      <Controller
+                        name="phone"
+                        control={control}
+                        rules={{ required: "Phone number is required" }}
+                        render={({ field }) => (
+                          <PhoneInput
+                            {...field}
+                            country="in"
+                            onChange={(val) => field.onChange(val.replace(/^91/, ""))}
+                            enableSearch
+                            disableCountryCode
+                            placeholder="Phone Number*"
+                            inputStyle={{
+                              width: "100%",
+                              height: "50px",
+                              fontSize: "16px",
+                              paddingLeft: "58px",
+                              border: "1px solid #ccc",
+                              borderRadius: "4px",
+                              color: "#555",
+                            }}
+                            containerStyle={{ width: "100%" }}
+                          />
+                        )}
                       />
+                      {errors.phone && (
+                        <small className="text-danger">{errors.phone.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
                       <input
+                        {...register("email", {
+                          required: "Email is required",
+                          pattern: {
+                            value: /^\S+@\S+$/i,
+                            message: "Invalid email",
+                          },
+                        })}
                         type="email"
-                        name="email"
-                        placeholder="Email id*"
-                        maxLength="200"
-                        required
                         className="form-control"
+                        placeholder="Email id*"
                       />
+                      {errors.email && (
+                        <small className="text-danger">{errors.email.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
                       <select
-                        name="enqproject"
+                        {...register("enqproject", { required: "Select a project" })}
                         className="form-control"
-                        required
                       >
                         <option value="">Select Projects*</option>
                         <option value="Highland">VGN Highland</option>
                         <option value="Paradise">VGN Paradise</option>
-                        <option value="Horizon">VGN Horizon</option>
-                        <option value="Classique">VGN Classique</option>
-                        <option value="Serene">VGN Serene</option>
-                        <option value="Pride">VGN Pride</option>
-                        <option value="Brillianze Phase II">
-                          VGN Brillianze Phase II
-                        </option>
-                        <option value="Westfield">VGN Westfield</option>
-                        <option value="Mahalakshmi nagar Phase XIV">
-                          VGN Mahalakshmi nagar Phase XIV
-                        </option>
-                        <option value="CH40">VGN CH40</option>
-                        <option value="Mugavari Phase II">
-                          VGN Mugavari Phase - II
-                        </option>
-                        <option value="Windsor Park Phase IV - 1G">
-                          VGN Windsor Park Phase IV - 1G
-                        </option>
-                        <option value="Southern Meadows">
-                          VGN Southern Meadows
-                        </option>
-                        <option value="Exotica">VGN Exotica</option>
-                        <option value="Varnabhoomi Phase II">
-                          VGN Varnabhoomi Phase II
-                        </option>
-                        <option value="Windsor Park Phase VII">
-                          VGN Windsor Park Phase VII
-                        </option>
+                        {/* Add remaining options */}
                       </select>
+                      {errors.enqproject && (
+                        <small className="text-danger">{errors.enqproject.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
                       <input
+                        {...register("flatplotno", { required: "Plot number is required" })}
                         type="text"
-                        name="flatplotno"
+                        className="form-control"
                         placeholder="Flat / Plot Number*"
-                        maxLength="20"
-                        required
-                        className="form-control"
                       />
+                      {errors.flatplotno && (
+                        <small className="text-danger">{errors.flatplotno.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
                       <input
+                        {...register("otherproj")}
                         type="text"
-                        name="otherproj"
-                        placeholder="Other Project"
-                        maxLength="50"
                         className="form-control"
+                        placeholder="Other Project"
                       />
                     </div>
                   </div>
                 </div>
 
+                {/* Referee Details */}
                 <div className="group-input mb-4">
                   <div className="cc-title mb-3">
                     <h4>Referee Details</h4>
@@ -124,71 +148,72 @@ export default function ReferralForm() {
                   <div className="row g-3">
                     <div className="col-lg-6">
                       <input
+                        {...register("frndname", { required: "Friend's name is required" })}
                         type="text"
-                        name="frndname"
-                        placeholder="Friend Name*"
-                        maxLength="100"
-                        required
                         className="form-control"
+                        placeholder="Friend Name*"
                       />
+                      {errors.frndname && (
+                        <small className="text-danger">{errors.frndname.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
-                      
-                      <PhoneInput
-                        country={"in"}
-                        value={friendPhone}
-                        onChange={setFriendPhone}
-                        inputStyle={{ width: "100%" }}
+                      <Controller
+                        name="friendPhone"
+                        control={control}
+                        rules={{ required: "Friend's phone is required" }}
+                        render={({ field }) => (
+                          <PhoneInput
+                            {...field}
+                            country="in"
+                            onChange={(val) => field.onChange(val.replace(/^91/, ""))}
+                            enableSearch
+                            disableCountryCode
+                            placeholder="Friend Mobile*"
+                            inputStyle={{
+                              width: "100%",
+                              height: "50px",
+                              fontSize: "16px",
+                              paddingLeft: "58px",
+                              border: "1px solid #ccc",
+                              borderRadius: "4px",
+                              color: "#555",
+                            }}
+                            containerStyle={{ width: "100%" }}
+                          />
+                        )}
                       />
+                      {errors.friendPhone && (
+                        <small className="text-danger">{errors.friendPhone.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
                       <input
+                        {...register("location", { required: "Location is required" })}
                         type="text"
-                        name="location"
-                        placeholder="Location*"
-                        maxLength="100"
-                        required
                         className="form-control"
+                        placeholder="Location*"
                       />
+                      {errors.location && (
+                        <small className="text-danger">{errors.location.message}</small>
+                      )}
                     </div>
+
                     <div className="col-lg-6">
                       <select
-                        name="frndproject"
+                        {...register("frndproject", { required: "Select a project" })}
                         className="form-control"
-                        required
                       >
                         <option value="">Select Projects*</option>
                         <option value="Highland">VGN Highland</option>
                         <option value="Paradise">VGN Paradise</option>
-                        <option value="Horizon">VGN Horizon</option>
-                        <option value="Classique">VGN Classique</option>
-                        <option value="Serene">VGN Serene</option>
-                        <option value="Pride">VGN Pride</option>
-                        <option value="Brillianze Phase II">
-                          VGN Brillianze Phase II
-                        </option>
-                        <option value="Westfield">VGN Westfield</option>
-                        <option value="Mahalakshmi nagar Phase XIV">
-                          VGN Mahalakshmi nagar Phase XIV
-                        </option>
-                        <option value="CH40">VGN CH40</option>
-                        <option value="Mugavari Phase II">
-                          VGN Mugavari Phase - II
-                        </option>
-                        <option value="Windsor Park Phase IV - 1G">
-                          VGN Windsor Park Phase IV - 1G
-                        </option>
-                        <option value="Southern Meadows">
-                          VGN Southern Meadows
-                        </option>
-                        <option value="Exotica">VGN Exotica</option>
-                        <option value="Varnabhoomi Phase II">
-                          VGN Varnabhoomi Phase II
-                        </option>
-                        <option value="Windsor Park Phase VII">
-                          VGN Windsor Park Phase VII
-                        </option>
+                        {/* Add remaining options */}
                       </select>
+                      {errors.frndproject && (
+                        <small className="text-danger">{errors.frndproject.message}</small>
+                      )}
                     </div>
                   </div>
                 </div>

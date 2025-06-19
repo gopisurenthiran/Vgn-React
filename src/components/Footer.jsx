@@ -1,4 +1,5 @@
 import React from "react";
+import ToTop from '../components/ToTop'
 import footerBg from "@/assets/footer-bg.png";
 import {
   FaFacebookF,
@@ -8,6 +9,7 @@ import {
   FaPhoneAlt,
   FaWhatsapp,
 } from "react-icons/fa";
+import ToTopContact from "./ToTop";
 
 export default function Footer() {
   return (
@@ -23,7 +25,8 @@ export default function Footer() {
         backgroundImage: `url(${footerBg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom center",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
+        height: "200px"
       }}>
       <div className="container">
         <div className="row gy-4 text-start">
@@ -89,14 +92,15 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="text-center py-3 mt-4 border-top border-white border-opacity-25">
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-white small gap-2">
-          <p className="mb-0">© 2025 VGN Homes - All Rights Reserved.</p>
-          <p className="mb-0">Website Maintained by <strong>Ayatiworks</strong></p>
+          <p className="mb-0 footer_text_size text-white">© 2025 VGN Homes - All Rights Reserved.</p>
+          <p className="mb-0 fs-6 footer_text_size text-white">Website Maintained by <strong>Ayatiworks</strong><img src="web_logo.png" alt="" style={{height: "40px"}}/></p>
           <p className="mb-0">
-            <a href="#" className="text-white text-decoration-none me-2">Privacy Policy</a>|
-            <a href="#" className="text-white text-decoration-none ms-2">Disclaimer</a>
+            <a href="#" className="text-white footer_text_size text-decoration-none me-2">Privacy Policy</a><span className="text-white">|</span>
+            <a href="#" className="text-white footer_text_size text-decoration-none ms-2">Disclaimer</a>
           </p>
         </div>
       </div>
+
     </footer>
   );
 }

@@ -1,10 +1,10 @@
-import React from "react";
-import channelImage from "@/assets/channel.jpg"; // Adjust the path based on your project setup
 
-export default function ChannelPartnerSection() {
+import addressImage from "@/assets/address.jpg"; // Update path based on your project structure
+
+export default function AddressSection() {
   return (
     <section className="breadcrumb-section position-relative">
-      <img src={channelImage} alt="Channel Partner" style={{ width: "100%" }} />
+      <img src={addressImage} alt="Address" style={{ width: "100%" }} />
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -12,7 +12,7 @@ export default function ChannelPartnerSection() {
               className="breadcrumb-text position-absolute"
               style={{ zIndex: 99, bottom: 20 }}
             >
-              <h4>Channel Partner</h4>
+              <h4>Address</h4>
             </div>
           </div>
         </div>

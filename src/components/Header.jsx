@@ -89,8 +89,8 @@ export default function NavigationBar() {
                 Customer's Corner
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Support</a></li>
-                <li><a className="dropdown-item" href="#">FAQs</a></li>
+                <li><a className="dropdown-item" href="/customer-support">Customer Support</a></li>
+                <li><a className="dropdown-item" href="/emi-calculator">EMI Calculator</a></li>
               </ul>
             </li>
 
@@ -99,8 +99,8 @@ export default function NavigationBar() {
                 Contact Us
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Email</a></li>
-                <li><a className="dropdown-item" href="#">Location</a></li>
+                <li><a className="dropdown-item" href="/contact">Address</a></li>
+                <li><a className="dropdown-item" href="/careers">Careers</a></li>
               </ul>
             </li>
           </ul>

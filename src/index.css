@@ -93,6 +93,9 @@ button:focus,
 textarea:focus {
   outline: none;
 }
+a{
+   text-decoration: none;
+}
 
 a:hover,
 a:focus {
@@ -1043,7 +1046,7 @@ select {
 .cf-content {
     background: #fff;
     padding: 30px;
-    border-radius: 20px;
+   
     box-shadow: 2px 2px 10px #d7d5d5;
 }
 .cf-content {
@@ -1054,4 +1057,187 @@ select {
     font-weight: 700;
     text-transform: none;
     margin-bottom: 8px;
+}
+.heading1 h4 {
+   
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+    margin-bottom: 40px;
+}
+/* Emi Claculator Start */
+
+.ranger1 {
+    margin-top: 45px;
+}
+.col-lg-41 {
+    width: 38%;
+    float: left;
+    padding-left: 15px;
+}
+.range1-lable {
+    font-size: 15px;
+    color: #da2c25;
+}
+label {
+    display: inline-block;
+    margin-bottom: 2px;
+    font-weight: 700;
+    margin-top: 12px;
+    font-size: 15px;
+}
+.col-lg-81 {
+    width: 45%;
+    padding-left: 10px;
+    float: left;
+}
+.ranger1 input {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px;
+}
+.ui-widget.ui-widget-content {
+    background: #e1e1e1;
+    height: 7px;
+    border: none;
+}
+.col-lg-per {
+    width: 6%;
+    padding-left: 0px;
+    float: left;
+}
+.percen-txt {
+    display: table-cell;
+    font-size: 20px;
+    padding: 7px;
+    border: none;
+    background: #b4151a;
+    margin-top: 3px;
+    position: absolute;
+    color: #fff;
+}
+.month-txt {
+    display: table-cell;
+    font-size: 18px;
+    border: none;
+    padding: 8px 3px;
+    background: #a60c11;
+    margin-top: 3px;
+    position: absolute;
+    color: #fff;
+    margin-left: 5px;
+}
+.border-left2 {
+    border-left: 1px solid #cccccc !important;
+}
+.border-bottom2 {
+    border-bottom: 1px dashed #ccc !important;
+    margin-bottom: 25px;
+}
+
+.head3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #da2c25;
+}
+.amount {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #da2c25;
+}
+/* Emi Claculator End */
+
+
+/* Address Start */
+.set-bg4 {
+    background: url(@/assets/address.jpg) center center no-repeat;
+    background-size: cover; 
+    
+}
+/* Address Start */
+
+.tab .tablinks {
+    text-decoration: none;
+    background-color: transparent;
+    float: left;
+    border: none;
+    color: #000;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 13px;
+    font-weight: 700;
+    transition: 0.3s;
+    font-size: 16px;
+    border: 2px solid transparent;
+}
+.tab .tablinks:hover {
+    background-color: transparent;
+    color: #bf151a;
+    border: 2px solid #c3252b;
+}
+.tab .tablinks.active {
+    background-color: #bf151a;
+    color: #fff;
+    border: 2px solid #c3252b;
+}
+
+.cf-content .cc-title {
+    margin-bottom: 35px;
+}
+
+
+.contact-section {
+    position: relative;
+    background: #f9f9f9;
+    height: autopx;
+}
+.contact-info .ci-item {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.contact-info .ci-item .ci-icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #b4151a;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 60px;
+    text-align: center;
+    float: left;
+    margin-right: 20px;
+}
+.contact-info .ci-item .ci-text
+
+ {
+    overflow: hidden;
+    padding-top: 5px;
+}
+.contact-info .ci-item .ci-text h5
+
+ {
+    color: #111111;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.contact-info .ci-item .ci-text p {
+    color: #111111;
+    opacity: 1;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.cs-map {
+    height: 450px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+}
+
+.footer_text_size {
+    font-size: 10px;
 }

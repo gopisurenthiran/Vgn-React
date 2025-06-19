@@ -1,10 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, Controller } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
+import { ToastContainer, toast } from "react-toastify";
 import "react-phone-input-2/lib/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import { submitEnquiry } from "../../services/enquiryService";
 
 export default function EnquiryForm() {
-  const [phone, setPhone] = useState("");
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      const result = await submitEnquiry(data);
+      // console.log("Success:", result);
+      toast.success("Form submitted successfully!");
+      reset();
+    } catch (error) {
+      toast.error("Submission failed. Please try again.");
+    }
+  };
 
   return (
     <div
@@ -17,7 +38,8 @@ export default function EnquiryForm() {
         minHeight: "100vh",
       }}
     >
-      {/* Heading */}
+      <ToastContainer position="top-right" autoClose={3000} />
+
       <div className="text-center mb-4">
         <h4 className="text-white d-inline-flex align-items-center" style={{ fontSize: "1.6rem" }}>
           <img
@@ -30,67 +52,111 @@ export default function EnquiryForm() {
         </h4>
       </div>
 
-      {/* Form Box */}
       <div className="container bg-white rounded-4 shadow-lg p-4 p-md-5" style={{ maxWidth: "900px" }}>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row g-3 mb-3">
+            {/* Name */}
             <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="Name*" required />
-            </div>
-            <div className="col-md-6">
-              <PhoneInput
-                country={"in"}
-                value={phone}
-                onChange={setPhone}
-                enableSearch
-                inputProps={{
-                  name: "phone",
-                  required: true,
-                }}
-                inputStyle={{
-                  width: "100%",
-                  height: "38px",
-                }}
+              <input
+                type="text"
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
+                placeholder="Name*"
+                {...register("name", { required: "Name is required" })}
               />
+              {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
+            </div>
+
+            {/* Phone */}
+            <div className="col-md-6">
+              <Controller
+                name="mobile"
+                control={control}
+                rules={{ required: "Phone number is required" }}
+                render={({ field }) => (
+                  <PhoneInput
+                    country="in"
+                    value={field.value}
+                    onChange={field.onChange}
+                    disableCountryCode
+                    onlyCountries={["in"]}
+                    enableSearch
+                    placeholder="Phone Number*"
+                    inputProps={{ name: "mobile", required: true }}
+                    inputStyle={{
+                      width: "100%",
+                      height: "50px",
+                      fontSize: "16px",
+                      paddingLeft: "58px",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      color: "#555",
+                    }}
+                    buttonStyle={{ border: "none", background: "transparent" }}
+                    containerStyle={{ width: "100%" }}
+                  />
+                )}
+              />
+              {errors.mobile && <div className="text-danger small mt-1">{errors.mobile.message}</div>}
             </div>
           </div>
 
+          {/* Email & Project */}
           <div className="row g-3 mb-3">
             <div className="col-md-6">
-              <input type="email" className="form-control" placeholder="Email id*" required />
+              <input
+                type="email"
+                className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                placeholder="Email id*"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email format",
+                  },
+                })}
+              />
+              {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
             </div>
+
             <div className="col-md-6">
-              <select className="form-select" required>
+              <select
+                className={`form-select ${errors.project ? "is-invalid" : ""}`}
+                {...register("project", { required: "Please select a project" })}
+              >
                 <option value="">Select Projects*</option>
-                <option value="Grandeur">VGN Grandeur</option>
-                <option value="Aspire Gardens">VGN Aspire Gardens</option>
-                <option value="Pride de' Villa">VGN Pride de' Villa</option>
-                <option value="Highland">VGN Highland</option>
-                <option value="Horizon">VGN Horizon</option>
-                <option value="Classique">VGN Classique</option>
-                <option value="Serene">VGN Serene</option>
-                <option value="Pride">VGN Pride</option>
-                <option value="Brillianze Phase II">VGN Brillianze Phase II</option>
-                <option value="Westfield">VGN Westfield</option>
-                <option value="Mahalakshmi nagar Phase XIV">VGN Mahalakshmi Nagar Phase XIV</option>
-                <option value="CH40">VGN CH40</option>
-                <option value="Mugavari Phase II">VGN Mugavari Phase II</option>
-                <option value="Windsor Park Phase IV - 1G">VGN Windsor Park Phase IV - 1G</option>
-                <option value="Southern Meadows">VGN Southern Meadows</option>
-                <option value="Exotica">VGN Exotica</option>
-                <option value="Varnabhoomi Phase II">VGN Varnabhoomi Phase II</option>
-                <option value="Windsor Park Phase VII">VGN Windsor Park Phase VII</option>
+                {[
+                  "Grandeur", "Aspire Gardens", "Pride de' Villa", "Highland", "Horizon", "Classique",
+                  "Serene", "Pride", "Brillianze Phase II", "Westfield", "Mahalakshmi nagar Phase XIV",
+                  "CH40", "Mugavari Phase II", "Windsor Park Phase IV - 1G", "Southern Meadows", "Exotica",
+                  "Varnabhoomi Phase II", "Windsor Park Phase VII",
+                ].map((proj) => (
+                  <option key={proj} value={proj}>
+                    VGN {proj}
+                  </option>
+                ))}
               </select>
+              {errors.project && <div className="invalid-feedback">{errors.project.message}</div>}
             </div>
           </div>
 
+          {/* Message */}
           <div className="mb-3">
-            <textarea className="form-control" rows="3" placeholder="Message" required></textarea>
+            <textarea
+              className={`form-control ${errors.message ? "is-invalid" : ""}`}
+              rows="3"
+              placeholder="Message*"
+              {...register("message", { required: "Message is required" })}
+            ></textarea>
+            {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
           </div>
-
-          <div className="row align-items-start mb-3 gx-2">
+           <div className="row align-items-start mb-3 gx-2">
             <div className="col-auto">
-              <input type="checkbox" id="consent" className="form-check-input" required />
+              <input
+                type="checkbox"
+                id="consent"
+                className={`form-check-input ${errors.consent ? "is-invalid" : ""}`}
+                {...register("consent", { required: "You must agree to continue" })}
+              />
             </div>
             <div className="col">
               <label htmlFor="consent" className="form-check-label small">
@@ -98,9 +164,11 @@ export default function EnquiryForm() {
                 SMS, WhatsApp & call. This will override the registry on DND/NDNC.
                 <span className="text-danger">*</span>
               </label>
+              {errors.consent && <div className="text-danger small">{errors.consent.message}</div>}
             </div>
           </div>
 
+          {/* Submit */}
           <div className="text-center">
             <button type="submit" className="btn btn-outline-danger rounded-pill px-4 py-2">
               SUBMIT
