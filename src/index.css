@@ -195,7 +195,7 @@ a:hover, a:focus {
 
 
 
-.nav-item a:hover {
+.nav-item1 a:hover {
     text-decoration: underline !important;
     text-decoration-color: #bf151a !important;
     text-decoration-thickness: 2px !important;

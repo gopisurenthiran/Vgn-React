@@ -1,73 +1,5 @@
-/* Vgn-Pride Start */
-.overlay:target {
-    visibility: visible;
-    opacity: 1;
-}
-.overlay {
-    position: fixed;
-    top: 0;
-    height: 1200px;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 1000;
-}
-.popup {
-    margin: 150px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 0;
-    width: 25%;
-    border-bottom: 1px solid #bcbcbc;
-    position: relative;
-    transition: all 5s ease-in-out;
-}
-.down-text {
-    padding-bottom: 15px;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-}
-.popup .close {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    padding: 0px 5px 4px 4px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-    background: #e92808;
-}
-.close {
-    opacity: 1;
-}
-.form-group {
-    margin-bottom: 5px;
-}
-.form-control {
-    margin-top: 5px;
-}
-.downlod-form .iti {
-    padding: 7px 0px 2px 0px !important;
-}
-.button1 {
-    text-align: center;
-    margin-top: 18px;
-    width: 100%;
-    background: #b4151a;
-    border: none;
-    padding: 5px;
-    font-size: 15px;
-    font-weight: 700;
-    width: 200px;
-    color: #fff;
-}
+/* Vgn-Paradise Start */
+
 .border-btm {
     border-bottom: 1px solid #dddddd;
     margin-bottom: 35px;
@@ -77,11 +9,11 @@
     padding: 20px;
 }
 
-.section-title h4, .section-title h5, .section-title h6 {
+.section-title5 h4, .section-title5 h5, .section-title5 h6 {
     text-transform: none;
     font-weight: 900;
 }
-.section-title h4, .section-title h5, .section-title h6 {
+.section-title5 h4, .section-title5 h5, .section-title5 h6 {
 
 color: #111111;
     font-weight: 700;
@@ -90,14 +22,14 @@ color: #111111;
     position: relative;
     padding-left: 20px;
 }
-.section-title h4:after, .section-title h5:after, .section-title h6:after {
+.section-title5 h4:after, .section-title5 h5:after, .section-title5 h6:after {
     content: "";
     position: absolute;
     left: 0;
     top: -9px;
     width: 5px;
     height: 46px;
-    background: linear-gradient(to bottom, #10534a 0, #10534a 100%) 
+    background: linear-gradient(to bottom, #c99333 0, #c99333 100%);
     
 }
 .property-details-section
@@ -234,12 +166,12 @@ color: #111111;
 }
 
 .pd-text .pd-board .tab-board .nav-tabs {
-    background: #5f041b;
+    background: #b37e45  ;
     border-bottom: none;
 }
 .pd-text .pd-board .tab-board .nav-tabs .nav-item a.active {
     color: #ffffff;
-    background: linear-gradient(to right, #5f041b 0, #df001d 100%);
+    background: linear-gradient(to right, #b37e45   0, #76272e  100%);
 }
 .pd-text .pd-board .tab-board .nav-tabs .nav-item
 
@@ -278,12 +210,12 @@ color: #111111;
   width: 100%;
 }
 
-.custom-slick-arrow {
+.custom-slick-arrow3 {
   position: absolute;
   top: 95px;
   z-index: 10;
   border: none;
-  background-color: #5f041b !important;
+  background-color: #b37e45 ;
   outline: 0;
   height: 31px;
   width: 29px;
@@ -297,9 +229,9 @@ color: #111111;
   opacity: 0.85;
 }
 
-.custom-slick-arrow:hover {
+.custom-slick-arrow3:hover {
   opacity: 1;
-  background-color: #5f041b !important;
+  background-color: #b37e45  ;
 }
 
 .next-arrow {
@@ -369,4 +301,48 @@ color: #111111;
     transition: linear 0.1s;
     text-align: center;
 }
-/* Vgn-Pride End */
+.service-title2 {
+    position: absolute;
+    z-index: 9999;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+.service-title2 h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+}
+.completed-txt1:before {
+    background: url(../assets/vgn-paradise/shaw-optimised.png) center bottom repeat;
+    bottom: 0;
+    content: "";
+    height: 139px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+}
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 0px;
+    width: 100%;
+    border-radius: 5px;
+    height: auto;
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+}
+/* Vgn-Paradise End */
+

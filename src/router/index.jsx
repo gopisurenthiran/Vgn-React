@@ -9,10 +9,12 @@ import Testimonial from "../pages/Testimonial";
 import OngoingProjects from "@/pages/OngoingProjects";
 import VgnGrandeur from "@/pages/VgnGrandeur";
 import VgnAspireGardens from "@/pages/VgnAspireGardens";
-import VgnPride from "@/pages/VgnPride";
+import VgnPrideVilla from "@/pages/VgnPrideVilla";
 import VgnParadise from "../pages/VgnParadise";
 import VgnHighland from "../pages/VgnHighland";
 import VgnHorizon from "../pages/VgnHorizon";
+import VgnClassique from "../pages/VgnClassique";
+import VgnPride from "@/pages/VgnPride";
 import Channel from "@/pages/Channel";
 import Land from "@/pages/Land";
 import Nri from "@/pages/Nri";
@@ -40,10 +42,12 @@ const router = createBrowserRouter([
       { path: "ongoing-project", element: <OngoingProjects /> },
       { path: "vgn-grandeur/index", element: <VgnGrandeur /> },
       { path: "vgn-aspire-gardens/index", element: <VgnAspireGardens /> },
-      { path: "vgn-pride-de-villa/index", element: <VgnPride /> },
+      { path: "vgn-pride-de-villa/index", element: <VgnPrideVilla /> },
       { path: "vgn-paradise/index", element: <VgnParadise /> },
       { path: "vgn-highland/index", element: <VgnHighland /> },
       { path: "vgn-horizon/index", element: <VgnHorizon /> },
+      { path: "vgn-classique/index", element: <VgnClassique /> },
+      { path: "vgn-pride/index", element: <VgnPride /> },
       { path: "completed-project", element: <CompletedProjects /> },
       { path: "channel-partner", element: <Channel /> },
       { path: "land-enquiry", element: <Land /> },

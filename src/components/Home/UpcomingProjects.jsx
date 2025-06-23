@@ -15,9 +15,9 @@ const properties = [
     {
       title: 'Heritage Springz',
       image: '/heritage.jpg',
-      location: 'Near Medavakkam',
+      location: ' Ottiyambakkam, Chennai.',
       type: 'Plots',
-      size: '700 to 2400 sqft',
+      size: ' 700 - 1683 Sq ft',
       status: 'Launching soon'
     }
 ];

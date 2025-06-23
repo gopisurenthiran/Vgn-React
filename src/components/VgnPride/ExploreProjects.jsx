@@ -126,7 +126,7 @@ export default function ExploreProjects() {
   return (
     <section className="property-details-section py-5" id="expore-projects" style={{ background: "#f9f9f9" }}>
       <div className="container">
-        <div className="section-title1 mb-4">
+        <div className="section-title5 mb-4">
           <h4>
             Explore <span>Our Projects</span>
           </h4>

@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { useNavigate } from 'react-router-dom';
 import { MdLocationPin } from "react-icons/md";
 import { FaObjectGroup, FaBuilding, FaHome } from "react-icons/fa";
-
+import VGNHeritage from "@/assets/ongoing/project37.jpg"
 import VGNGrandeur from "@/assets/ongoing/project36.jpg";
 import  VGNAspireGardens from "@/assets/ongoing/project35.jpg";
 import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
@@ -22,6 +22,16 @@ import VGNSamudra from "@/assets/ongoing/project9.jpg";
 
 
 const properties = [
+   {
+      title: "VGN Heritage Springz",
+      location: "Ottiyambakkam, Chennai.",
+      type: "Plots",
+      size: "700 - 1683 Sq ft",
+      status: " Under Construction",
+      image: VGNHeritage,
+      isNew: true,
+      btnText: "VIEW MORE",
+    },
   {
     image: VGNGrandeur,
     title: "VGN Grandeur",

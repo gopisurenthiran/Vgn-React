@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 import VGNParadise from "@/assets/ongoing/project23.jpg";
 import VGNGranduer from "@/assets/ongoing/project36.jpg";
 import VGNHighland from "@/assets/ongoing/project23.jpg";
@@ -12,10 +13,8 @@ import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
 import VGNClassique from "@/assets/ongoing/project24.jpg";
 
 
-
-
-
 const properties = [
+     
       {
     title: "VGN Paradise",
     location: "Tiruvottiyur (Wimco nagar).",

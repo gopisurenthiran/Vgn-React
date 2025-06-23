@@ -10,68 +10,44 @@ export default function LocationAdvantages() {
       <div className="tab-board">
         <ul className="nav nav-tabs" role="tablist">
           <li className="nav-item">
-            <a
-              className="nav-link active"
-              data-bs-toggle="tab"
-              href="#school"
-              role="tab"
-            >
+            <a className="nav-link active" data-bs-toggle="tab" href="#school" role="tab">
               SCHOOLS
             </a>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              data-bs-toggle="tab"
-              href="#college"
-              role="tab"
-            >
+            <a className="nav-link" data-bs-toggle="tab" href="#college" role="tab">
               COLLEGES
             </a>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              data-bs-toggle="tab"
-              href="#hospital"
-              role="tab"
-            >
+            <a className="nav-link" data-bs-toggle="tab" href="#hospital" role="tab">
               HOSPITALS
             </a>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              data-bs-toggle="tab"
-              href="#restaurant"
-              role="tab"
-            >
+            <a className="nav-link" data-bs-toggle="tab" href="#restaurant" role="tab">
               RESTAURANTS
             </a>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              data-bs-toggle="tab"
-              href="#sports"
-              role="tab"
-            >
+            <a className="nav-link" data-bs-toggle="tab" href="#sports" role="tab">
               SPORTS & ENTERTAINMENT PLACES
             </a>
           </li>
+         
         </ul>
 
         <div className="tab-content">
           {renderTabPane("school", true, [
-            ["Padma Aadharsh Hr secondary school", "1.3 Km"],
+            ["Padma Aadharsh Hr secondary School", "1.3 Km"],
             ["Hindustan International School", "1.4 Km"],
             ["Velammal Vidyashram", "1.8 Km"],
-            ["Kidzee,Kelambakkam", "2.2 Km"],
-            ["Bhuvana Krishna Matriculation school", "2.5 Km"],
-            ["Chettinad - Sarvalokaa Education", "2.7 Km"],
-            ["St Mary’s Matriculation Hr Secondary School", "3.3 Km"],
+            ["Kidzee, Kelambakkam", "2.2 Km"],
+            ["Bhuvana Krishna Matriculation School", "2.5 Km"],
+            ["Chettinad-Saravalokaa Education", "2.7 Km"],
+            ["St Mary's Matriculation Hr Secondary School", "3.3 Km"],
             ["Gateway International School", "3.5 Km"],
-            ["St. Francis De Sales Matriculation School", "4.6 Km"],
+            ["St.Francis De Sales Matriculation School", "4.6 Km"],
           ])}
 
           {renderTabPane("college", false, [
@@ -83,7 +59,6 @@ export default function LocationAdvantages() {
             ["Anand Institute of Higher Technology", "2.4 Km"],
             ["Good Life Community College & Institute of Allied Health Sciences", "2.9 Km"],
             ["Jeppiaar University", "7.7 Km"],
-              
           ])}
 
           {renderTabPane("hospital", false, [
@@ -105,26 +80,25 @@ export default function LocationAdvantages() {
           ])}
 
           {renderTabPane("sports", false, [
-            ["CTC Sports Arena", "2.4 Km"],
             ["Aquatic Splash Swim Academy India", "3.1 Km"],
             ["Moosaa Land", "6 Km"],
-            ["Kelambakkam - Thaiyur Mini Waterfall", "7.4 Km"],
+            ["Kelambakkam-Thaiyur Mini Waterfall", "7.4 Km"],
             ["ECR View Point", "8.8 Km"],
+            ["Bay of Life Surf School & Ocean Literacy", "9 Km"],
+            ["MGM Dizee World", "10.9 Km"],
           ])}
+
+         
         </div>
       </div>
     </div>
   );
 }
 
-// Helper function to render each tab pane with rows
+// Reusable tab-pane renderer
 function renderTabPane(id, isActive, rows) {
   return (
-    <div
-      className={`tab-pane ${isActive ? "active show" : ""}`}
-      id={id}
-      role="tabpanel"
-    >
+    <div className={`tab-pane ${isActive ? "active show" : ""}`} id={id} role="tabpanel">
       <div className="tab-desc">
         <div style={{ overflowX: "auto" }}>
           <table className="location-table">
@@ -137,7 +111,6 @@ function renderTabPane(id, isActive, rows) {
                     </p>
                   </td>
                   <td>{distance}</td>
-                  {/* Optional additional columns for desktop spacing */}
                   {[...Array(5)].map((_, i) => (
                     <td className="dektop-td" key={i}></td>
                   ))}
@@ -148,10 +121,5 @@ function renderTabPane(id, isActive, rows) {
         </div>
       </div>
     </div>
-
-    
   );
 }
-
-
-
