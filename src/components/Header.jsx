@@ -20,9 +20,9 @@ export default function NavigationBar() {
 
       {/* Main Navbar */}
       <nav className="navbar navbar-expand-lg custom-navbar sticky-top shadow-sm bg">
-        <div className="container">
-          <a className="navbar-brand d-flex align-items-center" href="/">
-            <img src={logo} alt="Logo" width="100" height="100" className="img-fluid" />
+        <div className="container-fluid">
+          <a className="navbar-brand d-flex" href="/">
+            <img src={logo} alt="Logo" style={{width:"150px" }} className="img-fluid" />
           </a>
 
           <button
@@ -39,15 +39,15 @@ export default function NavigationBar() {
 
           <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul className="navbar-nav text-uppercase fw-bold gap-2 align-items-center mulish-sans">
-              <li className="nav-item1">
+              <li className="nav-item">
                 <a className="nav-link active" href="/">Home</a>
               </li>
 
-              <li className="nav-item1 dropdown">
+              <li className="nav-item dropdown">
                 <a className="nav-link" href="#" role="button" data-bs-toggle="dropdown">
                  About Us <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu ">
                   <li><a className="dropdown-item" href="/about">About VGN</a></li>
                   <li><a className="dropdown-item" href="/values">Our Values</a></li>
                   <li><a className="dropdown-item" href="/chairman">Message From Chairman</a></li>
@@ -56,7 +56,7 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item1 dropdown">
+              <li className="nav-item dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Projects <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -66,7 +66,7 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item1 dropdown">
+              <li className="nav-item dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Partners <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -76,15 +76,15 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item1">
+              <li className="nav-item">
                 <a className="nav-link" href="/nri">NRI</a>
               </li>
 
-              <li className="nav-item1">
+              <li className="nav-item">
                 <a className="nav-link" href="/irefer">iRefer</a>
               </li>
 
-              <li className="nav-item1 dropdown">
+              <li className="nav-item dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Customer's Corner <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -94,7 +94,7 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item1 dropdown">
+              <li className="nav-item dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Contact Us <i className="bi bi-caret-down-fill ms-1"></i>
                 </a> 

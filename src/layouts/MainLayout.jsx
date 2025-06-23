@@ -15,7 +15,7 @@ export default function MainLayout() {
         
         <Outlet />
       </main>
-       <BrandIconSection/>
+       {/* <BrandIconSection/> */}
       {/* Full-width Footer */}
       <ToTopContact />
       <Footer />
