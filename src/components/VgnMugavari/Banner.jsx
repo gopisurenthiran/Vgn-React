@@ -1,5 +1,5 @@
-import Desktop from "@/assets/vgn-horizon/hero-1.jpg";
-import Mobile from "@/assets/vgn-horizon/hero-2-1.png";
+import Desktop from "@/assets/vgn-mugavari/hero-2.jpg";
+import Mobile from "@/assets/vgn-mugavari/hero-2-1.png";
 
 export default function Banner() {
   return (

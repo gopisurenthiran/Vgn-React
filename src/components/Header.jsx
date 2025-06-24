@@ -39,11 +39,11 @@ export default function NavigationBar() {
 
           <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul className="navbar-nav text-uppercase fw-bold gap-2 align-items-center mulish-sans">
-              <li className="nav-item">
+              <li className="nav-item1">
                 <a className="nav-link active" href="/">Home</a>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item1 dropdown">
                 <a className="nav-link" href="#" role="button" data-bs-toggle="dropdown">
                  About Us <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -56,7 +56,7 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item1 dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Projects <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -66,7 +66,7 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item1 dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Partners <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -76,15 +76,15 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item1">
                 <a className="nav-link" href="/nri">NRI</a>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item1">
                 <a className="nav-link" href="/irefer">iRefer</a>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item1 dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Customer's Corner <i className="bi bi-caret-down-fill ms-1"></i>
                 </a>
@@ -94,7 +94,7 @@ export default function NavigationBar() {
                 </ul>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item1 dropdown">
                 <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
                   Contact Us <i className="bi bi-caret-down-fill ms-1"></i>
                 </a> 

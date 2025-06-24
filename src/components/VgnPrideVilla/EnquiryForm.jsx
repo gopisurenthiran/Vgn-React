@@ -2,6 +2,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import LocationAdvantages from "./LocationAdvantages";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
+import BrochureModal from "../Modal";
 import Carousel from "react-bootstrap/Carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -417,56 +418,7 @@ export default function EnquiryForm() {
                     </p>
                   </div>
 
-                  {/* Modal */}
-                  <Modal show={showModal} onHide={handleClose} centered>
-                    <Modal.Header closeButton style={{ borderBottom: "none" }}>
-                      <Modal.Title
-                        className="w-100 text-center"
-                        style={{ fontWeight: "600" }}
-                      >
-                        DOWNLOAD E-BROCHURE
-                      </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                      <Form>
-                        <Form.Group controlId="formName" className="mb-3">
-                          <Form.Control
-                            type="text"
-                            placeholder="Name"
-                            style={{ borderRadius: "6px" }}
-                          />
-                        </Form.Group>
-                        <Form.Group controlId="formPhone" className="mb-3">
-                          <PhoneInput
-                            country={"in"}
-                            inputStyle={{
-                              width: "100%",
-                              borderRadius: "6px",
-                              height: "38px",
-                            }}
-                          />
-                        </Form.Group>
-                        <Form.Group controlId="formEmail" className="mb-4">
-                          <Form.Control
-                            type="email"
-                            placeholder="Email Id"
-                            style={{ borderRadius: "6px" }}
-                          />
-                        </Form.Group>
-                        <Button
-                          className="w-100 mx-auto"
-                          style={{
-                            backgroundColor: "#b80000",
-                            border: "none",
-                            fontWeight: "600",
-                          }}
-                          onClick={handleClose}
-                        >
-                          Submit and Download
-                        </Button>
-                      </Form>
-                    </Modal.Body>
-                  </Modal>
+                 <BrochureModal show={showModal} handleClose={handleClose} />
                 </div>
               </div>
               <div className="border-bottom my-3"></div>

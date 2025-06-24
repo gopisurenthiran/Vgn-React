@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { FaAngleDoubleRight } from "react-icons/fa";
@@ -98,56 +99,22 @@ export default function EnquiryForm() {
 
 
 
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    location: "",
-    agree: false,
-  });
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = React.useState("");
 
-  // Helper input filters
-  const onlyAlpha = (value) => value.replace(/[^a-zA-Z ]/g, "");
-  const noAlpha = (value) => value.replace(/[^0-9]/g, "");
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    setForm((prev) => ({
-      ...prev,
-      [name]:
-        name === "name"
-          ? onlyAlpha(value)
-          : name === "phone"
-          ? noAlpha(value)
-          : type === "checkbox"
-          ? checked
-          : value,
-    }));
+  const onSubmit = async (data) => {
+    console.log("Form Data Submitted:", data);
+    setMessage("Form submitted successfully!");
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage("");
-
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
-      setMessage("Form submitted successfully!");
-      // Reset form
-      setForm({
-        name: "",
-        phone: "",
-        email: "",
-        location: "",
-        agree: false,
-      });
-    }, 1500);
-  };
+    const phone = watch("phone");
 
   return (
     <section className="property-details-section">
@@ -164,9 +131,8 @@ export default function EnquiryForm() {
                     <div className="section-title3">
                       <h4>Enquiry Form</h4>
                     </div>
-
-                    <form
-                      onSubmit={handleSubmit}
+                 <form
+                      onSubmit={handleSubmit(onSubmit)}
                       className="review-form"
                       style={{ marginTop: "20px" }}
                     >
@@ -177,11 +143,16 @@ export default function EnquiryForm() {
                           type="text"
                           className="form-control"
                           placeholder="Name"
-                          name="name"
-                          value={form.name}
-                          onChange={handleChange}
                           maxLength="100"
+                          {...register("name", {
+                            required: "Name is required",
+                          })}
                         />
+                        {errors.name && (
+                          <small className="text-danger">
+                            {errors.name.message}
+                          </small>
+                        )}
                       </div>
 
                       {/* Phone Number */}
@@ -189,16 +160,22 @@ export default function EnquiryForm() {
                         <label className="form-label">Phone Number*</label>
                         <PhoneInput
                           country={"in"}
-                          value={form.phone}
-                          onChange={(phone) => setForm({ ...form, phone })}
                           inputProps={{
                             name: "phone",
                             required: true,
-                            placeholder: "Phone Number",
                             className: "form-control",
                           }}
+                          value={phone}
+                          onChange={(phone) =>
+                            setValue("phone", phone, { shouldValidate: true })
+                          }
                           inputStyle={{ width: "100%" }}
                         />
+                        {errors.phone && (
+                          <small className="text-danger">
+                            Phone number is required
+                          </small>
+                        )}
                       </div>
 
                       {/* Email */}
@@ -208,11 +185,20 @@ export default function EnquiryForm() {
                           type="email"
                           className="form-control"
                           placeholder="Email"
-                          name="email"
-                          value={form.email}
-                          onChange={handleChange}
                           maxLength="250"
+                          {...register("email", {
+                            required: "Email is required",
+                            pattern: {
+                              value: /^\S+@\S+$/i,
+                              message: "Invalid email format",
+                            },
+                          })}
                         />
+                        {errors.email && (
+                          <small className="text-danger">
+                            {errors.email.message}
+                          </small>
+                        )}
                       </div>
 
                       {/* Location */}
@@ -222,22 +208,27 @@ export default function EnquiryForm() {
                           type="text"
                           className="form-control"
                           placeholder="Location"
-                          name="location"
-                          value={form.location}
-                          onChange={handleChange}
                           maxLength="100"
+                          {...register("location", {
+                            required: "Location is required",
+                          })}
                         />
+                        {errors.location && (
+                          <small className="text-danger">
+                            {errors.location.message}
+                          </small>
+                        )}
                       </div>
 
                       {/* Checkbox */}
                       <div className="mb-3 form-check">
                         <input
-                          className="form-check-input"
                           type="checkbox"
-                          name="agree"
+                          className="form-check-input"
                           id="chkagree"
-                          checked={form.agree}
-                          onChange={handleChange}
+                          {...register("agree", {
+                            required: "You must agree before submitting",
+                          })}
                         />
                         <label
                           className="form-check-label form-label"
@@ -245,19 +236,25 @@ export default function EnquiryForm() {
                         >
                           I Agree to let VGN's representatives to contact me
                         </label>
+                        {errors.agree && (
+                          <small className="text-danger">
+                            {errors.agree.message}
+                          </small>
+                        )}
                       </div>
 
                       {/* Submit */}
                       <button
                         type="submit"
                         className="site-btn w-100"
-                        disabled={loading}
+                        disabled={isSubmitting}
                       >
-                        {loading ? "Submitting..." : "Submit"}
+                        {isSubmitting ? "Submitting..." : "Submit"}
                       </button>
 
+                      {/* Message */}
                       <div className="text-center mt-3">
-                        {loading && (
+                        {isSubmitting && (
                           <img
                             src="img/sending.gif"
                             alt="Sending"
