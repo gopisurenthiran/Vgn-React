@@ -27,7 +27,9 @@
   font-weight: 700;
   font-style: normal;
 }
-
+body {
+  overflow-x: hidden;
+}
 html,
 body {
   height: 100%;
@@ -251,6 +253,9 @@ section {
     text-underline-offset: 5px;
    
 }
+.navbar .dropdown-menu {
+  z-index: 1100 !important;
+}
 
 .footer-a {
   color: #b61217;
@@ -260,6 +265,16 @@ section {
 .footer-a:hover {
   color: #931013; /* Optional: darker on hover */
   text-decoration: underline; /* Optional: add underline on hover */
+}
+.custom-menu-btn {
+  top: 10px;
+  right: -180px;
+}
+
+@media (min-width: 768px) {
+  .custom-menu-btn {
+    right: 15px;
+  }
 }
 
 
@@ -372,14 +387,21 @@ section {
     margin-top: -13px;
 }
 .heading h4 {
-   
+    
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     position: relative;
     margin-bottom: 40px;
 }
-
+.heading2 h4 {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    margin-bottom: 40px;
+}
 
 
 .desktop {
@@ -1021,7 +1043,6 @@ select {
     color: #bf151a;
     background: #fff;
     border: none;
-    border-radius: 50px;
     margin-top: 20px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1033,6 +1054,23 @@ select {
 .site-btn:hover {
     background: #bf151a;
     color: #fff;
+}
+
+.site-btn5{
+    background-color: #fff;
+    color: #bf151a;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    padding: 6px 10px;
+    border: 2px solid #bf151a;
+}
+.site-btn5:hover{
+    background-color: #bf151a;
+    color: #ffff;
 }
 /* Channel Page End */
 
@@ -1121,9 +1159,7 @@ select {
 }
 .answer {
     padding: 0 20px 20px;
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 500;
+    
 }
 .answercount{
   max-height: 120px;
@@ -1355,3 +1391,148 @@ label {
 .footer_text_size {
     font-size: 10px;
 }
+
+
+.copyright-text {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    opacity: 1;
+    text-align: center;
+    background: #a60209;
+    padding: 8px 0;
+    margin-top: 0px;
+}
+
+.copy-txt2 {
+    color: #ffd3af !important;
+    font-size: 11px !important;
+    text-align: right;
+    line-height: 14px !important;
+}
+.copy-txt2 a {
+    color: #ffd3af !important;
+}
+
+
+/* enqurei Compact checkbox styling */
+.form-check {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem; /* aligns checkbox with label text */
+}
+
+.form-check-input {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.2rem;
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+.text-danger {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+
+.property-item  h5  {
+    font-size: 20px;
+    font-weight: 700;
+    color: #b4151a;
+    font-family: 'Mulish', sans-serif;
+}
+.form-control:focus{
+        border-color: #b4151a !important;
+}
+.react-tel-input .form-control:focus{
+    border-color: #b4151a !important;
+} 
+textarea.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc; /* or any neutral border color */
+}
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+.react-tel-input .form-control {
+  box-shadow: none !important;
+  outline: none !important;
+}
+.input-field:focus,
+.textarea-field:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  
+}
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #b4151a  !important; /* Optional: Keep or change the red border */
+}
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #b4151a ; /* Or a specific color if needed */
+}
+select {
+  border: 1px solid #b4151a !important;
+  border-radius: 8px; /* optional: round corners */
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* On focus */
+select:focus {
+  border: 1px solid #b4151a !important;
+  outline: none !important;
+}
+
+/* Optional: for hover effect */
+select:hover {
+  border-color: #b4151a !important;
+}
+
+.custom-check {
+  width: 30px;
+  height: 24px;
+  border: 2px solid #b4151a;
+  border-radius: 5px;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-check:checked {
+  background-color: #b4151a;
+  border-color: #b4151a;
+}
+
+.custom-check:checked::after {
+  content: "✔";
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-check:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+

@@ -41,7 +41,10 @@ export default function EnquiryForm() {
       <ToastContainer position="top-right" autoClose={3000} />
 
       <div className="text-center mb-4">
-        <h4 className="text-white d-inline-flex align-items-center" style={{ fontSize: "1.6rem" }}>
+        <h4
+          className="text-white d-inline-flex align-items-center"
+          style={{ fontSize: "1.6rem" }}
+        >
           <img
             className="head-border"
             src="/head-border.png"
@@ -52,7 +55,10 @@ export default function EnquiryForm() {
         </h4>
       </div>
 
-      <div className="container bg-white rounded-4 shadow-lg p-4 p-md-5" style={{ maxWidth: "900px" }}>
+      <div
+        className="container bg-white rounded-4 shadow-lg p-4 p-md-5"
+        style={{ maxWidth: "900px" }}
+      >
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row g-3 mb-3">
             {/* Name */}
@@ -63,7 +69,9 @@ export default function EnquiryForm() {
                 placeholder="Name*"
                 {...register("name", { required: "Name is required" })}
               />
-              {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
+              {errors.name && (
+                <div className="invalid-feedback">{errors.name.message}</div>
+              )}
             </div>
 
             {/* Phone */}
@@ -96,7 +104,11 @@ export default function EnquiryForm() {
                   />
                 )}
               />
-              {errors.mobile && <div className="text-danger small mt-1">{errors.mobile.message}</div>}
+              {errors.mobile && (
+                <div className="text-danger small mt-1">
+                  {errors.mobile.message}
+                </div>
+              )}
             </div>
           </div>
 
@@ -115,27 +127,47 @@ export default function EnquiryForm() {
                   },
                 })}
               />
-              {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
+              {errors.email && (
+                <div className="invalid-feedback">{errors.email.message}</div>
+              )}
             </div>
 
             <div className="col-md-6">
               <select
                 className={`form-select ${errors.project ? "is-invalid" : ""}`}
-                {...register("project", { required: "Please select a project" })}
+                {...register("project", {
+                  required: "Please select a project",
+                })}
               >
                 <option value="">Select Projects*</option>
                 {[
-                  "Grandeur", "Aspire Gardens", "Pride de' Villa", "Highland", "Horizon", "Classique",
-                  "Serene", "Pride", "Brillianze Phase II", "Westfield", "Mahalakshmi nagar Phase XIV",
-                  "CH40", "Mugavari Phase II", "Windsor Park Phase IV - 1G", "Southern Meadows", "Exotica",
-                  "Varnabhoomi Phase II", "Windsor Park Phase VII",
+                  "Grandeur",
+                  "Aspire Gardens",
+                  "Pride de' Villa",
+                  "Highland",
+                  "Horizon",
+                  "Classique",
+                  "Serene",
+                  "Pride",
+                  "Brillianze Phase II",
+                  "Westfield",
+                  "Mahalakshmi nagar Phase XIV",
+                  "CH40",
+                  "Mugavari Phase II",
+                  "Windsor Park Phase IV - 1G",
+                  "Southern Meadows",
+                  "Exotica",
+                  "Varnabhoomi Phase II",
+                  "Windsor Park Phase VII",
                 ].map((proj) => (
                   <option key={proj} value={proj}>
                     VGN {proj}
                   </option>
                 ))}
               </select>
-              {errors.project && <div className="invalid-feedback">{errors.project.message}</div>}
+              {errors.project && (
+                <div className="invalid-feedback">{errors.project.message}</div>
+              )}
             </div>
           </div>
 
@@ -147,30 +179,38 @@ export default function EnquiryForm() {
               placeholder="Message*"
               {...register("message", { required: "Message is required" })}
             ></textarea>
-            {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
+            {errors.message && (
+              <div className="invalid-feedback">{errors.message.message}</div>
+            )}
           </div>
-           <div className="row align-items-start mb-3 gx-2">
-            <div className="col-auto">
+          <div className="row  align-items-start mb-3 gx-4">
+            <div className="col-auto d-flex">
               <input
                 type="checkbox"
                 id="consent"
-                className={`form-check-input ${errors.consent ? "is-invalid" : ""}`}
-                {...register("consent", { required: "You must agree to continue" })}
+                className="custom-check mt-1 me-3"
+                {...register("consent", { required: "Consent is required" })}
               />
-            </div>
-            <div className="col">
-              <label htmlFor="consent" className="form-check-label small">
-                I authorize VGN and its representatives to contact me with updates and notifications via email,
-                SMS, WhatsApp & call. This will override the registry on DND/NDNC.
-                <span className="text-danger">*</span>
-              </label>
-              {errors.consent && <div className="text-danger small">{errors.consent.message}</div>}
+              <div>
+                <label htmlFor="consent" className="form-check-label small m-0">
+                  I authorize VGN and its representatives to
+                  contact me with updates and notifications via email, SMS,
+                  WhatsApp & call.{" "}
+                  This will override the registry on DND/NDNC.
+                  <span className="">*</span>
+                </label>
+                {errors.consent && (
+                  <div className=" small mt-1">
+                    {errors.consent.message}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Submit */}
           <div className="text-center">
-            <button type="submit" className="btn btn-outline-danger rounded-pill px-4 py-2">
+            <button type="submit" className="site-btn5 px-4 py-2">
               SUBMIT
             </button>
           </div>

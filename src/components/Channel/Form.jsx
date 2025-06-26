@@ -5,6 +5,9 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import headBorder from "/head-border.png"; // adjust if needed
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ChannelEnquiry } from "../../services/ChannelService";
 
 export default function PartnerWithUs() {
   const {
@@ -15,13 +18,38 @@ export default function PartnerWithUs() {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Submitted Data:", data);
-    reset(); // reset form after successful submission
+
+const onSubmit = async (data) => {
+  // Map form fields to API payload format
+  const payload = {
+    name: data.name,
+    email: data.email,
+    mobile: data.mobile,
+    company_name: data.company,
+    address: data.address,
+    org_type: data.organizationType,
+    member_of_association: data.association || "",
+    type_of_bussiness: data.businessType,
+    rera: data.rera || "",
   };
+
+  try {
+    const result = await ChannelEnquiry(payload);
+
+    toast.success("Form submitted successfully!");
+
+    reset(); // Clear form after success
+  } catch (error) {
+    console.error("Submission error:", error);
+
+    toast.error("Submission failed. Please try again.");
+  }
+};
+
 
   return (
     <section className="contact-form-section spad bg" style={{ padding: "60px 0" }}>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Container>
         <div className="row justify-content-center">
           <div className="col-lg-8">
@@ -54,7 +82,7 @@ export default function PartnerWithUs() {
 
                 <div className="col-lg-6">
                   <Controller
-                    name="phone"
+                    name="mobile"
                     control={control}
                     rules={{ required: "Phone number is required" }}
                     render={({ field }) => (
@@ -66,7 +94,7 @@ export default function PartnerWithUs() {
                         onlyCountries={["in"]}
                         enableSearch
                         placeholder="Phone Number*"
-                        inputProps={{ required: true, name: "phone" }}
+                        inputProps={{ required: true, name: "mobile" }}
                         inputStyle={{
                           width: "100%",
                           height: "50px",
@@ -81,7 +109,7 @@ export default function PartnerWithUs() {
                       />
                     )}
                   />
-                  {errors.phone && <div className="text-danger small mt-1">{errors.phone.message}</div>}
+                  {errors.mobile && <div className="text-danger small mt-1">{errors.mobile.message}</div>}
                 </div>
 
                 <div className="col-lg-6">
@@ -173,17 +201,15 @@ export default function PartnerWithUs() {
                 <div className="col-lg-12 text-center mt-4">
                   <button
                     type="submit"
-                    className="site-btn"
+                    className="site-btn5"
                     id="btnsubmit"
                     name="btnsubmit"
                     style={{
                       border: "2px solid #b40000",
-                      color: "#b40000",
-                      borderRadius: "50px",
+                     
                       padding: "10px 40px",
                       fontWeight: "600",
-                      background: "transparent",
-                      letterSpacing: "1px"
+                      
                     }}
                   >
                     SUBMIT

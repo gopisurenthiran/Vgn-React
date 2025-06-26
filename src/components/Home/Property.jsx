@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link } from "react-router-dom";
 
 import VGNParadise from "@/assets/ongoing/project23.jpg";
 import VGNGranduer from "@/assets/ongoing/project36.jpg";
@@ -12,10 +13,8 @@ import VGNPridedeVilla from "@/assets/ongoing/project35.jpg";
 import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
 import VGNClassique from "@/assets/ongoing/project24.jpg";
 
-
 const properties = [
-     
-      {
+  {
     title: "VGN Paradise",
     location: "Tiruvottiyur (Wimco nagar).",
     type: "Plots & Villas",
@@ -24,18 +23,19 @@ const properties = [
     image: VGNParadise,
     isNew: true,
     btnText: "VIEW MORE",
+    link: "/vgn-paradise/index",
   },
-     {
+  {
     title: "VGN Granduer",
     location: "Iyyappanthangal, Porur.",
-    type: " Plots",
+    type: "Plots",
     size: "581 - 3061 Sq feet",
     status: "Ready to Construct",
     image: VGNGranduer,
     isNew: true,
     btnText: "VIEW MORE",
+    link: "/vgn-grandeur/index",
   },
-
   {
     title: "VGN Highland",
     location: "Tharapakkam, Chennai.",
@@ -45,6 +45,7 @@ const properties = [
     image: VGNHighland,
     isNew: false,
     btnText: "VIEW MORE",
+    link: "/vgn-highland/index",
   },
   {
     title: "VGN Aspire Gardens",
@@ -55,8 +56,9 @@ const properties = [
     image: VGNAspireGardens,
     isNew: true,
     btnText: "VIEW MORE",
+    link: "/vgn-aspire-gardens/index",
   },
-   {
+  {
     title: "VGN Pride de' Villa",
     location: "Padur, Chennai.",
     type: "Villa",
@@ -65,36 +67,37 @@ const properties = [
     image: VGNPridedeVilla,
     isNew: true,
     btnText: "VIEW MORE",
+    link: "/vgn-pride-de-villa/index",
   },
-   {
+  {
     title: "VGN Mugavari Phase - IV & V",
-    location: " Tambaram, Chennai.",
-    type: " Plots",
+    location: "Tambaram, Chennai.",
+    type: "Plots",
     size: "700 - 1926 Sq feet",
     status: "Ready to Construct",
     image: VGNMugavariPhase,
     isNew: false,
     btnText: "VIEW MORE",
+    link: "/vgn-mugavari-phase2/index",
   },
-   {
+  {
     title: "VGN Classique",
     location: "Ambattur, Chennai.",
-    type: " Plots",
+    type: "Plots",
     size: "703 - 1416 Sq feet",
     status: "Ready to Construct",
-   image: VGNClassique,
+    image: VGNClassique,
     isNew: false,
     btnText: "VIEW MORE",
+    link: "/vgn-classique/index",
   },
-
-  
 ];
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 992 },
     items: 3,
-    slidesToSlide: 1, // ← slide 1 card at a time
+    slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 991, min: 768 },
@@ -110,18 +113,22 @@ const responsive = {
 
 const Property = () => {
   return (
-    
-    <div className=" py-5" style={{ background: "#fef7ef" }}>
-          <div className="text-center mb-3 heading ">
-             <h4 className="d-inline-flex align-items-center" style={{ fontSize: "1.8rem" }}>
-              <img className="head-border"
+    <div className="py-5" style={{ background: "#fef7ef" }}>
+      <div className="text-center mb-3 heading">
+        <h4
+          className="d-inline-flex align-items-center"
+          style={{ fontSize: "1.8rem" }}
+        >
+          <img
+            className="head-border"
             src="/head-border.png"
             alt="Red corner"
             style={{ width: "33px", height: "30px", marginRight: "10px" }}
           />
-            FEATURED PROJECTS
+          FEATURED PROJECTS
         </h4>
       </div>
+
       <Carousel
         responsive={responsive}
         autoPlay={true}
@@ -165,10 +172,12 @@ const Property = () => {
                 </span>
               )}
             </div>
-            <div className="card-body bg-white" style={{ padding: "25px" }}>
-              <h5 className="text-danger fw-bold mb-3">{item.title}</h5>
-
-              <div className="d-flex flex-wrap mb-3" style={{ fontSize: "0.95rem" }}>
+            <div className="card-body property-item bg-white" style={{ padding: "25px" }}>
+              <h5 className=" mb-3">{item.title}</h5>
+              <div
+                className="d-flex flex-wrap mb-3"
+                style={{ fontSize: "0.95rem" }}
+              >
                 <div className="me-4 mb-2">
                   <i className="bi bi-geo-alt-fill text-danger me-1"></i>
                   {item.location}
@@ -178,8 +187,10 @@ const Property = () => {
                   {item.type}
                 </div>
               </div>
-
-              <div className="d-flex flex-wrap mb-3" style={{ fontSize: "0.95rem" }}>
+              <div
+                className="d-flex flex-wrap mb-3"
+                style={{ fontSize: "0.95rem" }}
+              >
                 <div className="me-4 mb-2">
                   <i className="bi bi-aspect-ratio-fill text-danger me-1"></i>
                   {item.size}
@@ -189,11 +200,13 @@ const Property = () => {
                   {item.status}
                 </div>
               </div>
-
               <div className="text-center">
-                <button className="btn btn-outline-danger rounded-pill px-4 py-2 fw-semibold">
+                <Link
+                  to={item.link}
+                  className="site-btn5 px-4 py-2 d-inline-block text-decoration-none"
+                >
                   {item.btnText}
-                </button>
+                </Link>
               </div>
             </div>
           </div>

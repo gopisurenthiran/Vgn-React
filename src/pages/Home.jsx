@@ -8,6 +8,7 @@ import VgnAdvantages from '../components/Home/VgnAdvantages';
 
 import Property from '../components/Home/Property';
 import UpcomingProjects from '../components/Home/UpcomingProjects';
+import BrandIconSection from '../components/BrandIconSection';
 
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
        <Video/>
        <EnquiryForm/>
        <VgnAdvantages/>
-     
+       <BrandIconSection/>
     </div>
   )
 }

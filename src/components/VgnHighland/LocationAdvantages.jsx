@@ -3,11 +3,11 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 
 export default function LocationAdvantages() {
   return (
-    <div className="pd-board pd-widget" id="advantages">
+    <div className="pd-board6 pd-widget" id="advantages">
       <div className="section-title3">
         <h4>Location Advantages</h4>
       </div>
-      <div className="tab-board">
+      <div className="tab-board6">
         <ul className="nav nav-tabs" role="tablist">
           <li className="nav-item">
             <a

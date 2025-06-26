@@ -1,3 +1,4 @@
+import BrandIconSection from '../components/BrandIconSection'
 import Banner from '../components/Customer/Banner'
 import Form from '../components/Customer/Form'
 
@@ -6,6 +7,7 @@ export default function Customer() {
     <div>
       <Banner/>
       <Form/>
+      <BrandIconSection/>
     </div>
   )
 }

@@ -3,22 +3,25 @@ import { Modal, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ModalEnquiry } from "../services/modal";
 
 export default function BrochureModal({ show, handleClose }) {
   const {
     register,
     handleSubmit,
     setValue,
-    watch,
     trigger,
+    reset,
     formState: { errors },
+    watch,
   } = useForm();
 
-  const phone = watch("phone");
+  const mobile = watch("mobile");
 
-  // Register phone manually with validation
   useEffect(() => {
-    register("phone", {
+    register("mobile", {
       required: "Phone number is required",
       minLength: {
         value: 10,
@@ -27,13 +30,36 @@ export default function BrochureModal({ show, handleClose }) {
     });
   }, [register]);
 
-  const onSubmit = (data) => {
-    console.log("Brochure form submitted:", data);
-    handleClose();
+  const onSubmit = async (data) => {
+    const payload = {
+      name: data.name,
+      email: data.email,
+      mobile: data.mobile,
+    };
+
+    try {
+      const result = await ModalEnquiry(payload);
+
+      toast.success("Form submitted successfully!", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+
+      reset();
+      handleClose(); // Optional: close modal on success
+    } catch (error) {
+      console.error("Submission error:", error);
+
+      toast.error("Submission failed. Please try again.", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+    }
   };
 
   return (
     <Modal show={show} onHide={handleClose} centered>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Modal.Header closeButton style={{ borderBottom: "none" }}>
         <Modal.Title
           className="w-100 text-center"
@@ -57,14 +83,14 @@ export default function BrochureModal({ show, handleClose }) {
             )}
           </Form.Group>
 
-          {/* Phone */}
-          <Form.Group controlId="formPhone" className="mb-3">
+          {/* Mobile */}
+          <Form.Group controlId="formMobile" className="mb-3">
             <PhoneInput
               country={"in"}
-              value={phone}
-              onChange={(phone) => {
-                setValue("phone", phone);
-                trigger("phone");
+              value={mobile}
+              onChange={(value) => {
+                setValue("mobile", value);
+                trigger("mobile");
               }}
               inputStyle={{
                 width: "100%",
@@ -72,11 +98,11 @@ export default function BrochureModal({ show, handleClose }) {
                 height: "38px",
               }}
               inputProps={{
-                name: "phone",
+                name: "mobile",
               }}
             />
-            {errors.phone && (
-              <small className="text-danger">{errors.phone.message}</small>
+            {errors.mobile && (
+              <small className="text-danger">{errors.mobile.message}</small>
             )}
           </Form.Group>
 

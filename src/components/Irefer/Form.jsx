@@ -4,6 +4,9 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import headBorder from "@/assets/head-border.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { IreferEnquiry } from "../../services/ireferService";
 
 export default function ReferralForm() {
   const {
@@ -14,13 +17,45 @@ export default function ReferralForm() {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Submitted Data:", data);
-    reset();
+ const onSubmit = async (data) => {
+  // Map form fields to API payload format
+  const payload = {
+    name: data.name,
+    email: data.email,
+    mobile: data.phone, // Assuming form field is 'phone'
+    project: data.project,
+    plot_no: data.plotNo,
+    other_project: data.otherProject,
+    friend_name: data.friendName,
+    friend_mobile: data.friendPhone,
+    friend_location: data.friendLocation,
+    refer_project: data.referProject,
   };
+
+  try {
+    const result = await IreferEnquiry(payload);
+
+    toast.success("Form submitted successfully!", {
+      position: "bottom-right",
+      autoClose: 3000,
+    });
+
+    reset(); // Clear form after success
+  } catch (error) {
+    console.error("Submission error:", error);
+
+    toast.error("Submission failed. Please try again.", {
+      position: "bottom-right",
+      autoClose: 3000,
+    });
+  }
+};
+
+
 
   return (
     <section className="contact-form-section py-5 bg">
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
@@ -219,7 +254,7 @@ export default function ReferralForm() {
                 </div>
 
                 <div className="text-center">
-                  <button type="submit" className="site-btn btn-primary px-5">
+                  <button type="submit" className="site-btn5  px-5">
                     Submit
                   </button>
                 </div>

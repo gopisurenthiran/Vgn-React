@@ -3,6 +3,9 @@ import { useForm, Controller } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import headBorder from "/head-border.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { LandEnquiry } from "../../services/LandEnquiry";
 
 export default function LandEnquiryForm() {
   const {
@@ -13,13 +16,39 @@ export default function LandEnquiryForm() {
     formState: { errors }
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    reset(); // optional: resets form after submit
+  const onSubmit = async (data) => {
+  // Map form fields to API payload format
+  const payload = {
+    name: data.name,
+    email: data.email,
+    mobile: data.phone,
+    location: data.location,
+    message: data.message,
   };
+
+  try {
+    const result = await LandEnquiry(payload);
+
+    toast.success("Form submitted successfully!", {
+      position: "bottom-right",
+      autoClose: 3000,
+    });
+
+    reset(); // Clear form after success
+  } catch (error) {
+    console.error("Submission error:", error);
+
+    toast.error("Submission failed. Please try again.", {
+      position: "bottom-right",
+      autoClose: 3000,
+    });
+  }
+};
+
 
   return (
     <section className="contact-form-section spad py-5 bg">
+       <ToastContainer position="top-right" autoClose={3000} />
       <div className="container">
         <div className="custom-form-wrapper mx-auto p-4 p-md-5 bg-white shadow-sm">
           <div className="heading text-center mb-4">
@@ -124,7 +153,7 @@ export default function LandEnquiryForm() {
             </div>
 
             <div className="text-center">
-              <button type="submit" className="site-btn custom-submit-btn">
+              <button type="submit" className="site-btn5 custom-submit-btn">
                 SUBMIT
               </button>
             </div>

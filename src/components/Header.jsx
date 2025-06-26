@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "@/assets/logo.svg";
-
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function NavigationBar() {
   return (
@@ -9,11 +9,11 @@ export default function NavigationBar() {
       {/* Top Contact Bar */}
       <div className="hs-top text-white py-2 px-3 d-flex justify-content-end align-items-center small">
         <div className="me-4 mulish-sans">
-        <i className="bi bi-telephone-fill me-2" style={{fontSize: "12px"}}></i>
+          <i className="bi bi-telephone-fill me-2" style={{ fontSize: "12px" }}></i>
           044 4002 4002, 044 6965 6902
         </div>
         <div className="mulish-sans">
-          <i className="bi bi-envelope-fill me-2" style={{fontSize: "12px"}}></i>
+          <i className="bi bi-envelope-fill me-2" style={{ fontSize: "12px" }}></i>
           info@vgngroup.org
         </div>
       </div>
@@ -21,9 +21,9 @@ export default function NavigationBar() {
       {/* Main Navbar */}
       <nav className="navbar navbar-expand-lg custom-navbar sticky-top shadow-sm bg">
         <div className="container-fluid">
-          <a className="navbar-brand d-flex" href="/">
-            <img src={logo} alt="Logo" style={{width:"150px" }} className="img-fluid" />
-          </a>
+          <Link className="navbar-brand d-flex" to="/">
+            <img src={logo} alt="Logo" style={{ width: "150px" }} className="img-fluid" />
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -40,67 +40,67 @@ export default function NavigationBar() {
           <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul className="navbar-nav text-uppercase fw-bold gap-2 align-items-center mulish-sans">
               <li className="nav-item1">
-                <a className="nav-link active" href="/">Home</a>
+                <Link className="nav-link" to="/">Home</Link>
               </li>
 
               <li className="nav-item1 dropdown">
-                <a className="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                 About Us <i className="bi bi-caret-down-fill ms-1"></i>
-                </a>
-                <ul className="dropdown-menu ">
-                  <li><a className="dropdown-item" href="/about">About VGN</a></li>
-                  <li><a className="dropdown-item" href="/values">Our Values</a></li>
-                  <li><a className="dropdown-item" href="/chairman">Message From Chairman</a></li>
-                  <li><a className="dropdown-item" href="/our-people">Our People</a></li>
-                  <li><a className="dropdown-item" href="/testimonial">Testimonials</a></li>
+                <span className="nav-link" role="button" data-bs-toggle="dropdown">
+                  About Us <i className="bi bi-caret-down-fill ms-1"></i>
+                </span>
+                <ul className="dropdown-menu">
+                  <li><Link className="dropdown-item" to="/about">About VGN</Link></li>
+                  <li><Link className="dropdown-item" to="/values">Our Values</Link></li>
+                  <li><Link className="dropdown-item" to="/chairman">Message From Chairman</Link></li>
+                  <li><Link className="dropdown-item" to="/our-people">Our People</Link></li>
+                  <li><Link className="dropdown-item" to="/testimonial">Testimonials</Link></li>
                 </ul>
               </li>
 
               <li className="nav-item1 dropdown">
-                <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
+                <span className="nav-link" role="button" data-bs-toggle="dropdown">
                   Projects <i className="bi bi-caret-down-fill ms-1"></i>
-                </a>
+                </span>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/ongoing-project">Ongoing Projects</a></li>
-                  <li><a className="dropdown-item" href="/completed-project">Completed Projects</a></li>
+                  <li><Link className="dropdown-item" to="/ongoing-project">Ongoing Projects</Link></li>
+                  <li><Link className="dropdown-item" to="/completed-project">Completed Projects</Link></li>
                 </ul>
               </li>
 
               <li className="nav-item1 dropdown">
-                <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
+                <span className="nav-link" role="button" data-bs-toggle="dropdown">
                   Partners <i className="bi bi-caret-down-fill ms-1"></i>
-                </a>
+                </span>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/channel-partner">Channel Partner</a></li>
-                  <li><a className="dropdown-item" href="/land-enquiry">Land Enquiry / Joint Ventures</a></li>
+                  <li><Link className="dropdown-item" to="/channel-partner">Channel Partner</Link></li>
+                  <li><Link className="dropdown-item" to="/land-enquiry">Land Enquiry / Joint Ventures</Link></li>
                 </ul>
               </li>
 
               <li className="nav-item1">
-                <a className="nav-link" href="/nri">NRI</a>
+                <Link className="nav-link" to="/nri">NRI</Link>
               </li>
 
               <li className="nav-item1">
-                <a className="nav-link" href="/irefer">iRefer</a>
+                <Link className="nav-link" to="/irefer">iRefer</Link>
               </li>
 
               <li className="nav-item1 dropdown">
-                <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
+                <span className="nav-link" role="button" data-bs-toggle="dropdown">
                   Customer's Corner <i className="bi bi-caret-down-fill ms-1"></i>
-                </a>
+                </span>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/customer-support">Customer Support</a></li>
-                  <li><a className="dropdown-item" href="/emi-calculator">EMI Calculator</a></li>
+                  <li><Link className="dropdown-item" to="/customer-support">Customer Support</Link></li>
+                  <li><Link className="dropdown-item" to="/emi-calculator">EMI Calculator</Link></li>
                 </ul>
               </li>
 
               <li className="nav-item1 dropdown">
-                <a className="nav-link " href="#" role="button" data-bs-toggle="dropdown">
+                <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
                   Contact Us <i className="bi bi-caret-down-fill ms-1"></i>
-                </a> 
+                </span>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/contact">Address</a></li>
-                  <li><a className="dropdown-item" href="/careers">Careers</a></li>
+                  <li><Link className="dropdown-item" to="/contact">Address</Link></li>
+                  <li><Link className="dropdown-item" to="/careers">Careers</Link></li>
                 </ul>
               </li>
             </ul>

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import { FaObjectGroup, FaBuilding, FaHome } from "react-icons/fa";
-import VGNHeritage from "@/assets/ongoing/project37.jpg"
+import VGNHeritage from "@/assets/ongoing/project37.jpg";
 import VGNGrandeur from "@/assets/ongoing/project36.jpg";
-import  VGNAspireGardens from "@/assets/ongoing/project35.jpg";
+import VGNAspireGardens from "@/assets/ongoing/project35.jpg";
 import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
 import VGNParadise from "@/assets/ongoing/project23.jpg";
 import VGNHighland from "@/assets/ongoing/project31.jpg";
@@ -20,18 +20,16 @@ import VGNSouthernMeadows from "@/assets/ongoing/project21.jpg";
 import VGNVarnabhoomi from "@/assets/ongoing/project5.jpg";
 import VGNSamudra from "@/assets/ongoing/project9.jpg";
 
-
 const properties = [
-   {
-      title: "VGN Heritage Springz",
-      location: "Ottiyambakkam, Chennai.",
-      type: "Plots",
-      size: "700 - 1683 Sq ft",
-      status: " Under Construction",
-      image: VGNHeritage,
-      isNew: true,
-      btnText: "VIEW MORE",
-    },
+  {
+    title: "VGN Heritage Springz",
+    location: "Ottiyambakkam, Chennai.",
+    type: "Plots",
+    size: "700 - 1683 Sq ft",
+    status: " Under Construction",
+    image: VGNHeritage,
+  link: "/vgn-heritage-springz/index",
+  },
   {
     image: VGNGrandeur,
     title: "VGN Grandeur",
@@ -86,7 +84,7 @@ const properties = [
     status: "Ready to Construct",
     link: "/vgn-horizon/index",
   },
-   {
+  {
     image: VGNClassique,
     title: "VGN Classique",
     location: "Ambattur, Chennai.",
@@ -161,7 +159,7 @@ const properties = [
 ];
 
 export default function PropertySection({ prop }) {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
@@ -171,25 +169,22 @@ export default function PropertySection({ prop }) {
   }, []);
 
   return (
-    <section className="property-section spad  aos-animate" >
+    <section className="property-section spad  aos-animate">
       <div className="container-fluid">
         <div className="row">
           {properties.map((prop, index) => (
             <div
-                  className="col-lg-4 col-md-6 mb-4"
-    key={index}
-    data-aos="zoom-in"
-    data-aos-delay={`${index * 150}`} 
-    data-aos-duration="800" 
- 
-          
+              className="col-lg-4 col-md-6 mb-4"
+              key={index}
+              data-aos="zoom-in"
+              data-aos-delay={`${index * 150}`}
+              data-aos-duration="800"
             >
-              <div className="as-item" >
-                <div className="property-item  rounded overflow-hidden" >
+              <div className="as-item">
+                <div className="property-item  rounded overflow-hidden">
                   <img
                     src={prop.image}
                     alt={prop.title}
-                   
                     className="img-fluid w-100"
                     style={{ cursor: "default" }}
                   />
@@ -204,22 +199,32 @@ export default function PropertySection({ prop }) {
                       <div className="row">
                         <div className="col-md-7">
                           <li className="mb-2">
-                            <span><MdLocationPin className="me-1" /></span>
-                              {prop.location}
-                           
+                            <span>
+                              <MdLocationPin className="me-1" />
+                            </span>
+                            {prop.location}
                           </li>
                           <li>
-                           <span> <FaObjectGroup className="me-1" /></span> 
+                            <span>
+                              {" "}
+                              <FaObjectGroup className="me-1" />
+                            </span>
                             {prop.size}
                           </li>
                         </div>
                         <div className="col-md-5">
                           <li className="mb-2">
-                           <span> <FaBuilding className="me-1" /></span> 
+                            <span>
+                              {" "}
+                              <FaBuilding className="me-1" />
+                            </span>
                             {prop.type}
                           </li>
                           <li>
-                            <span> <FaHome className="me-1 " /></span>
+                            <span>
+                              {" "}
+                              <FaHome className="me-1 " />
+                            </span>
                             {prop.status}
                           </li>
                         </div>
@@ -229,12 +234,12 @@ export default function PropertySection({ prop }) {
                     <div className="pi-agent mt-3">
                       <div className="pa-item">
                         <div className="loadmore-btn">
-                           <a
-      className="btn btn-sm"
-      onClick={() => navigate(prop.link)}
-    >
-      View more
-    </a>
+                          <a
+                            className="btn btn-sm"
+                            onClick={() => navigate(prop.link)}
+                          >
+                            View more
+                          </a>
                         </div>
                       </div>
                     </div>

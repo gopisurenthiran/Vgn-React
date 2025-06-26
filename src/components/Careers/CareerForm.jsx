@@ -164,7 +164,7 @@ export default function CareersForm() {
                 </div>
 
                 <div className="text-center">
-                  <button type="submit" className="site-btn btn btn-primary px-4">
+                  <button type="submit" className="site-btn5 px-4">
                     Apply Now
                   </button>
                 </div>

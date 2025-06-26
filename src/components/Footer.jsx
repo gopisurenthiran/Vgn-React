@@ -6,8 +6,7 @@ import {
   FaYoutube,
   FaLinkedinIn,
   FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaWhatsapp,
+  // FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -21,13 +20,12 @@ export default function Footer() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom center",
           backgroundSize: "contain",
-          height: "200px",
         }}
       >
-        <div className="p-5">
+        <div className="container-fluid px-3 px-md-5 py-5">
           {/* Contact Section */}
           <div className="row text-start">
-            <div className="col-sm-12 col-md-3">
+            <div className="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
               <h5 className="fw-bold footer-heading mb-3">CONTACT US</h5>
               <address className="mb-2 footer-content">
                 <strong>VGN HOMES PRIVATE LIMITED</strong>
@@ -36,7 +34,7 @@ export default function Footer() {
                 <br />
                 Aminjikarai, Chennai – 600 030.
               </address>
-              <p className="mb-1 footer-content text-white">
+              <p className="mb-1 footer-content">
                 Email:{" "}
                 <a
                   href="mailto:info@vgngroup.org"
@@ -45,7 +43,7 @@ export default function Footer() {
                   info@vgngroup.org
                 </a>
               </p>
-              <p className="text-white footer-content">
+              <p className="footer-content">
                 Phone:{" "}
                 <a
                   href="tel:+914443937979"
@@ -57,58 +55,166 @@ export default function Footer() {
             </div>
 
             {/* 4 Columns Section */}
-            <div className="col-sm-12 col-md-9">
+            <div className="col-12 col-md-8 col-lg-9">
               <div className="row">
-                <div className="col-2"></div>
+                <div className="col-0 col-lg-2 d-none d-lg-block"></div>
+
                 {/* Projects */}
-                <div className="col-4 col-md-2">
+                <div className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                   <h5 className="fw-bold footer-heading mb-3">PROJECTS</h5>
                   <ul className="list-unstyled footer-content mb-0">
                     <li>
-                      <a href="/ongoing-project" className="text-white text-decoration-none">Plots in Chennai</a>
+                      <a
+                        href="/ongoing-project"
+                        className="text-white text-decoration-none"
+                      >
+                        Plots in Chennai
+                      </a>
                     </li>
                     <li>
-                      <a href="/vgn-pride/index" className="text-white text-decoration-none">Plots in OMR</a>
+                      <a
+                        href="/vgn-pride/index"
+                        className="text-white text-decoration-none"
+                      >
+                        Plots in OMR
+                      </a>
                     </li>
                     <li>
-                      <a href="/vgn-classique/index" className="text-white text-decoration-none">Plots in Ambattur</a>
+                      <a
+                        href="/vgn-classique/index"
+                        className="text-white text-decoration-none"
+                      >
+                        Plots in Ambattur
+                      </a>
                     </li>
                   </ul>
                 </div>
 
                 {/* Quick Links */}
-                <div className="col-4 col-md-2">
+                <div className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                   <h5 className="fw-bold footer-heading mb-3">QUICK LINKS</h5>
                   <ul className="list-unstyled footer-content mb-0">
-                    <li><a href="/channel-partner" className="text-white text-decoration-none">Partners</a></li>
-                    <li><a href="/nri" className="text-white text-decoration-none">NRI</a></li>
-                    <li><a href="/careers" className="text-white text-decoration-none">Careers</a></li>
-                    <li><a href="/irefer" className="text-white text-decoration-none">iRefer</a></li>
-                    <li><a href="/contact" className="text-white text-decoration-none">Contact</a></li>
+                    <li>
+                      <a
+                        href="/channel-partner"
+                        className="text-white text-decoration-none"
+                      >
+                        Partners
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/nri"
+                        className="text-white text-decoration-none"
+                      >
+                        NRI
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/careers"
+                        className="text-white text-decoration-none"
+                      >
+                        Careers
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/irefer"
+                        className="text-white text-decoration-none"
+                      >
+                        iRefer
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/contact"
+                        className="text-white text-decoration-none"
+                      >
+                        Contact
+                      </a>
+                    </li>
                   </ul>
                 </div>
 
                 {/* Other Links */}
-                <div className="col-4 col-md-2">
+                <div className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
                   <h5 className="fw-bold footer-heading mb-3">OTHER LINKS</h5>
                   <ul className="list-unstyled footer-content mb-0">
-                    <li><a href="/customer-support" className="text-white text-decoration-none">Customer Support</a></li>
-                    <li><a href="/terms-and-conditions" className="text-white text-decoration-none">Terms and Conditions</a></li>
-                    <li><a href="/emi-calculator" className="text-white text-decoration-none">EMI Calculator</a></li>
+                    <li>
+                      <a
+                        href="/customer-support"
+                        className="text-white text-decoration-none"
+                      >
+                        Customer Support
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/terms-and-conditions"
+                        className="text-white text-decoration-none"
+                      >
+                        Terms and Conditions
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/emi-calculator"
+                        className="text-white text-decoration-none"
+                      >
+                        EMI Calculator
+                      </a>
+                    </li>
                   </ul>
                 </div>
 
                 {/* Social Icons */}
-
-                <div className="col-6 col-md-3" >
+                <div className="col-12 col-md-3 mt-4 mt-md-0">
                   <h5 className="fw-bold footer-heading mb-3">GET IN TOUCH</h5>
                   <div className="d-flex flex-wrap gap-3 fs-5">
-                    <a href="https://www.facebook.com/VGN1942/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className=" social-icon footer-content"><FaFacebookF /></a>
-                    <a href="https://www.instagram.com/vgnhomes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className=" social-icon footer-content"><FaInstagram /></a>
-                    <a href="https://www.youtube.com/c/VGNHomesPvtLtd" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className=" social-icon footer-content"><FaYoutube /></a>
-                    <a href="https://www.linkedin.com/company/vgn-homes-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className=" social-icon footer-content"><FaLinkedinIn /></a>
-                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a5266874a566b89:0x9ce8f00d9409709e?source=g.page.share" aria-label="Call" className=" social-icon footer-content"><FaMapMarkerAlt /></a>
-                    {/* <a href="https://wa.me/914443937979" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-white social-icon footer-content"><FaWhatsapp /></a> */}
+                    <a
+                      href="https://www.facebook.com/VGN1942/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="social-icon footer-content text-white"
+                    >
+                      <FaFacebookF />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/vgnhomes/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="social-icon footer-content text-white"
+                    >
+                      <FaInstagram />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/c/VGNHomesPvtLtd"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                      className="social-icon footer-content text-white"
+                    >
+                      <FaYoutube />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/vgn-homes-pvt-ltd/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="social-icon footer-content text-white"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+                    <a
+                      href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3a5266874a566b89:0x9ce8f00d9409709e?source=g.page.share"
+                      aria-label="Map"
+                      className="social-icon footer-content text-white"
+                    >
+                      <FaMapMarkerAlt />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -118,20 +224,46 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="text-center py-3 mt-4 border-top border-white border-opacity-25">
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-white small gap-2">
-          <p className="mb-0 footer-content text-whit">© 2025 VGN Homes - All Rights Reserved.</p>
-          <p className="mb-0 footer-content text-whit ">
-            Website Maintained by <strong>Ayatiworks</strong>
-            <img src="/web_logo.png" alt="Ayatiworks Logo" style={{ height: "40px", marginLeft: "10px" }} />
+      <div className="copyright-text">
+   <div className="">
+        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-white small gap-3 text-center text-md-start">
+          <p className="mb-0 footer-content">
+            © 2025 VGN Homes - All Rights Reserved.
           </p>
-          <p className="mb-0">
-            <a href="/privacy-policy" className="text-white footer-content text-decoration-none me-2">Privacy Policy</a>
+          <p className="mb-0 footer-content d-flex align-items-center justify-content-center">
+            Website Maintained by <strong className="ms-1">Ayatiworks</strong>
+            <a
+              href="https://ayatiworks.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ms-2"
+            >
+              <img
+                src="/web_logo.png"
+                alt="Ayatiworks Logo"
+                style={{ height: "40px" }}
+              />
+            </a>
+          </p>
+          <p className="mb-0 footer-content copy-txt2">
+            <a
+              href="/privacy-policy"
+              className="text-white text-decoration-none me-2"
+            >
+              Privacy Policy
+            </a>
             <span className="text-white">|</span>
-            <a href="/disclaimer" className="text-white footer-content text-decoration-none ms-2">Disclaimer</a>
+            <a
+              href="/disclaimer"
+              className="text-white text-decoration-none ms-2"
+            >
+              Disclaimer
+            </a>
           </p>
         </div>
       </div>
+      </div>
+   
     </footer>
   );
 }

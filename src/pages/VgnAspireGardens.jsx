@@ -9,6 +9,7 @@ export default function VgnAspireGardens() {
      <Banner />
      <EnquiryForm />
      <ExploreProjects />
+     
     </div>
   )
 }

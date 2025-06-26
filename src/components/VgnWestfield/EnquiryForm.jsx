@@ -97,6 +97,7 @@ import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import BrochureModal from "../Modal";
+import EnquiryFormHome from "../EnquiryForm";
 
 export default function EnquiryForm() {
   const [showModal, setShowModal] = useState(false);
@@ -253,144 +254,7 @@ export default function EnquiryForm() {
                     <div className="section-title8">
                       <h4>Enquiry Form</h4>
                     </div>
-
-                    <form
-                      onSubmit={handleSubmit(onSubmit)}
-                      className="review-form"
-                      style={{ marginTop: "20px" }}
-                    >
-                      {/* Name */}
-                      <div className="mb-3">
-                        <label className="form-label">Name*</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Name"
-                          maxLength="100"
-                          {...register("name", {
-                            required: "Name is required",
-                          })}
-                        />
-                        {errors.name && (
-                          <small className="text-danger">
-                            {errors.name.message}
-                          </small>
-                        )}
-                      </div>
-
-                      {/* Phone Number */}
-                      <div className="mb-3">
-                        <label className="form-label">Phone Number*</label>
-                        <PhoneInput
-                          country={"in"}
-                          inputProps={{
-                            name: "phone",
-                            required: true,
-                            className: "form-control",
-                          }}
-                          value={phone}
-                          onChange={(phone) =>
-                            setValue("phone", phone, { shouldValidate: true })
-                          }
-                          inputStyle={{ width: "100%" }}
-                        />
-                        {errors.phone && (
-                          <small className="text-danger">
-                            Phone number is required
-                          </small>
-                        )}
-                      </div>
-
-                      {/* Email */}
-                      <div className="mb-3">
-                        <label className="form-label">Email Id*</label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Email"
-                          maxLength="250"
-                          {...register("email", {
-                            required: "Email is required",
-                            pattern: {
-                              value: /^\S+@\S+$/i,
-                              message: "Invalid email format",
-                            },
-                          })}
-                        />
-                        {errors.email && (
-                          <small className="text-danger">
-                            {errors.email.message}
-                          </small>
-                        )}
-                      </div>
-
-                      {/* Location */}
-                      <div className="mb-3">
-                        <label className="form-label">Location*</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Location"
-                          maxLength="100"
-                          {...register("location", {
-                            required: "Location is required",
-                          })}
-                        />
-                        {errors.location && (
-                          <small className="text-danger">
-                            {errors.location.message}
-                          </small>
-                        )}
-                      </div>
-
-                      {/* Checkbox */}
-                      <div className="mb-3 form-check">
-                        <input
-                          type="checkbox"
-                          className="form-check-input"
-                          id="chkagree"
-                          {...register("agree", {
-                            required: "You must agree before submitting",
-                          })}
-                        />
-                        <label
-                          className="form-check-label form-label"
-                          htmlFor="chkagree"
-                        >
-                          I Agree to let VGN's representatives to contact me
-                        </label>
-                        {errors.agree && (
-                          <small className="text-danger">
-                            {errors.agree.message}
-                          </small>
-                        )}
-                      </div>
-
-                      {/* Submit */}
-                      <button
-                        type="submit"
-                        className="site-btn w-100"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? "Submitting..." : "Submit"}
-                      </button>
-
-                      {/* Message */}
-                      <div className="text-center mt-3">
-                        {isSubmitting && (
-                          <img
-                            src="img/sending.gif"
-                            alt="Sending"
-                            style={{ width: "40px" }}
-                          />
-                        )}
-                        {message && (
-                          <div className="text-success mt-2" id="msg">
-                            {message}
-                          </div>
-                        )}
-                      </div>
-                    </form>
+                    <EnquiryFormHome/>
                   </div>
                 </div>
               </div>
@@ -710,7 +574,7 @@ export default function EnquiryForm() {
 
               <div className="border-bottom my-3"></div>
               {/* Video Section */}
-              <div className="pd-widget" id="gallery">
+              {/* <div className="pd-widget" id="gallery">
                 <div className="section-title8">
                   <h4>Video</h4>
                 </div>
@@ -730,9 +594,9 @@ export default function EnquiryForm() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="border-bottom my-3"></div>
+              
               {/* About VGN */}
               <div className="pd-widget" id="about-vgn">
                 <div className="section-title8">

@@ -3,6 +3,7 @@ import WhyInvest from '../components/Nri/WhyInvest'
 import WhyChennai from '../components/Nri/WhyChennai'
 import Faq from '../components/Nri/Faq'
 import Form from '../components/Nri/Form'
+import BrandIconSection from '../components/BrandIconSection'
 
 
 export default function Channel() {
@@ -13,6 +14,7 @@ export default function Channel() {
             <WhyChennai />
             <Faq/>
             <Form />
+            <BrandIconSection/>
         </>
     )
    

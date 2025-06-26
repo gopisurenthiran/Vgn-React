@@ -4,6 +4,11 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ChannelEnquiry } from "../../services/ChannelService";
+
+
 import headBorder from "/head-border.png"; // adjust path if needed
 
 export default function ChannelForm() {
@@ -14,12 +19,45 @@ export default function ChannelForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form submitted:", data);
+const onSubmit = async (data) => {
+  // Map form fields to API payload format
+  const payload = {
+    name: data.name,
+    email: data.email,
+    mobile: data.phone,
+    company_name: data.company,
+    address: data.address,
+    org_type: data.orgType,
+    member_of_association: data.association || "",
+    type_of_bussiness: data.businessType,
+    rera: data.rera || "",
   };
 
+  try {
+    const result = await ChannelEnquiry(payload);
+
+    // Assuming result.ok or result.status can help determine success
+    if (result?.success || result?.status === 200) {
+      toast.success("✅ Form submitted successfully!", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+      reset(); // Clear form
+    } else {
+      throw new Error("API returned failure");
+    }
+
+  } catch (error) {
+    console.error("Submission error:", error);
+    toast.error("❌ Submission failed. Please try again.", {
+      position: "bottom-right",
+      autoClose: 3000,
+    });
+  }
+};
   return (
     <section className="contact-form-section spad py-5 bg">
+          <ToastContainer position="top-right" autoClose={3000} />
       <div className="container">
         <div className="custom-form-wrapper mx-auto p-4 p-md-5 bg-white shadow-sm">
           <div className="heading text-center mb-4">
@@ -203,21 +241,21 @@ export default function ChannelForm() {
               </Col>
 
               <Col lg={12} className="text-center mt-4">
-                <Button
-                  type="submit"
-                  className="site-btn"
-                  style={{
-                    border: "2px solid #b40000",
-                    color: "#b40000",
-                    borderRadius: "50px",
-                    padding: "10px 40px",
-                    fontWeight: "600",
-                    background: "transparent",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  SUBMIT
-                </Button>
+                 <button
+                    type="submit"
+                    className="site-btn5"
+                    id="btnsubmit"
+                    name="btnsubmit"
+                    style={{
+                      border: "2px solid #b40000",
+                     
+                      padding: "10px 40px",
+                      fontWeight: "600",
+                      
+                    }}
+                  >
+                    SUBMIT
+                  </button>
               </Col>
             </Row>
           </Form>

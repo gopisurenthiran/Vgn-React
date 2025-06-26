@@ -71,6 +71,7 @@ import advIcon2 from "@/assets/adv-icon2.png";
 import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
+import EnquiryFormHome from "../EnquiryForm";
 
 export default function EnquiryForm() {
   const [showModal, setShowModal] = useState(false);
@@ -241,113 +242,7 @@ export default function EnquiryForm() {
                     <div className="section-title1">
                       <h4>Enquiry Form</h4>
                     </div>
-
-                    <form
-                      onSubmit={handleSubmit}
-                      className="review-form"
-                      style={{ marginTop: "20px" }}
-                    >
-                      {/* Name */}
-                      <div className="mb-3">
-                        <label className="form-label">Name*</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Name"
-                          name="name"
-                          value={form.name}
-                          onChange={handleChange}
-                          maxLength="100"
-                        />
-                      </div>
-
-                      {/* Phone Number */}
-                      <div className="mb-3">
-                        <label className="form-label">Phone Number*</label>
-                        <PhoneInput
-                          country={"in"}
-                          value={form.phone}
-                          onChange={(phone) => setForm({ ...form, phone })}
-                          inputProps={{
-                            name: "phone",
-                            required: true,
-                            placeholder: "Phone Number",
-                            className: "form-control",
-                          }}
-                          inputStyle={{ width: "100%" }}
-                        />
-                      </div>
-
-                      {/* Email */}
-                      <div className="mb-3">
-                        <label className="form-label">Email Id*</label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Email"
-                          name="email"
-                          value={form.email}
-                          onChange={handleChange}
-                          maxLength="250"
-                        />
-                      </div>
-
-                      {/* Location */}
-                      <div className="mb-3">
-                        <label className="form-label">Location*</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Location"
-                          name="location"
-                          value={form.location}
-                          onChange={handleChange}
-                          maxLength="100"
-                        />
-                      </div>
-
-                      {/* Checkbox */}
-                      <div className="mb-3 form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="agree"
-                          id="chkagree"
-                          checked={form.agree}
-                          onChange={handleChange}
-                        />
-                        <label
-                          className="form-check-label form-label"
-                          htmlFor="chkagree"
-                        >
-                          I Agree to let VGN's representatives to contact me
-                        </label>
-                      </div>
-
-                      {/* Submit */}
-                      <button
-                        type="submit"
-                        className="site-btn w-100"
-                        disabled={loading}
-                      >
-                        {loading ? "Submitting..." : "Submit"}
-                      </button>
-
-                      <div className="text-center mt-3">
-                        {loading && (
-                          <img
-                            src="img/sending.gif"
-                            alt="Sending"
-                            style={{ width: "40px" }}
-                          />
-                        )}
-                        {message && (
-                          <div className="text-success mt-2" id="msg">
-                            {message}
-                          </div>
-                        )}
-                      </div>
-                    </form>
+                     <EnquiryFormHome/>
                   </div>
                 </div>
               </div>

@@ -69,11 +69,11 @@ export default function LocationAdvantages() {
   const [activeTab, setActiveTab] = useState("school");
 
   return (
-    <div className="pd-board pd-widget" id="advantages">
+    <div className="pd-board11 pd-widget" id="advantages">
       <div className="section-title9">
         <h4>Location Advantages</h4>
       </div>
-      <div className="tab-board">
+      <div className="tab-board11">
         <ul
           className="nav nav-tabs d-flex flex-wrap justify-content-start"
           role="tablist"

@@ -4,7 +4,10 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import headBorder from "/head-border.png"; // adjust path if needed
+import headBorder from "/head-border.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ContactEnquiry } from "../../services/ContactService";
 
 export default function ContactSupportForm() {
   const {
@@ -12,16 +15,40 @@ export default function ContactSupportForm() {
     handleSubmit,
     control,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
-    reset();
+  const onSubmit = async (data) => {
+    // Map form fields to API payload format
+    const payload = {
+      name: data.name,
+      email: data.email,
+      mobile: data.mobile, // or data.phone depending on your field name
+      message: data.message,
+    };
+
+    try {
+      const result = await ContactEnquiry(payload);
+
+      toast.success("Form submitted successfully!", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+
+      reset(); // Clear form after success
+    } catch (error) {
+      console.error("Submission error:", error);
+
+      toast.error("Submission failed. Please try again.", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+    }
   };
 
   return (
     <div className="cf-content p-4" style={{ boxShadow: 0, borderRadius: 0 }}>
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="heading mb-4">
         <h4>
           <span className="head-border">
@@ -38,6 +65,7 @@ export default function ContactSupportForm() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <Row className="gy-3">
+          {/* Name */}
           <Col lg={4}>
             <Form.Group controlId="name4">
               <Form.Control
@@ -52,17 +80,20 @@ export default function ContactSupportForm() {
             </Form.Group>
           </Col>
 
+          {/* Mobile */}
           <Col lg={4}>
-            <Form.Group controlId="phone4">
+            <Form.Group controlId="mobile4">
               <Controller
-                name="phone"
+                name="mobile"
                 control={control}
                 rules={{ required: "Phone number is required" }}
                 render={({ field }) => (
                   <PhoneInput
                     country={"in"}
                     value={field.value}
-                    onChange={(value) => field.onChange(value.replace(/^91/, ""))}
+                    onChange={(value) =>
+                      field.onChange(value.replace(/^91/, ""))
+                    }
                     disableCountryCode={true}
                     onlyCountries={["in"]}
                     enableSearch
@@ -75,19 +106,20 @@ export default function ContactSupportForm() {
                       paddingLeft: "58px",
                       border: "1px solid #ccc",
                       borderRadius: "4px",
-                      color: "#555"
+                      color: "#555",
                     }}
                     buttonStyle={{ border: "none", background: "transparent" }}
                     containerStyle={{ width: "100%" }}
                   />
                 )}
               />
-              {errors.phone && (
-                <div className="text-danger mt-1">{errors.phone.message}</div>
+              {errors.mobile && (
+                <div className="text-danger mt-1">{errors.mobile.message}</div>
               )}
             </Form.Group>
           </Col>
 
+          {/* Email */}
           <Col lg={4}>
             <Form.Group controlId="email4">
               <Form.Control
@@ -97,8 +129,8 @@ export default function ContactSupportForm() {
                   required: "Email is required",
                   pattern: {
                     value: /^\S+@\S+$/i,
-                    message: "Invalid email address"
-                  }
+                    message: "Invalid email address",
+                  },
                 })}
                 isInvalid={errors.email}
               />
@@ -108,6 +140,7 @@ export default function ContactSupportForm() {
             </Form.Group>
           </Col>
 
+          {/* Message */}
           <Col lg={12}>
             <Form.Group controlId="message4">
               <Form.Control
@@ -123,24 +156,21 @@ export default function ContactSupportForm() {
             </Form.Group>
           </Col>
 
+          {/* Submit */}
           <Col lg={12} className="text-center mt-3">
-            <Button
+            <button
               type="submit"
-              className="site-btn"
-              id="btnsubmit4"
-              name="btnsubmit4"
+              className="site-btn5"
+              id="btnsubmit"
+              name="btnsubmit"
               style={{
                 border: "2px solid #b40000",
-                color: "#b40000",
-                borderRadius: "50px",
                 padding: "10px 40px",
                 fontWeight: "600",
-                background: "transparent",
-                letterSpacing: "1px"
               }}
             >
-              Submit
-            </Button>
+              SUBMIT
+            </button>
 
             <div
               id="loader-icon4"

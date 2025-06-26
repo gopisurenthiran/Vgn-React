@@ -3,11 +3,11 @@ import { Tab, Nav } from 'react-bootstrap';
 
 const LocationAdvantages = () => {
   return (
-    <section className="pd-board pd-widget" id="advantage">
+    <section className="pd-board9 pd-widget" id="advantage">
       <div className="section-title7">
         <h4>Location Advantages</h4>
       </div>
-      <div className="tab-board">
+      <div className="tab-board9">
         <Tab.Container defaultActiveKey="school">
           <Nav variant="tabs" className="nav nav-tabs" role="tablist">
             <Nav.Item className="nav-item">
