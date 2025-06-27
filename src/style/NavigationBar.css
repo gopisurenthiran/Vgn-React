@@ -1,0 +1,91 @@
+/* Dropdown animation */
+.dropdown-menu {
+  animation: fadeIn 0.3s ease-in-out;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shared base styles */
+.navbar-nav .nav-link,
+.navbar-nav .dropdown-item {
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  background-color: transparent !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ===============================
+   Top-level nav link styles
+   =============================== */
+
+/* Hover effect for top-level menu items */
+.navbar-nav .nav-link:hover {
+  color: #b61217 !important;
+  border-bottom: 3px solid #b61217;
+  border-bottom-left-radius: 4px;
+}
+
+/* Active state for top-level menu */
+.navbar-nav .nav-link.active {
+  color: #b61217 !important;
+  font-weight: 600;
+  border-bottom: 3px solid #b61217;
+  border-bottom-left-radius: 4px;
+}
+
+/* ===============================
+   Dropdown menu styles
+   =============================== */
+
+.dropdown-menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect for dropdown items */
+.navbar-nav .dropdown-item:hover {
+  color: #b61217 !important;
+  border-left: 3px solid #b61217;
+  padding-left: calc(1rem - 3px);
+}
+
+/* Active dropdown item */
+.navbar-nav .dropdown-item.active {
+  color: #b61217 !important;
+  font-weight: 600;
+  border-left: 3px solid #b61217;
+  padding-left: calc(1rem - 3px);
+  background-color: transparent !important;
+}
+
+/* ==================  MOBILE NAV – link separators & sizing  ================== */
+@media (max-width: 991.98px) {              /* < 992 px = Bootstrap “lg” break */
+  /* All items inside the collapsed menu */
+  .navbar-nav .nav-link,
+  .navbar-nav .dropdown-item {
+    padding: 0.8rem 1rem;                  /* roomier tap targets            */
+    border-bottom: 1px solid #e9ecef;      /* light grey divider             */
+    font-size: 1.05rem;                    /* tweak to taste (≈ fs-6½)       */
+  }
+
+  /* Remove the divider from the very last item in any list */
+  .navbar-nav .nav-item:last-child > .nav-link,
+  .dropdown-menu .dropdown-item:last-child {
+    border-bottom: none;
+  }
+}

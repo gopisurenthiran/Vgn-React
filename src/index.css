@@ -27,9 +27,9 @@
   font-weight: 700;
   font-style: normal;
 }
-body {
+/* body {
   overflow-x: hidden;
-}
+} */
 html,
 body {
   height: 100%;
@@ -120,101 +120,6 @@ ol {
 .btn-accent:hover {
   background-color: #d97706;
 }
-
-
-/* Common header font */
-header, .navbar, .navbar-nav, .dropdown-menu {
-  font-family: "Mulish", sans-serif;
-  font-size: 12px;
-}
-
-/* Main nav link underline on hover */
-.navbar .nav-link.nav-underline:hover {
-  border-bottom: 2px solid #b4151a;
-  transition: border-bottom 0.3s ease;
-}
-
-/* Dropdown hover fix */
-.navbar .dropdown-menu {
-  margin-top: 20px;              /* Constant spacing */
-  transition: opacity 0.3s ease;
-  opacity: 0;
-  display: block;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.navbar .dropdown:hover > .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Dropdown menu base styles */
-.dropdown-menu {
-  background-color: #fff !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0;
-  margin-top: 0 !important; /* default */
-  transition: margin-top 0.3s ease;
-}
-
-/* On parent nav-item:hover, dropdown shows with margin-top 20px */
-/* .nav-item.dropdown:hover .dropdown-menu {
-  margin-top: 8px !important;
-} */
-
-/* Dropdown item hover left red bar */
-.dropdown-menu .dropdown-item {
-  border-left: 3px solid transparent;
-  transition: border-left 0.3s ease, background-color 0.3s ease;
-}
-
-.dropdown-menu .dropdown-item:hover {
-  border-left: 3px solid #b4151a;
-  background-color: #fff9f1 !important;
-  color: #000 !important;
-}
-
-
-/* Optional: animated underline effect on parent nav link */
-.nav-hover {
-  position: relative;
-}
-.nav-hover::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #b4151a;
-  transition: width 0.3s ease;
-}
-.nav-hover:hover::after {
-  width: 100%;
-}
-
-/* Active styles for current nav */
-.nav-link.active,
-.dropdown-item.active {
-  font-weight: bold;
-  color: #b4151a !important;
-}
-
-
-/* underline hover effect & active colouring already handled in JSX */
-.nav-link.nav-underline:hover { border-bottom: 2px solid #b4151a; }
-
-.dropdown-menu .dropdown-hover-item:hover {
-  border-left: 3px solid #b4151a;
-  background:#fff; color:#000;
-}
-
-.dropdown-menu { border:none!important; box-shadow:none!important; border-radius:0!important; padding:0; }
-
 
 
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";      // ⬅️ NEW
 import footerBg from "@/assets/footer-bg.png";
 import {
   FaFacebookF,
@@ -6,7 +7,6 @@ import {
   FaYoutube,
   FaLinkedinIn,
   FaMapMarkerAlt,
-  // FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -26,16 +26,16 @@ export default function Footer() {
           {/* Contact Section */}
           <div className="row text-start">
             <div className="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
-              <h5 className="fw-bold footer-heading mb-3">CONTACT US</h5>
+              <h5 className="fw-bold footer-heading mb-3">CONTACT&nbsp;US</h5>
               <address className="mb-2 footer-content">
-                <strong>VGN HOMES PRIVATE LIMITED</strong>
+                <strong>VGN&nbsp;HOMES&nbsp;PRIVATE&nbsp;LIMITED</strong>
                 <br />
-                No.333, Poonamallee High Road,
+                No.333, Poonamallee&nbsp;High&nbsp;Road,
                 <br />
-                Aminjikarai, Chennai – 600 030.
+                Aminjikarai,&nbsp;Chennai&nbsp;–&nbsp;600&nbsp;030.
               </address>
               <p className="mb-1 footer-content">
-                Email:{" "}
+                Email:&nbsp;
                 <a
                   href="mailto:info@vgngroup.org"
                   className="text-white text-decoration-none"
@@ -44,12 +44,12 @@ export default function Footer() {
                 </a>
               </p>
               <p className="footer-content">
-                Phone:{" "}
+                Phone:&nbsp;
                 <a
                   href="tel:+914443937979"
                   className="text-white text-decoration-none"
                 >
-                  +91 44 4393 7979
+                  +91&nbsp;44&nbsp;4393&nbsp;7979
                 </a>
               </p>
             </div>
@@ -64,114 +64,112 @@ export default function Footer() {
                   <h5 className="fw-bold footer-heading mb-3">PROJECTS</h5>
                   <ul className="list-unstyled footer-content mb-0">
                     <li>
-                      <a
-                        href="/ongoing-project"
+                      <Link
+                        to="/ongoing-project"
                         className="text-white text-decoration-none"
                       >
-                        Plots in Chennai
-                      </a>
+                        Plots&nbsp;in&nbsp;Chennai
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/vgn-pride/index"
+                      <Link
+                        to="/vgn-pride/index"
                         className="text-white text-decoration-none"
                       >
-                        Plots in OMR
-                      </a>
+                        Plots&nbsp;in&nbsp;OMR
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/vgn-classique/index"
+                      <Link
+                        to="/vgn-classique/index"
                         className="text-white text-decoration-none"
                       >
-                        Plots in Ambattur
-                      </a>
+                        Plots&nbsp;in&nbsp;Ambattur
+                      </Link>
                     </li>
                   </ul>
                 </div>
 
                 {/* Quick Links */}
                 <div className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                  <h5 className="fw-bold footer-heading mb-3">QUICK LINKS</h5>
+                  <h5 className="fw-bold footer-heading mb-3">QUICK&nbsp;LINKS</h5>
                   <ul className="list-unstyled footer-content mb-0">
                     <li>
-                      <a
-                        href="/channel-partner"
+                      <Link
+                        to="/channel-partner"
                         className="text-white text-decoration-none"
                       >
                         Partners
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/nri"
-                        className="text-white text-decoration-none"
-                      >
+                      <Link to="/nri" className="text-white text-decoration-none">
                         NRI
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/careers"
+                      <Link
+                        to="/careers"
                         className="text-white text-decoration-none"
                       >
                         Careers
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/irefer"
+                      <Link
+                        to="/irefer"
                         className="text-white text-decoration-none"
                       >
                         iRefer
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/contact"
+                      <Link
+                        to="/contact"
                         className="text-white text-decoration-none"
                       >
                         Contact
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
 
                 {/* Other Links */}
                 <div className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
-                  <h5 className="fw-bold footer-heading mb-3">OTHER LINKS</h5>
+                  <h5 className="fw-bold footer-heading mb-3">OTHER&nbsp;LINKS</h5>
                   <ul className="list-unstyled footer-content mb-0">
                     <li>
-                      <a
-                        href="/customer-support"
+                      <Link
+                        to="/customer-support"
                         className="text-white text-decoration-none"
                       >
-                        Customer Support
-                      </a>
+                        Customer&nbsp;Support
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/terms-and-conditions"
+                      <Link
+                        to="/terms-and-conditions"
                         className="text-white text-decoration-none"
                       >
-                        Terms and Conditions
-                      </a>
+                        Terms&nbsp;and&nbsp;Conditions
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/emi-calculator"
+                      <Link
+                        to="/emi-calculator"
                         className="text-white text-decoration-none"
                       >
-                        EMI Calculator
-                      </a>
+                        EMI&nbsp;Calculator
+                      </Link>
                     </li>
                   </ul>
                 </div>
 
                 {/* Social Icons */}
                 <div className="col-12 col-md-3 mt-4 mt-md-0">
-                  <h5 className="fw-bold footer-heading mb-3">GET IN TOUCH</h5>
+                  <h5 className="fw-bold footer-heading mb-3">GET&nbsp;IN&nbsp;TOUCH</h5>
                   <div className="d-flex flex-wrap gap-3 fs-5">
+                    {/* external links stay as <a> tags */}
                     <a
                       href="https://www.facebook.com/VGN1942/"
                       target="_blank"
@@ -225,45 +223,47 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="copyright-text">
-   <div className="">
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-white small gap-3 text-center text-md-start">
-          <p className="mb-0 footer-content">
-            © 2025 VGN Homes - All Rights Reserved.
-          </p>
-          <p className="mb-0 footer-content d-flex align-items-center justify-content-center">
-            Website Maintained by <strong className="ms-1">Ayatiworks</strong>
-            <a
-              href="https://ayatiworks.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ms-2"
-            >
-              <img
-                src="/web_logo.png"
-                alt="Ayatiworks Logo"
-                style={{ height: "40px" }}
-              />
-            </a>
-          </p>
-          <p className="mb-0 footer-content copy-txt2">
-            <a
-              href="/privacy-policy"
-              className="text-white text-decoration-none me-2"
-            >
-              Privacy Policy
-            </a>
-            <span className="text-white">|</span>
-            <a
-              href="/disclaimer"
-              className="text-white text-decoration-none ms-2"
-            >
-              Disclaimer
-            </a>
-          </p>
+        <div className="">
+          <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-white small gap-3 text-center text-md-start">
+            <p className="mb-0 footer-content">
+              ©&nbsp;2025&nbsp;VGN&nbsp;Homes&nbsp;-&nbsp;All&nbsp;Rights&nbsp;Reserved.
+            </p>
+
+            <p className="mb-0 footer-content d-flex align-items-center justify-content-center">
+              Website&nbsp;Maintained&nbsp;by&nbsp;
+              <strong className="ms-1">Ayatiworks</strong>
+              <a
+                href="https://ayatiworks.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ms-2"
+              >
+                <img
+                  src="/web_logo.png"
+                  alt="Ayatiworks Logo"
+                  style={{ height: "40px" }}
+                />
+              </a>
+            </p>
+
+            <p className="mb-0 footer-content copy-txt2">
+              <Link
+                to="/privacy-policy"
+                className="text-white text-decoration-none me-2"
+              >
+                Privacy&nbsp;Policy
+              </Link>
+              <span className="text-white">|</span>
+              <Link
+                to="/disclaimer"
+                className="text-white text-decoration-none ms-2"
+              >
+                Disclaimer
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
-      </div>
-   
     </footer>
   );
 }
