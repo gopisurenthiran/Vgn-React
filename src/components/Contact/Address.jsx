@@ -1,121 +1,73 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  FaClock,
-} from "react-icons/fa";
+  FaClock
+} from 'react-icons/fa';
+import '@/style/Address.css';            /* << move CSS block below into this file */
 
 export default function Address() {
   return (
-    <section className="contact-section">
-      <Container>
-        <Row>
-          <Col lg={6}>
-            <div className="contact-info mt-5">
-              <div className="ci-item">
-                <div className="ci-icon">
-                  <FaMapMarkerAlt />
-                </div>
-                <div className="ci-text">
-                  <h5>Address</h5>
-                  <p>
-                    <b>VGN HOMES PRIVATE LIMITED</b>
-                    <br />
-                    No.333, Poonamallee High Road,
-                    <br />
-                    Amaindakarai, Chennai – 600 030.
-                  </p>
-                </div>
-              </div>
+    <section className="contact-section py-5">
+      <Container fluid="lg">
+        <Row className="g-4">
+          {/* ---- contact panel ---- */}
+          <Col lg={5}>
+            <div className="contact-info shadow-sm p-4 h-100 bg-white">
+              <InfoItem icon={<FaMapMarkerAlt />} title="Address">
+                <strong>VGN HOMES PRIVATE LIMITED</strong><br />
+                No. 333, Poonamallee High Road,<br />
+                Amaindakarai, Chennai – 600 030.
+              </InfoItem>
 
-              <div className="ci-item">
-                <div className="ci-icon">
-                  <FaPhoneAlt />
-                </div>
-                <div className="ci-text">
-                  <h5>Phone Number</h5>
-                  <ul style={{
-                    padding: "0", listStyleType : "none"
-                  }}>
-                    <li>
-                      <a href="tel:+914443937979" style={{ color: "#000", textDecoration:"none" }}>
-                        +91 44 4393 7979
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <InfoItem icon={<FaPhoneAlt />} title="Phone">
+                <a href="tel:+914443937979" className="ci-link">
+                  +91 44 4393 7979
+                </a>
+              </InfoItem>
 
-              <div className="ci-item">
-                <div className="ci-icon">
-                  <FaEnvelope />
-                </div>
-                <div className="ci-text">
-                  <h5>Email Id</h5>
-                  <p>
-                    <a
-                      href="mailto:info@vgngroup.org"
-                      style={{ color: "#000", textDecoration:"none" }}
-                    >
-                      info@vgngroup.org
-                    </a>
-                  </p>
-                </div>
-              </div>
+              <InfoItem icon={<FaEnvelope />} title="Email">
+                <a href="mailto:info@vgngroup.org" className="ci-link">
+                  info@vgngroup.org
+                </a>
+              </InfoItem>
 
-              <div className="ci-item">
-                <div className="ci-icon">
-                  <FaClock
-                    style={{
-                      background: "#fff",
-                      color: "#b4151a",
-                      borderRadius: "107%",
-                      padding: "1px 2px",
-                    }}
-                  />
-                </div>
-                <div className="ci-text">
-                  <h5>Corporate Office</h5>
-                  <p>Monday to Saturday</p>
-                  <p>09.30 am to 06.30 pm</p>
-                </div>
-              </div>
+              <InfoItem icon={<FaClock />} title="Corporate Office">
+                Monday – Saturday<br />09:30 am – 06:30 pm
+              </InfoItem>
 
-              <div className="ci-item">
-                <div className="ci-icon">
-                  <FaClock
-                    style={{
-                      background: "#fff",
-                      color: "#b4151a",
-                      borderRadius: "107%",
-                      padding: "1px 2px",
-                    }}
-                  />
-                </div>
-                <div className="ci-text">
-                  <h5>Site Office</h5>
-                  <p>All Days</p>
-                  <p>09.30 am to 06.30 pm</p>
-                </div>
-              </div>
+              <InfoItem icon={<FaClock />} title="Site Office">
+                All Days<br />09:30 am – 06:30 pm
+              </InfoItem>
+            </div>
+          </Col>
+
+          {/* ---- map ---- */}
+          <Col lg={7}>
+            <div className="ratio ratio-16x9 h-100">
+              <iframe
+                title="VGN Homes Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.3867!2d80.22892!3d13.074658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266874a566b89%3A0x9ce8f00d9409709e!2sVGN%20Homes%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1647878072272"
+                allowFullScreen
+                loading="lazy"
+              />
             </div>
           </Col>
         </Row>
       </Container>
-
-      <div className="cs-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.3867498594955!2d80.22891971482308!3d13.074657990788367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266874a566b89%3A0x9ce8f00d9409709e!2sVGN%20Homes%20Pvt.%20Ltd%20%E2%98%91!5e0!3m2!1sen!2sin!4v1647878072272!5m2!1sen!2sin"
-          width="100%"
-          height="650"
-          style={{ border: "0" }}
-          allowFullScreen
-          loading="lazy"
-          title="VGN Homes Location"
-        ></iframe>
-      </div>
     </section>
   );
 }
+
+/* ---------- tiny helper ---------- */
+const InfoItem = ({ icon, title, children }) => (
+  <div className="d-flex mb-4 ci-item">
+    <div className="ci-icon me-3 flex-shrink-0">{icon}</div>
+    <div>
+      <h6 className="fw-semibold mb-1">{title}</h6>
+      <p className="mb-0 lh-sm">{children}</p>
+    </div>
+  </div>
+);

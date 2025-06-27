@@ -1,0 +1,22 @@
+/* variables for quick theming */
+:root{
+  --ci-red:#b4151a;
+  --ci-font: 'Mulish',sans-serif;
+  --ci-icon-size:18px;
+}
+
+.contact-section{font-family:var(--ci-font);font-size:14px;}
+.ci-item:last-child{margin-bottom:0;}
+
+.ci-icon{
+  color:var(--ci-red);
+  font-size:var(--ci-icon-size);
+  line-height:1;
+  margin-top:2px;
+}
+
+.ci-link{
+  color:#000;
+  text-decoration:none;
+}
+.ci-link:hover{color:var(--ci-red);text-decoration:underline;}

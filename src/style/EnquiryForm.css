@@ -1,0 +1,27 @@
+.enquiry-card{
+  max-width:380px;           /* roughly matches the screenshot width */
+  padding:32px 24px;
+  background:#fff;
+}
+
+.enquiry-title{
+  font-size:1.5rem;
+  font-weight:700;
+  position:relative;
+  padding-left:18px;
+}
+
+.enquiry-title::before{
+  content:'';
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:4px;
+  background:#7a0b15; /* deep red bar */
+}
+
+/* tweak react-phone-input to inherit bootstrap font + full width */
+.react-tel-input .form-control{
+  font-size:1rem!important;
+  height:calc(1.5em + .75rem + 2px)!important;
+  border-radius:.25rem!important;
+}

@@ -122,6 +122,102 @@ ol {
 }
 
 
+/* Common header font */
+header, .navbar, .navbar-nav, .dropdown-menu {
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+}
+
+/* Main nav link underline on hover */
+.navbar .nav-link.nav-underline:hover {
+  border-bottom: 2px solid #b4151a;
+  transition: border-bottom 0.3s ease;
+}
+
+/* Dropdown hover fix */
+.navbar .dropdown-menu {
+  margin-top: 20px;              /* Constant spacing */
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.navbar .dropdown:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Dropdown menu base styles */
+.dropdown-menu {
+  background-color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0;
+  margin-top: 0 !important; /* default */
+  transition: margin-top 0.3s ease;
+}
+
+/* On parent nav-item:hover, dropdown shows with margin-top 20px */
+/* .nav-item.dropdown:hover .dropdown-menu {
+  margin-top: 8px !important;
+} */
+
+/* Dropdown item hover left red bar */
+.dropdown-menu .dropdown-item {
+  border-left: 3px solid transparent;
+  transition: border-left 0.3s ease, background-color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  border-left: 3px solid #b4151a;
+  background-color: #fff9f1 !important;
+  color: #000 !important;
+}
+
+
+/* Optional: animated underline effect on parent nav link */
+.nav-hover {
+  position: relative;
+}
+.nav-hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #b4151a;
+  transition: width 0.3s ease;
+}
+.nav-hover:hover::after {
+  width: 100%;
+}
+
+/* Active styles for current nav */
+.nav-link.active,
+.dropdown-item.active {
+  font-weight: bold;
+  color: #b4151a !important;
+}
+
+
+/* underline hover effect & active colouring already handled in JSX */
+.nav-link.nav-underline:hover { border-bottom: 2px solid #b4151a; }
+
+.dropdown-menu .dropdown-hover-item:hover {
+  border-left: 3px solid #b4151a;
+  background:#fff; color:#000;
+}
+
+.dropdown-menu { border:none!important; box-shadow:none!important; border-radius:0!important; padding:0; }
+
+
+
+
 .footer-bg-overlay {
   background-image: url("/footer-bg.png"); /* Place your image in /public */
   background-repeat: no-repeat;
@@ -169,18 +265,18 @@ a:hover, a:focus {
     line-height: 35px;
     font-weight: 100;
 }
-.navbar{
+/* .navbar{
     font-family: "Mulish", sans-serif;
     font-size: 12px;
 }
-/* Custom hover for dropdown */
+
 .navbar-nav .dropdown:hover .dropdown-menu {
   display: block;
   margin-top: 0;
   font-family: "Mulish", sans-serif;
     font-size: 12px;
 
-}
+} */
 
 .fade-in {
   animation: fadeInDown 0.6s ease-in-out;
@@ -232,12 +328,12 @@ section {
 }
 
 /* Apply mulish-sans font to dropdown items */
-.navbar-nav .dropdown-menu,
+/* .navbar-nav .dropdown-menu,
 .navbar-nav .dropdown-menu .dropdown-item {
     font-family: "Mulish", sans-serif;
     font-size: 12px;
  
-}
+} */
 /* 1. Apply font style globally */
 .mulish-sans {
   font-family: 'Mulish', sans-serif;
@@ -246,7 +342,7 @@ section {
 
 
 
-.nav-item1 a:hover {
+/* .nav-item1 a:hover {
     text-decoration: underline !important;
     text-decoration-color: #bf151a !important;
     text-decoration-thickness: 2px !important;
@@ -255,7 +351,7 @@ section {
 }
 .navbar .dropdown-menu {
   z-index: 1100 !important;
-}
+} */
 
 .footer-a {
   color: #b61217;
@@ -278,7 +374,7 @@ section {
 }
 
 
-.hs-nav .nav-menu ul li .dropdown {
+/* .hs-nav .nav-menu ul li .dropdown {
     position: absolute;
     left: -30px;
     top: 80px;
@@ -291,7 +387,7 @@ section {
     visibility: hidden;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-}
+} */
 
 
 .hs-top .ht-widget {
@@ -1532,7 +1628,58 @@ select:hover {
   box-shadow: none;
 }
 
+/* .navbar-nav > .nav-item > .nav-link {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+.navbar-nav > .nav-item:not(:last-child) > .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #0d6efd; 
+  opacity: 0;
+  transition: opacity .25s;
+}
+.navbar-nav > .nav-item > .nav-link.active::after,
+.navbar-nav > .nav-item > .nav-link:hover::after {
+  opacity: 1;
+} */
 
+
+/* Scrollbar styling for WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;              /* Width of vertical scrollbar */
+  height: 8px;             /* Height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;     /* Background of scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b61217;     /* Thumb color */
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a30f13;     /* Darker on hover */
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;               /* "auto" or "thin" */
+  scrollbar-color: #b61217 #f1f1f1;    /* thumb and track */
+}
+
+
+.head-border img {
+  width: 40px;
+  margin-bottom: 6px;
+}
 
 
 
