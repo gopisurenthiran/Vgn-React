@@ -1,0 +1,47 @@
+/* Root wrapper */
+.subnav-wrapper {
+  position: fixed;
+  inset: 0 auto auto 0;       /* top‑left */
+  right: 0;
+  z-index: 1100;
+  background: #f4e7d3;
+  border-bottom: 1px solid #d9c9b7;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+}
+
+/* Inner bar */
+.subnav-inner {
+  padding: 0.5rem 1rem;
+}
+
+/* Shared link styling */
+.nav-link {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #212529;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #b91011;
+}
+
+/* MOBILE drawer */
+.subnav-mobile {
+  background: #f4e7d3;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.subnav-mobile.show {
+  max-height: 500px;  /* plenty to reveal all items */
+}
+
+.subnav-mobile .nav-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid #e5d7c7;
+}

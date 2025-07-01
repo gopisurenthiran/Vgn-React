@@ -1,0 +1,179 @@
+/*──────────────────────────────────────────
+  TOP RED INFO STRIP
+──────────────────────────────────────────*/
+
+/*──────────────────────────────────────────
+  GLOBAL FONT FAMILY + SIZE
+──────────────────────────────────────────*/
+.vgn-top-strip, .vgn-navbar, .vgn-offcanvas,
+.vgn-navbar .nav-link, .vgn-navbar .dropdown-toggle,
+.vgn-offcanvas .nav-link, .vgn-offcanvas .dropdown-toggle,
+.dropdown-item {
+  font-family: 'Mulish', sans-serif;
+  font-size: 12px;
+}
+
+
+.vgn-top-strip{
+  background:#b91011;
+  color:#fff;
+  font-size:.875rem;
+}
+
+/*──────────────────────────────────────────
+  NAVBAR (no shadow / border)
+──────────────────────────────────────────*/
+.vgn-navbar{
+  background:#fff9f1;
+  border-bottom:none;
+  box-shadow:none;
+}
+
+/*──────────────────────────────────────────
+  LINKS & TOGGLES (desktop + drawer)
+──────────────────────────────────────────*/
+.vgn-navbar .nav-link,
+.vgn-navbar .dropdown-toggle,
+.vgn-offcanvas .nav-link,
+.vgn-offcanvas .dropdown-toggle{
+  position:relative;
+  padding:1.25rem 1rem;
+  letter-spacing:.5px;
+  color:#212529;
+  transition:color .25s;
+}
+
+.vgn-navbar .nav-link:hover,
+.vgn-navbar .dropdown-toggle:hover,
+.vgn-offcanvas .nav-link:hover,
+.vgn-offcanvas .dropdown-toggle:hover,
+.vgn-navbar .nav-link.active,
+.vgn-offcanvas .nav-link.active{
+  color:#b91011;
+}
+
+/* plain link underline */
+.vgn-navbar .nav-link:not(.dropdown-toggle)::after,
+.vgn-offcanvas .nav-link:not(.dropdown-toggle)::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;
+  width:100%;height:3px;
+  background:#b91011;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s;
+}
+.vgn-navbar .nav-link:not(.dropdown-toggle):hover::after,
+.vgn-navbar .nav-link:not(.dropdown-toggle).active::after,
+.vgn-offcanvas .nav-link:not(.dropdown-toggle):hover::after,
+.vgn-offcanvas .nav-link:not(.dropdown-toggle).active::after{
+  transform:scaleX(1);
+}
+
+/* dropdown toggle caret + underline */
+.vgn-navbar .dropdown-toggle::after,
+.vgn-offcanvas .dropdown-toggle::after{
+  display:inline-block;margin-left:.255em;vertical-align:.255em;
+  content:"";border-top:.35em solid;
+  border-right:.35em solid transparent;border-left:.35em solid transparent;
+}
+.vgn-navbar .dropdown-toggle::before,
+.vgn-offcanvas .dropdown-toggle::before{
+  content:"";position:absolute;bottom:0;left:0;
+  width:100%;height:3px;background:#b91011;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .25s;
+}
+.vgn-navbar .dropdown-toggle:hover::before,
+.vgn-navbar .dropdown-toggle.show::before,
+.vgn-offcanvas .dropdown-toggle:hover::before,
+.vgn-offcanvas .dropdown-toggle.show::before{
+  transform:scaleX(1);
+}
+
+/*──────────────────────────────────────────
+  DROPDOWN MENU (desktop)
+──────────────────────────────────────────*/
+.dropdown-menu{
+  border:none;border-radius:0;padding:.5rem 0;box-shadow:none;
+}
+.dropdown-item{
+  position:relative;padding:.55rem 1.5rem .55rem 1rem;
+  font-size:.9375rem;transition:all .2s;
+}
+.dropdown-item::before{
+  content:"";position:absolute;top:0;left:0;
+  width:4px;height:100%;background:transparent;transition:background .2s;
+}
+.dropdown-item:hover,
+.dropdown-item:focus{background:#faf6f0;color:#b91011;}
+.dropdown-item:hover::before,
+.dropdown-item:focus::before{background:#b91011;}
+
+/*──────────────────────────────────────────
+  OFFCANVAS
+──────────────────────────────────────────*/
+.vgn-offcanvas{background:#fcf8f3;width:260px;}
+.vgn-offcanvas .offcanvas-header{border-bottom:none;}
+.vgn-offcanvas .dropdown-menu{display:block;margin:0;padding-left:.5rem;position:static;float:none;box-shadow:none;}
+.drawer-parent{opacity:.8;cursor:default;}
+.vgn-offcanvas .ps-4{padding-left:1.5rem!important;}
+
+/*──────────────────────────────────────────
+  MOBILE padding tweak
+──────────────────────────────────────────*/
+/* @media(max-width:991.98px){
+  .vgn-navbar .nav-link,
+  .vgn-navbar .dropdown-toggle{padding:.75rem 1rem;}
+} */
+
+/*──────────────────────────────────────────
+  MOBILE drawer – tighter padding
+──────────────────────────────────────────*/
+@media (max-width: 991.98px) {
+  /* links & toggles inside the off‑canvas */
+  .vgn-offcanvas .nav-link,
+  .vgn-offcanvas .dropdown-toggle {
+    padding: 0.5rem 1rem;        /* ↓ from 1.25rem */
+  }
+
+  /* accordion parent labels (About Us, Projects, …) */
+  .drawer-parent {
+    padding: 0.75rem 1rem;       /* ↓ from 1rem 1rem */
+  }
+
+  /* child links that use .ps-4 helper */
+  .vgn-offcanvas .ps-4 {
+    padding-left: 1.25rem !important; /* a little tighter than 1.5rem */
+  }
+}
+
+/* parent labels inside drawer */
+.drawer-parent {
+  opacity: .85;
+  cursor: pointer;
+  user-select: none;
+  padding: 1rem 1rem;
+}
+
+/* chevron icon spacing */
+.drawer-parent .bi {
+  font-size: .9rem;
+}
+
+/* children indent */
+.vgn-offcanvas .ps-4 {
+  padding-left: 1.5rem !important;
+}
+
+/* mobile drawer accordion styling */
+
+
+.drawer-parent:hover {
+  background: #f2ede6;
+}
+
+.drawer-parent i {
+  font-size: 0.9rem;
+}

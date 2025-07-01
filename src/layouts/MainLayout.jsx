@@ -4,14 +4,15 @@ import ScrollToTop from "@/components/ScrollToTop";
 import BrandIconSection from '../components/BrandIconSection';
 import ToTopContact from '../components/ToTop';
 import NavigationBar from '../components/Header';
+import Navigation from '../components/NavigationBar';
 
 export default function MainLayout() {
   return (
     <div className="d-flex flex-column min-vh-100 w-100">
       <ScrollToTop />
       {/* Full-width Header */}
-      <NavigationBar />
-
+      {/* <NavigationBar /> */}
+      <Navigation />
       {/* Main content with no container constraint */}
       <main className="flex-fill w-100">
         
