@@ -91,14 +91,11 @@ export default function EnquiryForm() {
     "Lawn",
   ];
 
-    const videoUrls = [
+  const videoUrls = [
     "https://www.youtube.com/embed/rq2E2fFO3S0?si=uhfJm4fsV-xj-dM1",
     "https://www.youtube.com/embed/vW_gpf5caGE?si=TNIN-Di8dOH5Ex4b",
     "https://www.youtube.com/embed/qPFqtiedfb0?si=ZLkuQMeJ5_PrxM1T",
-    
   ];
-
-
 
   const {
     register,
@@ -115,7 +112,7 @@ export default function EnquiryForm() {
     setMessage("Form submitted successfully!");
   };
 
-    const phone = watch("phone");
+  const phone = watch("phone");
 
   return (
     <section className="property-details-section">
@@ -132,7 +129,7 @@ export default function EnquiryForm() {
                     <div className="section-title3">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -154,12 +151,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={highlandmobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={highlandmobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -319,8 +318,6 @@ export default function EnquiryForm() {
                   title="VGN Grandeur Location Map"
                 ></iframe>
               </div>
-
-             
 
               <div className="border-btm"></div>
               {/* About VGN */}

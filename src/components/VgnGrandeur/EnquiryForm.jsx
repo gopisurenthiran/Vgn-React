@@ -167,7 +167,7 @@ export default function EnquiryForm() {
                     <div className="section-title">
                       <h4>Enquiry Form</h4>
                     </div>
-                  <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -189,12 +189,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={grandeurmobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={grandeurmobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}

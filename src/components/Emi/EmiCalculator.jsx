@@ -126,45 +126,53 @@ export default function EmiCalculator() {
             </div>
 
             {/* Term */}
-            <div className="mb-4">
-              <div className="row align-items-center mb-1">
-                <label className="col-md-5 col-form-label text-danger fw-semibold">
-                  Term ({isYear ? "Years" : "Months"})*
-                </label>
-                <div className="col-md-7">
-                  <div className="input-group">
-                    <input
-                      type="number"
-                      value={term}
-                      onChange={(e) => setTerm(Number(e.target.value))}
-                      className="form-control"
-                    />
-                    <button
-                      type="button"
-                      className={`btn ${isYear ? "btn-danger" : "btn-outline-danger"}`}
-                      onClick={() => setIsYear(true)}
-                    >
-                      Yr
-                    </button>
-                    <button
-                      type="button"
-                      className={`btn ms-2 ${!isYear ? "btn-danger" : "btn-outline-danger"}`}
-                      onClick={() => setIsYear(false)}
-                    >
-                      Mo
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <input
-                type="range"
-                min="1"
-                max={isYear ? 30 : 360}
-                value={term}
-                onChange={(e) => setTerm(Number(e.target.value))}
-                className="form-range range-sm red-range term"
-              />
-            </div>
+           <div className="mb-4">
+  <div className="row align-items-start align-items-md-center mb-2">
+    {/* Label */}
+    <label className="col-12 col-md-5 col-form-label text-danger fw-semibold mb-2 mb-md-0">
+      Term ({isYear ? "Years" : "Months"})<span className="text-danger">*</span>
+    </label>
+
+    {/* Input + Buttons */}
+    <div className="col-12 col-md-7">
+      <div className="d-flex flex-column flex-sm-row gap-2">
+        <input
+          type="number"
+          value={term}
+          onChange={(e) => setTerm(Number(e.target.value))}
+          className="form-control"
+        />
+        <div className="d-flex gap-2">
+          <button
+            type="button"
+            className={`btn ${isYear ? "btn-danger" : "btn-outline-danger"}`}
+            onClick={() => setIsYear(true)}
+          >
+            Yr
+          </button>
+          <button
+            type="button"
+            className={`btn ${!isYear ? "btn-danger" : "btn-outline-danger"}`}
+            onClick={() => setIsYear(false)}
+          >
+            Mo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Range Slider */}
+  <input
+    type="range"
+    min="1"
+    max={isYear ? 30 : 360}
+    value={term}
+    onChange={(e) => setTerm(Number(e.target.value))}
+    className="form-range range-sm red-range term"
+  />
+</div>
+
           </div>
 
           {/* Vertical Divider */}

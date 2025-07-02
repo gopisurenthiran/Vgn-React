@@ -212,7 +212,6 @@ footer{
 }
 
 .social-icon:hover {
-  background-color: #fff;
   color: #b61217;
   transform: scale(1.05);
 }
@@ -1155,8 +1154,9 @@ select {
     right: 20px;
     transition: 0.2s;
 }
+/* When active, show minus (−) instead of rotated plus */
 .question.active::after {
-    transform: rotate(45deg);
+  content: "\2212" !important; /* Unicode for minus (−) */
 }
 .answer {
     padding: 0 20px 20px;
@@ -1498,40 +1498,48 @@ select:focus {
 select:hover {
   border-color: #b4151a !important;
 }
-
 .custom-check {
-  width: 30px;
-  height: 24px;
+  width: 20px;                         /* Mobile-friendly size */
+  height: 20px;
   border: 2px solid #b4151a;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: #fff;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in-out;
+  flex-shrink: 0;                      /* Prevents shrinking inside flex */
 }
 
-.custom-check:checked {
-  background-color: #b4151a;
-  border-color: #b4151a;
-}
-
+/* Checkmark style */
 .custom-check:checked::after {
-  content: "✔";
-  color: #fff !important;
-  font-size: 14px;
-  font-weight: bold;
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 3px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid #b4151a;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
+/* Hover/focus interaction */
+.custom-check:hover,
 .custom-check:focus {
+  border-color: #861010;
   outline: none;
-  box-shadow: none;
 }
+
+/* Increase size slightly on tablets/desktops */
+@media (min-width: 768px) {
+  .custom-check {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 
 /* .navbar-nav > .nav-item > .nav-link {
   padding-top: 1rem;
@@ -1586,5 +1594,41 @@ select:hover {
   margin-bottom: 6px;
 }
 
+/* Remove outline and box-shadow on hover, focus, click */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Optional: Only remove for mouse, keep for keyboard users */
+.navbar-toggler:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 
+
+
+.cc-form input::placeholder,
+.cc-form textarea::placeholder,
+.cc-form select {
+  font-size: 14px;
+  color: #6c757d; /* Bootstrap's default placeholder color */
+  font-weight: 400;
+}
+
+.cc-form input,
+.cc-form textarea,
+.cc-form select {
+  font-size: 14px;
+  padding: 10px 12px;
+  height: 45px;
+}
+.cc-form textarea {
+  height: auto;
+}
+.cc-form select.form-select {
+  height: 45px;
+}

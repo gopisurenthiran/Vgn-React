@@ -17,39 +17,41 @@ export default function PartnerWithUs() {
     reset,
   } = useForm();
 
- const onSubmit = async (data) => {
-  // Map form fields to API payload format
-  const payload = {
-    name: data.name,
-    email: data.email,
-    mobile: data.phone, // Assuming the form uses "phone"
-    project: data.project,
-    message: data.message,
+  const onSubmit = async (data) => {
+    // Map form fields to API payload format
+    const payload = {
+      name: data.name,
+      email: data.email,
+      mobile: data.phone, // Assuming the form uses "phone"
+      project: data.project,
+      message: data.message,
+    };
+
+    try {
+      const result = await CustomerEnquiry(payload);
+
+      toast.success("Form submitted successfully!", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+
+      reset(); // Clear form after success
+    } catch (error) {
+      console.error("Submission error:", error);
+
+      toast.error("Submission failed. Please try again.", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+    }
   };
 
-  try {
-    const result = await CustomerEnquiry(payload);
-
-    toast.success("Form submitted successfully!", {
-      position: "bottom-right",
-      autoClose: 3000,
-    });
-
-    reset(); // Clear form after success
-  } catch (error) {
-    console.error("Submission error:", error);
-
-    toast.error("Submission failed. Please try again.", {
-      position: "bottom-right",
-      autoClose: 3000,
-    });
-  }
-};
-
-
   return (
-    <section className="contact-form-section spad bg" style={{ padding: "60px 0" }}>
-            <ToastContainer position="top-right" autoClose={3000} />
+    <section
+      className="contact-form-section spad bg"
+      style={{ padding: "60px 0" }}
+    >
+      <ToastContainer position="top-right" autoClose={3000} />
       <Container>
         <div className="row justify-content-center">
           <div className="col-lg-8">
@@ -58,7 +60,7 @@ export default function PartnerWithUs() {
                 <span className="head-border">
                   <img src={headBorder} alt="head-border" />
                 </span>
-                WE'RE ALL EARS
+                WE Hear
               </h4>
               <p className="mt-3">
                 Queries, suggestions, assistance, be it anything you’d like to
@@ -69,7 +71,10 @@ export default function PartnerWithUs() {
 
             <Form
               className="cc-form p-4"
-              style={{ background: "#fff", boxShadow: "0 0 20px rgba(0,0,0,0.05)" }}
+              style={{
+                background: "#fff",
+                boxShadow: "0 0 20px rgba(0,0,0,0.05)",
+              }}
               onSubmit={handleSubmit(onSubmit)}
             >
               <div className="row gy-3">
@@ -79,7 +84,9 @@ export default function PartnerWithUs() {
                     placeholder="Name*"
                     {...register("name", { required: "Name is required" })}
                   />
-                  {errors.name && <small className="text-danger">{errors.name.message}</small>}
+                  {errors.name && (
+                    <small className="text-danger">{errors.name.message}</small>
+                  )}
                 </div>
 
                 <div className="col-lg-6">
@@ -92,9 +99,10 @@ export default function PartnerWithUs() {
                         {...field}
                         country={"in"}
                         value={field.value}
-                        onChange={(value) => field.onChange(value.replace(/^91/, ""))}
+                        onChange={(value) =>
+                          field.onChange(value.replace(/^91/, ""))
+                        }
                         disableCountryCode
-                        onlyCountries={["in"]}
                         enableSearch
                         placeholder="Phone Number*"
                         inputProps={{ required: true }}
@@ -117,7 +125,11 @@ export default function PartnerWithUs() {
                       />
                     )}
                   />
-                  {errors.phone && <small className="text-danger">{errors.phone.message}</small>}
+                  {errors.phone && (
+                    <small className="text-danger">
+                      {errors.phone.message}
+                    </small>
+                  )}
                 </div>
 
                 <div className="col-lg-6">
@@ -132,16 +144,53 @@ export default function PartnerWithUs() {
                       },
                     })}
                   />
-                  {errors.email && <small className="text-danger">{errors.email.message}</small>}
+                  {errors.email && (
+                    <small className="text-danger">
+                      {errors.email.message}
+                    </small>
+                  )}
                 </div>
 
-                <div className="col-lg-6">
-                  <Form.Control
-                    type="text"
-                    placeholder="Project*"
-                    {...register("project", { required: "Project name is required" })}
-                  />
-                  {errors.project && <small className="text-danger">{errors.project.message}</small>}
+                <div className="col-md-6">
+                  <select
+                    className={`form-select ${
+                      errors.project ? "is-invalid" : ""
+                    }`}
+                    {...register("project", {
+                      required: "Please select a project",
+                    })}
+                  >
+                    <option value="">Select Projects*</option>
+                    {[
+                      "Grandeur",
+                      "Aspire Gardens",
+                      "Pride de' Villa",
+                      "Highland",
+                      "Horizon",
+                      "Classique",
+                      "Serene",
+                      "Pride",
+                      "Brillianze Phase II",
+                      "Westfield",
+                      "Mahalakshmi nagar Phase XIV",
+                      "CH40",
+                      "Mugavari Phase II",
+                      "Windsor Park Phase IV - 1G",
+                      "Southern Meadows",
+                      "Exotica",
+                      "Varnabhoomi Phase II",
+                      "Windsor Park Phase VII",
+                    ].map((proj) => (
+                      <option key={proj} value={proj}>
+                        VGN {proj}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.project && (
+                    <div className="invalid-feedback">
+                      {errors.project.message}
+                    </div>
+                  )}
                 </div>
 
                 <div className="col-lg-12">
@@ -149,9 +198,15 @@ export default function PartnerWithUs() {
                     rows="4"
                     placeholder="Message*"
                     className="form-control"
-                    {...register("message", { required: "Message is required" })}
+                    {...register("message", {
+                      required: "Message is required",
+                    })}
                   ></textarea>
-                  {errors.message && <small className="text-danger">{errors.message.message}</small>}
+                  {errors.message && (
+                    <small className="text-danger">
+                      {errors.message.message}
+                    </small>
+                  )}
                 </div>
 
                 <div className="col-lg-12 text-center mt-4">
@@ -161,11 +216,9 @@ export default function PartnerWithUs() {
                     id="btnsubmit"
                     name="btnsubmit"
                     style={{
-                      
                       borderRadius: "50px",
                       padding: "10px 40px",
                       fontWeight: "600",
-                     
                     }}
                   >
                     SUBMIT

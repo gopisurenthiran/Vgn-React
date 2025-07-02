@@ -121,14 +121,6 @@ const completedProjects = [
     year: "2024",
   },
   {
-    image: img65,
-    name: "VGN Exotica",
-    size: "12 Premium Signature Homes",
-    type: "Flats",
-    location: "Velappanchavadi, Chennai.",
-    year: "2024",
-  },
-  {
     image: img64,
     name: "VGN Santhosh Nagar",
     size: "1030 Sq.Ft.",

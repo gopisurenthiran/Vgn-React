@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "@/assets/logo.svg";
 import { BiMenu } from "react-icons/bi";
-import "./subnav.css";         // ✅ corrected filename
+import "./subnav.css"; // ✅ corrected filename
 
 export default function SubNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function SubNav() {
   }, [isOpen]);
 
   const toggle = () => setIsOpen(!isOpen);
-  const close  = () => setIsOpen(false);
+  const close = () => setIsOpen(false);
 
   return (
     <header className="subnav-wrapper">
@@ -40,15 +40,17 @@ export default function SubNav() {
         </nav>
 
         {/* Mobile hamburger */}
-        <button
-          className="btn d-md-none"
-          aria-label="Toggle navigation"
-          aria-expanded={isOpen}
-          aria-controls="mobile-nav"
-          onClick={toggle}
-        >
-          <BiMenu size={28} />
-        </button>
+        <div className="d-flex justify-content-end d-md-none">
+          <button
+            className="btn"
+            aria-label="Toggle navigation"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            onClick={toggle}
+          >
+            <BiMenu size={28} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile drawer */}

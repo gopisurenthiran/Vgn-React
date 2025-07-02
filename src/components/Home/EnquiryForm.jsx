@@ -86,7 +86,7 @@ export default function EnquiryForm() {
                     value={field.value}
                     onChange={field.onChange}
                     disableCountryCode
-                    onlyCountries={["in"]}
+                    
                     enableSearch
                     placeholder="Phone Number*"
                     inputProps={{ name: "mobile", required: true }}
@@ -184,7 +184,7 @@ export default function EnquiryForm() {
             )}
           </div>
           <div className="row  align-items-start mb-3 gx-4">
-            <div className="col-auto d-flex">
+            <div className="col-auto d-flex align-items-start">
               <input
                 type="checkbox"
                 id="consent"

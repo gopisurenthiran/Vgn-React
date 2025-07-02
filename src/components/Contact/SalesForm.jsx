@@ -86,7 +86,6 @@ const onSubmit = async (data) => {
                       value={field.value}
                       onChange={(value) => field.onChange(value.replace(/^91/, ""))}
                       disableCountryCode
-                      onlyCountries={["in"]}
                       enableSearch
                       placeholder="Phone Number*"
                       inputProps={{ name: "phone", required: true }}

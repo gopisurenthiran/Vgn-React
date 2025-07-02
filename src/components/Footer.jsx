@@ -87,6 +87,30 @@ export default function Footer() {
                         Plots&nbsp;in&nbsp;Ambattur
                       </Link>
                     </li>
+                        <li>
+                      <Link
+                        to="/ongoing-project"
+                        className="text-white text-decoration-none"
+                      >
+                        Villas in Avadi
+                      </Link>
+                    </li>
+                        <li>
+                      <Link
+                        to="/vgn-paradise/index"
+                        className="text-white text-decoration-none"
+                      >
+                        Plots in Thiruvottriyur
+                      </Link>
+                    </li>
+                        <li>
+                      <Link
+                        to="#"
+                        className="text-white text-decoration-none"
+                      >
+                        Villas in OMR
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 

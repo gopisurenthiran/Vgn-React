@@ -6,14 +6,10 @@ import { useForm } from "react-hook-form";
 import "react-phone-input-2/lib/bootstrap.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapMarkerAlt,
- 
-} from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaClipboard, FaDownload, FaHome } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-
 
 import aspire from "@/assets/vgn-samudra/main-logo.png";
 import aspiremobile from "@/assets/vgn-samudra/logo1.png";
@@ -23,9 +19,6 @@ import icon2 from "@/assets/vgn-samudra/2.png";
 import icon3 from "@/assets/vgn-samudra/3.png";
 import icon4 from "@/assets/vgn-samudra/4.png";
 
-
-
-
 import mapImage from "@/assets/vgn-windsorpark/location-map.png";
 
 import advIcon1 from "@/assets/adv-icon1.png";
@@ -34,7 +27,6 @@ import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
-
 
 export default function EnquiryForm() {
   const features = [
@@ -54,7 +46,6 @@ export default function EnquiryForm() {
       icon: icon4,
       title: "Avenue trees",
     },
-    
   ];
 
   const [showModal, setShowModal] = useState(false);
@@ -102,7 +93,6 @@ export default function EnquiryForm() {
     },
   ];
 
- 
   const {
     register,
     handleSubmit,
@@ -135,7 +125,7 @@ export default function EnquiryForm() {
                     <div className="section-title12">
                       <h4>Enquiry Form</h4>
                     </div>
-                     <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -157,12 +147,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={aspiremobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={aspiremobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -186,11 +178,9 @@ export default function EnquiryForm() {
                       <FaClipboard
                         style={{ color: "#d90005", marginRight: "6px" }}
                       />
-                     RERA: TN/01/Layout/0426/2021
+                      RERA: TN/01/Layout/0426/2021
                     </p>
-                    
                   </div>
-                 
                 </div>
               </div>
               <div className="border-bottom my-3"></div>
@@ -207,10 +197,21 @@ export default function EnquiryForm() {
                 </div>
 
                 <p style={{ textAlign: "justify" }}>
-                 VGN Samudra, in Thiruneermalai, is a premium plotted development of 48 plots spread across 1.88 acres. Located just 200 metres from Maharishi Vidya Mandir School and 600 metres from Shri Ranganathar Swamy Temple, the project offers great connectivity, along with easy access to the 400ft outer ring road that connects Vandalur and also Minjur.
+                  VGN Samudra, in Thiruneermalai, is a premium plotted
+                  development of 48 plots spread across 1.88 acres. Located just
+                  200 metres from Maharishi Vidya Mandir School and 600 metres
+                  from Shri Ranganathar Swamy Temple, the project offers great
+                  connectivity, along with easy access to the 400ft outer ring
+                  road that connects Vandalur and also Minjur.
                 </p>
                 <p style={{ textAlign: "justify" }}>
-                 The Location is also close to Thirumudivakkam, an industrial estate which has 350+ companies. These ready-to-build plots are complete with essential and green amenities like elevated blacktop roads and avenue trees, with plenty of educational institutions, hospitals, workplaces, and major neighborhoods like Tambaram, Pallavaram and Chrompet nearby, this is a great investment for your growth as well as your home.
+                  The Location is also close to Thirumudivakkam, an industrial
+                  estate which has 350+ companies. These ready-to-build plots
+                  are complete with essential and green amenities like elevated
+                  blacktop roads and avenue trees, with plenty of educational
+                  institutions, hospitals, workplaces, and major neighborhoods
+                  like Tambaram, Pallavaram and Chrompet nearby, this is a great
+                  investment for your growth as well as your home.
                 </p>
               </div>
 
@@ -285,7 +286,6 @@ export default function EnquiryForm() {
 
               <div className="border-bottom my-3"></div>
 
-              
               {/* About VGN */}
               <div className="pd-widget" id="about-vgn">
                 <div className="section-title12">

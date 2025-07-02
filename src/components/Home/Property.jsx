@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 
 import VGNParadise from "@/assets/ongoing/project23.jpg";
 import VGNGranduer from "@/assets/ongoing/project36.jpg";
-import VGNHighland from "@/assets/ongoing/project23.jpg";
-import VGNAspireGardens from "@/assets/ongoing/project34.jpg";
-import VGNPridedeVilla from "@/assets/ongoing/project35.jpg";
-import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
+import VGNHighland from "@/assets/ongoing/project31.jpg";
+import VGNAspireGardens from "@/assets/ongoing/project35.jpg";
+import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
+
 import VGNClassique from "@/assets/ongoing/project24.jpg";
 
 const properties = [
@@ -36,8 +36,20 @@ const properties = [
     btnText: "VIEW MORE",
     link: "/vgn-grandeur/index",
   },
+   {
+    title: "Heritage Springz",
+    image: "/heritage.jpg",
+    isNew: true,
+    location: "Ottiyambakkam, Chennai.",
+    type: "Plots",
+    size: "700 - 1683 Sq ft",
+    status: "Launching soon",
+    isNew: true,
+    btnText: "VIEW MORE",
+    link: "/vgn-heritage-springz/index",
+  },
   {
-    title: "VGN Highland",
+    title: "VGN Highland I & II",
     location: "Tharapakkam, Chennai.",
     type: "Plots",
     size: "595 - 1731 Sq feet",
@@ -69,17 +81,7 @@ const properties = [
     btnText: "VIEW MORE",
     link: "/vgn-pride-de-villa/index",
   },
-  {
-    title: "VGN Mugavari Phase - IV & V",
-    location: "Tambaram, Chennai.",
-    type: "Plots",
-    size: "700 - 1926 Sq feet",
-    status: "Ready to Construct",
-    image: VGNMugavariPhase,
-    isNew: false,
-    btnText: "VIEW MORE",
-    link: "/vgn-mugavari-phase2/index",
-  },
+
   {
     title: "VGN Classique",
     location: "Ambattur, Chennai.",
@@ -152,7 +154,7 @@ const Property = () => {
                 src={item.image}
                 alt={item.title}
                 className="card-img-top"
-                style={{ height: "250px", objectFit: "cover" }}
+                style={{ height: "250px" }}
               />
               {item.isNew && (
                 <span

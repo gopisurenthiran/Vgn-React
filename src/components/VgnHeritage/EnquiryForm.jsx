@@ -24,14 +24,12 @@ import am7 from "@/assets/vgn-heritage/am20.png";
 import am8 from "@/assets/vgn-heritage/am18.png";
 import am9 from "@/assets/vgn-heritage/am19.png";
 
-
 import high1 from "@/assets/vgn-heritage/high4.jpg";
 import high2 from "@/assets/vgn-heritage/high5.jpg";
 import high3 from "@/assets/vgn-heritage/high6.jpg";
 import high4 from "@/assets/vgn-heritage/high7.jpg";
 import high5 from "@/assets/vgn-heritage/high8.jpg";
 import high6 from "@/assets/vgn-heritage/high9.jpg";
-
 
 import mapImage from "@/assets/vgn-heritage/map.jpg";
 
@@ -82,29 +80,9 @@ export default function EnquiryForm() {
       text: <>20 million sq.ft. of residential projects</>,
     },
   ];
-  const amenityIcons = [
-    am1,
-    am2,
-    am3,
-    am4,
-    am5,
-    am6,
-    am7,
-    am8,
-    am9,
-   
-  ];
+  const amenityIcons = [am1, am2, am3, am4, am5, am6, am7, am8, am9];
 
-  const highlightImages = [
-    high1,
-    high2,
-    high3,
-    high4,
-    high5,
-    high6,
-   
-    
-  ];
+  const highlightImages = [high1, high2, high3, high4, high5, high6];
 
   const {
     register,
@@ -138,7 +116,7 @@ export default function EnquiryForm() {
                     <div className="section-title">
                       <h4>Enquiry Form</h4>
                     </div>
-                  <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -160,12 +138,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={heritagemobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={heritagemobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -209,7 +189,18 @@ export default function EnquiryForm() {
                   </h4>
                 </div>
                 <p className="text-justify">
-                  Welcome to <b>VGN Heritage Springz, Ottiyambakkam</b> - Where the nature meets convenience. 101 Lifestyle plots are strategically located near Medavakkam Junction and OMR (Old Mahabalipuram Road). Imagine waking up to the soothing sound of chirping birds, the gentle rustle of leaves, and the soft breeze caressing your face. At VGN Heritage Springz, Nature isn't just something you see - It's something you experience every day. Surrounded by lush greenery, pristine water sources, and the peaceful hum of wildlife, your home becomes a true sanctuary, offering a serene escape from the hustle and bustle of city life. Enjoy the best of both - an easy commute to work and a peaceful home surrounded by nature's beauty.
+                  Welcome to <b>VGN Heritage Springz, Ottiyambakkam</b> - Where
+                  the nature meets convenience. 101 Lifestyle plots are
+                  strategically located near Medavakkam Junction and OMR (Old
+                  Mahabalipuram Road). Imagine waking up to the soothing sound
+                  of chirping birds, the gentle rustle of leaves, and the soft
+                  breeze caressing your face. At VGN Heritage Springz, Nature
+                  isn't just something you see - It's something you experience
+                  every day. Surrounded by lush greenery, pristine water
+                  sources, and the peaceful hum of wildlife, your home becomes a
+                  true sanctuary, offering a serene escape from the hustle and
+                  bustle of city life. Enjoy the best of both - an easy commute
+                  to work and a peaceful home surrounded by nature's beauty.
                 </p>
               </div>
 
@@ -280,8 +271,6 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
               {/* Location Advantages Section */}
               <LocationAdvantages />
-
-             
 
               <div className="border-bottom my-3"></div>
               {/* Route Map Section */}

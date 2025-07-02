@@ -206,22 +206,22 @@ export default function EnquiryForm() {
     },
   ];
 
-   const {
-     register,
-     handleSubmit,
-     setValue,
-     watch,
-     formState: { errors, isSubmitting },
-   } = useForm();
- 
-   const [message, setMessage] = React.useState("");
- 
-   const onSubmit = async (data) => {
-     console.log("Form Data Submitted:", data);
-     setMessage("Form submitted successfully!");
-   };
- 
-   const phone = watch("phone");
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const [message, setMessage] = React.useState("");
+
+  const onSubmit = async (data) => {
+    console.log("Form Data Submitted:", data);
+    setMessage("Form submitted successfully!");
+  };
+
+  const phone = watch("phone");
   return (
     <section className="property-details-section">
       <div className="container">
@@ -237,7 +237,7 @@ export default function EnquiryForm() {
                     <div className="section-title5">
                       <h4>Enquiry Form</h4>
                     </div>
-                     <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -259,12 +259,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={aspiremobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={aspiremobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -489,7 +491,7 @@ export default function EnquiryForm() {
               </div>
 
               <div className="border-btm"></div>
-              
+
               {/* About VGN */}
               <div className="pd-widget" id="about-vgn">
                 <div className="section-title5">

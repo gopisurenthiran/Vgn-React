@@ -40,15 +40,17 @@ export default function SubNav() {
         </nav>
 
         {/* Mobile hamburger */}
-        <button
-          className="btn d-md-none"
-          aria-label="Toggle navigation"
-          aria-expanded={isOpen}
-          aria-controls="mobile-nav"
-          onClick={toggle}
-        >
-          <BiMenu size={28} />
-        </button>
+        <div className="d-flex justify-content-end d-md-none">
+                  <button
+                    className="btn"
+                    aria-label="Toggle navigation"
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-nav"
+                    onClick={toggle}
+                  >
+                    <BiMenu size={28} />
+                  </button>
+                </div>
       </div>
 
       {/* Mobile drawer */}

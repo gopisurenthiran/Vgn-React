@@ -214,8 +214,8 @@ export default function EnquiryForm() {
     setMessage("Form submitted successfully!");
   };
 
-    const phone = watch("phone");
-  
+  const phone = watch("phone");
+
   return (
     <section className="property-details-section">
       <div className="container">
@@ -252,13 +252,14 @@ export default function EnquiryForm() {
                       className="img-fluid d-none d-lg-block"
                       style={{ maxWidth: "100%" }}
                     />
-                    {/* Mobile Image */}
-                    <img
-                      src={aspiremobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={aspiremobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}

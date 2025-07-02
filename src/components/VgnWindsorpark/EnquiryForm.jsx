@@ -6,14 +6,10 @@ import { useForm } from "react-hook-form";
 import "react-phone-input-2/lib/bootstrap.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapMarkerAlt,
- 
-} from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaClipboard, FaDownload, FaHome } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-
 
 import aspire from "@/assets/vgn-windsorpark/main-logo.png";
 import aspiremobile from "@/assets/vgn-windsorpark/main-logo1.png";
@@ -26,8 +22,6 @@ import icon5 from "@/assets/vgn-windsorpark/icon5.png";
 import icon6 from "@/assets/vgn-windsorpark/icon6.png";
 import icon7 from "@/assets/vgn-windsorpark/icon7.png";
 import icon8 from "@/assets/vgn-windsorpark/icon8.png";
-
-
 
 import mapImage from "@/assets/vgn-windsorpark/location-map.png";
 
@@ -120,7 +114,6 @@ export default function EnquiryForm() {
     },
   ];
 
- 
   const {
     register,
     handleSubmit,
@@ -153,7 +146,7 @@ export default function EnquiryForm() {
                     <div className="section-title9">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -175,12 +168,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={aspiremobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={aspiremobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -206,20 +201,23 @@ export default function EnquiryForm() {
                       />
                       RERA: TN/02/Layout/1976/2023
                     </p>
-                    <p
-                      onClick={handleShow}
-                      style={{
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "10px",
-                      }}
-                    >
-                      <FaDownload style={{ color: "#d90005" }} />
-                      <span style={{ color: "#e00527" }}>
-                        Download E-Brochure
-                      </span>
-                    </p>
+                    <div className="d-flex justify-content-center justify-content-lg-start">
+                      <p
+                        onClick={handleShow}
+                        className="m-0"
+                        style={{
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <FaDownload style={{ color: "#d90005" }} />
+                        <span style={{ color: "#e00527" }}>
+                          Download E-Brochure
+                        </span>
+                      </p>
+                    </div>
                   </div>
                   <BrochureModal show={showModal} handleClose={handleClose} />
                 </div>

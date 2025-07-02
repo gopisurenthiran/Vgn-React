@@ -17,41 +17,39 @@ export default function ReferralForm() {
     reset,
   } = useForm();
 
- const onSubmit = async (data) => {
-  // Map form fields to API payload format
-  const payload = {
-    name: data.name,
-    email: data.email,
-    mobile: data.phone, // Assuming form field is 'phone'
-    project: data.project,
-    plot_no: data.plotNo,
-    other_project: data.otherProject,
-    friend_name: data.friendName,
-    friend_mobile: data.friendPhone,
-    friend_location: data.friendLocation,
-    refer_project: data.referProject,
+  const onSubmit = async (data) => {
+    // Map form fields to API payload format
+    const payload = {
+      name: data.name,
+      email: data.email,
+      mobile: data.phone, // Assuming form field is 'phone'
+      project: data.project,
+      plot_no: data.plotNo,
+      other_project: data.otherProject,
+      friend_name: data.friendName,
+      friend_mobile: data.friendPhone,
+      friend_location: data.friendLocation,
+      refer_project: data.referProject,
+    };
+
+    try {
+      const result = await IreferEnquiry(payload);
+
+      toast.success("Form submitted successfully!", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+
+      reset(); // Clear form after success
+    } catch (error) {
+      console.error("Submission error:", error);
+
+      toast.error("Submission failed. Please try again.", {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+    }
   };
-
-  try {
-    const result = await IreferEnquiry(payload);
-
-    toast.success("Form submitted successfully!", {
-      position: "bottom-right",
-      autoClose: 3000,
-    });
-
-    reset(); // Clear form after success
-  } catch (error) {
-    console.error("Submission error:", error);
-
-    toast.error("Submission failed. Please try again.", {
-      position: "bottom-right",
-      autoClose: 3000,
-    });
-  }
-};
-
-
 
   return (
     <section className="contact-form-section py-5 bg">
@@ -84,7 +82,9 @@ export default function ReferralForm() {
                         placeholder="Name*"
                       />
                       {errors.name && (
-                        <small className="text-danger">{errors.name.message}</small>
+                        <small className="text-danger">
+                          {errors.name.message}
+                        </small>
                       )}
                     </div>
 
@@ -97,7 +97,9 @@ export default function ReferralForm() {
                           <PhoneInput
                             {...field}
                             country="in"
-                            onChange={(val) => field.onChange(val.replace(/^91/, ""))}
+                            onChange={(val) =>
+                              field.onChange(val.replace(/^91/, ""))
+                            }
                             enableSearch
                             disableCountryCode
                             placeholder="Phone Number*"
@@ -115,7 +117,9 @@ export default function ReferralForm() {
                         )}
                       />
                       {errors.phone && (
-                        <small className="text-danger">{errors.phone.message}</small>
+                        <small className="text-danger">
+                          {errors.phone.message}
+                        </small>
                       )}
                     </div>
 
@@ -133,34 +137,65 @@ export default function ReferralForm() {
                         placeholder="Email id*"
                       />
                       {errors.email && (
-                        <small className="text-danger">{errors.email.message}</small>
+                        <small className="text-danger">
+                          {errors.email.message}
+                        </small>
                       )}
                     </div>
 
                     <div className="col-lg-6">
                       <select
-                        {...register("enqproject", { required: "Select a project" })}
+                        {...register("enqproject", {
+                          required: "Select a project",
+                        })}
                         className="form-control"
                       >
                         <option value="">Select Projects*</option>
-                        <option value="Highland">VGN Highland</option>
-                        <option value="Paradise">VGN Paradise</option>
-                        {/* Add remaining options */}
+                        {[
+                          "Grandeur",
+                          "Aspire Gardens",
+                          "Pride de' Villa",
+                          "Highland",
+                          "Horizon",
+                          "Classique",
+                          "Serene",
+                          "Pride",
+                          "Brillianze Phase II",
+                          "Westfield",
+                          "Mahalakshmi nagar Phase XIV",
+                          "CH40",
+                          "Mugavari Phase II",
+                          "Windsor Park Phase IV - 1G",
+                          "Southern Meadows",
+                          "Exotica",
+                          "Varnabhoomi Phase II",
+                          "Windsor Park Phase VII",
+                        ].map((proj) => (
+                          <option key={proj} value={proj}>
+                            VGN {proj}
+                          </option>
+                        ))}
                       </select>
                       {errors.enqproject && (
-                        <small className="text-danger">{errors.enqproject.message}</small>
+                        <small className="text-danger">
+                          {errors.enqproject.message}
+                        </small>
                       )}
                     </div>
 
                     <div className="col-lg-6">
                       <input
-                        {...register("flatplotno", { required: "Plot number is required" })}
+                        {...register("flatplotno", {
+                          required: "Plot number is required",
+                        })}
                         type="text"
                         className="form-control"
                         placeholder="Flat / Plot Number*"
                       />
                       {errors.flatplotno && (
-                        <small className="text-danger">{errors.flatplotno.message}</small>
+                        <small className="text-danger">
+                          {errors.flatplotno.message}
+                        </small>
                       )}
                     </div>
 
@@ -183,13 +218,17 @@ export default function ReferralForm() {
                   <div className="row g-3">
                     <div className="col-lg-6">
                       <input
-                        {...register("frndname", { required: "Friend's name is required" })}
+                        {...register("frndname", {
+                          required: "Friend's name is required",
+                        })}
                         type="text"
                         className="form-control"
                         placeholder="Friend Name*"
                       />
                       {errors.frndname && (
-                        <small className="text-danger">{errors.frndname.message}</small>
+                        <small className="text-danger">
+                          {errors.frndname.message}
+                        </small>
                       )}
                     </div>
 
@@ -202,7 +241,9 @@ export default function ReferralForm() {
                           <PhoneInput
                             {...field}
                             country="in"
-                            onChange={(val) => field.onChange(val.replace(/^91/, ""))}
+                            onChange={(val) =>
+                              field.onChange(val.replace(/^91/, ""))
+                            }
                             enableSearch
                             disableCountryCode
                             placeholder="Friend Mobile*"
@@ -220,34 +261,65 @@ export default function ReferralForm() {
                         )}
                       />
                       {errors.friendPhone && (
-                        <small className="text-danger">{errors.friendPhone.message}</small>
+                        <small className="text-danger">
+                          {errors.friendPhone.message}
+                        </small>
                       )}
                     </div>
 
                     <div className="col-lg-6">
                       <input
-                        {...register("location", { required: "Location is required" })}
+                        {...register("location", {
+                          required: "Location is required",
+                        })}
                         type="text"
                         className="form-control"
                         placeholder="Location*"
                       />
                       {errors.location && (
-                        <small className="text-danger">{errors.location.message}</small>
+                        <small className="text-danger">
+                          {errors.location.message}
+                        </small>
                       )}
                     </div>
 
                     <div className="col-lg-6">
                       <select
-                        {...register("frndproject", { required: "Select a project" })}
+                        {...register("frndproject", {
+                          required: "Select a project",
+                        })}
                         className="form-control"
                       >
                         <option value="">Select Projects*</option>
-                        <option value="Highland">VGN Highland</option>
-                        <option value="Paradise">VGN Paradise</option>
-                        {/* Add remaining options */}
+                        {[
+                          "Grandeur",
+                          "Aspire Gardens",
+                          "Pride de' Villa",
+                          "Highland",
+                          "Horizon",
+                          "Classique",
+                          "Serene",
+                          "Pride",
+                          "Brillianze Phase II",
+                          "Westfield",
+                          "Mahalakshmi nagar Phase XIV",
+                          "CH40",
+                          "Mugavari Phase II",
+                          "Windsor Park Phase IV - 1G",
+                          "Southern Meadows",
+                          "Exotica",
+                          "Varnabhoomi Phase II",
+                          "Windsor Park Phase VII",
+                        ].map((proj) => (
+                          <option key={proj} value={proj}>
+                            VGN {proj}
+                          </option>
+                        ))}
                       </select>
                       {errors.frndproject && (
-                        <small className="text-danger">{errors.frndproject.message}</small>
+                        <small className="text-danger">
+                          {errors.frndproject.message}
+                        </small>
                       )}
                     </div>
                   </div>

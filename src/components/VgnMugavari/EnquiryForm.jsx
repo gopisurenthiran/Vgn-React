@@ -1,4 +1,3 @@
-
 import { useForm } from "react-hook-form";
 import { Modal, Button, Form } from "react-bootstrap";
 import LocationAdvantages from "./LocationAdvantages";
@@ -23,9 +22,6 @@ import img1 from "@/assets/vgn-mugavari/icon1.png";
 import img2 from "@/assets/vgn-mugavari/icon2.png";
 import img3 from "@/assets/vgn-mugavari/icon3.png";
 import img4 from "@/assets/vgn-mugavari/icon4.png";
-
-
-
 
 import mapImage from "@/assets/vgn-mugavari/location-map.jpg";
 
@@ -92,26 +88,24 @@ export default function EnquiryForm() {
     },
     { img: img3, text: "Compound wall all around" },
     { img: img4, text: "Avenue trees" },
-   
   ];
 
-   const {
-      register,
-      handleSubmit,
-      setValue,
-      watch,
-      formState: { errors, isSubmitting },
-    } = useForm();
-  
-    const [message, setMessage] = React.useState("");
-  
-    const onSubmit = async (data) => {
-      console.log("Form Data Submitted:", data);
-      setMessage("Form submitted successfully!");
-    };
-  
-    const phone = watch("phone");
- 
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const [message, setMessage] = React.useState("");
+
+  const onSubmit = async (data) => {
+    console.log("Form Data Submitted:", data);
+    setMessage("Form submitted successfully!");
+  };
+
+  const phone = watch("phone");
 
   return (
     <section className="property-details-section">
@@ -128,8 +122,7 @@ export default function EnquiryForm() {
                     <div className="section-title7">
                       <h4>Enquiry Form</h4>
                     </div>
-                     <EnquiryFormHome/>
-                  
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -151,18 +144,20 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={mugavarimobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={mugavarimobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
                         style={{ color: "#d90005" }}
                       />{" "}
-                    Tambaram, Chennai.
+                      Tambaram, Chennai.
                     </p>
                   </div>
                 </div>
@@ -174,25 +169,26 @@ export default function EnquiryForm() {
                       <FaHome
                         style={{ color: "#d90005", marginRight: "6px" }}
                       />
-                     Plots Ranging from: 700 - 1926 Sq feet
+                      Plots Ranging from: 700 - 1926 Sq feet
                     </p>
 
-                    <p
-                      onClick={handleShow}
-                      style={{
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "10px",
-                      }}
-                    >
-                      <FaDownload style={{ color: "#d90005" }} />
-                      <span style={{ color: "#e00527" }}>
-                        Download E-Brochure
-                      </span>
-                    </p>
-
-                   
+                    <div className="d-flex justify-content-center justify-content-lg-start">
+                      <p
+                        onClick={handleShow}
+                        className="m-0"
+                        style={{
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <FaDownload style={{ color: "#d90005" }} />
+                        <span style={{ color: "#e00527" }}>
+                          Download E-Brochure
+                        </span>
+                      </p>
+                    </div>
                   </div>
 
                   {/* Modal */}
@@ -256,19 +252,32 @@ export default function EnquiryForm() {
                     className="mobile-h4"
                     style={{ fontWeight: 900, fontSize: "35px" }}
                   >
-                  About VGN Mugavari
+                    About VGN Mugavari
                   </h4>
                 </div>
 
                 <p style={{ textAlign: "justify" }}>
-                 Tambaram, a much favoured residential and commercial destination. It's vantage location with easy access to several parts of the city and landmark hubs have made it a highly sought-after place for many years now. It's been the cherished dream of many to build their dream home in this beautiful place. An Amalgamation of the traditional and the modern, the quaintness of suburban life mixed with the busy city life, that's what Tambaram is all around.
-                
+                  Tambaram, a much favoured residential and commercial
+                  destination. It's vantage location with easy access to several
+                  parts of the city and landmark hubs have made it a highly
+                  sought-after place for many years now. It's been the cherished
+                  dream of many to build their dream home in this beautiful
+                  place. An Amalgamation of the traditional and the modern, the
+                  quaintness of suburban life mixed with the busy city life,
+                  that's what Tambaram is all around.
                 </p>
                 <p style={{ textAlign: "justify" }}>
-                   VGN's Mugavari is located in such and enviable location, an address that welcomes prosperity. Whether you are planning to build your perfect home or buying as an investment for your kids' financial security, this place is just right for you. The appreciation in this location is manifold, giving you great returns.
+                  VGN's Mugavari is located in such and enviable location, an
+                  address that welcomes prosperity. Whether you are planning to
+                  build your perfect home or buying as an investment for your
+                  kids' financial security, this place is just right for you.
+                  The appreciation in this location is manifold, giving you
+                  great returns.
                 </p>
                 <p style={{ textAlign: "justify" }}>
-                  Plots sizes ranging from 700 - 1926 sq.ft. Mugavari comes with an array of feel-good, cozy amenities that will make life more joyous and meaningful for you.
+                  Plots sizes ranging from 700 - 1926 sq.ft. Mugavari comes with
+                  an array of feel-good, cozy amenities that will make life more
+                  joyous and meaningful for you.
                 </p>
               </div>
 
@@ -314,7 +323,6 @@ export default function EnquiryForm() {
               <LocationAdvantages />
 
               <div className="border-bottom my-3"></div>
-            
 
               {/* Location Map Section */}
               <div className="pd-widget" id="map">

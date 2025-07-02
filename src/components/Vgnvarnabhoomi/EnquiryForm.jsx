@@ -7,14 +7,10 @@ import { useForm } from "react-hook-form";
 import "react-phone-input-2/lib/bootstrap.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapMarkerAlt,
- 
-} from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaClipboard, FaDownload, FaHome } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-
 
 import aspire from "@/assets/vgn-varnabhoomi/main-logo.png";
 import aspiremobile from "@/assets/vgn-varnabhoomi/main-logo.png";
@@ -38,8 +34,6 @@ import gal3 from "@/assets/vgn-varnabhoomi/gal3.jpg";
 
 import mapImage from "@/assets/vgn-varnabhoomi/location-map.jpg";
 
-
-
 import advIcon1 from "@/assets/vgn-varnabhoomi/adv-icon1.png";
 import advIcon2 from "@/assets/vgn-varnabhoomi/adv-icon2.png";
 import advIcon3 from "@/assets/vgn-varnabhoomi/adv-icon3.png";
@@ -50,7 +44,7 @@ import EnquiryFormHome from "../EnquiryForm";
 
 export default function EnquiryForm() {
   const gallerySlides = [gal1, gal2, gal3];
- 
+
   const features = [
     {
       icon: icon1,
@@ -84,19 +78,19 @@ export default function EnquiryForm() {
       icon: icon8,
       title: "LED Street Lights",
     },
-     {
+    {
       icon: icon9,
       title: "Shuttle Court",
     },
-     {
+    {
       icon: icon10,
       title: "Acupuncture Walkways",
     },
-     {
+    {
       icon: icon11,
       title: "Outdoor Gym",
     },
-     {
+    {
       icon: icon12,
       title: "Abundant Groundwater",
     },
@@ -147,7 +141,6 @@ export default function EnquiryForm() {
     },
   ];
 
- 
   const {
     register,
     handleSubmit,
@@ -180,7 +173,7 @@ export default function EnquiryForm() {
                     <div className="section-title11">
                       <h4>Enquiry Form</h4>
                     </div>
-                     <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -202,12 +195,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={aspiremobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={aspiremobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -233,20 +228,24 @@ export default function EnquiryForm() {
                       />
                       RERA: TN/01/Layout/0121/2021
                     </p>
-                    <p
-                      onClick={handleShow}
-                      style={{
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "10px",
-                      }}
-                    >
-                      <FaDownload style={{ color: "#d90005" }} />
-                      <span style={{ color: "#e00527" }}>
-                        Download E-Brochure
-                      </span>
-                    </p>
+                    <div className="text-center"></div>
+                    <div className="d-flex justify-content-center justify-content-lg-start">
+                      <p
+                        onClick={handleShow}
+                        className="m-0"
+                        style={{
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <FaDownload style={{ color: "#d90005" }} />
+                        <span style={{ color: "#e00527" }}>
+                          Download E-Brochure
+                        </span>
+                      </p>
+                    </div>
                   </div>
                   <BrochureModal show={showModal} handleClose={handleClose} />
                 </div>
@@ -265,9 +264,22 @@ export default function EnquiryForm() {
                 </div>
 
                 <p style={{ textAlign: "justify" }}>
-                 VGN Varnabhoomi, a premium collection of plots located in Pudupakkam, in Vandalur-Kelambakkam Road. Located close to the OMR IT Hub and GST Road, it is conveniently surrounded by schools, colleges, universities, hospitals and companies. MNC and Tech giants like TCS, Cognizant, Capgemini and many more are right behind the compound inside the Siruseri IT Park, which is also a major residential neighborhood, Varnabhoomi is a truly valuable and once-in-a-lifetime investment for your home.
+                  VGN Varnabhoomi, a premium collection of plots located in
+                  Pudupakkam, in Vandalur-Kelambakkam Road. Located close to the
+                  OMR IT Hub and GST Road, it is conveniently surrounded by
+                  schools, colleges, universities, hospitals and companies. MNC
+                  and Tech giants like TCS, Cognizant, Capgemini and many more
+                  are right behind the compound inside the Siruseri IT Park,
+                  which is also a major residential neighborhood, Varnabhoomi is
+                  a truly valuable and once-in-a-lifetime investment for your
+                  home.
                 </p>
-                <p><b>Available plots: 1034, 1195, 1207, 1363, 1370, 1441, 1424 Sq.Ft.</b></p>
+                <p>
+                  <b>
+                    Available plots: 1034, 1195, 1207, 1363, 1370, 1441, 1424
+                    Sq.Ft.
+                  </b>
+                </p>
               </div>
 
               <div className="border-bottom my-3"></div>
@@ -351,7 +363,7 @@ export default function EnquiryForm() {
 
               <div className="border-bottom my-3"></div>
 
-               {/* Gallery Section */}
+              {/* Gallery Section */}
               <div className="pd-widget" id="gallery">
                 <div className="section-title11">
                   <h4>Gallery</h4>
@@ -399,7 +411,7 @@ export default function EnquiryForm() {
                   </div>
                 </div>
               </div>
-                <div className="border-bottom my-3"></div>
+              <div className="border-bottom my-3"></div>
               {/* About VGN */}
               <div className="pd-widget" id="about-vgn">
                 <div className="section-title11">

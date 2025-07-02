@@ -109,7 +109,7 @@ export default function EnquiryForm() {
     "https://www.youtube.com/embed/Rd04FY2se-M",
     "https://www.youtube.com/embed/XbrqKh9A0pU?si=DpJX8kLxCq114ko9",
   ];
- const {
+  const {
     register,
     handleSubmit,
     setValue,
@@ -124,7 +124,7 @@ export default function EnquiryForm() {
     setMessage("Form submitted successfully!");
   };
 
-    const phone = watch("phone");
+  const phone = watch("phone");
 
   return (
     <section className="property-details-section">
@@ -141,7 +141,7 @@ export default function EnquiryForm() {
                     <div className="section-title4">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -163,12 +163,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={classiquemobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={classiquemobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -361,8 +363,8 @@ export default function EnquiryForm() {
                   </div>
                 </div>
               </div>
-                <div className="border-bottom my-3"></div>
-                   <LocationAdvantages/>
+              <div className="border-bottom my-3"></div>
+              <LocationAdvantages />
               <div className="border-bottom my-3"></div>
               <div className="pd-widget" id="360view">
                 <div className="section-title4">

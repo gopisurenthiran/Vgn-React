@@ -242,7 +242,7 @@ export default function EnquiryForm() {
                     <div className="section-title1">
                       <h4>Enquiry Form</h4>
                     </div>
-                     <EnquiryFormHome/>
+                    <EnquiryFormHome />
                   </div>
                 </div>
               </div>
@@ -264,12 +264,14 @@ export default function EnquiryForm() {
                       style={{ maxWidth: "100%" }}
                     />
                     {/* Mobile Image */}
-                    <img
-                      src={aspiremobile}
-                      alt="mobile-logo"
-                      className="img-fluid d-block d-lg-none"
-                      style={{ maxWidth: "100%" }}
-                    />
+                    <div className="d-lg-none text-center">
+                      <img
+                        src={aspiremobile}
+                        alt="mobile-logo"
+                        className="img-fluid"
+                        style={{ maxWidth: "100%", height: "auto" }}
+                      />
+                    </div>
                     <p className="mb-0">
                       <FontAwesomeIcon
                         icon={faMapMarkerAlt}
@@ -290,20 +292,23 @@ export default function EnquiryForm() {
                       3 BHK Villa Ranging from 1692 - 1739 sq.ft.
                     </p>
 
-                    <p
-                      onClick={handleShow}
-                      style={{
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "10px",
-                      }}
-                    >
-                      <FaDownload style={{ color: "#d90005" }} />
-                      <span style={{ color: "#e00527" }}>
-                        Download E-Brochure
-                      </span>
-                    </p>
+                    <div className="d-flex justify-content-center justify-content-lg-start">
+                      <p
+                        onClick={handleShow}
+                        className="m-0"
+                        style={{
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <FaDownload style={{ color: "#d90005" }} />
+                        <span style={{ color: "#e00527" }}>
+                          Download E-Brochure
+                        </span>
+                      </p>
+                    </div>
 
                     <p>
                       <FaClipboard
@@ -313,7 +318,7 @@ export default function EnquiryForm() {
                     </p>
                   </div>
 
-                 <BrochureModal show={showModal} handleClose={handleClose} />
+                  <BrochureModal show={showModal} handleClose={handleClose} />
                 </div>
               </div>
               <div className="border-bottom my-3"></div>
