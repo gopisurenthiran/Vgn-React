@@ -85,15 +85,6 @@ const properties = [
     link: "/vgn-horizon/index",
   },
   {
-    image: VGNClassique,
-    title: "VGN Classique",
-    location: "Ambattur, Chennai.",
-    size: "703 - 1416 Sq feet",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-classique/index",
-  },
-  {
     image: VGNPride,
     title: "VGN Pride",
     location: "Padur, OMR, Chennai.",

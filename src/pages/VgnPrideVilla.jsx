@@ -3,7 +3,7 @@ import Banner from '../components/VgnPrideVilla/Banner.jsx';
 import EnquiryForm from '../components/VgnPrideVilla/EnquiryForm.jsx';
 import ExploreProjects from '../components/VgnPrideVilla/ExploreProjects.jsx';
 import "../style/VgnPrideVilla.css";
-import SubNav from "../components/VgnPrideVilla/SubNav.jsx";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
 import SubFooter from "../components/VgnPrideVilla/SubFooter.jsx";
 
@@ -45,8 +45,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+     
 
       {/* ✅ Content */}
       <EnquiryForm />

@@ -1,76 +1,65 @@
-import React, { useState, useEffect } from "react";
-import logo from "@/assets/logo.svg";
-import { BiMenu } from "react-icons/bi";
-import "./subnav.css";         // ✅ corrected filename
+import React, { useEffect, useState } from "react";
+import "./subnav.css";
+
+const sections = [
+  ["#about-vgn", "About"],
+  ["#highlights", "Project Highlights"],
+  ["#amenities", "Amenities"],
+  ["#advantages", "Location Advantages"],
+  ["#map", "Location"],
+  ["#contact", "Contact"],
+];
 
 export default function SubNav() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-  /* Lock body scroll when drawer is open */
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => (document.body.style.overflow = "");
-  }, [isOpen]);
+    const handleScroll = () => {
+      let found = "";
 
-  const toggle = () => setIsOpen(!isOpen);
-  const close  = () => setIsOpen(false);
+      for (let [id] of sections) {
+        const el = document.querySelector(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const topOffset = window.innerWidth < 768 ? 90 : 130; // smaller offset for mobile
+          if (rect.top <= topOffset && rect.bottom >= topOffset) {
+            found = id;
+            break;
+          }
+        }
+      }
+
+      // ✅ Only update if changed
+      setActiveSection(prev => (prev !== found ? found : prev));
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    // ✅ Small delay to avoid early layout mismatch
+    const timeout = setTimeout(() => {
+      handleScroll();
+    }, 300);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="subnav-wrapper">
-      <div className="container-fluid subnav-inner d-flex align-items-center justify-content-between">
-        {/* Logo */}
-        <a href="/" className="navbar-brand m-0 d-flex align-items-center">
-          <img src={logo} alt="VGN Logo" height="56" />
-        </a>
-
-        {/* Desktop links */}
-        <nav className="nav d-none d-md-flex gap-3">
-          {[
-            ["#about-vgn", "About"],
-            ["#highlights", "Project Highlights"],
-            ["#amenities", "Amenities"],
-            ["#advantages", "Location Advantages"],
-            ["#map", "Location"],
-            ["#contact", "Contact"],
-          ].map(([href, label]) => (
-            <a key={href} href={href} className="nav-link">
+    <div className="subnav-tabs-wrapper">
+      <ul className="nav nav-tab justify-content-start flex-nowrap">
+        {sections.map(([href, label]) => (
+          <li className="nav-item" key={href}>
+            <a
+              className={`nav-link ${activeSection === href ? "active" : ""}`}
+              href={href}
+            >
               {label}
             </a>
-          ))}
-        </nav>
-
-        {/* Mobile hamburger */}
-        <div className="d-flex justify-content-end d-md-none">
-                  <button
-                    className="btn"
-                    aria-label="Toggle navigation"
-                    aria-expanded={isOpen}
-                    aria-controls="mobile-nav"
-                    onClick={toggle}
-                  >
-                    <BiMenu size={28} />
-                  </button>
-                </div>
-      </div>
-
-      {/* Mobile drawer */}
-      <nav
-        id="mobile-nav"
-        className={`subnav-mobile d-md-none ${isOpen ? "show" : ""}`}
-      >
-        {[
-          ["#about-vgn", "About"],
-          ["#highlights", "Project Highlights"],
-          ["#amenities", "Amenities"],
-          ["#advantages", "Location Advantages"],
-          ["#map", "Location"],
-          ["#contact", "Contact"],
-        ].map(([href, label]) => (
-          <a key={href} href={href} className="nav-link" onClick={close}>
-            {label}
-          </a>
+          </li>
         ))}
-      </nav>
-    </header>
+      </ul>
+    </div>
   );
 }

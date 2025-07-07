@@ -39,6 +39,8 @@ import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Disclaimer from "@/pages/Disclaimer";
 import Terms from "../pages/Terms";
+import BlogGrid from "../pages/BlogGrid";
+import BlogDetail from "../pages/BlogDetail";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +84,8 @@ const router = createBrowserRouter([
       { path: "privacy-policy", element: <Privacy /> },
       { path: "disclaimer", element: <Disclaimer /> },
       { path: "terms-and-conditions", element: <Terms /> },
+      {path:"/blogs", element:<BlogGrid/>},
+      {path:"/blog/:slug", element:<BlogDetail/>},
     ],
   },
 ]);

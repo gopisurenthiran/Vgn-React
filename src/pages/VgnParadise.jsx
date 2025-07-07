@@ -6,7 +6,7 @@ import ExploreProjects from '../components/VgnParadise/ExploreProjects.jsx';
 import "../style/VgnParadise.css";
 import SubFooter from "../components/VgnParadise/SubFooter.jsx";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
-import SubNav from "../components/VgnParadise/SubNav.jsx";
+
 
 export default function VgnParadise() {
    const bannerRef = useRef(null);
@@ -46,8 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+    
 
       {/* ✅ Content */}
       <EnquiryForm />

@@ -3,7 +3,6 @@ import Banner from '../components/VgnSamudra/Banner';
 import EnquiryForm from '../components/VgnSamudra/EnquiryForm';
 import ExploreProjects from '../components/VgnSamudra/ExploreProjects';
 import "../style/VgnSamudra.css";
-import SubNav from "../components/VgnSamudra/SubNav";
 import SubFooter from "../components/VgnSamudra/SubFooter";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 
@@ -45,9 +44,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
-
+     
       {/* ✅ Content */}
       <EnquiryForm />
       <ExploreProjects />

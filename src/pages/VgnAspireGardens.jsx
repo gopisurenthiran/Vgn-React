@@ -3,7 +3,7 @@ import Banner from '../components/VgnAspire/Banner.jsx';
 import EnquiryForm from '../components/VgnAspire/EnquiryForm.jsx';
 import ExploreProjects from '../components/VgnAspire/ExploreProjects.jsx';
 import SubFooter from '../components/VgnAspire/SubFooter.jsx';
-import SubNav from '../components/VgnAspire/SubNav.jsx';
+
 import "../style/VgnAspire.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -46,8 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+     
 
       {/* ✅ Content */}
       <EnquiryForm />

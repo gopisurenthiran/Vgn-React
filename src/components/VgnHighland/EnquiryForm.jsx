@@ -32,6 +32,7 @@ import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import LocationAdvantages from "./LocationAdvantages";
 import EnquiryFormHome from "../EnquiryForm";
+import SubNav from "./SubNav";
 
 export default function EnquiryForm() {
   const advantages = [
@@ -118,12 +119,13 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
+           <SubNav/>
           <div className="col-lg-4">
             <div
               className="position-sticky"
               style={{ top: "100px", zIndex: 1 }}
             >
-              <div className="property-sidebar">
+              <div className="property-sidebar" id="contact">
                 <div className="single-sidebar">
                   <div className="contact-bx">
                     <div className="section-title3">
@@ -137,7 +139,9 @@ export default function EnquiryForm() {
           </div>
 
           <div className="col-lg-8">
+            
             <div className="pd-text">
+               
               {/* Top Section with Logo & Address */}
               <div className="row align-items-center py-3">
                 {/* Logo & Location */}
@@ -192,7 +196,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About Section */}
-              <div className="pd-widget" id="about">
+              <div className="pd-widget" id="about-vgn">
                 <div className="section-title3">
                   <h1
                     className="mobile-h4"
@@ -214,7 +218,7 @@ export default function EnquiryForm() {
 
               {/* Highlights Section */}
 
-              <div className="pd-widget pd-widget1" id="amenities">
+              <div className="pd-widget pd-widget1" id="highlights">
                 <div className="section-title3">
                   <h4>Project Highlights</h4>
                 </div>
@@ -281,7 +285,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* Video Section */}
-              <div className="pd-widget" id="gallery">
+              <div className="pd-widget" id="video">
                 <div className="section-title3">
                   <h4>Videos</h4>
                 </div>

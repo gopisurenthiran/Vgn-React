@@ -4,7 +4,7 @@ import Banner from '../components/VgnHorizon/Banner.jsx';
 import EnquiryForm from '../components/VgnHorizon/EnquiryForm.jsx';
 import ExploreProjects from '../components/VgnHorizon/ExploreProjects.jsx';
 import "../style/VgnHorizon.css";
-import SubNav from "../components/VgnHorizon/SubNav.jsx";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
 import SubFooter from "../components/VgnHorizon/SubFooter.jsx";
 
@@ -46,8 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+    
 
       {/* ✅ Content */}
       <EnquiryForm />

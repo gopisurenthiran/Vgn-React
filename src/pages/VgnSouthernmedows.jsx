@@ -4,7 +4,7 @@ import Banner from '../components/VgnSouthern/Banner';
 import EnquiryForm from '../components/VgnSouthern/EnquiryForm';
 import ExploreProjects from '../components/VgnSouthern/ExploreProjects';
 import "../style/VgnSouthern.css";
-import SubNav from "../components/VgnSouthern/SubNav";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 import SubFooter from "../components/VgnSouthern/SubFooter";
 
@@ -46,9 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
-
+     
       {/* ✅ Content */}
       <EnquiryForm />
       <ExploreProjects />

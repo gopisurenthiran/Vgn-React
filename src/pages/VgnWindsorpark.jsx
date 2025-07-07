@@ -3,7 +3,6 @@ import Banner from '../components/VgnWindsorpark/Banner';
 import EnquiryForm from '../components/VgnWindsorpark/EnquiryForm';
 import ExploreProjects from '../components/VgnWindsorpark/ExploreProjects';
 import "../style/VgnWindsorpark.css";
-import SubNav from "../components/VgnWindsorpark/SubNav";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 import SubFooter from "../components/VgnWindsorpark/SubFooter";
 
@@ -45,8 +44,6 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
 
       {/* ✅ Content */}
       <EnquiryForm />

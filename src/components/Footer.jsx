@@ -155,6 +155,14 @@ export default function Footer() {
                         Contact
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="/blogs"
+                        className="text-white text-decoration-none"
+                      >
+                        Blogs
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 

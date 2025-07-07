@@ -1,41 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, NavDropdown, Container, Offcanvas } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from '@/assets/logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../style/Navigation.css';
 
-const isDesktop = () => window.matchMedia('(min-width: 992px)').matches;
-
 export default function Navigation() {
-  const [openDropdown, setOpenDropdown] = useState(null);  // desktop hover
-  const [showDrawer,   setShowDrawer]   = useState(false); // mobile drawer
-  const [drawerOpen,   setDrawerOpen]   = useState(null);  // which group open in drawer
+  const [showDrawer, setShowDrawer] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(null);
+  const [hovered, setHovered] = useState(null);
+  let timeout;
 
-  /* desktop hover handlers */
-  const enter  = k => isDesktop() && setOpenDropdown(k);
-  const leave  = () => isDesktop() && setOpenDropdown(null);
-  const toggle = (k, o) => isDesktop() && setOpenDropdown(o ? k : null);
+  const isDesktop = () => window.matchMedia('(min-width: 992px)').matches;
 
-  /* drawer handlers */
-  const openDrawer  = () => setShowDrawer(true);
+  const handleMouseEnter = (key) => {
+    if (isDesktop()) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setHovered(key), 100);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isDesktop()) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setHovered(null), 100);
+    }
+  };
+
+  const openDrawer = () => setShowDrawer(true);
   const closeDrawer = () => setShowDrawer(false);
+  const toggleDrawerGroup = (k) => setDrawerOpen(drawerOpen === k ? null : k);
 
-  /* toggle one section at a time in drawer */
-  const toggleDrawerGroup = (k) =>
-    setDrawerOpen(drawerOpen === k ? null : k);
+  const CustomDropdownItem = ({ to, children }) => (
+    <NavDropdown.Item
+      as={NavLink}
+      to={to}
+      className={({ isActive }) =>
+        `dropdown-item ${isActive ? 'active' : ''}`
+      }
+    >
+      {children}
+    </NavDropdown.Item>
+  );
 
-  /* shared link renderer */
   const Links = ({ inDrawer = false }) => {
-    /* desktop props */
-    const hoverProps = (k) =>
-      inDrawer
-        ? {}
-        : { show: openDropdown === k, onMouseEnter: () => enter(k), onMouseLeave: leave, onToggle: (o) => toggle(k, o) };
-
-    /* helper: parent + children (drawer version) */
     const DrawerParent = ({ k, title, items }) => (
       <>
         <Nav.Link
@@ -45,7 +54,6 @@ export default function Navigation() {
           {title}
           <i className={`bi ${drawerOpen === k ? 'bi-chevron-up' : 'bi-chevron-down'}`} />
         </Nav.Link>
-
         {drawerOpen === k &&
           items.map(({ to, label }) => (
             <Nav.Link
@@ -61,36 +69,29 @@ export default function Navigation() {
       </>
     );
 
-    /* MOBILE DRAWER  (accordion style) */
     if (inDrawer) {
       return (
         <>
-          <Nav.Link as={NavLink} to="/" end onClick={closeDrawer}>
-            Home
-          </Nav.Link>
-
+          <Nav.Link as={NavLink} to="/" end onClick={closeDrawer}>Home</Nav.Link>
           <DrawerParent
             k="about"
-            title="About Us"
+            title="About Us"
             items={[
-              { to: '/about', label: 'About VGN' },
+              { to: '/about', label: 'About VGN' },
               { to: '/values', label: 'Our Values' },
               { to: '/chairman', label: 'Message From Chairman' },
               { to: '/our-people', label: 'Our People' },
               { to: '/testimonial', label: 'Testimonials' },
             ]}
-
           />
-
           <DrawerParent
             k="projects"
             title="Projects"
             items={[
-              { to: '/ongoing-project',   label: 'Ongoing Projects' },
+              { to: '/ongoing-project', label: 'Ongoing Projects' },
               { to: '/completed-project', label: 'Completed Projects' },
             ]}
           />
-
           <DrawerParent
             k="partners"
             title="Partners"
@@ -99,24 +100,21 @@ export default function Navigation() {
               { to: '/land-enquiry', label: 'Land Enquiry / Joint Ventures' },
             ]}
           />
-
-          <Nav.Link as={NavLink} to="/nri"    onClick={closeDrawer}>NRI</Nav.Link>
+          <Nav.Link as={NavLink} to="/nri" onClick={closeDrawer}>NRI</Nav.Link>
           <Nav.Link as={NavLink} to="/irefer" onClick={closeDrawer}>iRefer</Nav.Link>
-
           <DrawerParent
             k="customers"
-            title="Customer's Corner"
+            title="Customer's Corner"
             items={[
-              { to: '/customer-support',       label: 'Customer Support' },
+              { to: '/customer-support', label: 'Customer Support' },
               { to: '/emi-calculator', label: 'EMI Calculator' },
             ]}
           />
-
           <DrawerParent
             k="contact"
-            title="Contact Us"
+            title="Contact Us"
             items={[
-              { to: '/contact',   label: 'Address' },
+              { to: '/contact', label: 'Address' },
               { to: '/careers', label: 'Careers' },
             ]}
           />
@@ -124,106 +122,75 @@ export default function Navigation() {
       );
     }
 
-    /* DESKTOP  (hover dropdowns) */
     return (
       <>
-    <Nav.Link as={NavLink} to="/" end onClick={closeDrawer}>
-      Home
-    </Nav.Link>
+        <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
 
-    {/* About Us */}
-    <NavDropdown
-      title="About Us"
-      id="about-dd"
-      drop="down"
-      {...hoverProps('about')}
-    >
-      <NavDropdown.Item as={NavLink} to="/about"        onClick={closeDrawer}>About VGN</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/values"       onClick={closeDrawer}>Our Values</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/chairman"     onClick={closeDrawer}>Message From Chairman</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/our-people"   onClick={closeDrawer}>Our People</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/testimonial"  onClick={closeDrawer}>Testimonials</NavDropdown.Item>
-    </NavDropdown>
+        <div onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={handleMouseLeave}>
+          <NavDropdown title="About Us" id="about-dd" show={hovered === 'about'}>
+            <CustomDropdownItem to="/about">About VGN</CustomDropdownItem>
+            <CustomDropdownItem to="/values">Our Values</CustomDropdownItem>
+            <CustomDropdownItem to="/chairman">Message From Chairman</CustomDropdownItem>
+            <CustomDropdownItem to="/our-people">Our People</CustomDropdownItem>
+            <CustomDropdownItem to="/testimonial">Testimonials</CustomDropdownItem>
+          </NavDropdown>
+        </div>
 
-    {/* Projects */}
-    <NavDropdown
-      title="Projects"
-      id="projects-dd"
-      drop="down"
-      {...hoverProps('projects')}
-    >
-      <NavDropdown.Item as={NavLink} to="/ongoing-project"   onClick={closeDrawer}>Ongoing Projects</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/completed-project" onClick={closeDrawer}>Completed Projects</NavDropdown.Item>
-    </NavDropdown>
+        <div onMouseEnter={() => handleMouseEnter('projects')} onMouseLeave={handleMouseLeave}>
+          <NavDropdown title="Projects" id="projects-dd" show={hovered === 'projects'}>
+            <CustomDropdownItem to="/ongoing-project">Ongoing Projects</CustomDropdownItem>
+            <CustomDropdownItem to="/completed-project">Completed Projects</CustomDropdownItem>
+          </NavDropdown>
+        </div>
 
-    {/* Partners */}
-    <NavDropdown
-      title="Partners"
-      id="partners-dd"
-      drop="down"
-      {...hoverProps('partners')}
-    >
-      <NavDropdown.Item as={NavLink} to="/channel-partner"  onClick={closeDrawer}>Channel Partners</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/land-enquiry"     onClick={closeDrawer}>Land Enquiry / Joint Ventures</NavDropdown.Item>
-    </NavDropdown>
+        <div onMouseEnter={() => handleMouseEnter('partners')} onMouseLeave={handleMouseLeave}>
+          <NavDropdown title="Partners" id="partners-dd" show={hovered === 'partners'}>
+            <CustomDropdownItem to="/channel-partner">Channel Partners</CustomDropdownItem>
+            <CustomDropdownItem to="/land-enquiry">Land Enquiry / Joint Ventures</CustomDropdownItem>
+          </NavDropdown>
+        </div>
 
-    {/* Simple links */}
-    <Nav.Link as={NavLink} to="/nri"    onClick={closeDrawer}>NRI</Nav.Link>
-    <Nav.Link as={NavLink} to="/irefer" onClick={closeDrawer}>iRefer</Nav.Link>
+        <Nav.Link as={NavLink} to="/nri">NRI</Nav.Link>
+        <Nav.Link as={NavLink} to="/irefer">iRefer</Nav.Link>
 
-    {/* Customer's Corner */}
-    <NavDropdown
-      title="Customer's Corner"
-      id="customers-dd"
-      drop="down"
-      {...hoverProps('customers')}
-    >
-      <NavDropdown.Item as={NavLink} to="/customer-support" onClick={closeDrawer}>Customer Support</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/emi-calculator"   onClick={closeDrawer}>EMI Calculator</NavDropdown.Item>
-    </NavDropdown>
+        <div onMouseEnter={() => handleMouseEnter('customers')} onMouseLeave={handleMouseLeave}>
+          <NavDropdown title="Customer's Corner" id="customers-dd" show={hovered === 'customers'}>
+            <CustomDropdownItem to="/customer-support">Customer Support</CustomDropdownItem>
+            <CustomDropdownItem to="/emi-calculator">EMI Calculator</CustomDropdownItem>
+          </NavDropdown>
+        </div>
 
-    {/* Contact Us */}
-    <NavDropdown
-      title="Contact Us"
-      id="contact-dd"
-      drop="down"
-      {...hoverProps('contact')}
-    >
-      <NavDropdown.Item as={NavLink} to="/contact"  onClick={closeDrawer}>Address</NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/careers"  onClick={closeDrawer}>Careers</NavDropdown.Item>
-    </NavDropdown>
-  </>
+        <div onMouseEnter={() => handleMouseEnter('contact')} onMouseLeave={handleMouseLeave}>
+          <NavDropdown title="Contact Us" id="contact-dd" show={hovered === 'contact'}>
+            <CustomDropdownItem to="/contact">Address</CustomDropdownItem>
+            <CustomDropdownItem to="/careers">Careers</CustomDropdownItem>
+          </NavDropdown>
+        </div>
+      </>
     );
   };
 
   return (
     <>
-      {/* top strip */}
       <div className='vgn-top-strip'>
-        
-      <Container >
-      <div className="vgn-top-strip d-flex justify-content-end align-items-center px-3 py-1">
-        
-        <i className="bi bi-telephone-fill me-2" />
-        <span className="me-4 small">044 4002 4002 / 044 6965 6902</span>
-        <i className="bi bi-envelope-fill me-2" />
-        <span className="small">info@vnggroup.org</span>
-      </div>
-      </Container>
+        <Container>
+          <div className="d-flex justify-content-end align-items-center px-3 py-1">
+            <i className="bi bi-telephone-fill me-2" />
+            <span className="me-4 small">044 4002 4002 / 044 6965 6902</span>
+            <i className="bi bi-envelope-fill me-2" />
+            <span className="small">info@vnggroup.org</span>
+          </div>
+        </Container>
       </div>
 
-
-      {/* navbar */}
       <Navbar expand="lg" className="vgn-navbar py-0" sticky="top">
         <Container>
           <Navbar.Brand as={NavLink} to="/">
             <img src={logo} alt="VGN" height="56" />
           </Navbar.Brand>
-
           <button className="navbar-toggler border-0" onClick={openDrawer} aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
-
           <Navbar.Collapse className="justify-content-end d-none d-lg-flex">
             <Nav className="align-items-lg-center ms-auto fw-bold text-uppercase">
               <Links />
@@ -232,7 +199,6 @@ export default function Navigation() {
         </Container>
       </Navbar>
 
-      {/* drawer */}
       <Offcanvas show={showDrawer} onHide={closeDrawer} placement="start" className="vgn-offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title><img src={logo} alt="VGN" height="40" /></Offcanvas.Title>

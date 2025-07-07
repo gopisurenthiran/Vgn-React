@@ -4,7 +4,7 @@ import Banner from "../components/VgnClassique/Banner";
 import EnquiryForm from "../components/VgnClassique/EnquiryForm";
 import ExploreProjects from "../components/VgnClassique/ExploreProjects";
 import '../style/VgnClassique.css';
-import SubNav from "../components/VgnClassique/SubNav";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 import SubFooter from "../components/VgnClassique/SubFooter";
 
@@ -46,8 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+     
 
       {/* ✅ Content */}
       <EnquiryForm />

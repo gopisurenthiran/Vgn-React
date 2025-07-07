@@ -3,7 +3,7 @@ import Banner from '../components/VgnWestfield/Banner';
 import EnquiryForm from '../components/VgnWestfield/EnquiryForm';
 import ExploreProjects from '../components/VgnWestfield/ExploreProjects';
 import "../style/VgnWestField.css";
-import SubNav from "../components/VgnWestfield/SubNav";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 import SubFooter from "../components/VgnWestfield/SubFooter";
 
@@ -45,8 +45,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+    
 
       {/* ✅ Content */}
       <EnquiryForm />

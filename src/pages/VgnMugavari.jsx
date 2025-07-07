@@ -4,7 +4,7 @@ import Banner from '../components/VgnMugavari/Banner.jsx'
 import EnquiryForm from '../components/VgnMugavari/EnquiryForm.jsx'
 import ExploreProjects from '../components/VgnMugavari/ExploreProjects.jsx'
 import "../style/VgnMugavari.css";
-import SubNav from "../components/VgnMugavari/SubNav.jsx";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
 import SubFooter from "../components/VgnMugavari/SubFooter.jsx";
 
@@ -46,8 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+    
 
       {/* ✅ Content */}
       <EnquiryForm />

@@ -36,10 +36,13 @@
 .vgn-navbar .dropdown-toggle,
 .vgn-offcanvas .nav-link,
 .vgn-offcanvas .dropdown-toggle{
+  color: #111111;
+    font-size: 12px;
+    font-weight: 800;
   position:relative;
-  padding:1.25rem 1rem;
+ margin-right: 10px;
   letter-spacing:.5px;
-  color:#212529;
+  color:#212529 !important;
   transition:color .25s;
 }
 
@@ -58,11 +61,14 @@
   content:"";
   position:absolute;
   bottom:0;left:0;
-  width:100%;height:3px;
+  width:100%;
+  height:2px;
   background:#b91011;
   transform:scaleX(0);
   transform-origin:left;
   transition:transform .25s;
+
+  
 }
 .vgn-navbar .nav-link:not(.dropdown-toggle):hover::after,
 .vgn-navbar .nav-link:not(.dropdown-toggle).active::after,
@@ -81,7 +87,7 @@
 .vgn-navbar .dropdown-toggle::before,
 .vgn-offcanvas .dropdown-toggle::before{
   content:"";position:absolute;bottom:0;left:0;
-  width:100%;height:3px;background:#b91011;
+  width:100%;height:2px;background:#b91011;
   transform:scaleX(0);transform-origin:left;
   transition:transform .25s;
 }
@@ -90,6 +96,7 @@
 .vgn-offcanvas .dropdown-toggle:hover::before,
 .vgn-offcanvas .dropdown-toggle.show::before{
   transform:scaleX(1);
+  
 }
 
 /*──────────────────────────────────────────
@@ -177,3 +184,4 @@
 .drawer-parent i {
   font-size: 0.9rem;
 }
+

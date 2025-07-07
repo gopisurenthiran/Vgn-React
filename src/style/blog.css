@@ -1,0 +1,36 @@
+.blog-content p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.blog-content img {
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.blog-banner {
+  background: url('../assets/dummy.webp') no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+  min-height: 300px;
+}
+
+.blog-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.blog-card .card-text {
+  font-size: 0.95rem;
+}
+.list-group-item.active {
+  background-color: #bf151a;
+  color: white;
+}

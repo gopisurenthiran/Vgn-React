@@ -3,7 +3,7 @@ import Banner from "../components/VgnHighland/Banner";
 import EnquiryForm from "../components/VgnHighland/EnquiryForm";
 import ExploreProjects from "../components/VgnHighland/ExploreProjects";
 import '../style/VgnHighland.css';
-import SubNav from "../components/VgnHighland/SubNav";
+
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 import SubFooter from "../components/VgnHighland/SubFooter";
 
@@ -45,8 +45,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+     
 
       {/* ✅ Content */}
       <EnquiryForm />

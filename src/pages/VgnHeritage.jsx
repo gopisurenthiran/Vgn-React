@@ -5,7 +5,7 @@ import Banner from "../components/VgnHeritage/Banner";
 import EnquiryForm from "../components/VgnHeritage/EnquiryForm";
 import ExploreProjects from "../components/VgnHeritage/ExploreProjects";
 import SubFooter from "../components/VgnHeritage/SubFooter";
-import SubNav from "../components/VgnHeritage/SubNav";
+
 
 import '../style/VgnHeritage.css';
 
@@ -47,8 +47,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
+    
 
       {/* ✅ Content */}
       <EnquiryForm />

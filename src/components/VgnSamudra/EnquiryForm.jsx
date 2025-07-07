@@ -27,6 +27,7 @@ import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
+import SubNav from "./SubNav";
 
 export default function EnquiryForm() {
   const features = [
@@ -119,7 +120,7 @@ export default function EnquiryForm() {
               className="position-sticky"
               style={{ top: "100px", zIndex: 1 }}
             >
-              <div className="property-sidebar">
+              <div className="property-sidebar" id="contact">
                 <div className="single-sidebar">
                   <div className="contact-bx">
                     <div className="section-title12">
@@ -134,6 +135,7 @@ export default function EnquiryForm() {
 
           <div className="col-lg-8">
             <div className="pd-text">
+              <SubNav />
               {/* Top Section with Logo & Address */}
               <div className="row align-items-center py-3">
                 {/* Logo & Location */}
@@ -186,7 +188,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About Section */}
-              <div className="pd-widget" id="about">
+              <div className="pd-widget" id="about-vgn">
                 <div className="section-title12">
                   <h1
                     className="mobile-h4"
@@ -220,7 +222,7 @@ export default function EnquiryForm() {
               {/* Project Highlights Section */}
               <div
                 className="pd-widget pd-widget1"
-                id="project"
+                id="highlights"
                 style={{ marginBottom: "5px" }}
               >
                 <div className="section-title12">
@@ -229,7 +231,7 @@ export default function EnquiryForm() {
                 <div className="row">
                   {features.map((feature, index) => (
                     <div
-                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col2"
+                      className="col-lg-3 col-md-3 col-6 g-3"
                       key={index}
                     >
                       <div className="servicebox first">
@@ -287,7 +289,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About VGN */}
-              <div className="pd-widget" id="about-vgn">
+              <div className="pd-widget">
                 <div className="section-title12">
                   <h4>About VGN</h4>
                   <br />

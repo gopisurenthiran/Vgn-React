@@ -66,12 +66,21 @@ import completed3 from "@/assets/Completed/completed3.jpg";
 import completed2 from "@/assets/Completed/completed2.jpg";
 import completed39 from "@/assets/Completed/completed39.jpg";
 import completed1 from "@/assets/Completed/completed1.jpg";
+import img24 from "@/assets/ongoing/completed71.jpg";
 
 
 
 
 
 const completedProjects = [
+  {
+    image: img24,
+    name: "VGN Classique",
+    size: " 703 - 1845 Sq.ft",
+    type: "Plots",
+    location: " Ambattur.",
+    year: "2025",
+  },
   {
     image: img70,
     name: "VGN Mahalakshmi nagar Phase XIV",

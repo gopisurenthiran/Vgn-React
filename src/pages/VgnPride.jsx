@@ -4,7 +4,6 @@ import Banner from '../components/VgnPride/Banner.jsx'
 import EnquiryForm from '../components/VgnPride/EnquiryForm.jsx'
 import ExploreProjects from '../components/VgnPride/ExploreProjects.jsx'
 import "../style/VgnPride.css";
-import SubNav from "../components/VgnPride/SubNav.jsx";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
 import SubFooter from "../components/VgnPride/SubFooter.jsx";
 
@@ -46,8 +45,6 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
 
       {/* ✅ Content */}
       <EnquiryForm />

@@ -98,6 +98,7 @@ import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import BrochureModal from "../Modal";
 import EnquiryFormHome from "../EnquiryForm";
+import SubNav from "./SubNav";
 
 export default function EnquiryForm() {
   const [showModal, setShowModal] = useState(false);
@@ -243,12 +244,13 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
+          <SubNav/>
           <div className="col-lg-4">
             <div
               className="position-sticky"
               style={{ top: "100px", zIndex: 1 }}
             >
-              <div className="property-sidebar">
+              <div className="property-sidebar" id="contact">
                 <div className="single-sidebar">
                   <div className="contact-bx">
                     <div className="section-title8">
@@ -333,7 +335,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About Section */}
-              <div className="pd-widget" id="about">
+              <div className="pd-widget" id="about-vgn">
                 <div className="section-title8">
                   <h1
                     className="mobile-h4"
@@ -369,7 +371,7 @@ export default function EnquiryForm() {
                 <div className="row">
                   {highlights.map((item, index) => (
                     <div
-                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col2"
+                      className="col-lg-3 col-md-3 col-6 g-3"
                       key={index}
                     >
                       <div className="servicebox first">
@@ -404,7 +406,7 @@ export default function EnquiryForm() {
               {/* Plots Section */}
               <div
                 className="pd-widget pd-widget1"
-                id="why-plots"
+                id="plots"
                 style={{ marginBottom: "5px" }}
               >
                 <div className="section-title8">
@@ -413,7 +415,7 @@ export default function EnquiryForm() {
                 <div className="row">
                   {whyPlots.map((item, index) => (
                     <div
-                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col2"
+                      className="col-lg-3 col-md-3 col-6 g-3"
                       key={index}
                     >
                       <div className="servicebox first">
@@ -456,7 +458,7 @@ export default function EnquiryForm() {
                 <div className="row">
                   {amenities.map((item, index) => (
                     <div
-                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col2"
+                      className="col-lg-3 col-md-3 col-6 g-3"
                       key={index}
                     >
                       <div className="servicebox first">
@@ -493,7 +495,7 @@ export default function EnquiryForm() {
                 <div className="row">
                   {clubhouseFeatures.map((item, idx) => (
                     <div
-                      className="col-lg-3 col-md-3 col-sm-6 col-xs-12 col2"
+                      className="col-lg-3 col-md-3 col-6 g-3"
                       key={idx}
                     >
                       <div className="servicebox first">
@@ -544,7 +546,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* Route Map Section */}
-              <div className="pd-widget" id="map">
+              <div className="pd-widget" id="route">
                 <div className="section-title8">
                   <h4>Route Map</h4>
                 </div>
@@ -602,7 +604,7 @@ export default function EnquiryForm() {
               </div> */}
 
               {/* About VGN */}
-              <div className="pd-widget" id="about-vgn">
+              <div className="pd-widget">
                 <div className="section-title8">
                   <h4>About VGN</h4>
                   <br />

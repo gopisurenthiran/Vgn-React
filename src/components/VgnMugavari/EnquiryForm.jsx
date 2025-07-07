@@ -31,6 +31,7 @@ import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
+import SubNav from "./SubNav";
 
 export default function EnquiryForm() {
   const [showModal, setShowModal] = useState(false);
@@ -111,12 +112,13 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
+          <SubNav />
           <div className="col-lg-4">
             <div
               className="position-sticky"
               style={{ top: "100px", zIndex: 1 }}
             >
-              <div className="property-sidebar">
+              <div className="property-sidebar" id="contact">
                 <div className="single-sidebar">
                   <div className="contact-bx">
                     <div className="section-title7">
@@ -246,7 +248,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About Section */}
-              <div className="pd-widget" id="about">
+              <div className="pd-widget" id="about-vgn">
                 <div className="section-title7">
                   <h4
                     className="mobile-h4"
@@ -286,7 +288,7 @@ export default function EnquiryForm() {
               {/* Project Highlights Section */}
               <div
                 className="pd-widget pd-widget1"
-                id="features"
+                id="highlights"
                 style={{ marginBottom: "5px" }}
               >
                 <div className="section-title7">
@@ -296,7 +298,7 @@ export default function EnquiryForm() {
                   {projects.map((feature, index) => (
                     <div
                       key={index}
-                      className="col-lg-3 col-md-4 col-sm-2 col-12 mb-4"
+                      className="col-lg-3 col-md-4 col-6 g-3"
                     >
                       <div className="servicebox first">
                         <div className="service-icon">
@@ -345,7 +347,7 @@ export default function EnquiryForm() {
 
               <div className="border-bottom my-3"></div>
               {/* Route Map Section */}
-              <div className="pd-widget" id="map">
+              <div className="pd-widget" id="route">
                 <div className="section-title7">
                   <h4>Route Map</h4>
                 </div>
@@ -354,7 +356,7 @@ export default function EnquiryForm() {
 
               <div className="border-btm"></div>
               {/* About VGN */}
-              <div className="pd-widget" id="about-vgn">
+              <div className="pd-widget">
                 <div className="section-title7">
                   <h4>About VGN</h4>
                   <br />

@@ -76,6 +76,7 @@ import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
+import SubNav from "./SubNav";
 
 export default function EnquiryForm() {
   const advantages = [
@@ -207,12 +208,13 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
+             <SubNav/>
           <div className="col-lg-4">
             <div
               className="position-sticky"
               style={{ top: "100px", zIndex: 1 }}
             >
-              <div className="property-sidebar">
+              <div className="property-sidebar" id="contact">
                 <div className="single-sidebar">
                   <div className="contact-bx">
                     <div className="section-title2">
@@ -281,7 +283,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About Section */}
-              <div className="pd-widget" id="about">
+              <div className="pd-widget" id="about-vgn">
                 <div className="section-title2">
                   <h1
                     className="mobile-h4"
@@ -340,7 +342,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* NearBy Section */}
-              <div className="pd-widget pd-widget1 mb-2" id="features">
+              <div className="pd-widget pd-widget1 mb-2" id="nearby">
                 <div className="section-title2 mb-4">
                   <h4>Nearby</h4>
                 </div>
@@ -470,7 +472,7 @@ export default function EnquiryForm() {
 
               <div className="border-bottom my-3"></div>
               {/* Route Map Section */}
-              <div className="pd-widget" id="map">
+              <div className="pd-widget" id="route">
                 <div className="section-title2">
                   <h4>Route Map</h4>
                 </div>
@@ -479,7 +481,7 @@ export default function EnquiryForm() {
 
               <div className="border-btm"></div>
               {/* Video Section */}
-              <div className="pd-widget" id="gallery">
+              <div className="pd-widget" id="video">
                 <div className="section-title2">
                   <h4>Video</h4>
                 </div>
@@ -503,7 +505,7 @@ export default function EnquiryForm() {
 
               <div className="border-btm"></div>
 
-              <div className="pd-widget" id="map">
+              <div className="pd-widget" id="360view">
                 <div className="section-title">
                   <h4>360&deg; View</h4>
                 </div>

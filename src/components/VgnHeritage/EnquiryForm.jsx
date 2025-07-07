@@ -39,6 +39,7 @@ import advIcon3 from "@/assets/adv-icon3.png";
 import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
+import SubNav from "./SubNav";
 
 export default function EnquiryForm() {
   const advantages = [
@@ -124,7 +125,9 @@ export default function EnquiryForm() {
           </div>
 
           <div className="col-lg-8">
+               
             <div className="pd-text">
+               <SubNav/>
               {/* Top Section with Logo & Address */}
               <div className="row align-items-center py-3">
                 {/* Logo & Location */}
@@ -179,7 +182,7 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* About Section */}
-              <div className="pd-widget" id="about">
+              <div className="pd-widget" id="about-vgn">
                 <div className="section-title">
                   <h4
                     className="mobile-h4"

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Banner from "../components/VgnGrandeur/Banner.jsx";
 import EnquiryForm from "../components/VgnGrandeur/EnquiryForm.jsx";
 import ExploreProjects from "../components/VgnGrandeur/ExploreProjects.jsx";
-import SubNav from "../components/VgnGrandeur/SubNav.jsx"; // ✅ new import
+
 import "../style/VgnGrandeur.css";
 import SubFooter from "../components/VgnGrandeur/SubFooter.jsx";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
@@ -46,9 +46,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
-
+     
       {/* ✅ Content */}
       <EnquiryForm />
       <ExploreProjects />

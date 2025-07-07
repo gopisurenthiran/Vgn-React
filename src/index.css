@@ -1039,6 +1039,7 @@ select {
   font-size: 15px;
 }
 .site-btn {
+  text-decoration: none;
     font-size: 13px;
     color: #bf151a;
     background: #fff;
@@ -1631,4 +1632,44 @@ select:hover {
 }
 .cc-form select.form-select {
   height: 45px;
+}
+
+.high h5 {
+  text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #b4151a;
+    font-family: 'Mulish', sans-serif;
+  }
+  .class-img{
+     text-align: center;
+  }
+  .shine-text {
+  position: relative;
+  overflow: hidden;
+  color: #000; /* or your preferred text color */
+  font-weight: 600;
+}
+
+.shine-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
 }

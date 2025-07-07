@@ -3,7 +3,6 @@ import Banner from '../components/Vgnvarnabhoomi/Banner';
 import EnquiryForm from '../components/Vgnvarnabhoomi/EnquiryForm';
 import ExploreProjects from '../components/Vgnvarnabhoomi/ExploreProjects';
 import "../style/Vgnvarnabhoomi.css";
-import SubNav from "../components/Vgnvarnabhoomi/SubNav";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer";
 import SubFooter from "../components/Vgnvarnabhoomi/SubFooter";
 
@@ -45,9 +44,7 @@ useEffect(() => {
         <Banner />
       </div>
 
-      {/* ✅ SubNav */}
-      {showSubNav && <SubNav />}
-
+     
       {/* ✅ Content */}
       <EnquiryForm />
       <ExploreProjects />
