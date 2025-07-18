@@ -20,15 +20,7 @@ import VGNVarnabhoomi from "@/assets/ongoing/project5.jpg";
 import VGNSamudra from "@/assets/ongoing/project9.jpg";
 
 const properties = [
-  {
-    image: VGNGrandeur,
-    title: "VGN Krystal Peak",
-    location: "Iyyappanthangal, Porur",
-    size: "581 - 3061 Sq feet",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-krystal-peak/index",
-  },
+ 
   {
     title: "VGN Heritage Springz",
     location: "Ottiyambakkam, Chennai.",
