@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from "react-router-dom"; 
 import project35 from "@/assets/ongoing/project35.jpg";
 import project34 from "@/assets/ongoing/project34.jpg";
 import project31 from "@/assets/ongoing/project31.jpg";
@@ -32,7 +32,7 @@ export default function ExploreProjects() {
       bhk: "2 BHK & 3 BHK",
       type: "Plots",
       status: "Under Construction",
-      link: "https://www.vgnhomes.org/vgn-aspire-gardens/index",
+      link: "/vgn-aspire-gardens/index",
       image: project35,
       size: null,
     },
@@ -42,7 +42,7 @@ export default function ExploreProjects() {
       bhk: "3 BHK",
       type: "Plots",
       status: "Under Construction",
-      link: "https://www.vgnhomes.org/vgn-pride-de-villa/index",
+      link: "/vgn-pride-de-villa/index",
       image: project34,
       size: null,
     },
@@ -52,7 +52,7 @@ export default function ExploreProjects() {
       size: "595 - 1731 Sq feet",
       type: "Plots",
       status: "Ready to Construct",
-      link: "https://www.vgnhomes.org/vgn-highland/index",
+      link: "/vgn-highland/index",
       image: project31,
       bhk: null,
     },
@@ -62,7 +62,7 @@ export default function ExploreProjects() {
       size: "700 - 1926 Sq feet",
       type: "Plots",
       status: "Ready to Construct",
-      link: "https://vgnhomes.org/vgn-mugavari-phase2/index",
+      link: "/vgn-mugavari-phase2/index",
       image: project10_1,
       bhk: null,
     },
@@ -73,7 +73,7 @@ export default function ExploreProjects() {
     size: "646 - 2607",
     type: "Plots",
     status: "Ready to Construct",
-    link: "https://www.vgnhomes.org/vgn-horizon/index",
+    link: "/vgn-horizon/index",
   },
   {
     title: "VGN Classique",
@@ -82,7 +82,7 @@ export default function ExploreProjects() {
     size: "753 - 1416",
     type: "Plots",
     status: "Ready to Construct",
-    link: "https://www.vgnhomes.org/vgn-classique/index",
+    link: "/vgn-classique/index",
   },
   {
     title: "VGN Pride",
@@ -91,7 +91,7 @@ export default function ExploreProjects() {
     size: "523 - 1636",
     type: "Plots",
     status: "Ready to Construct",
-    link: "https://www.vgnhomes.org/vgn-pride/index",
+    link: "/vgn-pride/index",
   },
  
   ];
@@ -170,9 +170,9 @@ export default function ExploreProjects() {
                       <i className="fa fa-home text-danger me-2"></i>
                       {project.status}
                     </span>
-                    <a href={project.link} className="btn btn-sm btn-outline-danger">
+                    <Link to={project.link} className="btn btn-sm btn-outline-danger">
                       View More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

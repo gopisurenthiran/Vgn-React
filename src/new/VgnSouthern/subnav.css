@@ -24,9 +24,7 @@
   transition: color 0.2s;
 }
 
-.nav-link:hover {
-  color: #b91011;
-}
+
 
 /* MOBILE drawer */
 .subnav-mobile {

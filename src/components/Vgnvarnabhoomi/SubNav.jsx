@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import "./subnav.css";
 
 const sections = [
@@ -17,47 +18,46 @@ export default function SubNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const topOffset = window.innerWidth < 768 ? 90 : 130;
-      let currentSection = "";
+      let found = "";
 
-      for (let i = 0; i < sections.length; i++) {
-        const [id] = sections[i];
+      for (let [id] of sections) {
         const el = document.querySelector(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= topOffset && rect.bottom > topOffset) {
-            currentSection = id;
-            break; // Stop at the first matching section
+          const topOffset = window.innerWidth < 768 ? 90 : 130;
+          if (rect.top <= topOffset && rect.bottom >= topOffset) {
+            found = id;
+            break;
           }
         }
       }
 
-      if (currentSection !== activeSection) {
-        setActiveSection(currentSection);
-      }
+      setActiveSection((prev) => (prev !== found ? found : prev));
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
-    handleScroll(); // Call once on load
+    const timeout = setTimeout(() => {
+      handleScroll();
+    }, 300);
 
     return () => {
+      clearTimeout(timeout);
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
     };
-  }, [activeSection]);
+  }, []);
 
   return (
     <div className="subnav-tabs-wrapper">
-      <ul className="nav nav-tab">
+<ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
         {sections.map(([href, label]) => (
           <li className="nav-item" key={href}>
-            <a
+            <Link
               className={`nav-link ${activeSection === href ? "active" : ""}`}
-              href={href}
+              to={href}
+              smooth
             >
               {label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

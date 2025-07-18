@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom"; // Import Link
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "slick-carousel/slick/slick.css";
@@ -14,16 +15,20 @@ import project24 from "@/assets/ongoing/project24.jpg";
 import project15 from "@/assets/ongoing/project15.jpg";
 
 const NextArrow = ({ onClick }) => (
-  <button className="custom-slick-arrow9 next-arrow" onClick={onClick} aria-label="Next">
+  <button className="custom-slick-arrow next-arrow" onClick={onClick} aria-label="Next">
     <i className="fa fa-angle-right"></i>
   </button>
 );
 
 const PrevArrow = ({ onClick }) => (
-  <button className="custom-slick-arrow9 prev-arrow" onClick={onClick} aria-label="Previous">
+  <button className="custom-slick-arrow prev-arrow" onClick={onClick} aria-label="Previous">
     <i className="fa fa-angle-left"></i>
   </button>
 );
+
+// Helper to check if the link is external
+const isExternal = (url) => url.startsWith("http");
+
 export default function ExploreProjects() {
   const projects = [
     {
@@ -67,33 +72,32 @@ export default function ExploreProjects() {
       bhk: null,
     },
     {
-    title: "VGN Horizon",
-    image: project27,
-    location: "Avadi, Chennai.",
-    size: "646 - 2607",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-horizon/index",
-  },
-  {
-    title: "VGN Classique",
-    image: project24,
-    location: "Ambattur, Chennai.",
-    size: "753 - 1416",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-classique/index",
-  },
-  {
-    title: "VGN Pride",
-    image: project15,
-    location: "Padur, Chennai.",
-    size: "523 - 1636",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-pride/index",
-  },
- 
+      title: "VGN Horizon",
+      image: project27,
+      location: "Avadi, Chennai.",
+      size: "646 - 2607",
+      type: "Plots",
+      status: "Ready to Construct",
+      link: "/vgn-horizon/index",
+    },
+    {
+      title: "VGN Classique",
+      image: project24,
+      location: "Ambattur, Chennai.",
+      size: "753 - 1416",
+      type: "Plots",
+      status: "Ready to Construct",
+      link: "/vgn-classique/index",
+    },
+    {
+      title: "VGN Pride",
+      image: project15,
+      location: "Padur, Chennai.",
+      size: "523 - 1636",
+      type: "Plots",
+      status: "Ready to Construct",
+      link: "/vgn-pride/index",
+    },
   ];
 
   const settings = {
@@ -108,25 +112,15 @@ export default function ExploreProjects() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 992, settings: { slidesToShow: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1 } },
     ],
   };
 
   return (
     <section className="property-details-section py-5" id="expore-projects" style={{ background: "#f9f9f9" }}>
       <div className="container">
-        <div className="section-title9 mb-4">
+        <div className="section-title1 mb-4">
           <h4>
             Explore <span>Our Projects</span>
           </h4>
@@ -137,14 +131,12 @@ export default function ExploreProjects() {
             <div key={idx} className="px-3">
               <div className="border rounded bg-white shadow-sm overflow-hidden">
                 <div className="imgTitle">
-                    <div className="slide-img-txt">
-                   
-                   <h2 className="blogTitle fw-bold">{project.title}</h2>
-                    </div>
-                    <img src={project.image} alt={project.title} className="img-fluid w-100" />
+                  <div className="slide-img-txt">
+                    <h2 className="blogTitle fw-bold">{project.title}</h2>
+                  </div>
+                  <img src={project.image} alt={project.title} className="img-fluid w-100" />
                 </div>
-                <div className="slider-content">
-                  
+                <div className="slider-content p-3">
                   <p>
                     <i className="fa fa-map-marker text-danger me-2"></i>
                     {project.location}
@@ -170,9 +162,21 @@ export default function ExploreProjects() {
                       <i className="fa fa-home text-danger me-2"></i>
                       {project.status}
                     </span>
-                    <a href={project.link} className="btn btn-sm btn-outline-danger">
-                      View More
-                    </a>
+
+                    {isExternal(project.link) ? (
+                      <a
+                        href={project.link}
+                        className="btn btn-sm btn-outline-danger"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View More
+                      </a>
+                    ) : (
+                      <Link to={project.link} className="btn btn-sm btn-outline-danger">
+                        View More
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

@@ -119,7 +119,7 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
-           <SubNav/>
+           {/* <SubNav/> */}
           <div className="col-lg-4">
             <div
               className="position-sticky"
@@ -188,7 +188,14 @@ export default function EnquiryForm() {
                         icon={faClipboard}
                         style={{ color: "#d90005" }}
                       />{" "}
-                      RERA: TN/01/Layout/0188/2024
+                      PH I - RERA: TN/01/Layout/0188/2024
+                    </p>
+                      <p className="mb-0">
+                      <FontAwesomeIcon
+                        icon={faClipboard}
+                        style={{ color: "#d90005" }}
+                      />{" "}
+                      PH II - RERA: TN/1/Layout/2357/2025
                     </p>
                   </div>
                 </div>

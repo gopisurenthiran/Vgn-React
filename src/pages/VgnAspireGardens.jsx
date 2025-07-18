@@ -1,43 +1,45 @@
+import BrandIconSection from '../components/BrandIconSection.jsx';
 import BrandIconSectionInner from '../components/BrandIconSectionIneer.jsx';
+import Faq from '../components/Nri/Faq.jsx';
 import Banner from '../components/VgnAspire/Banner.jsx';
 import EnquiryForm from '../components/VgnAspire/EnquiryForm.jsx';
 import ExploreProjects from '../components/VgnAspire/ExploreProjects.jsx';
 import SubFooter from '../components/VgnAspire/SubFooter.jsx';
+import SubNav from '../components/VgnAspire/SubNav.jsx';
 
 import "../style/VgnAspire.css";
 import { useEffect, useRef, useState } from "react";
+
+
+
 
 
 export default function VgnAspireGardens() {
   const bannerRef = useRef(null);
   const [showSubNav, setShowSubNav] = useState(false);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      setShowSubNav(entry.intersectionRatio < 0.3);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowSubNav(entry.intersectionRatio < 0.3);
 
-      // Toggle main navbar visibility
-      const mainNavbar = document.querySelector(".custom-navbar");
-      if (mainNavbar) {
-        if (entry.intersectionRatio < 0.3) {
-          mainNavbar.classList.add("d-none");
-        } else {
-          mainNavbar.classList.remove("d-none");
+        const mainNavbar = document.querySelector(".custom-navbar");
+        if (mainNavbar) {
+          if (entry.intersectionRatio < 0.3) {
+            mainNavbar.classList.add("d-none");
+          } else {
+            mainNavbar.classList.remove("d-none");
+          }
         }
-      }
-    },
-    {
-      root: null,
-      threshold: [0, 0.3, 1],
-    }
-  );
+      },
+      { root: null, threshold: [0, 0.3, 1] }
+    );
 
-  if (bannerRef.current) observer.observe(bannerRef.current);
-  return () => {
-    if (bannerRef.current) observer.unobserve(bannerRef.current);
-  };
-}, []);
+    if (bannerRef.current) observer.observe(bannerRef.current);
+    return () => {
+      if (bannerRef.current) observer.unobserve(bannerRef.current);
+    };
+  }, []);
 
   return (
     <div>
@@ -46,13 +48,18 @@ useEffect(() => {
         <Banner />
       </div>
 
-     
+      {/* ✅ Sticky SubNav */}
+      {showSubNav && <SubNav />}
 
-      {/* ✅ Content */}
+      {/* ✅ Page Sections */}
+      <div className="pt-20 md:pt-28">
+       {/* ✅ Content */}
       <EnquiryForm />
       <ExploreProjects />
-      <BrandIconSectionInner />
+      <Faq/>
+      <BrandIconSection/>
       <SubFooter />
+      </div>
     </div>
   );
 }

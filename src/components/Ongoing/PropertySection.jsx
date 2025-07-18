@@ -11,16 +11,24 @@ import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
 import VGNParadise from "@/assets/ongoing/project23.jpg";
 import VGNHighland from "@/assets/ongoing/project31.jpg";
 import VGNHorizon from "@/assets/ongoing/project27.jpg";
-import VGNClassique from "@/assets/ongoing/project24.jpg";
+
 import VGNPride from "@/assets/ongoing/project15.jpg";
 import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
-import VGNWestfield from "@/assets/ongoing/project22.jpg";
-import VGNWindsorParkPhase4 from "@/assets/ongoing/project30.jpg";
-import VGNSouthernMeadows from "@/assets/ongoing/project21.jpg";
+
+
 import VGNVarnabhoomi from "@/assets/ongoing/project5.jpg";
 import VGNSamudra from "@/assets/ongoing/project9.jpg";
 
 const properties = [
+  {
+    image: VGNGrandeur,
+    title: "VGN Krystal Peak",
+    location: "Iyyappanthangal, Porur",
+    size: "581 - 3061 Sq feet",
+    type: "Plots",
+    status: "Ready to Construct",
+    link: "/vgn-krystal-peak/index",
+  },
   {
     title: "VGN Heritage Springz",
     location: "Ottiyambakkam, Chennai.",
@@ -32,7 +40,7 @@ const properties = [
   },
   {
     image: VGNGrandeur,
-    title: "VGN Grandeur",
+    title: "VGN Grandeur Phase I & II",
     location: "Iyyappanthangal, Porur",
     size: "581 - 3061 Sq feet",
     type: "Plots",
@@ -68,7 +76,7 @@ const properties = [
   },
   {
     image: VGNHighland,
-    title: "VGN Highland",
+    title: "VGN Highland Phase I & II",
     location: "Tharapakkam, Chennai",
     size: "734 - 1704 Sq feet",
     type: "Plots",
@@ -101,33 +109,6 @@ const properties = [
     type: "Plots",
     status: "Ready to Construct",
     link: "/vgn-mugavari-phase2/index",
-  },
-  {
-    image: VGNWestfield,
-    title: "VGN Westfield",
-    location: "Avadi, Chennai.",
-    size: "1358, 2195 Sq feet",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-westfield/index",
-  },
-  {
-    image: VGNWindsorParkPhase4,
-    title: "VGN Windsor Park Phase IV - 1G",
-    location: "Avadi, Chennai.",
-    size: "1104, 1170 Sq.Ft.",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-windsorpark-phase4-1g/index",
-  },
-  {
-    image: VGNSouthernMeadows,
-    title: "VGN Southern Meadows",
-    location: "Potheri, Chennai.",
-    size: "1302 Sq.Ft.",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-southernmeadows/index",
   },
   {
     image: VGNVarnabhoomi,

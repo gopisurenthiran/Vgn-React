@@ -1,50 +1,43 @@
 .subnav-tabs-wrapper {
   position: sticky;
-  top: 56px;
-  z-index: 1020;
+  top: 62px; /* Adjust if your main navbar height differs */
+  z-index: 1005;
   background: #b4151a;
+  border-bottom: 1px solid #ddd;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding: 0.5rem 1rem;
+  margin-top: 5px;
 }
 
 .subnav-tabs-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-.subnav-tabs-wrapper .nav-tab{
-  flex-wrap: nowrap !important;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  border-bottom: none;
-  padding: 0;
-  margin: 0;
-  width: max-content;
-}
-
-.subnav-tabs-wrapper .nav-item {
-  flex: 0 0 auto;
+.subnav-tabs-wrapper .nav-tab {
+  display: flex;
+  gap: 1rem;
 }
 
 .subnav-tabs-wrapper .nav-link {
-  color: white;
-  border: none;
-  background: transparent;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
   font-weight: 500;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.2s ease;
   white-space: nowrap;
-  border-radius: 0;
+}
+
+.subnav-tabs-wrapper .nav-link:hover {
+  background-color: #f5f5f5;
+  color: #000;
 }
 
 .subnav-tabs-wrapper .nav-link.active {
-  background-color: white;
+  background-color: #fff;
   color: #b4151a;
   font-weight: 600;
-  border-radius: 0;
-}
-
-.nav-link:hover {
-    color: #ffff !important;
 }

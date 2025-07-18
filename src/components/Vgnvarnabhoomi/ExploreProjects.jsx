@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from "react-router-dom"; 
 import bank1 from '@/assets/vgn-varnabhoomi/bank1.png';
 import bank2 from '@/assets/vgn-varnabhoomi/bank2.png';
 import bank8 from '@/assets/vgn-varnabhoomi/bank8.png';
@@ -196,9 +196,9 @@ export default function ExploreProjects() {
                       <i className="fa fa-home text-danger me-2"></i>
                       {project.status}
                     </span>
-                    <a href={project.link} className="btn btn-sm btn-outline-danger">
+                    <Link to={project.link} className="btn btn-sm btn-outline-danger">
                       View More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

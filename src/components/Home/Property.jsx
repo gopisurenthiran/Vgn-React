@@ -26,7 +26,7 @@ const properties = [
     link: "/vgn-paradise/index",
   },
   {
-    title: "VGN Granduer",
+    title: "VGN Granduer Phase I & II",
     location: "Iyyappanthangal, Porur.",
     type: "Plots",
     size: "581 - 3061 Sq feet",

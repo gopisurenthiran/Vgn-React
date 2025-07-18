@@ -67,10 +67,10 @@ import completed2 from "@/assets/Completed/completed2.jpg";
 import completed39 from "@/assets/Completed/completed39.jpg";
 import completed1 from "@/assets/Completed/completed1.jpg";
 import img24 from "@/assets/ongoing/completed71.jpg";
-
-
-
-
+import VGNWindsorParkPhase4 from "@/assets/ongoing/project30.jpg";
+import VGNSouthernMeadows from "@/assets/ongoing/project21.jpg";
+import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
+import VGNWestfield from "@/assets/ongoing/project22.jpg";
 
 const completedProjects = [
   {
@@ -84,7 +84,7 @@ const completedProjects = [
   {
     image: img70,
     name: "VGN Mahalakshmi nagar Phase XIV",
-    size: "1105 Sq.ft",
+    size: "742 - 1353 Sq.ft",
     type: "Plots",
     location: "Velappanchavadi, Chennai.",
     year: "2024",
@@ -92,7 +92,7 @@ const completedProjects = [
   {
     image: img68,
     name: "VGN CH40",
-    size: "1592 Sq.Ft.",
+    size: "690 - 2518 Sq.Ft.",
     type: "Plots",
     location: "Anna Nagar, Chennai.",
     year: "2024",
@@ -100,7 +100,7 @@ const completedProjects = [
   {
     image: img69,
     name: "VGN Windsor Park Phase - VII",
-    size: "2176 Sq.Ft.",
+    size: "984 - 2176 Sq.Ft.",
     type: "Flats",
     location: "Poonamallee, Chennai.",
     year: "2024",
@@ -108,7 +108,7 @@ const completedProjects = [
   {
     image: img67,
     name: "VGN Serene",
-    size: "1216, 1958 Sq feet",
+    size: "661 - 2101 Sq.ft.",
     type: "Flats",
     location: "Kundrathur, Chennai.",
     year: "2024",
@@ -116,11 +116,66 @@ const completedProjects = [
   {
     image: img66,
     name: "VGN Brillianze Phase II",
-    size: "1354 Sq feet",
+    size: " 555 - 2054 Sq.ft.",
     type: "Flats",
     location: "Ponmar, Chennai.",
     year: "2024",
   },
+  {
+    image: VGNWestfield,
+    name: "VGN Westfield",
+    location: "Avadi, Chennai.",
+    size: "667 - 2195 Sq.ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2025",
+  },
+  {
+    image: VGNWindsorParkPhase4,
+    name: "VGN Windsor Park Phase IV - 1G",
+    location: "Avadi, Chennai.",
+    size: "641 - 1236 Sq.Ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2025",
+  },
+  {
+    image: VGNSouthernMeadows,
+    name: "VGN Southern Meadows - I",
+    location: "Potheri, Chennai.",
+    size: "754 - 4213 Sq.ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2024",
+  },
+   {
+    image: VGNSouthernMeadows,
+    name: "VGN Southern Meadows - II",
+    location: "Potheri, Chennai.",
+    size: "698 - 1618 Sq.ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2023",
+  },
+   {
+    image: VGNSouthernMeadows,
+    name: "VGN Southern Meadows - III",
+    location: "Potheri, Chennai.",
+    size: " 469 - 1451 Sq.ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2020",
+  },
+   {
+    image: VGNSouthernMeadows,
+    name: "VGN Southern Meadows - IV",
+    location: "Potheri, Chennai.",
+    size: "958 - 1162 Sq.ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2025",
+  },
+
   {
     image: img65,
     name: "VGN Exotica",
@@ -132,7 +187,7 @@ const completedProjects = [
   {
     image: img64,
     name: "VGN Santhosh Nagar",
-    size: "1030 Sq.Ft.",
+    size: "786 - 3774 Sq.Ft.",
     type: "Plots",
     location: "Aranvoyal (Thirumazhisai).",
     year: "2024",
@@ -140,15 +195,32 @@ const completedProjects = [
   {
     image: img63,
     name: "VGN Southern Fortune",
-    size: "2747 Sq.Ft.",
+    size: "575 - 2747 Sq.Ft.",
     type: "Plots",
     location: "Potheri, Chennai.",
     year: "2024",
   },
     {
-    image: img62,
-    name: "VGN Mugavari",
-    size: "1404, 3490 Sq.Ft.",
+      image: VGNMugavariPhase,
+      name: "VGN Mugavari Phase - I",
+      location: "Tambaram, Chennai.",
+      size: " 653 - 3490 Sq.Ft.",
+      type: "Plots",
+      year: "2024",
+      
+    },
+  {
+    image: VGNMugavariPhase,
+    name: "VGN Mugavari - II",
+    size: "760 - 956 Sq.Ft.",
+    type: "Plots",
+    location: "Tambaram, Chennai.",
+    year: "2024",
+  },
+   {
+    image: VGNMugavariPhase,
+    name: "VGN Mugavari - III",
+    size: "645 - 1457 Sq.Ft.",
     type: "Plots",
     location: "Tambaram, Chennai.",
     year: "2024",
@@ -156,7 +228,7 @@ const completedProjects = [
   {
     image: img54,
     name: "VGN Sparkle",
-    size: "914 Sq.Ft.",
+    size: " 891 - 939 Sq.Ft.",
     type: "Plots",
     location: "Avadi, Chennai.",
     year: "2023",
@@ -164,7 +236,7 @@ const completedProjects = [
   {
     image: img61,
     name: "VGN Southern Chirpy",
-    size: "1375 Sq.Ft.",
+    size: "2BHK & 3BHK.",
     type: "Plots",
     location: "Potheri, Chennai.",
     year: "2023",
@@ -258,7 +330,7 @@ const completedProjects = [
     year: 2020,
   },
 
-   {
+  {
     image: img43,
     name: "VGN EXPANZA",
     size: "2BHK",
@@ -341,7 +413,7 @@ const completedProjects = [
   {
     image: img53,
     name: "VGN WINDSOR PARK PHASE - IV",
-    size: "607 - 2335",
+    size: "607 - 2335 Sq.Ft.",
     type: "Plots",
     location: "Melpakkam, Avadi",
     year: 2017,
@@ -349,7 +421,7 @@ const completedProjects = [
   {
     image: img33,
     name: "VGN SERENITY GROVE",
-    size: "624 - 3341",
+    size: "624 - 3341 Sq.Ft.",
     type: "Plots",
     location: "Ayappakkam",
     year: 2017,
@@ -363,7 +435,7 @@ const completedProjects = [
     year: 2017,
   },
 
-    {
+  {
     image: completed31,
     name: "VGN HARMONY",
     size: "2BHK, 3BHK",
@@ -374,7 +446,7 @@ const completedProjects = [
   {
     image: completed30,
     name: "VGN MONTE CARLO",
-    size: "614 - 5440",
+    size: "614 - 5440 Sq.Ft.",
     type: "Plots",
     location: "Nolambur, Mogappair west",
     year: 2016,
@@ -382,7 +454,7 @@ const completedProjects = [
   {
     image: completed29,
     name: "VGN ROYAL COURT",
-    size: "602 - 893",
+    size: "602 - 893 Sq.Ft.",
     type: "Plots",
     location: "Mugalivakkam",
     year: 2016,
@@ -398,7 +470,7 @@ const completedProjects = [
   {
     image: completed51,
     name: "VGN WINDSOR PARK PHASE - I, II & III",
-    size: "600 - 3442",
+    size: "600 - 3442 Sq.Ft.",
     type: "Plots",
     location: "Melpakkam, Avadi",
     year: 2015,
@@ -406,7 +478,7 @@ const completedProjects = [
   {
     image: completed27,
     name: "VGN GRAND HISTORIA",
-    size: "1043 - 1890",
+    size: "1043 - 1890 Sq.Ft.",
     type: "Plots",
     location: "Thiruneermalai",
     year: 2015,
@@ -414,7 +486,7 @@ const completedProjects = [
   {
     image: completed26,
     name: "VGN MAHALAKSHMI NAGAR",
-    size: "615 - 2362",
+    size: "615 - 2362 Sq.Ft.",
     type: "Plots",
     location: "Ayyampakkam, Thiruverkadu",
     year: 2015,
@@ -422,7 +494,7 @@ const completedProjects = [
   {
     image: completed25,
     name: "VGN SHANTHI NAGAR",
-    size: "985 - 1644",
+    size: "985 - 1644 Sq.Ft.",
     type: "Plots",
     location: "Ambathur",
     year: 2015,
@@ -430,7 +502,7 @@ const completedProjects = [
   {
     image: completed24,
     name: "VGN SOUTHERN COUNTY",
-    size: "1200 - 2733",
+    size: "1200 - 2733 Sq.Ft.",
     type: "Plots",
     location: "Kavanur, Kattankulathur",
     year: 2015,
@@ -438,7 +510,7 @@ const completedProjects = [
   {
     image: completed23,
     name: "VGN SOUTHERN COUNTY MAIN",
-    size: "1261 - 3728",
+    size: "1261 - 3728 Sq.Ft.",
     type: "Plots",
     location: "Kattankullathur",
     year: 2015,
@@ -446,7 +518,7 @@ const completedProjects = [
   {
     image: completed22,
     name: "VGN SPRING FIELD",
-    size: "630 - 3827",
+    size: "630 - 3827 Sq.Ft.",
     type: "Plots",
     location: "Villijambakkam, Avadi",
     year: 2015,
@@ -454,7 +526,7 @@ const completedProjects = [
   {
     image: completed21,
     name: "VGN CEE PAA",
-    size: "1928 - 2725",
+    size: "1928 - 2725 Sq.Ft.",
     type: "Plots",
     location: "Kavanur",
     year: 2014,
@@ -519,7 +591,7 @@ const completedProjects = [
   {
     image: completed13,
     name: "VGN BLOOMINGDALE",
-    size: "600 - 2953",
+    size: "600 - 2953 Sq.Ft.",
     type: "Plots",
     location: "Kongadu village, Sp kovil",
     year: 2013,
@@ -527,7 +599,7 @@ const completedProjects = [
   {
     image: completed12,
     name: "VGN SUMMERDALE",
-    size: "626 - 3094",
+    size: "626 - 3094 Sq.Ft.",
     type: "Plots",
     location: "Kovur",
     year: 2013,
@@ -564,7 +636,7 @@ const completedProjects = [
     location: "Kattankulathur",
     year: 2012,
   },
- {
+  {
     image: completed7,
     name: "VGN ERNEST PHASE-I",
     size: "1BHK",
@@ -591,7 +663,7 @@ const completedProjects = [
   {
     image: completed4,
     name: "VGN SARANG AVENUE MAIN",
-    size: "638 - 3767",
+    size: "638 - 3767 Sq.Ft.",
     type: "Plots",
     location: "Venbakkam, Sp kovil",
     year: 2011,
@@ -599,7 +671,7 @@ const completedProjects = [
   {
     image: completed3,
     name: "VGN SOUTHERN GARDEN",
-    size: "993 - 3257",
+    size: "993 - 3257 Sq.Ft.",
     type: "Plots",
     location: "Kowl Bazzar, Pozhichalur",
     year: 2011,
@@ -607,7 +679,7 @@ const completedProjects = [
   {
     image: completed2,
     name: "VGN NORTHWOOD PARK",
-    size: "1018 - 3120",
+    size: "1018 - 3120 Sq.Ft.",
     type: "Plots",
     location: "Thirutheri, Sp kovil",
     year: 2008,
@@ -628,8 +700,6 @@ const completedProjects = [
     location: "Mogappair West",
     year: 2003,
   },
-
 ];
-
 
 export default completedProjects;

@@ -6,7 +6,7 @@ import image2 from "@/assets/2.png";
 import image3 from "@/assets/3.png";
 import image4 from "@/assets/4.png";
 import image5 from "@/assets/5.png";
-
+import { Link, Links } from "react-router-dom";
 export default function Trust() {
   return (
     <>
@@ -17,12 +17,12 @@ export default function Trust() {
         <div className="container">
           <div className="row align-items-center">
             {/* Left: Image */}
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-4 text-center">
               <img src={trust} className="about-img img-fluid" alt="logo" />
             </div>
 
             {/* Right: Content */}
-            <div className="col-lg-9">
+            <div className="col-lg-8">
               <div className="pd-widget" id="about-vgn">
                 <br />
                 <br />
@@ -41,19 +41,11 @@ export default function Trust() {
                   understanding our customer’s desires and helped us improve
                   their quality of life by providing them with the best
                   projects. &nbsp;
-                  <a href="/about" className="read-more">
+                  <Link to="/about" className="read-more">
                     Read more
-                  </a>
+                  </Link>
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg py-5">
-        <div className="container">
-          <div className="row gx-4 gy-4 justify-content-center high">
+                  <div className="row gx-4 gy-4 justify-content-center high">
             <div className="col-lg-4 col-md-4 col-6">
               <div className="class-img">
                 <img src={image1} alt="" className="img-fluid" />
@@ -101,6 +93,15 @@ export default function Trust() {
               </div>
             </div>
           </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg py-5">
+        <div className="container">
+        
         </div>
       </section>
     </>

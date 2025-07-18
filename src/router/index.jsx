@@ -11,6 +11,7 @@ import Testimonial from "@/pages/Testimonial";
 import OngoingProjects from "@/pages/OngoingProjects";
 import CompletedProjects from "@/pages/CompletedProjects";
 
+import VgnKrystalPeak from "../pages/VgnKrystalPeak";
 import VgnHeritage from "@/pages/VgnHeritage";
 import VgnGrandeur from "@/pages/VgnGrandeur";
 import VgnAspireGardens from "@/pages/VgnAspireGardens";
@@ -18,12 +19,12 @@ import VgnPrideVilla from "@/pages/VgnPrideVilla";
 import VgnParadise from "@/pages/VgnParadise";
 import VgnHighland from "@/pages/VgnHighland";
 import VgnHorizon from "@/pages/VgnHorizon";
-import VgnClassique from "@/pages/VgnClassique";
+// import VgnClassique from "@/pages/VgnClassique";
 import VgnPride from "@/pages/VgnPride";
 import VgnMugavari from "@/pages/VgnMugavari";
-import VgnWestField from "@/pages/VgnWestfield";
-import VgnWindsorpark from "@/pages/VgnWindsorpark";
-import VgnSouthernMedows from "@/pages/VgnSouthernMedows";
+// import VgnWestField from "@/pages/VgnWestfield";
+// import VgnWindsorpark from "@/pages/VgnWindsorpark";
+// import VgnSouthernMedows from "@/pages/VgnSouthernMedows";
 import VgnVarnabhoomi from "@/pages/VgnVarnabhoomi";
 import VgnSamudra from "@/pages/VgnSamudra";
 
@@ -53,10 +54,11 @@ const router = createBrowserRouter([
       { path: "chairman", element: <Chairman /> },
       { path: "our-people", element: <OurPeople /> },
       { path: "testimonial", element: <Testimonial /> },
-
+      
       { path: "ongoing-project", element: <OngoingProjects /> },
       { path: "completed-project", element: <CompletedProjects /> },
       
+      {path: "vgn-krystal-peak/index", element:<VgnKrystalPeak/>},
       { path: "vgn-heritage-springz/index", element: <VgnHeritage /> },
       { path: "vgn-grandeur/index", element: <VgnGrandeur /> },
       { path: "vgn-aspire-gardens/index", element: <VgnAspireGardens /> },
@@ -64,12 +66,12 @@ const router = createBrowserRouter([
       { path: "vgn-paradise/index", element: <VgnParadise /> },
       { path: "vgn-highland/index", element: <VgnHighland /> },
       { path: "vgn-horizon/index", element: <VgnHorizon /> },
-      { path: "vgn-classique/index", element: <VgnClassique /> },
+      // { path: "vgn-classique/index", element: <VgnClassique /> },
       { path: "vgn-pride/index", element: <VgnPride /> },
       { path: "vgn-mugavari-phase2/index", element: <VgnMugavari /> },
-      { path: "vgn-westfield/index", element: <VgnWestField /> },
-      { path: "vgn-windsorpark-phase4-1g/index", element: <VgnWindsorpark /> },
-      { path: "vgn-southernmeadows/index", element: <VgnSouthernMedows /> },
+      // { path: "vgn-westfield/index", element: <VgnWestField /> },
+      // { path: "vgn-windsorpark-phase4-1g/index", element: <VgnWindsorpark /> },
+      // { path: "vgn-southernmeadows/index", element: <VgnSouthernMedows /> },
       { path: "vgn-varnabhoomi/index", element: <VgnVarnabhoomi /> },
       { path: "vgn-samudra/index", element: <VgnSamudra /> },
 

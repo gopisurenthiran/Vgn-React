@@ -13,14 +13,7 @@ const properties = [
     size: "22 Cents",
     status: "Launching soon",
   },
-  {
-    title: "Heritage Springz",
-    image: "/heritage.jpg",
-    location: "Ottiyambakkam, Chennai.",
-    type: "Plots",
-    size: "700 - 1683 Sq ft",
-    status: "Launching soon",
-  },
+ 
 ];
 
 const UpcomingProjects = () => {

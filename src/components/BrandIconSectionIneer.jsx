@@ -16,8 +16,8 @@ export default function BrandIconSectionInner() {
               alt="Brand Icon 3"
               style={{ width: "70px", marginLeft: "15px" }}
             />
-            <h3 className="mb-0 fs-5 fw-semibold">
-              NA. available at website{" "}
+            <p className="rera">
+               TN/35/Layout/2358/2025. available at website{" "}
               <a
                 href="https://www.rera.tn.gov.in/"
                 className="footer-a"
@@ -26,7 +26,7 @@ export default function BrandIconSectionInner() {
               >
                 www.rera.tn.gov.in
               </a>
-            </h3>
+            </p>
           </div>
         </div>
 

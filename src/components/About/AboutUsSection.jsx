@@ -7,7 +7,7 @@ const stats = [
   { value: 81, suffix: '+', label: 'Years of business expertise' },
   { value: 240, suffix: '+', label: 'Projects' },
   { value: 60000, suffix: '+', label: 'Happy Customers' },
-  { value: 800, suffix: '+', label: 'Acres of plot property developed' },
+  { value: 1000, suffix: '+', label: 'Acres of plot property developed' },
   { value: 20, suffix: '', label: 'Million sq.ft. of residential projects' },
 ];
 

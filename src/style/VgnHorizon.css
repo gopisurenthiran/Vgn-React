@@ -344,3 +344,24 @@ color: #111111;
 }
 /* Vgn-Paradise End */
 
+/* Sticky subnav */
+.subnav-tabs-wrapper {
+  background: #b4151a;
+  z-index: 1005; /* Should be less than .custom-navbar */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: all 0.3s ease;
+}
+
+/* Hide scrollbar (Chrome, Safari) */
+.subnav-tabs-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sticky when scrolling */
+.fixed-top {
+  position: sticky;
+  top: 56px; /* Adjust based on the height of .custom-navbar */
+}

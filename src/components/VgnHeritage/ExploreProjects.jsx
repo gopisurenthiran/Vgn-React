@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "slick-carousel/slick/slick.css";
@@ -12,6 +13,7 @@ import project10_1 from "@/assets/ongoing/project10-1.jpg";
 import project27 from "@/assets/ongoing/project27.jpg";
 import project24 from "@/assets/ongoing/project24.jpg";
 import project15 from "@/assets/ongoing/project15.jpg";
+
 
 const NextArrow = ({ onClick }) => (
   <button className="custom-slick-arrow1 next-arrow" onClick={onClick} aria-label="Next">
@@ -170,9 +172,9 @@ export default function ExploreProjects() {
                       <i className="fa fa-home text-danger me-2"></i>
                       {project.status}
                     </span>
-                    <a href={project.link} className="btn btn-sm btn-outline-danger">
+                    <Link to={project.link} className="btn btn-sm btn-outline-danger">
                       View More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

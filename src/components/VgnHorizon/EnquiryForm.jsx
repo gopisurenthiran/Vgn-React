@@ -200,7 +200,7 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
-          <SubNav/>
+          {/* <SubNav/> */}
           <div className="col-lg-4">
             <div
               className="position-sticky"

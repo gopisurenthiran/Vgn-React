@@ -301,4 +301,18 @@ color: #111111;
     transition: linear 0.1s;
     text-align: center;
 }
+.rera {
+    text-align: justify;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.rera a {
+    color: #b4151a;
+    text-decoration: none;
+}
+.rera a:hover {
+    color: #b4151a;
+    text-decoration: none;
+}
 /* Vgn-Grandeur End */
+

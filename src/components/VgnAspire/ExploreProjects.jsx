@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "slick-carousel/slick/slick.css";
@@ -24,6 +25,7 @@ const PrevArrow = ({ onClick }) => (
     <i className="fa fa-angle-left"></i>
   </button>
 );
+
 export default function ExploreProjects() {
   const projects = [
     {
@@ -32,7 +34,7 @@ export default function ExploreProjects() {
       bhk: "2 BHK & 3 BHK",
       type: "Plots",
       status: "Under Construction",
-      link: "https://www.vgnhomes.org/vgn-aspire-gardens/index",
+      link: "/vgn-aspire-gardens/index",
       image: project35,
       size: null,
     },
@@ -42,7 +44,7 @@ export default function ExploreProjects() {
       bhk: "3 BHK",
       type: "Plots",
       status: "Under Construction",
-      link: "https://www.vgnhomes.org/vgn-pride-de-villa/index",
+      link: "/vgn-pride-de-villa/index",
       image: project34,
       size: null,
     },
@@ -52,7 +54,7 @@ export default function ExploreProjects() {
       size: "595 - 1731 Sq feet",
       type: "Plots",
       status: "Ready to Construct",
-      link: "https://www.vgnhomes.org/vgn-highland/index",
+      link: "/vgn-highland/index",
       image: project31,
       bhk: null,
     },
@@ -62,38 +64,37 @@ export default function ExploreProjects() {
       size: "700 - 1926 Sq feet",
       type: "Plots",
       status: "Ready to Construct",
-      link: "https://vgnhomes.org/vgn-mugavari-phase2/index",
+      link: "/vgn-mugavari-phase2/index",
       image: project10_1,
       bhk: null,
     },
     {
-    title: "VGN Horizon",
-    image: project27,
-    location: "Avadi, Chennai.",
-    size: "646 - 2607",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "https://www.vgnhomes.org/vgn-horizon/index",
-  },
-  {
-    title: "VGN Classique",
-    image: project24,
-    location: "Ambattur, Chennai.",
-    size: "753 - 1416",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "https://www.vgnhomes.org/vgn-classique/index",
-  },
-  {
-    title: "VGN Pride",
-    image: project15,
-    location: "Padur, Chennai.",
-    size: "523 - 1636",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "https://www.vgnhomes.org/vgn-pride/index",
-  },
- 
+      title: "VGN Horizon",
+      image: project27,
+      location: "Avadi, Chennai.",
+      size: "646 - 2607",
+      type: "Plots",
+      status: "Ready to Construct",
+      link: "/vgn-horizon/index",
+    },
+    {
+      title: "VGN Classique",
+      image: project24,
+      location: "Ambattur, Chennai.",
+      size: "753 - 1416",
+      type: "Plots",
+      status: "Ready to Construct",
+      link: "/vgn-classique/index",
+    },
+    {
+      title: "VGN Pride",
+      image: project15,
+      location: "Padur, Chennai.",
+      size: "523 - 1636",
+      type: "Plots",
+      status: "Ready to Construct",
+      link: "/vgn-pride/index",
+    },
   ];
 
   const settings = {
@@ -108,20 +109,13 @@ export default function ExploreProjects() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 992, settings: { slidesToShow: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1 } },
     ],
   };
+
+  // Helper: check if the link is internal
+  const isInternalLink = (url) => url.startsWith("/") && !url.startsWith("http");
 
   return (
     <section className="property-details-section py-5" id="expore-projects" style={{ background: "#f9f9f9" }}>
@@ -137,14 +131,12 @@ export default function ExploreProjects() {
             <div key={idx} className="px-3">
               <div className="border rounded bg-white shadow-sm overflow-hidden">
                 <div className="imgTitle">
-                    <div className="slide-img-txt">
-                   
-                   <h2 className="blogTitle fw-bold">{project.title}</h2>
-                    </div>
-                    <img src={project.image} alt={project.title} className="img-fluid w-100" />
+                  <div className="slide-img-txt">
+                    <h2 className="blogTitle fw-bold">{project.title}</h2>
+                  </div>
+                  <img src={project.image} alt={project.title} className="img-fluid w-100" />
                 </div>
-                <div className="slider-content">
-                  
+                <div className="slider-content p-3">
                   <p>
                     <i className="fa fa-map-marker text-danger me-2"></i>
                     {project.location}
@@ -170,9 +162,20 @@ export default function ExploreProjects() {
                       <i className="fa fa-home text-danger me-2"></i>
                       {project.status}
                     </span>
-                    <a href={project.link} className="btn btn-sm btn-outline-danger">
-                      View More
-                    </a>
+                    {isInternalLink(project.link) ? (
+                      <Link to={project.link} className="btn btn-sm btn-outline-danger">
+                        View More
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.link}
+                        className="btn btn-sm btn-outline-danger"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View More
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

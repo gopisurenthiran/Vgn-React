@@ -24,12 +24,21 @@ import am7 from "@/assets/vgn-heritage/am20.png";
 import am8 from "@/assets/vgn-heritage/am18.png";
 import am9 from "@/assets/vgn-heritage/am19.png";
 
-import high1 from "@/assets/vgn-heritage/high4.jpg";
-import high2 from "@/assets/vgn-heritage/high5.jpg";
-import high3 from "@/assets/vgn-heritage/high6.jpg";
-import high4 from "@/assets/vgn-heritage/high7.jpg";
-import high5 from "@/assets/vgn-heritage/high8.jpg";
-import high6 from "@/assets/vgn-heritage/high9.jpg";
+import high1 from "@/assets/vgn-heritage/ph1.jpg";
+import high2 from "@/assets/vgn-heritage/ph2.jpg";
+import high3 from "@/assets/vgn-heritage/ph3.jpg";
+import high4 from "@/assets/vgn-heritage/ph4.jpg";
+import high5 from "@/assets/vgn-heritage/ph5.jpg";
+import high6 from "@/assets/vgn-heritage/ph6.jpg";
+import high7 from "@/assets/vgn-heritage/ph7.jpg";
+import high8 from "@/assets/vgn-heritage/ph8.jpg";
+import high9 from "@/assets/vgn-heritage/ph9.jpg";
+import high10 from "@/assets/vgn-heritage/ph10.jpg";
+import high11 from "@/assets/vgn-heritage/ph11.jpg";
+import high12 from "@/assets/vgn-heritage/ph12.jpg";
+import high13 from "@/assets/vgn-heritage/ph13.jpg";
+import high14 from "@/assets/vgn-heritage/ph14.jpg";
+import high15 from "@/assets/vgn-heritage/ph15.jpg";
 
 import mapImage from "@/assets/vgn-heritage/map.jpg";
 
@@ -83,12 +92,10 @@ export default function EnquiryForm() {
   ];
   const amenityIcons = [am1, am2, am3, am4, am5, am6, am7, am8, am9];
 
-  const highlightImages = [high1, high2, high3, high4, high5, high6];
+  const highlightImages = [high1, high2, high3, high4, high5, high6, high7, high8, high9, high10, high11, high12, high13, high14, high15];
 
   const {
-    register,
-    handleSubmit,
-    setValue,
+  
     watch,
     formState: { errors, isSubmitting },
   } = useForm();
@@ -125,9 +132,8 @@ export default function EnquiryForm() {
           </div>
 
           <div className="col-lg-8">
-               
             <div className="pd-text">
-               <SubNav/>
+              {/* <SubNav /> */}
               {/* Top Section with Logo & Address */}
               <div className="row align-items-center py-3">
                 {/* Logo & Location */}
@@ -275,6 +281,23 @@ export default function EnquiryForm() {
               {/* Location Advantages Section */}
               <LocationAdvantages />
 
+              <div className="border-bottom my-3"></div>
+
+              <div className="pd-widget" id="map">
+                <div className="section-title">
+                  <h4>Location Map</h4>
+                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d102589.762054622!2d80.10656154161398!3d12.86526573763805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3a525b1117186cff%3A0x56e89654204addc4!2sV57Q%2BRP%2C%20Ottiambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600126!3m2!1d12.8652786!2d80.18896339999999!5e1!3m2!1sen!2sin!4v1752321043998!5m2!1sen!2sin"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Vgn Heritage Springz"
+                ></iframe>
+              </div>
               <div className="border-bottom my-3"></div>
               {/* Route Map Section */}
               <div className="pd-widget" id="map">

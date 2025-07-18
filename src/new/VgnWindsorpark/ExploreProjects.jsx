@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from "react-router-dom"; 
 import project35 from "@/assets/ongoing/project35.jpg";
 import project34 from "@/assets/ongoing/project34.jpg";
 import project31 from "@/assets/ongoing/project31.jpg";
@@ -14,13 +14,13 @@ import project24 from "@/assets/ongoing/project24.jpg";
 import project15 from "@/assets/ongoing/project15.jpg";
 
 const NextArrow = ({ onClick }) => (
-  <button className="custom-slick-arrow8 next-arrow" onClick={onClick} aria-label="Next">
+  <button className="custom-slick-arrow9 next-arrow" onClick={onClick} aria-label="Next">
     <i className="fa fa-angle-right"></i>
   </button>
 );
 
 const PrevArrow = ({ onClick }) => (
-  <button className="custom-slick-arrow8 prev-arrow" onClick={onClick} aria-label="Previous">
+  <button className="custom-slick-arrow9 prev-arrow" onClick={onClick} aria-label="Previous">
     <i className="fa fa-angle-left"></i>
   </button>
 );
@@ -126,7 +126,7 @@ export default function ExploreProjects() {
   return (
     <section className="property-details-section py-5" id="expore-projects" style={{ background: "#f9f9f9" }}>
       <div className="container">
-        <div className="section-title8 mb-4">
+        <div className="section-title9 mb-4">
           <h4>
             Explore <span>Our Projects</span>
           </h4>
@@ -170,9 +170,9 @@ export default function ExploreProjects() {
                       <i className="fa fa-home text-danger me-2"></i>
                       {project.status}
                     </span>
-                    <a href={project.link} className="btn btn-sm btn-outline-danger">
+                    <Link to={project.link} className="btn btn-sm btn-outline-danger">
                       View More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

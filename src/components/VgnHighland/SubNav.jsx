@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import "./subnav.css";
 
 const sections = [
@@ -22,7 +23,7 @@ export default function SubNav() {
         const el = document.querySelector(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          const topOffset = window.innerWidth < 768 ? 90 : 130; // smaller offset for mobile
+          const topOffset = window.innerWidth < 768 ? 90 : 130;
           if (rect.top <= topOffset && rect.bottom >= topOffset) {
             found = id;
             break;
@@ -30,13 +31,10 @@ export default function SubNav() {
         }
       }
 
-      // ✅ Only update if changed
-      setActiveSection(prev => (prev !== found ? found : prev));
+      setActiveSection((prev) => (prev !== found ? found : prev));
     };
 
     window.addEventListener("scroll", handleScroll);
-    
-    // ✅ Small delay to avoid early layout mismatch
     const timeout = setTimeout(() => {
       handleScroll();
     }, 300);
@@ -49,15 +47,16 @@ export default function SubNav() {
 
   return (
     <div className="subnav-tabs-wrapper">
-      <ul className="nav nav-tab justify-content-start flex-nowrap">
+<ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
         {sections.map(([href, label]) => (
           <li className="nav-item" key={href}>
-            <a
+            <Link
               className={`nav-link ${activeSection === href ? "active" : ""}`}
-              href={href}
+              to={href}
+              smooth
             >
               {label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

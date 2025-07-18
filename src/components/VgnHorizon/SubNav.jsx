@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import "./subnav.css";
 
 const sections = [
@@ -18,55 +19,48 @@ export default function SubNav() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-130px 0px 0px 0px", // Adjust for sticky header
-      threshold: 0.2,
+    const handleScroll = () => {
+      let found = "";
+
+      for (let [id] of sections) {
+        // Use CSS.escape to safely use id in querySelector
+        const el = document.querySelector(`#${CSS.escape(id)}`);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const topOffset = window.innerWidth < 768 ? 90 : 130;
+          if (rect.top <= topOffset && rect.bottom >= topOffset) {
+            found = id;
+            break;
+          }
+        }
+      }
+
+      setActiveSection((prev) => (prev !== found ? found : prev));
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(`#${entry.target.id}`);
-        }
-      });
-    }, observerOptions);
-
-    const targets = sections.map(([id]) => document.getElementById(id));
-    targets.forEach((target) => {
-      if (target) observer.observe(target);
-    });
+    window.addEventListener("scroll", handleScroll);
+    const timeout = setTimeout(() => {
+      handleScroll();
+    }, 300);
 
     return () => {
-      targets.forEach((target) => {
-        if (target) observer.unobserve(target);
-      });
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const handleScrollToSection = (id, e) => {
-    e.preventDefault();
-    const target = document.getElementById(id);
-    if (target) {
-      const offset = window.innerWidth < 768 ? 90 : 130;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: "smooth" });
-      setActiveSection(`#${id}`);
-    }
-  };
-
   return (
     <div className="subnav-tabs-wrapper">
-      <ul className="nav nav-tab">
-        {sections.map(([id, label]) => (
-          <li className="nav-item" key={id}>
-            <a
-              className={`nav-link ${activeSection === `#${id}` ? "active" : ""}`}
-              href={`#${id}`}
-              onClick={(e) => handleScrollToSection(id, e)}
+      <ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
+        {sections.map(([href, label]) => (
+          <li className="nav-item" key={href}>
+            <Link
+              className={`nav-link ${activeSection === href ? "active" : ""}`}
+              to={`#${href}`}
+              smooth
             >
               {label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

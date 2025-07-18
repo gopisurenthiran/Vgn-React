@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import "./subnav.css";
 
 const sections = [
@@ -49,15 +50,16 @@ export default function SubNav() {
 
   return (
     <div className="subnav-tabs-wrapper">
-      <ul className="nav nav-tab scroll-tabs">
+<ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
         {sections.map(([href, label]) => (
           <li className="nav-item" key={href}>
-            <a
+            <Link
               className={`nav-link ${activeSection === href ? "active" : ""}`}
-              href={href}
+              to={href}
+              smooth
             >
               {label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

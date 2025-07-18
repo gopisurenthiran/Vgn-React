@@ -168,12 +168,16 @@ const faqData = [
   },
 ];
 
-export default function FaqSection() {
+export default function Faq() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleAnswer = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  // Only show first 5 or all
+  const visibleFaqs = showAll ? faqData : faqData.slice(0, 5);
 
   return (
     <section
@@ -196,7 +200,7 @@ export default function FaqSection() {
           <div className="col-lg-12">
             <div className="pd-widget" id="about-vgn">
               <div className="wrapper">
-                {faqData.map((item, index) => (
+                {visibleFaqs.map((item, index) => (
                   <div className="container-txt" key={index}>
                     <div
                       className={`question ${
@@ -213,6 +217,18 @@ export default function FaqSection() {
                     )}
                   </div>
                 ))}
+
+                {/* Show More / Show Less Button */}
+                {faqData.length > 5 && (
+                  <div className="text-center mt-4">
+                    <button
+                      className=" site-btn5"
+                      onClick={() => setShowAll(!showAll)}
+                    >
+                      {showAll ? "Show Less" : "Show More"}
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
