@@ -20,8 +20,8 @@ const properties = [
     title: "VGN Krystal Peak",
     location: "Iyyappanthangal, Porur",
     size: "581 - 3061 Sq feet",
-    type: "Plots",
-    status: "Ready to Construct",
+    type: "Flats",
+    status: "Launching soon",
     link: "/vgn-krystal-peak/index",
   },
 ];
