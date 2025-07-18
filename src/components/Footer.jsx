@@ -81,7 +81,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        to="/vgn-classique/index"
+                        to="#"
                         className="text-white text-decoration-none"
                       >
                         Plots&nbsp;in&nbsp;Ambattur
