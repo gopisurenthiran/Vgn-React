@@ -9,7 +9,7 @@ import completedProjects from "@/data/Completed";
 export default function CompletedProjects() {
   return (
     <section className="property-section spad aos-animate bg" data-aos="zoom-in">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           {completedProjects.map((project, index) => (
             <div className="col-lg-4 col-md-6 mb-4" key={index}>

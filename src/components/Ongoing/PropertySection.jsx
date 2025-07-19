@@ -134,7 +134,7 @@ export default function PropertySection({ prop }) {
 
   return (
     <section className="property-section spad  aos-animate">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           {properties.map((prop, index) => (
             <div

@@ -28,7 +28,7 @@ export default function ReferralSteps() {
 
   return (
     <section className="property-section program-back latest-property-section mt-5">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="pd-widget mb-0">

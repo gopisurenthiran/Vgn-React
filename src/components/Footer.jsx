@@ -22,7 +22,7 @@ export default function Footer() {
           backgroundSize: "contain",
         }}
       >
-        <div className="container-fluid px-3 px-md-5 py-5">
+        <div className="container px-3 px-md-5 py-5">
           {/* Contact Section */}
           <div className="row text-start">
             <div className="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
