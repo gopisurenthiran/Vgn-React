@@ -8,7 +8,8 @@ import SubFooter from "../components/VgnGrandeur/SubFooter.jsx";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
 import Rera from "../components/VgnGrandeur/Rera.jsx";
 import Faq from "../components/Nri/Faq.jsx";
-import SubNav from "../components/VgnGrandeur/SubNav.jsx";
+import SubNav from "../components/VgnKrystalPeak/SubNav.jsx";
+
 
 
 export default function VgnKrystalPeak() {
@@ -46,12 +47,12 @@ export default function VgnKrystalPeak() {
       </div>
 
       {/* ✅ Sticky SubNav */}
-      {showSubNav && <SubNav />}
+      {showSubNav && <SubNav/>}
 
       {/* ✅ Page Sections */}
       <div className="pt-20 md:pt-28">
         {/* ✅ Content */}
-      <EnquiryForm />
+     <EnquiryForm/>
       <ExploreProjects />
       <Faq/>
       <Rera />

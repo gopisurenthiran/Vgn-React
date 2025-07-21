@@ -366,67 +366,73 @@ export default function EnquiryForm() {
 
               {/* Highlights Section */}
               <div className="container py-5 bg" id="spec">
-  <h2 className="text-center text-danger mb-2" style={{ fontSize: "24px" }}>
-    Specifications
-  </h2>
-  <p
-    className="text-center text-muted mb-4"
-    style={{ maxWidth: "600px", margin: "0 auto" }}
-  >
-    Crafted with elegant touches, it offers a perfect blend of durability, comfort, and stylish refinement throughout every corner of the home.
-  </p>
+                <h2
+                  className="text-center text-danger mb-2"
+                  style={{ fontSize: "24px" }}
+                >
+                  Specifications
+                </h2>
+                <p
+                  className="text-center text-muted mb-4"
+                  style={{ maxWidth: "600px", margin: "0 auto" }}
+                >
+                  Crafted with elegant touches, it offers a perfect blend of
+                  durability, comfort, and stylish refinement throughout every
+                  corner of the home.
+                </p>
 
-  <div className="row g-4">
-    {/* Left Side Menu */}
-    <div className="col-md-3 p-0">
-      <ul className="list-group list-group-flush ps-2">
-        {tabList.map((item) => (
-          <li
-            key={item}
-            className={`list-group-item fw-medium text-center text-md-end ${
-              activeTab === item ? "bg-danger text-white" : ""
-            }`}
-            style={{
-              cursor: "pointer",
-              backgroundColor: "transparent",
-              fontSize: "14px",
-            }}
-            onClick={() => setActiveTab(item)}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
+                <div className="row g-4">
+                  {/* Left Side Menu */}
+                  <div className="col-md-3 p-0">
+                    <ul className="list-group list-group-flush ps-2">
+                      {tabList.map((item) => (
+                        <li
+                          key={item}
+                          className={`list-group-item fw-medium text-center text-md-end ${
+                            activeTab === item ? "bg-danger text-white" : ""
+                          }`}
+                          style={{
+                            cursor: "pointer",
+                            backgroundColor: "transparent",
+                            fontSize: "14px",
+                          }}
+                          onClick={() => setActiveTab(item)}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-    {/* Image */}
-    <div className="col-md-4 border-start border-4 border-danger p-0">
-      <img
-        src={currentSpec.image}
-        alt={currentSpec.title}
-        className="border rounded img-fluid"
-      />
-    </div>
+                  {/* Image */}
+                  <div className="col-md-4 border-start border-4 border-danger p-0">
+                    <img
+                      src={currentSpec.image}
+                      alt={currentSpec.title}
+                      className="border rounded img-fluid"
+                    />
+                  </div>
 
-    {/* Right Side Content */}
-    <div className="col-md-5">
-      <h5 className="text-danger fw-bold mb-3">{currentSpec.title}</h5>
-      <ul className="list-unstyled">
-        {currentSpec.points.map((point, i) => (
-          <li key={i} className="mb-2">
-            <span className="text-danger me-2">▲</span>
-            {point}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-</div>
-
+                  {/* Right Side Content */}
+                  <div className="col-md-5">
+                    <h5 className="text-danger fw-bold mb-3">
+                      {currentSpec.title}
+                    </h5>
+                    <ul className="list-unstyled">
+                      {currentSpec.points.map((point, i) => (
+                        <li key={i} className="mb-2">
+                          <span className="text-danger me-2">▲</span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
               <div className="border-bottom my-3"></div>
 
-              <FloorPlans/>
+              <FloorPlans />
 
               <div className="border-bottom my-3"></div>
               {/* Location Advantages Section */}

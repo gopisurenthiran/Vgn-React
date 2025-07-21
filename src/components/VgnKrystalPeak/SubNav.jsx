@@ -4,8 +4,8 @@ import "./subnav.css";
 
 const sections = [
   ["#about-vgn", "About"],
-  ["#highlights", "Project Highlights"],
-  ["#amenities", "Amenities"],
+  ["#spec", "Specifications"],
+  ["#floor", "Floor Plan"],
   ["#advantages", "Location Advantages"],
   ["#map", "Location"],
   ["#contact", "Contact"],

@@ -10,7 +10,6 @@ import VGNGranduer from "@/assets/ongoing/project36.jpg";
 import VGNHighland from "@/assets/ongoing/project31.jpg";
 import VGNAspireGardens from "@/assets/ongoing/project35.jpg";
 import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
-
 import VGNClassique from "@/assets/ongoing/project24.jpg";
 
 const properties = [
@@ -36,7 +35,7 @@ const properties = [
     btnText: "VIEW MORE",
     link: "/vgn-grandeur/index",
   },
-   {
+  {
     title: "Heritage Springz",
     image: "/heritage.jpg",
     isNew: true,
@@ -44,7 +43,6 @@ const properties = [
     type: "Plots",
     size: "700 - 1683 Sq ft",
     status: "Launching soon",
-    isNew: true,
     btnText: "VIEW MORE",
     link: "/vgn-heritage-springz/index",
   },
@@ -81,7 +79,6 @@ const properties = [
     btnText: "VIEW MORE",
     link: "/vgn-pride-de-villa/index",
   },
-
   {
     title: "VGN Classique",
     location: "Ambattur, Chennai.",
@@ -99,125 +96,130 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 992 },
     items: 3,
-    slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 991, min: 768 },
     items: 2,
-    slidesToSlide: 1,
   },
   mobile: {
     breakpoint: { max: 767, min: 0 },
     items: 1,
-    slidesToSlide: 1,
   },
 };
 
 const Property = () => {
   return (
-    <div style={{ background: "#fef7ef" }} >
-  <div className="py-5 container">
-      <div className="text-center mb-3 heading">
-        <h4
-          className="d-inline-flex align-items-center"
-          style={{ fontSize: "1.8rem" }}
-        >
-          <img
-            className="head-border"
-            src="/head-border.png"
-            alt="Red corner"
-            style={{ width: "33px", height: "30px", marginRight: "10px" }}
-          />
-          FEATURED PROJECTS
-        </h4>
-      </div>
-
-      <Carousel
-        responsive={responsive}
-        autoPlay={true}
-        autoPlaySpeed={3000}
-        infinite={true}
-        arrows={false}
-        showDots={false}
-        keyBoardControl={true}
-        containerClass="carousel-container"
-        itemClass="px-3"
-        transitionDuration={500}
-      >
-        {properties.map((item, index) => (
-          <div
-            key={index}
-            className="card shadow-sm border-0"
-            style={{ borderRadius: "15px", overflow: "hidden" }}
+    <div style={{ background: "#fef7ef" }}>
+      <div className="py-5 container">
+        <div className="text-center mb-3 heading">
+          <h4
+            className="d-inline-flex align-items-center"
+            style={{ fontSize: "1.8rem" }}
           >
-            <div style={{ position: "relative" }}>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="card-img-top"
-                style={{ height: "250px" }}
-              />
-              {item.isNew && (
-                <span
+            <img
+              className="head-border"
+              src="/head-border.png"
+              alt="Red corner"
+              style={{ width: "33px", height: "30px", marginRight: "10px" }}
+            />
+            FEATURED PROJECTS
+          </h4>
+        </div>
+
+        <Carousel
+          responsive={responsive}
+          autoPlay
+          autoPlaySpeed={3000}
+          infinite
+          arrows={false}
+          showDots={false}
+          keyBoardControl
+          containerClass="carousel-container"
+          itemClass="px-3"
+          transitionDuration={500}
+        >
+          {properties.map((item, index) => (
+            <div
+              key={index}
+              className="card shadow-sm border-0 d-flex flex-column h-100"
+              style={{
+                borderRadius: "15px",
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ position: "relative" }}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="card-img-top"
                   style={{
-                    position: "absolute",
-                    top: "15px",
-                    left: "15px",
-                    background: "#d10000",
-                    color: "#fff",
-                    fontSize: "0.8rem",
-                    fontWeight: "bold",
-                    padding: "4px 10px",
-                    borderRadius: "3px",
+                    height: "250px",
+                   
                   }}
-                >
-                  NEW
-                </span>
-              )}
-            </div>
-            <div className="card-body property-item bg-white" style={{ padding: "25px" }}>
-              <h5 className=" mb-3">{item.title}</h5>
-              <div
-                className="d-flex flex-wrap mb-3"
-                style={{ fontSize: "0.95rem" }}
-              >
-                <div className="me-4 mb-2">
-                  <i className="bi bi-geo-alt-fill text-danger me-1"></i>
-                  {item.location}
-                </div>
-                <div className="mb-2">
-                  <i className="bi bi-building text-danger me-1"></i>
-                  {item.type}
-                </div>
+                />
+                {item.isNew && (
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "15px",
+                      left: "15px",
+                      background: "#d10000",
+                      color: "#fff",
+                      fontSize: "0.8rem",
+                      fontWeight: "bold",
+                      padding: "4px 10px",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    NEW
+                  </span>
+                )}
               </div>
-              <div
-                className="d-flex flex-wrap mb-3"
-                style={{ fontSize: "0.95rem" }}
-              >
-                <div className="me-4 mb-2">
-                  <i className="bi bi-aspect-ratio-fill text-danger me-1"></i>
-                  {item.size}
-                </div>
-                <div className="mb-2">
-                  <i className="bi bi-house-door-fill text-danger me-1"></i>
-                  {item.status}
-                </div>
-              </div>
-              <div className="text-center">
-                <Link
-                  to={item.link}
-                  className="site-btn5 px-4 py-2 d-inline-block text-decoration-none"
-                >
-                  {item.btnText}
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </Carousel>
+             <div
+  className="card-body property-item bg-white d-flex flex-column justify-between"
+  style={{ padding: "25px", minHeight: "260px" }}
+>
+  <h5 className="mb-3">{item.title}</h5>
+
+  {/* Row 1: Location & Type */}
+  <div className="row mb-2" style={{ fontSize: "0.95rem" }}>
+    <div className="col-7 mb-2">
+      <i className="bi bi-geo-alt-fill text-danger me-1"></i>
+      {item.location}
     </div>
+    <div className="col-5 mb-2">
+      <i className="bi bi-building text-danger me-1"></i>
+      {item.type}
     </div>
-  
+  </div>
+
+  {/* Row 2: Size & Status */}
+  <div className="row mb-3" style={{ fontSize: "0.95rem" }}>
+    <div className="col-7 mb-2">
+      <i className="bi bi-aspect-ratio-fill text-danger me-1"></i>
+      {item.size}
+    </div>
+    <div className="col-5 mb-2">
+      <i className="bi bi-house-door-fill text-danger me-1"></i>
+      {item.status}
+    </div>
+  </div>
+
+  <div className="text-center mt-auto">
+    <Link
+      to={item.link}
+      className="site-btn5 px-4 py-2 d-inline-block text-decoration-none"
+    >
+      {item.btnText}
+    </Link>
+  </div>
+</div>
+
+            </div>
+          ))}
+        </Carousel>
+      </div>
+    </div>
   );
 };
 
