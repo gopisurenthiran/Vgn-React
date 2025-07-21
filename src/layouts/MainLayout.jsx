@@ -14,7 +14,7 @@ export default function MainLayout() {
       {/* <NavigationBar /> */}
       <Navigation />
       {/* Main content with no container constraint */}
-      <main className="flex-fill w-100">
+      <main className=" w-100">
         
         <Outlet />
       </main>

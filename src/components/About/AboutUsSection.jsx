@@ -14,7 +14,7 @@ const stats = [
 const AboutUsSection = () => {
   return (
     <section className="property-section spad bg py-5">
-      <div className="container-fluid">
+      <div className="container">
         {/* Section Title */}
         <div className="row text-center mb-4">
           <div className="col-lg-12">

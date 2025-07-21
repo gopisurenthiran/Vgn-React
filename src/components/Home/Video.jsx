@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function Video() {
   return (
-    <section className="contact-form-section" style={{ backgroundSize: 'cover', marginBottom: 0 }}>
-      <div className="container-fluid">
+    <section className="contact-form-section container-fluid" style={{ backgroundSize: 'cover', marginBottom: 0 , background: '#fef7ef'}}>
+      <div className="container">
         <div className="row">
           {/* Left Text Content */}
           <div className="col-lg-6" style={{ background: '#bf151a' }}>

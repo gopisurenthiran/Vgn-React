@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function BrandIconSection() {
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container" >
+      <div className="row" style={{height:"70px"}}>
         {/* Empty Left Column */}
         <div className="col-lg-8 col-md-8"></div>
 

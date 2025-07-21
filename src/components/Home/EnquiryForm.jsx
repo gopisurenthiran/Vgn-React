@@ -28,14 +28,15 @@ export default function EnquiryForm() {
   };
 
   return (
-    <div
-      className="enquiry-section d-flex flex-column align-items-center justify-content-center"
+    <div className="" style={{ background: '#fef7ef'}}>
+ <div
+      className="container enquiry-section d-flex flex-column align-items-center justify-content-center"
       style={{
         backgroundImage: "url('/enquiry-back.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "80px 15px",
-        minHeight: "100vh",
+        minHeight: "400px",
       }}
     >
       <ToastContainer position="top-right" autoClose={3000} />
@@ -217,5 +218,7 @@ export default function EnquiryForm() {
         </form>
       </div>
     </div>
+    </div>
+   
   );
 }

@@ -115,7 +115,8 @@ const responsive = {
 
 const Property = () => {
   return (
-    <div className="py-5" style={{ background: "#fef7ef" }}>
+    <div style={{ background: "#fef7ef" }} >
+  <div className="py-5 container">
       <div className="text-center mb-3 heading">
         <h4
           className="d-inline-flex align-items-center"
@@ -215,6 +216,8 @@ const Property = () => {
         ))}
       </Carousel>
     </div>
+    </div>
+  
   );
 };
 
