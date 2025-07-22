@@ -7,7 +7,7 @@ import "../style/VgnGrandeur.css";
 import SubFooter from "../components/VgnGrandeur/SubFooter.jsx";
 import BrandIconSectionInner from "../components/BrandIconSectionIneer.jsx";
 import Rera from "../components/VgnGrandeur/Rera.jsx";
-import Faq from "../components/Nri/Faq.jsx";
+import Faq from "../components/VgnGrandeur/Faq.jsx";
 import SubNav from "../components/VgnGrandeur/SubNav.jsx";
 
 
