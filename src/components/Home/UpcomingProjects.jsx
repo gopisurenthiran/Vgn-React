@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import CelebrityFarms from "@/assets/ongoing/project25.jpg";
-import VGNGrandeur from "@/assets/ongoing/project36.jpg";
+import VGNkrystal from "@/assets/vgn-krystal/Banner.webp";
 import UpcomingModal from "../UpcomingModal";
 import { Link } from "react-router-dom"; // Use this if you're using React Router
 
@@ -16,7 +16,7 @@ const properties = [
     status: "Launching soon",
   },
   {
-    image: VGNGrandeur,
+    image: VGNkrystal,
     title: "VGN Krystal Peak",
     location: "Iyyappanthangal, Porur",
     size: "581 - 3061 Sq feet",

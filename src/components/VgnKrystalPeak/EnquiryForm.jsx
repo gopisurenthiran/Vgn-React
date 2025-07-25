@@ -408,7 +408,7 @@ export default function EnquiryForm() {
                 </div>
                 <div className="row">
                   {projectImages.map((img, i) => (
-                    <div key={i} className="col-lg-4 col-md-4 col-sm-6 mb-3">
+                    <div key={i} className="col-lg-3 col-md-3 col-sm-6 mb-3">
                       <div className="grid">
                         <figure className="effect-goliath">
                           <img
@@ -513,7 +513,7 @@ export default function EnquiryForm() {
                 <div className="row">
                   {clubhouseAmenities.map((item, index) => (
                     <div
-                      className="col-lg-3 col-md-4 col-sm-2 col-6 mb-4"
+                      className="col-lg-5 col-md-5 col-sm-2 col-6 mb-4"
                       key={index}
                     >
                       <div className="servicebox text-center">
