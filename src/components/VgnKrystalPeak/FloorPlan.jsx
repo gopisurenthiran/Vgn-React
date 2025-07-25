@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import floorImg1 from "@/assets/first.jpg";
-import floorImg2 from "@/assets/second.jpg";
-import floorImg3 from "@/assets/third.jpg";
-import floorImg4 from "@/assets/first.jpg";
-import floorImg5 from "@/assets/second.jpg";
+import floorImg1 from "@/assets/vgn-krystal/plan-1.webp";
+import floorImg2 from "@/assets/vgn-krystal/plan-2.webp";
+import floorImg3 from "@/assets/vgn-krystal/plan-3.webp";
+import floorImg4 from "@/assets/vgn-krystal/plan-4.webp";
+import floorImg5 from "@/assets/vgn-krystal/plan-5.webp";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 

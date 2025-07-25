@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import Banner from "../components/VgnGrandeur/Banner.jsx";
-import EnquiryForm from "../components/VgnGrandeur/EnquiryForm.jsx";
+import Banner from "../components/VgnKrystalPeak/Banner.jsx";
+import EnquiryForm from "../components/VgnKrystalPeak/EnquiryForm.jsx";
 import ExploreProjects from "../components/VgnGrandeur/ExploreProjects.jsx";
 
 import "../style/VgnKrystal.css";
@@ -52,7 +52,7 @@ export default function VgnKrystalPeak() {
       {/* ✅ Page Sections */}
       <div className="pt-20 md:pt-28">
         {/* ✅ Content */}
-     <EnquiryForm/>
+      <EnquiryForm/>
       <ExploreProjects />
       <Faq/>
       <Rera />

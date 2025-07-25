@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
-import Carousel from "react-bootstrap/Carousel";
 import LocationAdvantages from "./LocationAdvantages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,15 +13,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import grandeur from "@/assets/vgn-grandeur/main-logo.png";
 import grandeurmobile from "@/assets/vgn-grandeur/main-logo1.png";
-
-import structureImg from "@/assets/structure.jpg";
-import tilingImg from "@/assets/tiles.jpg";
-import kitchenImg from "@/assets/kitchen.jpg";
-import doorsImg from "@/assets/doors.jpg";
-import paintingImg from "@/assets/painting.jpg";
-import electricalImg from "@/assets/electrical.jpg";
-import plumbingImg from "@/assets/plumbing.jpg";
-import commonImg from "@/assets/cctv.jpg";
 
 import am1 from "@/assets/vgn-grandeur/am1.png";
 import am2 from "@/assets/vgn-grandeur/am2.png";
@@ -44,18 +34,6 @@ import am17 from "@/assets/vgn-grandeur/am16.png";
 import am18 from "@/assets/vgn-grandeur/am17.png";
 import am19 from "@/assets/vgn-grandeur/am18.png";
 import am20 from "@/assets/vgn-grandeur/am19.png";
-
-import gal1 from "@/assets/vgn-aspire-gardens/construction1.jpg";
-import gal2 from "@/assets/vgn-aspire-gardens/construction2.jpg";
-import gal3 from "@/assets/vgn-aspire-gardens/construction3.jpg";
-import gal4 from "@/assets/vgn-aspire-gardens/construction4.jpg";
-import gal5 from "@/assets/vgn-aspire-gardens/construction5.jpg";
-import gal6 from "@/assets/vgn-aspire-gardens/construction6.jpg";
-import gal7 from "@/assets/vgn-aspire-gardens/construction7.jpg";
-import gal8 from "@/assets/vgn-aspire-gardens/construction8.jpg";
-import gal9 from "@/assets/vgn-aspire-gardens/construction9.jpg";
-import gal10 from "@/assets/vgn-aspire-gardens/construction10.jpg";
-import gal11 from "@/assets/vgn-aspire-gardens/construction11.jpg";
 
 import high1 from "@/assets/vgn-grandeur/high1.jpg";
 import high2 from "@/assets/vgn-grandeur/high2.jpg";
@@ -79,7 +57,6 @@ import advIcon4 from "@/assets/adv-icon4.png";
 import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
 import SubNav from "./SubNav";
-import FloorPlans from "../VgnKrystalPeak/FloorPlan";
 
 export default function EnquiryForm() {
   const advantages = [
@@ -143,19 +120,6 @@ export default function EnquiryForm() {
     am19,
     am20,
   ];
-  const gallerySlides = [
-    gal1,
-    gal2,
-    gal3,
-    gal4,
-    gal5,
-    gal6,
-    gal7,
-    gal8,
-    gal9,
-    gal10,
-    gal11,
-  ];
 
   const highlightImages = [
     high1,
@@ -181,88 +145,14 @@ export default function EnquiryForm() {
   } = useForm();
 
   const [message, setMessage] = React.useState("");
-  const specsData = {
-    STRUCTURE: {
-      image: structureImg,
-      title: "STRUCTURE",
-      points: [
-        "RCC Framed Structure and AAC blocks used for External/Internal walls.",
-        "Anti-Termite Treatments wherever applicable during Construction Stage.",
-      ],
-    },
-    TILING: {
-      image: tilingImg,
-      title: "TILING",
-      points: [
-        "Vitrified tiles in living, dining and bedrooms.",
-        "Anti-skid ceramic tiles in bathrooms and balconies.",
-      ],
-    },
-    KITCHEN: {
-      image: kitchenImg,
-      title: "KITCHEN",
-      points: [
-        "Granite platform with stainless steel sink.",
-        "Provision for chimney and water purifier.",
-      ],
-    },
-    "DOORS, WINDOWS, VENTILATORS": {
-      image: doorsImg,
-      title: "DOORS, WINDOWS, VENTILATORS",
-      points: [
-        "Main door with teak wood frame.",
-        "UPVC sliding windows with mosquito mesh.",
-      ],
-    },
-    "PAINTING FINISHES": {
-      image: paintingImg,
-      title: "PAINTING FINISHES",
-      points: [
-        "Emulsion paint for internal walls.",
-        "Weather-proof paint for external walls.",
-      ],
-    },
-    "ELECTRICAL FIXTURES / FITTINGS": {
-      image: electricalImg,
-      title: "ELECTRICAL FIXTURES / FITTINGS",
-      points: [
-        "Three-phase power supply with concealed wiring.",
-        "Switches of HAVELLS/SCHNEIDER or equivalent.",
-        "Wiring of HAVELLS/ANCHOR/POLY CAB or equivalent.",
-        "Split A/C provision with electrification.",
-        "15A plug points for Refrigerator, Washing machine, and Micro-oven.",
-        "15A plug points for Geyser in all toilets.",
-        "5A socket for chimney and exhaust fan point in toilets.",
-        "Power back up of 600W for 2BHK, 800W for 3BHK & common areas.",
-      ],
-    },
-    "PLUMBING & SANITARY": {
-      image: plumbingImg,
-      title: "PLUMBING & SANITARY",
-      points: [
-        "CP fittings of reputed brand.",
-        "PVC & UPVC plumbing lines for water and waste.",
-      ],
-    },
-    "COMMON POINTS": {
-      image: commonImg,
-      title: "COMMON POINTS",
-      points: [
-        "DG back-up for lift, common lights & motors.",
-        "LED lighting in lobbies and staircases.",
-      ],
-    },
-  };
+
   const onSubmit = async (data) => {
     console.log("Form Data Submitted:", data);
     setMessage("Form submitted successfully!");
   };
 
   const phone = watch("phone");
-  const [activeTab, setActiveTab] = useState("ELECTRICAL FIXTURES / FITTINGS");
 
-  const tabList = Object.keys(specsData);
-  const currentSpec = specsData[activeTab];
   return (
     <section className="property-details-section">
       <div className="container">
@@ -287,7 +177,7 @@ export default function EnquiryForm() {
 
           <div className="col-lg-8">
             <div className="pd-text">
-              {/* <SubNav/> */}
+                  {/* <SubNav/> */}
               {/* Top Section with Logo & Address */}
               <div className="row align-items-center py-3">
                 {/* Logo & Location */}
@@ -365,125 +255,81 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
 
               {/* Highlights Section */}
-              <div className="container py-5 bg" id="spec">
-                <h2
-                  className="text-center text-danger mb-2"
-                  style={{ fontSize: "24px" }}
-                >
-                  Specifications
-                </h2>
-                <p
-                  className="text-center text-muted mb-4"
-                  style={{ maxWidth: "600px", margin: "0 auto" }}
-                >
-                  Crafted with elegant touches, it offers a perfect blend of
-                  durability, comfort, and stylish refinement throughout every
-                  corner of the home.
-                </p>
-
-                <div className="row g-4">
-                  {/* Left Side Menu */}
-                  <div className="col-md-3 p-0">
-                    <ul className="list-group list-group-flush ps-2">
-                      {tabList.map((item) => (
-                        <li
-                          key={item}
-                          className={`list-group-item fw-medium text-center text-md-end ${
-                            activeTab === item ? "bg-danger text-white" : ""
-                          }`}
-                          style={{
-                            cursor: "pointer",
-                            backgroundColor: "transparent",
-                            fontSize: "14px",
-                          }}
-                          onClick={() => setActiveTab(item)}
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Image */}
-                  <div className="col-md-4 border-start border-4 border-danger p-0">
-                    <img
-                      src={currentSpec.image}
-                      alt={currentSpec.title}
-                      className="border rounded img-fluid"
-                    />
-                  </div>
-
-                  {/* Right Side Content */}
-                  <div className="col-md-5">
-                    <h5 className="text-danger fw-bold mb-3">
-                      {currentSpec.title}
-                    </h5>
-                    <ul className="list-unstyled">
-                      {currentSpec.points.map((point, i) => (
-                        <li key={i} className="mb-2">
-                          <span className="text-danger me-2">▲</span>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className="pd-widget pd-widget1" id="highlights">
+                <div className="section-title">
+                  <h4>Project Highlights</h4>
+                </div>
+                <div className="row">
+                  {highlightImages.map((img, i) => (
+                    <div key={i} className="col-lg-4 col-md-4 col-sm-6 mb-3">
+                      <div className="grid">
+                        <figure className="effect-goliath">
+                          <img
+                            src={img}
+                            alt={`highlight-${i + 1}`}
+                            className="img-fluid"
+                          />
+                        </figure>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               <div className="border-bottom my-3"></div>
 
-              <FloorPlans />
+              {/* Amenities Section */}
+              <div className="pd-widget pd-widget1" id="amenities">
+                <div className="section-title">
+                  <h4>Amenities</h4>
+                </div>
+                <div className="row">
+                  {[
+                    "Entry with Feature Wall",
+                    "Walking / Jogging Track",
+                    "Sculpture Garden",
+                    "Sand pit with Exercise Equipments",
+                    "Arboretum",
+                    "Ball Play Area",
+                    "Snake and Ladder",
+                    "Hopscotch",
+                    "Acupressure Pathway",
+                    "Writing Board for Children",
+                    "Senior Citizen's Court",
+                    "Sandpit with Play Equipments",
+                    "Pathway with Roundabout",
+                    "Badminton Practice Court",
+                    "Amphitheatre",
+                    "Yoga Lawn",
+                    "Stage / Chess Play Area",
+                    "Herbal Garden",
+                    "Walkway with Pergola Above",
+                    "Seater",
+                  ].map((title, i) => (
+                    <div
+                      key={i}
+                      className="col-4 col-sm-4 col-md-3 col-lg-3 mb-4"
+                    >
+                      <div className="servicebox text-center">
+                        <div className="service-icon mb-2">
+                          <img
+                            src={amenityIcons[i]}
+                            alt={`amenity-${i + 1}`}
+                            style={{ height: "70px", objectFit: "contain" }}
+                          />
+                        </div>
+                        <div className="servicetitle">
+                          <h3>{title}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className="border-bottom my-3"></div>
               {/* Location Advantages Section */}
               <LocationAdvantages />
-
-              <div className="border-bottom my-3"></div>
-
-              <div className="pd-widget" id="gallery">
-                <div className="section-title">
-                  <h4>Gallery</h4>
-                </div>
-                <Carousel
-                  interval={2000}
-                  fade
-                  pause={false}
-                  indicators
-                  controls
-                >
-                  {gallerySlides.map((image, index) => (
-                    <Carousel.Item key={index}>
-                      <img
-                        className="d-block w-100"
-                        src={image}
-                        alt={`Gallery Slide ${index + 1}`}
-                        style={{ objectFit: "cover" }}
-                      />
-                    </Carousel.Item>
-                  ))}
-                </Carousel>
-              </div>
-              <div className="border-bottom my-3"></div>
-
-              {/* Video Section */}
-              <div className="pd-widget" id="video">
-                <div className="section-title">
-                  <h4>Video</h4>
-                </div>
-                <div className="row">
-                  <div className="col-12 col2">
-                    <div className="ratio ratio-16x9">
-                      <iframe
-                        src="https://www.youtube.com/embed/vCGQlTJuick?si=T0E0c6YfQOwl9e-V"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        referrerPolicy="strict-origin-when-cross-origin"
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div className="border-bottom my-3"></div>
               {/* Location Map Section */}

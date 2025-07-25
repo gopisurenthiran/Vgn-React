@@ -1,10 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Slider_1 from "@/assets/vgn-grandeur/hero-3.jpg";
-import Slider_2 from "@/assets/vgn-grandeur/hero-3.jpg";
-import Slider_1_Mobile from "@/assets/vgn-grandeur/hero-3-1.png"; // Example mobile images
-import Slider_2_Mobile from "@/assets/vgn-grandeur/hero-3-1.png";
+import Slider_1 from "@/assets/vgn-krystal/Banner.webp";
+import Slider_2 from "@/assets/vgn-krystal/Banner.webp";
+import Slider_1_Mobile from "@/assets/vgn-krystal/Banner.webp"; // Example mobile images
+import Slider_2_Mobile from "@/assets/vgn-krystal/Banner.webp";
 
 const slides = [
   {
