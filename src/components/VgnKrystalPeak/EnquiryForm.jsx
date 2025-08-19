@@ -521,7 +521,7 @@ export default function EnquiryForm() {
                           <img
                             src={item.image}
                             alt={item.title}
-                            style={{ height: "70px" }}
+                            
                           />
                         </div>
                         <div className="servicetitle">
@@ -647,7 +647,7 @@ export default function EnquiryForm() {
                               <img
                                 src={adv.icon}
                                 alt="advantage-icon"
-                                style={{ width: "70px" }}
+                                
                               />
                             </i>
                           </div>
