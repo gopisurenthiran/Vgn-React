@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://vgnhomes.ayatiworks.com/Vgnhomesapi/channelPartner.php";
+const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/channelPartner.php";
 
 export const ChannelEnquiry = async (data) => {
   try {

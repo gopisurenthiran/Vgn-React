@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/senddata.php";
-const API_URL = "https://vgnhomes.ayatiworks.com/Vgnhomesapi/senddata.php";
+const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/contact_enquiry.php";
+// const API_URL = "https://vgnhomes.ayatiworks.com/Vgnhomesapi/senddata.php";
 
 export const submitEnquiry = async (data) => {
   try {

@@ -1,7 +1,10 @@
 // api.js
+// const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/contact_enquiry.php";
+
+
 export const sendEnquiry = async (data) => {
   try {
-    const response = await fetch("https://vgnhomes.ayatiworks.com/Vgnhomesapi/OngoingEnquiry.php", {
+    const response = await fetch("https://www.vgnhomes.org/Vgnhomesapi/OngoingEnquiry.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

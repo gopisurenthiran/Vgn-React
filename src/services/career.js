@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/irefer_form.php";
+const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/career_enquiry.php";
 
-export const IreferEnquiry = async (data) => {
+export const career = async (data) => {
   try {
     const response = await axios.post(API_URL, data, {
       headers: {

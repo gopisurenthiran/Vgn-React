@@ -18,11 +18,10 @@ export default function ReferralForm() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // Map form fields to API payload format
     const payload = {
       name: data.name,
       email: data.email,
-      mobile: data.phone, // Assuming form field is 'phone'
+      mobile: data.phone,
       project: data.project,
       plot_no: data.plotNo,
       other_project: data.otherProject,
@@ -33,17 +32,14 @@ export default function ReferralForm() {
     };
 
     try {
-      const result = await IreferEnquiry(payload);
-
+      await IreferEnquiry(payload);
       toast.success("Form submitted successfully!", {
         position: "bottom-right",
         autoClose: 3000,
       });
-
-      reset(); // Clear form after success
+      reset();
     } catch (error) {
       console.error("Submission error:", error);
-
       toast.error("Submission failed. Please try again.", {
         position: "bottom-right",
         autoClose: 3000,
@@ -74,6 +70,7 @@ export default function ReferralForm() {
                     <h4>Your Details</h4>
                   </div>
                   <div className="row g-3">
+                    {/* Name */}
                     <div className="col-lg-6">
                       <input
                         {...register("name", { required: "Name is required" })}
@@ -88,6 +85,7 @@ export default function ReferralForm() {
                       )}
                     </div>
 
+                    {/* Phone */}
                     <div className="col-lg-6">
                       <Controller
                         name="phone"
@@ -123,6 +121,7 @@ export default function ReferralForm() {
                       )}
                     </div>
 
+                    {/* Email */}
                     <div className="col-lg-6">
                       <input
                         {...register("email", {
@@ -143,9 +142,10 @@ export default function ReferralForm() {
                       )}
                     </div>
 
+                    {/* Project */}
                     <div className="col-lg-6">
                       <select
-                        {...register("enqproject", {
+                        {...register("project", {
                           required: "Select a project",
                         })}
                         className="form-control"
@@ -176,32 +176,34 @@ export default function ReferralForm() {
                           </option>
                         ))}
                       </select>
-                      {errors.enqproject && (
+                      {errors.project && (
                         <small className="text-danger">
-                          {errors.enqproject.message}
+                          {errors.project.message}
                         </small>
                       )}
                     </div>
 
+                    {/* Plot No */}
                     <div className="col-lg-6">
                       <input
-                        {...register("flatplotno", {
+                        {...register("plotNo", {
                           required: "Plot number is required",
                         })}
                         type="text"
                         className="form-control"
                         placeholder="Flat / Plot Number*"
                       />
-                      {errors.flatplotno && (
+                      {errors.plotNo && (
                         <small className="text-danger">
-                          {errors.flatplotno.message}
+                          {errors.plotNo.message}
                         </small>
                       )}
                     </div>
 
+                    {/* Other Project */}
                     <div className="col-lg-6">
                       <input
-                        {...register("otherproj")}
+                        {...register("otherProject")}
                         type="text"
                         className="form-control"
                         placeholder="Other Project"
@@ -216,22 +218,24 @@ export default function ReferralForm() {
                     <h4>Referee Details</h4>
                   </div>
                   <div className="row g-3">
+                    {/* Friend Name */}
                     <div className="col-lg-6">
                       <input
-                        {...register("frndname", {
+                        {...register("friendName", {
                           required: "Friend's name is required",
                         })}
                         type="text"
                         className="form-control"
                         placeholder="Friend Name*"
                       />
-                      {errors.frndname && (
+                      {errors.friendName && (
                         <small className="text-danger">
-                          {errors.frndname.message}
+                          {errors.friendName.message}
                         </small>
                       )}
                     </div>
 
+                    {/* Friend Phone */}
                     <div className="col-lg-6">
                       <Controller
                         name="friendPhone"
@@ -267,25 +271,27 @@ export default function ReferralForm() {
                       )}
                     </div>
 
+                    {/* Location */}
                     <div className="col-lg-6">
                       <input
-                        {...register("location", {
+                        {...register("friendLocation", {
                           required: "Location is required",
                         })}
                         type="text"
                         className="form-control"
                         placeholder="Location*"
                       />
-                      {errors.location && (
+                      {errors.friendLocation && (
                         <small className="text-danger">
-                          {errors.location.message}
+                          {errors.friendLocation.message}
                         </small>
                       )}
                     </div>
 
+                    {/* Referee Project */}
                     <div className="col-lg-6">
                       <select
-                        {...register("frndproject", {
+                        {...register("referProject", {
                           required: "Select a project",
                         })}
                         className="form-control"
@@ -316,17 +322,18 @@ export default function ReferralForm() {
                           </option>
                         ))}
                       </select>
-                      {errors.frndproject && (
+                      {errors.referProject && (
                         <small className="text-danger">
-                          {errors.frndproject.message}
+                          {errors.referProject.message}
                         </small>
                       )}
                     </div>
                   </div>
                 </div>
 
+                {/* Submit */}
                 <div className="text-center">
-                  <button type="submit" className="site-btn5  px-5">
+                  <button type="submit" className="site-btn5 px-5">
                     Submit
                   </button>
                 </div>

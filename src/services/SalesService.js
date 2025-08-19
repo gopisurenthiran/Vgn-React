@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://vgnhomes.ayatiworks.com/Vgnhomesapi/Sales_Enquiry.php";
+const API_URL = "https://www.vgnhomes.org/Vgnhomesapi/Sales_Enquiry.php";
 
 export const SalesEnquiry = async (data) => {
   try {
