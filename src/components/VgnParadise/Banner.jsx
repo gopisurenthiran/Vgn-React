@@ -7,14 +7,22 @@ import Slider_3 from "@/assets/vgn-paradise/hero-3.jpg";
 import Slider_4 from "@/assets/vgn-paradise/hero-4.jpg";
 import Slider_5 from "@/assets/vgn-paradise/hero-6.jpg";
 import Slider_6 from "@/assets/vgn-paradise/hero-7.jpg";
+import Slider_7 from "@/assets/vgn-paradise/vgn-1.jpg";
 import Slider_1_Mobile from "@/assets/vgn-paradise/hero-1-1.png"; // Example mobile images
 import Slider_2_Mobile from "@/assets/vgn-paradise/hero-2-1.png";
 import Slider_3_Mobile from "@/assets/vgn-paradise/hero-3-1.png";
 import Slider_4_Mobile from "@/assets/vgn-paradise/hero-4-1.png";
 import Slider_5_Mobile from "@/assets/vgn-paradise/hero-6-1.png";
 import Slider_6_Mobile from "@/assets/vgn-paradise/hero-7-1.png";
+import Slider_7_Mobile from "@/assets/vgn-paradise/vgnMob-1.jpg";
 
 const slides = [
+  {
+    image: Slider_7,
+    mobileImage: Slider_7_Mobile,
+    title: '',
+    description: '',
+  },
   {
     image: Slider_1,
     mobileImage: Slider_1_Mobile,
