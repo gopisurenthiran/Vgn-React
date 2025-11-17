@@ -239,7 +239,7 @@ export default function EnquiryForm() {
                     <div className="section-title5">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome />
+                    <EnquiryFormHome projectname="Pride"/>
                   </div>
                 </div>
               </div>

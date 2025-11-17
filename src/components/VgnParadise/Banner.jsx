@@ -14,7 +14,7 @@ import Slider_3_Mobile from "@/assets/vgn-paradise/hero-3-1.png";
 import Slider_4_Mobile from "@/assets/vgn-paradise/hero-4-1.png";
 import Slider_5_Mobile from "@/assets/vgn-paradise/hero-6-1.png";
 import Slider_6_Mobile from "@/assets/vgn-paradise/hero-7-1.png";
-import Slider_7_Mobile from "@/assets/vgn-paradise/vgnMob-1.jpg";
+import Slider_7_Mobile from "@/assets/vgn-paradise/vgnmob-1.jpg";
 
 const slides = [
   {

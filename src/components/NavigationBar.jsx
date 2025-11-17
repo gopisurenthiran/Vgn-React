@@ -178,7 +178,7 @@ export default function Navigation() {
             <i className="bi bi-telephone-fill me-2" />
             <span className="me-4 small">044 4002 4002 / 044 6965 6902</span>
             <i className="bi bi-envelope-fill me-2" />
-            <span className="small">info@vnggroup.org</span>
+            <span className="small">info@vgngroup.org</span>
           </div>
         </Container>
       </div>

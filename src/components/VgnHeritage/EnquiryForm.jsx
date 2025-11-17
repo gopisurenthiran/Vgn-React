@@ -124,7 +124,9 @@ export default function EnquiryForm() {
                     <div className="section-title">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome />
+                    <EnquiryFormHome projectname="Heritage Springz" />
+
+                    {/* <EnquiryFormHome /> */}
                   </div>
                 </div>
               </div>

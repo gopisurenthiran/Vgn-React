@@ -124,7 +124,7 @@ export default function EnquiryForm() {
                     <div className="section-title7">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome />
+                    <EnquiryFormHome projectname="Mugavari Phase - IV & V" />
                   </div>
                 </div>
               </div>

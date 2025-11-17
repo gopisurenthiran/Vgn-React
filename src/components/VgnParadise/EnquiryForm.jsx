@@ -220,7 +220,7 @@ export default function EnquiryForm() {
                     <div className="section-title2">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome />
+                    <EnquiryFormHome projectname=" Paradise"/>
                   </div>
                 </div>
               </div>

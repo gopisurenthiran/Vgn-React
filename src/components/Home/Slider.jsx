@@ -9,7 +9,7 @@ import Slider_3 from "@/assets/slider/slider-3.jpg";
 import Slider_4 from "@/assets/slider/slider-4.jpg";
 import Slider_5 from "@/assets/slider/slider-5.jpg";
 import Slider_6 from "@/assets/slider/slider-6.jpg";
-import Slider_7 from "@/assets/slider/vgn-1.jpg";
+import Slider_7 from "@/assets/slider/slider-7.jpg";
 
 import SliderMob_1 from "@/assets/slider/sliderMob-1.jpg";
 import SliderMob_2 from "@/assets/slider/sliderMob-2.png";
@@ -17,7 +17,7 @@ import SliderMob_3 from "@/assets/slider/sliderMob-3.png";
 import SliderMob_4 from "@/assets/slider/sliderMob-4.jpg";
 import SliderMob_5 from "@/assets/slider/sliderMob-5.png";
 import SliderMob_6 from "@/assets/slider/sliderMob-6.jpg";
-import SliderMob_7 from "@/assets/slider/vgnMob-1.jpg";
+import SliderMob_7 from "@/assets/slider/sliderMob-7.jpg";
 
 /* Add link for each slide */
 const slides = [

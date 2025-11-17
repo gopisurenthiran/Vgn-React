@@ -7,7 +7,7 @@ import { sendEnquiry } from "../services/enquiryForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const EnquiryFormHome = () => {
+const EnquiryFormHome = ({ projectname }) => {   // ⬅️ accept prop here
   const {
     register,
     handleSubmit,
@@ -22,7 +22,10 @@ const EnquiryFormHome = () => {
 
   const validatePhone = (value) => {
     if (!value || value.length < 10) {
-      setError("phone", { type: "manual", message: "Valid phone number is required" });
+      setError("phone", {
+        type: "manual",
+        message: "Valid phone number is required",
+      });
       return false;
     }
     clearErrors("phone");
@@ -37,6 +40,7 @@ const EnquiryFormHome = () => {
       mobile: phone,
       email: data.email,
       location: data.location,
+      projectname: projectname || "",   // ⬅️ send projectname to API
     };
 
     const res = await sendEnquiry(payload);
@@ -55,7 +59,11 @@ const EnquiryFormHome = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={4000} />
-      <form onSubmit={handleSubmit(onSubmit)} className="review-form" style={{ marginTop: "20px" }}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="review-form"
+        style={{ marginTop: "20px" }}
+      >
         {/* Name */}
         <div className="">
           <label className="form-label">Name*</label>
@@ -68,7 +76,9 @@ const EnquiryFormHome = () => {
               required: "Name is required",
             })}
           />
-          {errors.name && <small className="text-danger">{errors.name.message}</small>}
+          {errors.name && (
+            <small className="text-danger">{errors.name.message}</small>
+          )}
         </div>
 
         {/* Phone Number */}
@@ -89,7 +99,9 @@ const EnquiryFormHome = () => {
             }}
             inputStyle={{ width: "100%" }}
           />
-          {errors.phone && <small className="text-danger">{errors.phone.message}</small>}
+          {errors.phone && (
+            <small className="text-danger">{errors.phone.message}</small>
+          )}
         </div>
 
         {/* Email */}
@@ -108,7 +120,9 @@ const EnquiryFormHome = () => {
               },
             })}
           />
-          {errors.email && <small className="text-danger">{errors.email.message}</small>}
+          {errors.email && (
+            <small className="text-danger">{errors.email.message}</small>
+          )}
         </div>
 
         {/* Location */}
@@ -123,11 +137,13 @@ const EnquiryFormHome = () => {
               required: "Location is required",
             })}
           />
-          {errors.location && <small className="text-danger">{errors.location.message}</small>}
+          {errors.location && (
+            <small className="text-danger">{errors.location.message}</small>
+          )}
         </div>
 
         {/* Checkbox */}
-        <div className=" form-check">
+        <div className="form-check">
           <input
             type="checkbox"
             className="form-check-input"
@@ -137,9 +153,11 @@ const EnquiryFormHome = () => {
             })}
           />
           <label className="form-check-label form-label" htmlFor="chkagree">
-            I Agree to let VGN's representatives to contact me
+            I Agree to let VGN&apos;s representatives to contact me
           </label>
-          {errors.agree && <small className="text-danger">{errors.agree.message}</small>}
+          {errors.agree && (
+            <small className="text-danger">{errors.agree.message}</small>
+          )}
         </div>
 
         {/* Submit */}
