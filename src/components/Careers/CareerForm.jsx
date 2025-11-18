@@ -1,10 +1,10 @@
+// src/components/CareersForm/CareersForm.jsx
 import React from "react";
 import { useForm } from "react-hook-form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import headBorder from "/head-border.png";
 import { career } from "../../services/career";
 
-// ✅ Import Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -18,35 +18,47 @@ export default function CareersForm() {
 
   const onSubmit = async (data) => {
     try {
+      let resumeBase64 = "";
+      let resumeName = "";
+
+      if (data.resume && data.resume[0]) {
+        const file = data.resume[0];
+        resumeName = file.name;
+
+        resumeBase64 = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            const base64 = reader.result.split(",")[1]; // only the base64 part
+            resolve(base64);
+          };
+          reader.onerror = reject;
+        });
+      }
+
       const payload = {
         name: data.name,
         phone: data.phone,
         email: data.email,
         department: data.department,
         message: data.message || "",
-        resume: data.resume?.[0]?.name || null,
+        resume_name: resumeName,
+        resume_base64: resumeBase64,
       };
+
+      console.log("Payload sending =>", payload);
 
       const response = await career(payload);
 
-      if (response.success) {
-        toast.success("Form submitted successfully!", {
-          position: "top-right",
-          autoClose: 3000,
-        });
+      if (response.status === "success") {
+        toast.success("Form submitted successfully!");
         reset();
       } else {
-        toast.error(response.message || "Failed to submit", {
-          position: "top-right",
-          autoClose: 3000,
-        });
+        toast.error(response.message || "Failed to submit");
       }
     } catch (err) {
-      console.error("Submission error:", err);
-      toast.error("Something went wrong. Please try again.", {
-        position: "top-right",
-        autoClose: 3000,
-      });
+      console.error(err);
+      toast.error("Something went wrong");
     }
   };
 
@@ -65,7 +77,6 @@ export default function CareersForm() {
               </h4>
             </div>
 
-            {/* ✅ Form */}
             <div className="cf-content p-4 mt-4">
               <form className="cc-form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">
@@ -78,7 +89,9 @@ export default function CareersForm() {
                       className="form-control"
                     />
                     {errors.name && (
-                      <small className="text-danger">{errors.name.message}</small>
+                      <small className="text-danger">
+                        {errors.name.message}
+                      </small>
                     )}
                   </div>
 
@@ -90,12 +103,17 @@ export default function CareersForm() {
                       {...register("phone", {
                         required: "Phone is required",
                         maxLength: { value: 10, message: "Max 10 digits" },
-                        pattern: { value: /^[0-9]+$/, message: "Only numbers allowed" },
+                        pattern: {
+                          value: /^[0-9]+$/,
+                          message: "Only numbers allowed",
+                        },
                       })}
                       className="form-control"
                     />
                     {errors.phone && (
-                      <small className="text-danger">{errors.phone.message}</small>
+                      <small className="text-danger">
+                        {errors.phone.message}
+                      </small>
                     )}
                   </div>
 
@@ -104,21 +122,22 @@ export default function CareersForm() {
                     <input
                       type="email"
                       placeholder="Email id*"
-                      {...register("email", {
-                        required: "Email is required",
-                        pattern: { value: /^\S+@\S+$/i, message: "Invalid email format" },
-                      })}
+                      {...register("email", { required: "Email is required" })}
                       className="form-control"
                     />
                     {errors.email && (
-                      <small className="text-danger">{errors.email.message}</small>
+                      <small className="text-danger">
+                        {errors.email.message}
+                      </small>
                     )}
                   </div>
 
                   {/* Department */}
                   <div className="col-lg-12 mb-3">
                     <select
-                      {...register("department", { required: "Select a department" })}
+                      {...register("department", {
+                        required: "Select a department",
+                      })}
                       className="form-select"
                     >
                       <option value="">Select Department*</option>
@@ -127,9 +146,15 @@ export default function CareersForm() {
                       <option value="ERP / Software Engineer">
                         ERP / Software Engineer
                       </option>
-                      <option value="Architectural Design">Architectural Design</option>
-                      <option value="Facility Management">Facility Management</option>
-                      <option value="Finance & Accounts">Finance & Accounts</option>
+                      <option value="Architectural Design">
+                        Architectural Design
+                      </option>
+                      <option value="Facility Management">
+                        Facility Management
+                      </option>
+                      <option value="Finance & Accounts">
+                        Finance & Accounts
+                      </option>
                       <option value="Graphic Designer">Graphic Designer</option>
                       <option value="Human Resources">Human Resources</option>
                       <option value="Internal Audit">Internal Audit</option>
@@ -154,7 +179,9 @@ export default function CareersForm() {
                       <option value="Transportation">Transportation</option>
                     </select>
                     {errors.department && (
-                      <small className="text-danger">{errors.department.message}</small>
+                      <small className="text-danger">
+                        {errors.department.message}
+                      </small>
                     )}
                   </div>
 
@@ -168,12 +195,51 @@ export default function CareersForm() {
                     ></textarea>
                   </div>
 
-                  {/* Resume */}
+                  {/* Resume Upload */}
+                  {/* Resume Upload */}
                   <div className="col-lg-4 mb-3">
-                    <input type="file" {...register("resume")} className="form-control" />
+                    <input
+                      type="file"
+                      accept=".doc,.docx"   // Only DOC & DOCX allowed
+                      {...register("resume", {
+                        validate: (fileList) => {
+                          if (!fileList[0]) return "Resume is required";
+
+                          const file = fileList[0];
+
+                          // Allowed formats
+                          const allowedTypes = [
+                            "application/msword",
+                            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                          ];
+
+                          if (!allowedTypes.includes(file.type)) {
+                            return "Only DOC or DOCX files are allowed";
+                          }
+
+                          // Max 2 MB size check
+                          if (file.size > 2 * 1024 * 1024) {
+                            return "File must be less than 2 MB";
+                          }
+
+                          return true;
+                        },
+                      })}
+                      className="form-control"
+                    />
+
+                    {/* Note text */}
+                    <small className="text-muted d-block mt-1">
+                      Allowed file types: <strong>.doc, .docx</strong> (Max: <strong>2 MB</strong>)
+                    </small>
+
+                    {errors.resume && (
+                      <small className="text-danger d-block mt-1">
+                        {errors.resume.message}
+                      </small>
+                    )}
                   </div>
                 </div>
-
                 <div className="text-center">
                   <button type="submit" className="site-btn5 px-4">
                     Apply Now
@@ -185,7 +251,6 @@ export default function CareersForm() {
         </div>
       </div>
 
-      {/* ✅ Toast Container */}
       <ToastContainer />
     </section>
   );
