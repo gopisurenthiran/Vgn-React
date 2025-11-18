@@ -10,6 +10,7 @@ import Slider_4 from "@/assets/slider/slider-4.jpg";
 import Slider_5 from "@/assets/slider/slider-5.jpg";
 import Slider_6 from "@/assets/slider/slider-6.jpg";
 import Slider_7 from "@/assets/slider/slider-7.jpg";
+import Slider_8 from "@/assets/slider/vgn-grandeur.jpg";
 
 import SliderMob_1 from "@/assets/slider/sliderMob-1.jpg";
 import SliderMob_2 from "@/assets/slider/sliderMob-2.png";
@@ -18,13 +19,15 @@ import SliderMob_4 from "@/assets/slider/sliderMob-4.jpg";
 import SliderMob_5 from "@/assets/slider/sliderMob-5.png";
 import SliderMob_6 from "@/assets/slider/sliderMob-6.jpg";
 import SliderMob_7 from "@/assets/slider/sliderMob-7.jpg";
+import SliderMob_8 from "@/assets/slider/vgn-grandeur-mob.jpg";
 
 /* Add link for each slide */
 const slides = [
+  { desktop: Slider_8, mobile: SliderMob_8, link: "/vgn-grandeur/index" },
   { desktop: Slider_7, mobile: SliderMob_7, link: "/vgn-paradise/index" },
   { desktop: Slider_5, mobile: SliderMob_5, link: "#" },
   // { desktop: Slider_6, mobile: SliderMob_6, link: "/vgn-paradise/index" },
-  { desktop: Slider_4, mobile: SliderMob_4, link: "/vgn-grandeur/index" },
+  // { desktop: Slider_4, mobile: SliderMob_4, link: "/vgn-grandeur/index" },
   { desktop: Slider_3, mobile: SliderMob_3, link: "/vgn-aspire-gardens/index" },
   { desktop: Slider_1, mobile: SliderMob_1, link: "/vgn-highland/index" },
   { desktop: Slider_2, mobile: SliderMob_2, link: "/vgn-pride-de-villa/index" },

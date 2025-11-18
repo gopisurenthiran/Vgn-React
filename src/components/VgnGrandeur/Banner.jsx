@@ -3,10 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Slider_1 from "@/assets/vgn-grandeur/hero-3.jpg";
 import Slider_2 from "@/assets/vgn-grandeur/hero-3.jpg";
+import Slider_3 from "@/assets/vgn-grandeur/vgn-grandeur.jpg";
 import Slider_1_Mobile from "@/assets/vgn-grandeur/hero-3-1.png"; // Example mobile images
 import Slider_2_Mobile from "@/assets/vgn-grandeur/hero-3-1.png";
+import Slider_3_Mobile from "@/assets/vgn-grandeur/vgn-grandeur-mob.jpg";
 
 const slides = [
+  {
+    image: Slider_3,
+    mobileImage: Slider_3_Mobile,
+    title: '',
+    description: '',
+  },
   {
     image: Slider_1,
     mobileImage: Slider_1_Mobile,
