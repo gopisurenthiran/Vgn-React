@@ -61,14 +61,26 @@ const VideoSliderThreeCols = () => {
         <>
             <section className="aw-3col-section py-5">
                 <Container>
-                    <div className="aw-3col-header mt-5">
+                    <div className="row mb-4">
+                        <div className="col-12 text-center">
+                            <div className="heading">
+                                <h4>
+                                    <span className="head-border me-2">
+                                        <img src="/head-border.png" alt="border" />
+                                    </span>
+                                    What our client says?
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="aw-3col-header ">
                         <div>
-                            <h2
+                            {/* <h2
                                 className="aw-3col-title"
                                 style={{ fontFamily: "'Mulish', sans-serif" }}
                             >
                                 What our clients say?
-                            </h2>
+                            </h2> */}
 
                             {/* <p className="aw-3col-subtitle">16+ Real client stories</p> */}
                         </div>
