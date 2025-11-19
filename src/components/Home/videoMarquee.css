@@ -1,0 +1,210 @@
+.aw-3col-section {
+  background: #fff9f1;
+}
+
+/* Header with arrows on top */
+.aw-3col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.aw-3col-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #b4151a;
+  margin-bottom: 0.35rem;
+}
+
+.aw-3col-subtitle {
+  font-size: 0.98rem;
+  color: #555555;
+  margin: 0;
+}
+
+.aw-3col-arrows {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.aw-3col-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(180, 21, 26, 0.5);
+  background: #fff9f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b4151a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aw-3col-arrow-btn:hover {
+  background: #b4151a;
+  color: #ffffff;
+}
+
+/* Card */
+.aw-3col-card {
+  background: #fff9f1;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease,
+    border-color 0.22s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.aw-3col-card-big {
+  /* subtle scale effect on hover */
+}
+
+.aw-3col-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+  border-color: rgba(180, 21, 26, 0.4);
+}
+
+/* Thumbnail area */
+.aw-3col-thumb-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.aw-3col-thumb-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.aw-3col-thumb-big {
+  height: 230px; /* bigger size */
+}
+
+/* Play button pill */
+.aw-3col-play-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.97);
+  color: #b4151a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+}
+
+.aw-3col-play-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #b4151a;
+  color: #ffffff;
+}
+
+.aw-3col-play-text {
+  white-space: nowrap;
+}
+
+/* Info */
+.aw-3col-info {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.aw-3col-name {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.aw-3col-role {
+  font-size: 0.86rem;
+  color: #777777;
+  margin: 0;
+}
+
+/* Modal */
+.aw-3col-modal {
+  border-radius: 18px;
+  background: #000;
+  overflow: hidden;
+}
+
+.aw-3col-video-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.aw-3col-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .aw-3col-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aw-3col-thumb-big {
+    height: 210px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .aw-3col-thumb-big {
+    height: 200px;
+  }
+}
+
+.aw-3col-thumb-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 6px;
+  position: relative;
+  background: #000;
+}
+
+.aw-3col-preview-video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.aw-3col-viewall-btn.arrow {
+  padding-right: 26px;
+  position: relative;
+}
+
+.aw-3col-viewall-btn.arrow::after {
+  content: "→";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}

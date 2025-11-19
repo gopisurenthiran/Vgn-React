@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import Testimonials from "./TrustTestimonials";
 
 const testimonials = [
   {
@@ -106,12 +107,12 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        <div
+        {/* <div
           className="position-relative text-center"
           onMouseEnter={stopAutoSlide}
           onMouseLeave={startAutoSlide}
         >
-          {/* Arrow Left */}
+         
           <button
             className="position-absolute top-50 start-0 translate-middle-y border-0 bg-transparent text-dark fs-4"
             onClick={prevTestimonial}
@@ -142,7 +143,7 @@ export default function TestimonialSection() {
             </div>
           </div>
 
-          {/* Arrow Right */}
+         
           <button
             className="position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-dark fs-4"
             onClick={nextTestimonial}
@@ -150,10 +151,9 @@ export default function TestimonialSection() {
           >
             <FaChevronRight />
           </button>
-        </div>
+        </div> */}
 
-        {/* Dots */}
-        <div className="d-flex justify-content-center mt-4">
+        {/* <div className="d-flex justify-content-center mt-4">
           <ul className="list-inline mb-0">
             {testimonials.map((_, idx) => (
               <li
@@ -169,7 +169,8 @@ export default function TestimonialSection() {
               ></li>
             ))}
           </ul>
-        </div>
+        </div> */}
+        <Testimonials/>
       </div>
     </section>
   );

@@ -1,0 +1,161 @@
+.aw-testimonials-section {
+  background: #fff9f1;
+  color: #111111;
+}
+
+.aw-testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #b4151a;
+}
+
+.aw-testimonials-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.aw-testimonials-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #b4151a;
+}
+
+/* Main video card */
+.aw-main-video-card {
+  background: #fff9f1;
+  border-radius: 18px;
+  border: 1px solid rgba(180, 21, 26, 0.16);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.aw-main-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: #000;
+}
+
+.aw-main-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aw-main-video-info {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+.aw-main-client-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.aw-main-client-role {
+  font-size: 0.9rem;
+  color: #777777;
+  margin-bottom: 0.75rem;
+}
+
+.aw-main-client-quote {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Right side list */
+.aw-video-list {
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Scrollbar subtle */
+.aw-video-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.aw-video-list::-webkit-scrollbar-thumb {
+  background: rgba(180, 21, 26, 0.6);
+  border-radius: 8px;
+}
+
+.aw-video-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.3rem;
+  margin-bottom: 0.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aw-video-item:hover {
+  background: rgba(180, 21, 26, 0.08);
+}
+
+.aw-video-item.active {
+  background: #b4151a;
+}
+
+.aw-video-item.active .aw-video-name,
+.aw-video-item.active .aw-video-role {
+  color: #ffffff;
+}
+
+.aw-video-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0, #b4151a 60%, #700910 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aw-play-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b4151a;
+}
+
+.aw-video-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aw-video-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.aw-video-role {
+  font-size: 0.8rem;
+  color: #777777;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .aw-main-video-card {
+    margin-bottom: 1rem;
+  }
+
+  .aw-video-list {
+    max-height: 260px;
+  }
+}

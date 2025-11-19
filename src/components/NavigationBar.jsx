@@ -175,12 +175,28 @@ export default function Navigation() {
       <div className='vgn-top-strip'>
         <Container>
           <div className="d-flex justify-content-end align-items-center px-3 py-1">
+
+            {/* Phone */}
             <i className="bi bi-telephone-fill me-2" />
-            <span className="me-4 small">044 4002 4002 / 044 6965 6902</span>
+            <a
+              href="tel:04440024002"
+              className="me-4 small text-decoration-none text-white"
+            >
+              044 4002 4002 / 044 6965 6902
+            </a>
+
+            {/* Email */}
             <i className="bi bi-envelope-fill me-2" />
-            <span className="small">info@vgngroup.org</span>
+            <a
+              href="mailto:info@vgngroup.org"
+              className="small text-decoration-none text-white"
+            >
+              info@vgngroup.org
+            </a>
+
           </div>
         </Container>
+
       </div>
 
       <Navbar expand="lg" className="vgn-navbar py-0" sticky="top">

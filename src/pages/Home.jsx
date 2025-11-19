@@ -9,6 +9,8 @@ import VgnAdvantages from '../components/Home/VgnAdvantages';
 import Property from '../components/Home/Property';
 import UpcomingProjects from '../components/Home/UpcomingProjects';
 import BrandIconSection from '../components/BrandIconSection';
+import TrustTestimonials from '../components/Testimonial/TrustTestimonials';
+import VideoTestimonialsSlider from '../components/Home/VideoTestimonialsSlider';
 
 
 export default function Home() {
@@ -20,6 +22,7 @@ export default function Home() {
       <UpcomingProjects />
        <Video/>
        <EnquiryForm/>
+       <VideoTestimonialsSlider />
        <VgnAdvantages/>
        <BrandIconSection/>
     </div>
