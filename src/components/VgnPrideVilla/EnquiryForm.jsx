@@ -43,26 +43,26 @@ import gal2 from "@/assets/vgn-pride-villa/gal2.jpg";
 import gal3 from "@/assets/vgn-pride-villa/gal3.jpg";
 import gal4 from "@/assets/vgn-pride-villa/gal4.jpg";
 import gal5 from "@/assets/vgn-pride-villa/gal5.jpg";
-import gal6 from "@/assets/vgn-pride-villa/gal13.jpg";
-import gal7 from "@/assets/vgn-pride-villa/gal14.jpg";
-import gal8 from "@/assets/vgn-pride-villa/gal15.jpg";
-import gal9 from "@/assets/vgn-pride-villa/gal16.jpg";
-import gal10 from "@/assets/vgn-pride-villa/gal17.jpg";
-import gal11 from "@/assets/vgn-pride-villa/gal18.jpg";
-import gal12 from "@/assets/vgn-pride-villa/gal19.jpg";
-import gal13 from "@/assets/vgn-pride-villa/gal20.jpg";
-import gal14 from "@/assets/vgn-pride-villa/gal21.jpg";
-import gal15 from "@/assets/vgn-pride-villa/gal22.jpg";
-import gal16 from "@/assets/vgn-pride-villa/gal23.jpg";
-import gal17 from "@/assets/vgn-pride-villa/gal24.jpg";
-import gal18 from "@/assets/vgn-pride-villa/gal25.jpg";
-import gal19 from "@/assets/vgn-pride-villa/gal26.jpg";
-import gal20 from "@/assets/vgn-pride-villa/gal27.jpg";
-import gal21 from "@/assets/vgn-pride-villa/gal28.jpg";
-import gal22 from "@/assets/vgn-pride-villa/gal29.jpg";
-import gal23 from "@/assets/vgn-pride-villa/gal30.jpg";
-import gal24 from "@/assets/vgn-pride-villa/gal31.jpg";
-import gal25 from "@/assets/vgn-pride-villa/gal32.jpg";
+import gal6 from "@/assets/vgn-pride-villa/gal6.jpg";
+import gal7 from "@/assets/vgn-pride-villa/gal7.jpg";
+import gal8 from "@/assets/vgn-pride-villa/gal8.jpg";
+import gal9 from "@/assets/vgn-pride-villa/gal9.jpg";
+import gal10 from "@/assets/vgn-pride-villa/gal10.jpg";
+import gal11 from "@/assets/vgn-pride-villa/gal11.jpg";
+import gal12 from "@/assets/vgn-pride-villa/gal12.jpg";
+import gal13 from "@/assets/vgn-pride-villa/gal13.jpg";
+import gal14 from "@/assets/vgn-pride-villa/gal14.jpg";
+import gal15 from "@/assets/vgn-pride-villa/gal15.jpg";
+import gal16 from "@/assets/vgn-pride-villa/gal16.jpg";
+import gal17 from "@/assets/vgn-pride-villa/gal17.jpg";
+// import gal18 from "@/assets/vgn-pride-villa/gal25.jpg";
+// import gal19 from "@/assets/vgn-pride-villa/gal26.jpg";
+// import gal20 from "@/assets/vgn-pride-villa/gal27.jpg";
+// import gal21 from "@/assets/vgn-pride-villa/gal28.jpg";
+// import gal22 from "@/assets/vgn-pride-villa/gal29.jpg";
+// import gal23 from "@/assets/vgn-pride-villa/gal30.jpg";
+// import gal24 from "@/assets/vgn-pride-villa/gal31.jpg";
+// import gal25 from "@/assets/vgn-pride-villa/gal32.jpg";
 
 import mapImage from "@/assets/vgn-pride-villa/map.png";
 
@@ -168,14 +168,14 @@ export default function EnquiryForm() {
     gal15,
     gal16,
     gal17,
-    gal18,
-    gal19,
-    gal20,
-    gal21,
-    gal22,
-    gal23,
-    gal24,
-    gal25,
+    // gal18,
+    // gal19,
+    // gal20,
+    // gal21,
+    // gal22,
+    // gal23,
+    // gal24,
+    // gal25,
   ];
   const [form, setForm] = useState({
     name: "",
