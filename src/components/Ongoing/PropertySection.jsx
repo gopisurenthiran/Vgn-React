@@ -11,13 +11,13 @@ import VGNPridedeVilla from "@/assets/ongoing/project34.jpg";
 import VGNParadise from "@/assets/ongoing/project23.jpg";
 import VGNHighland from "@/assets/ongoing/project31.jpg";
 import VGNHorizon from "@/assets/ongoing/project27.jpg";
-
+import VGNSamudra from "@/assets/ongoing/project9.jpg";
 import VGNPride from "@/assets/ongoing/project15.jpg";
 import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
 
 
 import VGNVarnabhoomi from "@/assets/ongoing/project5.jpg";
-import VGNSamudra from "@/assets/ongoing/project9.jpg";
+
 
 const properties = [
  
@@ -26,7 +26,7 @@ const properties = [
     location: "Ottiyambakkam, Chennai.",
     type: "Plots",
     size: "700 - 1683 Sq ft",
-    status: " Under Construction",
+    status: "Ready to Construct",
     image: VGNHeritage,
   link: "/vgn-heritage-springz/index",
   },
@@ -45,7 +45,7 @@ const properties = [
     location: "Avadi, Chennai",
     size: "2 BHK & 3 BHK",
     type: "Villa",
-    status: "Under Construction",
+    status: "Ready to Move In",
     link: "/vgn-aspire-gardens/index",
   },
   {
@@ -54,7 +54,7 @@ const properties = [
     location: "Padur, Chennai",
     size: "3 BHK",
     type: "Villa",
-    status: "Under Construction",
+    status: "Ready to Occupy",
     link: "/vgn-pride-de-villa/index",
   },
   {
@@ -84,15 +84,15 @@ const properties = [
     status: "Ready to Construct",
     link: "/vgn-horizon/index",
   },
-  {
-    image: VGNPride,
-    title: "VGN Pride",
-    location: "Padur, OMR, Chennai.",
-    size: "540 - 1636 Sq feet",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-pride/index",
-  },
+  // {
+  //   image: VGNPride,
+  //   title: "VGN Pride",
+  //   location: "Padur, OMR, Chennai.",
+  //   size: "540 - 1636 Sq feet",
+  //   type: "Plots",
+  //   status: "Ready to Construct",
+  //   link: "/vgn-pride/index",
+  // },
   {
     image: VGNMugavariPhase,
     title: "VGN Mugavari Phase - IV & V",
@@ -111,15 +111,15 @@ const properties = [
     status: "Ready to Construct",
     link: "/vgn-varnabhoomi/index",
   },
-  {
-    image: VGNSamudra,
-    title: "VGN Samudra",
-    location: "Chromepet, Chennai.",
-    size: "1829 Sq.Ft.",
-    type: "Plots",
-    status: "Ready to Construct",
-    link: "/vgn-samudra/index",
-  },
+  // {
+  //   image: VGNSamudra,
+  //   title: "VGN Samudra",
+  //   location: "Chromepet, Chennai.",
+  //   size: "1829 Sq.Ft.",
+  //   type: "Plots",
+  //   status: "Ready to Construct",
+  //   link: "/vgn-samudra/index",
+  // },
 ];
 
 export default function PropertySection({ prop }) {

@@ -71,8 +71,29 @@ import VGNWindsorParkPhase4 from "@/assets/ongoing/project30.jpg";
 import VGNSouthernMeadows from "@/assets/ongoing/project21.jpg";
 import VGNMugavariPhase from "@/assets/ongoing/project10-1.jpg";
 import VGNWestfield from "@/assets/ongoing/project22.jpg";
+import VGNSamudra from "@/assets/ongoing/project9.jpg";
+import VGNPride from "@/assets/ongoing/project15.jpg";
+
 
 const completedProjects = [
+{
+    image: VGNPride,
+    name: "VGN Pride",
+    location: "Padur, OMR, Chennai.",
+    size: "540 - 1636 Sq feet",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2025",
+  },
+  {
+    image: VGNSamudra,
+    name: "VGN Samudra",
+    location: "Chromepet, Chennai.",
+    size: "1829 Sq.Ft.",
+    type: "Plots",
+    status: "Ready to Construct",
+    year: "2025",
+  },
   {
     image: img24,
     name: "VGN Classique",

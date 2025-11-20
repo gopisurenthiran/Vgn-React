@@ -1,0 +1,19 @@
+.property-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-image {
+  width: 100%;
+  height: 260px;        /* fixed equal height */
+  object-fit: fill;    /* fill the card area */
+  object-position: center; /* center crop → looks clean */
+  border-radius: 6px;   /* optional */
+}
+
+
+
+.pi-text1 {
+  margin-top: auto;   /* pushes footer to bottom */
+}
