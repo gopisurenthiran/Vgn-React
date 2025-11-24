@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import LocationAdvantages from "./LocationAdvantages";
+import Carousel from "react-bootstrap/Carousel";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarkerAlt,
@@ -58,6 +60,37 @@ import advIcon5 from "@/assets/adv-icon5.png";
 import EnquiryFormHome from "../EnquiryForm";
 import SubNav from "./SubNav";
 
+import gal1 from "@/assets/vgn-grandeur/gal-1.jpg";
+import gal2 from "@/assets/vgn-grandeur/gal-2.jpg";
+import gal3 from "@/assets/vgn-grandeur/gal-3.jpg";
+import gal4 from "@/assets/vgn-grandeur/gal-4.jpg";
+import gal5 from "@/assets/vgn-grandeur/gal-5.jpg";
+import gal6 from "@/assets/vgn-grandeur/gal-6.jpg";
+import gal7 from "@/assets/vgn-grandeur/gal-7.jpg";
+import gal8 from "@/assets/vgn-grandeur/gal-8.jpg";
+import gal9 from "@/assets/vgn-grandeur/gal-9.jpg";
+import gal10 from "@/assets/vgn-grandeur/gal-10.jpg";
+import gal11 from "@/assets/vgn-grandeur/gal-11.jpg";
+import gal12 from "@/assets/vgn-grandeur/gal-12.jpg";
+
+const videoUrls = [
+  "https://www.youtube.com/embed/EPF9DXNd3Y8?si=VIHuwj3r5DD1Ivb3",
+
+];
+const gallerySlides = [
+  gal1,
+  gal2,
+  gal3,
+  gal4,
+  gal5,
+  gal6,
+  gal7,
+  gal8,
+  gal9,
+  gal10,
+  gal11,
+  gal12,
+];
 export default function EnquiryForm() {
   const advantages = [
     {
@@ -178,7 +211,7 @@ export default function EnquiryForm() {
 
           <div className="col-lg-8">
             <div className="pd-text">
-                  {/* <SubNav/> */}
+              {/* <SubNav/> */}
               {/* Top Section with Logo & Address */}
               <div className="row align-items-center py-3">
                 {/* Logo & Location */}
@@ -332,6 +365,53 @@ export default function EnquiryForm() {
               {/* Location Advantages Section */}
               <LocationAdvantages />
 
+              <div className="border-bottom my-3"></div>
+              {/* Video Section */}
+              <div className="pd-widget" id="videos">
+                <div className="section-title">
+                  <h4>Videos</h4>
+                </div>
+                <div className="row">
+                  {videoUrls.map((url, index) => (
+                    <div className="col-lg-4 mb-4" key={index}>
+                      <iframe
+                        width="100%"
+                        height="215"
+                        src={url}
+                        title={`YouTube video ${index + 1}`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="border-bottom my-3"></div>
+              <div className="pd-widget" id="gallery">
+                <div className="section-title">
+                  <h4>Gallery</h4>
+                </div>
+                <Carousel
+                  interval={2000}
+                  fade
+                  pause={false}
+                  indicators
+                  controls
+                >
+                  {gallerySlides.map((image, index) => (
+                    <Carousel.Item key={index}>
+                      <img
+                        className="d-block w-100"
+                        src={image}
+                        alt={`Gallery Slide ${index + 1}`}
+                        style={{ objectFit: "cover" }}
+                      />
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+              </div>
               <div className="border-bottom my-3"></div>
               {/* Location Map Section */}
               <div className="pd-widget" id="map">
