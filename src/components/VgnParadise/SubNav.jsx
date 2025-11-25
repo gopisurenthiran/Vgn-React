@@ -11,7 +11,9 @@ const sections = [
   ["advantages", "Location Advantages"],
   ["map", "Location"],
   ["route", "Route"],
-  ["video", "Video"],
+  // ["video", "Video"],
+  ["3dwalkthrough", "3D Walkthrough"],
+
   ["360view", "360 View"], // This id needs escaping
   ["contact", "Contact"],
 ];

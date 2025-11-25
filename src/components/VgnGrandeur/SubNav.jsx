@@ -7,8 +7,8 @@ const sections = [
   ["#highlights", "Project Highlights"],
   ["#amenities", "Amenities"],
   ["#advantages", "Location Advantages"],
+  ["#3dwalkthrough", "3D Walkthrough"],
   ["#gallery", "Gallery"],
-  ["#videos", "Vidoes"],
   ["#map", "Location"],
   ["#contact", "Contact"],
 ];

@@ -367,27 +367,28 @@ export default function EnquiryForm() {
 
               <div className="border-bottom my-3"></div>
               {/* Video Section */}
-              <div className="pd-widget" id="videos">
+              <div className="pd-widget" id="3dwalkthrough">
                 <div className="section-title">
-                  <h4>Videos</h4>
+                  <h4>3D Walkthrough</h4>
                 </div>
                 <div className="row">
-                  {videoUrls.map((url, index) => (
-                    <div className="col-lg-4 mb-4" key={index}>
+                  <div className="col-12 col2">
+                    <div className="ratio ratio-16x9">
                       <iframe
                         width="100%"
-                        height="215"
-                        src={url}
-                        title={`YouTube video ${index + 1}`}
-                        frameBorder="0"
+                        height="415"
+                        src="https://www.youtube.com/embed/JYi1DG42yHk?si=S4N9Syk3wNZpmQ7t"
+                        title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
                       ></iframe>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
+
               <div className="border-bottom my-3"></div>
               <div className="pd-widget" id="gallery">
                 <div className="section-title">

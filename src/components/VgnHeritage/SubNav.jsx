@@ -7,6 +7,8 @@ const sections = [
   ["#highlights", "Project Highlights"],
   ["#amenities", "Amenities"],
   ["#advantages", "Location Advantages"],
+  ["#3dwalkthrough", "3D Walkthrough"],
+
   ["#map", "Location"],
   ["#contact", "Contact"],
 ];
@@ -46,7 +48,7 @@ export default function SubNav() {
 
   return (
     <div className="subnav-tabs-wrapper">
-<ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
+      <ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
         {sections.map(([href, label]) => (
           <li className="nav-item" key={href}>
             <Link

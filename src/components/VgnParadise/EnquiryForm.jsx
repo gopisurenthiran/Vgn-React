@@ -208,7 +208,7 @@ export default function EnquiryForm() {
     <section className="property-details-section">
       <div className="container">
         <div className="row">
-             {/* <SubNav/> */}
+          {/* <SubNav/> */}
           <div className="col-lg-4">
             <div
               className="position-sticky"
@@ -220,7 +220,7 @@ export default function EnquiryForm() {
                     <div className="section-title2">
                       <h4>Enquiry Form</h4>
                     </div>
-                    <EnquiryFormHome projectname=" Paradise"/>
+                    <EnquiryFormHome projectname=" Paradise" />
                   </div>
                 </div>
               </div>
@@ -480,6 +480,34 @@ export default function EnquiryForm() {
               </div>
 
               <div className="border-btm"></div>
+
+
+              <div className="border-btm"></div>
+              <div className="pd-widget" id="3dwalkthrough">
+                <div className="section-title2">
+                  <h4>3D Walkthrough</h4>
+                </div>
+                <div className="row">
+                  <div className="col-12 col2">
+                    <div className="ratio ratio-16x9">
+                      <iframe
+                        width="100%"
+                        height="415"
+                        src="https://www.youtube.com/embed/XPZ9n1hCD84?si=Wr8v72YK6L7uJvL"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-btm"></div>
+              <div className="border-btm"></div>
+
               {/* Video Section */}
               <div className="pd-widget" id="video">
                 <div className="section-title2">
@@ -502,7 +530,6 @@ export default function EnquiryForm() {
                   ))}
                 </div>
               </div>
-
               <div className="border-btm"></div>
 
               <div className="pd-widget" id="360view">

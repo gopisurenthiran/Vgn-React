@@ -9,7 +9,9 @@ const sections = [
   ["#clubhouse", "Club House"],
   ["#advantages", "Location Advantages"],
   ["#gallery", "Gallery"],
-  ["#video", "Video"],
+  // ["#video", "Video"],
+  ["#3dwalkthrough", "3D Walkthrough"],
+
   ["#map", "Location"],
   ["#route", "Route"],
   ["#contact", "Contact"],
@@ -50,7 +52,7 @@ export default function SubNav() {
 
   return (
     <div className="subnav-tabs-wrapper">
-<ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
+      <ul className="nav nav-tab justify-content-start justify-content-md-end flex-nowrap">
         {sections.map(([href, label]) => (
           <li className="nav-item" key={href}>
             <Link

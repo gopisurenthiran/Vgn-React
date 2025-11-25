@@ -10,6 +10,10 @@ import {
   faClipboard,
 } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
+const videoUrls = [
+  "https://www.youtube.com/embed/ypQzafV3hUI?si=9FpctDU_EoOlTmKi",
+
+];
 
 import heritage from "@/assets/vgn-heritage/main-logo.png";
 import heritagemobile from "@/assets/vgn-heritage/main-logo1.png";
@@ -95,7 +99,7 @@ export default function EnquiryForm() {
   const highlightImages = [high1, high2, high3, high4, high5, high6, high7, high8, high9, high10, high11, high12, high13, high14, high15];
 
   const {
-  
+
     watch,
     formState: { errors, isSubmitting },
   } = useForm();
@@ -282,6 +286,31 @@ export default function EnquiryForm() {
               <div className="border-bottom my-3"></div>
               {/* Location Advantages Section */}
               <LocationAdvantages />
+
+              <div className="border-bottom my-3"></div>
+
+              {/* Video Section */}
+              <div className="pd-widget" id="3dwalkthrough">
+                <div className="section-title">
+                  <h4>3D Walkthrough</h4>
+                </div>
+                <div className="row">
+                  <div className="col-12 col2">
+                    <div className="ratio ratio-16x9">
+                      <iframe
+                        width="100%"
+                        height="415"
+                        src="https://www.youtube.com/embed/ypQzafV3hUI?si=9FpctDU_EoOlTmKi"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="border-bottom my-3"></div>
 
